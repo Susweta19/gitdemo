@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>login MCS+CG_Rights user--&gt;[Ex] right on CG_1 and ACo_1 the modification optionsand save options are selectable but delete option will be deactivated;[S] right on CG_3 and ACo_3 can be modified and deleted; no right on CG_2 and ACo_2 won't be displayed;</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>MCS+CG Right</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <ChoiceGuide>
+            <Actions>
+              <Content>
+                <Actions>
+                  <ChoiceGuideFromTemplate>
+                    <Parameters>
+                      <template>CG_1</template>
+                    </Parameters>
+                    <Actions>
+                      <Close>
+                      </Close>
+                    </Actions>
+                  </ChoiceGuideFromTemplate>
+                </Actions>
+              </Content>
+            </Actions>
+          </ChoiceGuide>
+          <ChoiceGuide>
+            <Actions>
+              <Content>
+                <Actions>
+                  <ChoiceGuideFromTemplate>
+                    <Parameters>
+                      <template>CG_3</template>
+                    </Parameters>
+                    <Actions>
+                    </Actions>
+                  </ChoiceGuideFromTemplate>
+                </Actions>
+              </Content>
+            </Actions>
+          </ChoiceGuide>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

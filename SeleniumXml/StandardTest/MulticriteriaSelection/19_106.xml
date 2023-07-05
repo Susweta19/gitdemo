@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Try to open 'Multicriterion Selection - Requirement Set' window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+					<langage>English</langage>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_MulticriteriaSelection</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+						</Actions>
+					</NavigationTree>
+					<MultiCriteria>
+						<Actions>
+							<Content>
+								<Actions></Actions>
+							</Content>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Define Criteria</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Start calculation of selection</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Add a new group</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Modify the group...</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Delete the group</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Edit…</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Save</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Export in XML format</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Literary expression</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Delete the Requirement Set</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+						</Actions>
+					</MultiCriteria>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

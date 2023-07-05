@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the display mode of the window title-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Open the TxCharts from Main tool bar</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <CurveModule>
+            <Actions>
+              <Content>
+                <Actions>
+                  <AddNewCurve>
+                    <Actions>
+                      <Content>
+                        <Actions>
+                          <Next>
+                          </Next>
+                          <Finish>
+                          </Finish>
+                        </Actions>
+                      </Content>
+                    </Actions>
+                  </AddNewCurve>
+                  <ExportChart>
+                    <Actions>
+                      <Close >
+                      	</Close>
+                    </Actions>
+                  </ExportChart>
+                </Actions>
+              </Content>
+              <Close>
+                <Parameters />
+              </Close>
+            </Actions>
+          </CurveModule>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Shubhajit -->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Use export module for user Michel Jean</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Michel&#160;Jean</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<Sleep>
+						<Parameters>
+							<timeOut>5</timeOut>
+						</Parameters>
+					</Sleep>
+					<IsButtonPresentByTitle>
+						<Parameters>
+							<buttonName>Export</buttonName>
+						</Parameters>
+						<ExpectedResult>false</ExpectedResult>
+					</IsButtonPresentByTitle>
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

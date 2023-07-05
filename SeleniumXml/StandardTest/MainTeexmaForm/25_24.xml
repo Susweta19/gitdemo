@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the availibility of the "AddANewThread" button</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<Sleep>
+						<Parameters>
+							<timeOut>8</timeOut>
+						</Parameters>
+					</Sleep>
+					<TxCommunity>
+						<Actions>
+							<AddNewThread>
+								<Actions>
+									<ReadHeader>
+										<ExpectedResult>Add a new thread</ExpectedResult>
+									</ReadHeader>
+									<Close></Close>
+								</Actions>
+							</AddNewThread>
+						</Actions>
+					</TxCommunity>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the availablity of toolbar buttons for TxSpecification module</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>DUPONT&#160;Jean-Michel</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>SPC Dashboard</modelName>
+						</Parameters>
+					</LaunchModel>
+
+					<WaitForAjax></WaitForAjax>
+					<ReturnSPCDashboardWindow>
+						<Actions>
+							<WaitForAjax></WaitForAjax>
+							<Content>
+								<Actions>
+									<ClickOnStatistics>
+										<Parameters>
+											<statisticsName>Calmagine - % metamizole sodium 2019</statisticsName>
+										</Parameters>
+									</ClickOnStatistics>
+									<ReturnTxSpecificationInNewTab>
+										<Actions>
+											<Content>
+												<Actions>
+													<ReadAllToolbarButtons>
+														<Actions>
+															<ElementAt>
+																<Parameters>
+																	<index>
+																		0
+																	</index>
+																</Parameters>
+																<ExpectedResult>Manage Configurations...</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>1</index>
+																</Parameters>
+																<ExpectedResult>Manage Dashboard...</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>2</index>
+																</Parameters>
+																<ExpectedResult>Create new Configuration...</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>3</index>
+																</Parameters>
+																<ExpectedResult>Edit current Configuration...</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>4</index>
+																</Parameters>
+																<ExpectedResult>Save current Configuration...</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>5</index>
+																</Parameters>
+																<ExpectedResult>Delete current Configuration...</ExpectedResult>
+															</ElementAt></Actions>
+													</ReadAllToolbarButtons></Actions>
+											</Content></Actions>
+									</ReturnTxSpecificationInNewTab>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnSPCDashboardWindow>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

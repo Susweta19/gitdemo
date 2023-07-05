@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the Functionality of Extraction Configuration [PDF] Extraction Word - Caractéristiques Liens</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Test&#160;Extraction</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                  <SelectEntity>
+                    <Parameters>
+                      <nodes>
+                        <path>Entité Test Word 2 (OneFilePerAllObject)</path>
+                      </nodes>
+                    </Parameters>
+                  </SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <MainToolbar>
+            <Parameters>
+              <modelName>ExtractionMainToolBar</modelName>
+            </Parameters>
+          </MainToolbar>
+          <ReturnExtraction>
+            <Actions>
+              <Content>
+                <Actions>
+                  <Filter>
+                  	<Actions>
+                  		<Select>
+                  			<Parameters>
+                  				<value>Test Extraction</value>
+                  			</Parameters>
+                  		</Select></Actions>
+                  </Filter>
+                  <Extractions>
+                    <Actions>
+                      <Select>
+                        <Parameters>
+                          <value>[PDF]&#160;Extraction&#160;Word&#160;-&#160;Caractéristiques&#160;Liens</value>
+                        </Parameters>
+                      </Select>
+                    </Actions>
+                  </Extractions>
+                  <Objects>
+                    <Actions>
+                      <DisplayTheEntireTree />
+                      <UncheckAll />
+                      <SelectEntitiesBox>
+                        <Parameters>
+                          <collection>
+                            <collection>
+                              <path>Entité Test Word/Excel</path>
+                            </collection>
+                          </collection>
+                        </Parameters>
+                        <Actions>
+                          <Tick />
+                        </Actions>
+                      </SelectEntitiesBox>
+                    </Actions>
+                  </Objects>
+                  <Extract>
+                    <Parameters />
+                    <Actions />
+                  </Extract>
+                </Actions>
+              </Content>
+            </Actions>
+          </ReturnExtraction>
+          <Sleep>
+            <Parameters>
+              <timeOut>2</timeOut>
+            </Parameters>
+          </Sleep><!--ChaineDeCaractere_Date_2019-02-18_DateTime_2019-02-18_12_47_40_NomObjet_#sObjectName#-->
+          <DownloadFileChecking>
+            <Parameters>
+              <DownloadDirectory>#DownloadDirectory#</DownloadDirectory><!--NomObjet_Entité Test WordExcel.docx    (OLD name)-->
+              <fileName>Caractéristiques Liens</fileName>
+              <contains>true</contains>
+            </Parameters>
+            <ExpectedResult>true</ExpectedResult>
+          </DownloadFileChecking>
+          <ReturnExtraction>
+            <Actions>
+              <Content>
+                <Actions>
+                  <Extractions>
+                    <Actions>
+                      <Select>
+                        <Parameters>
+                          <value>[PDF]&#160;Extraction&#160;Word&#160;-&#160;Caractéristiques&#160;Liens</value>
+                        </Parameters>
+                      </Select>
+                    </Actions>
+                  </Extractions>
+                  <Objects>
+                    <Actions>
+                      <SelectEntitiesBox>
+                        <Parameters>
+                          <collection>
+                            <collection>
+                              <path>Entité Test Word 2 (OneFilePerAllObject)</path>
+                            </collection>
+                            <collection>
+                            	<path>Entité Test Word/Excel</path></collection>
+                          </collection>
+                        </Parameters>
+                        <Actions>
+                          <Tick />
+                        </Actions>
+                      </SelectEntitiesBox>
+                    </Actions>
+                  </Objects>
+                  <Extract>
+                    <Parameters />
+                    <Actions />
+                  </Extract>
+                </Actions>
+              </Content>
+            </Actions>
+          </ReturnExtraction>
+          <Sleep>
+            <Parameters>
+              <timeOut>10</timeOut>
+            </Parameters>
+          </Sleep>
+          <DownloadFileChecking>
+            <Parameters>
+              <DownloadDirectory>#DownloadDirectory#</DownloadDirectory>
+              <fileName>Caractéristiques Liens</fileName>
+              <contains>true</contains>
+            </Parameters>
+            <ExpectedResult>true</ExpectedResult>
+          </DownloadFileChecking>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>See the structure, Check the order of the different objects and Fold and unfold at least 3 times then select a task</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+
+
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Projects/Tasks view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<IsProjectCollasped>
+												<Parameters>
+													<projectName>Projet-CT-132</projectName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsProjectCollasped>
+											<CollapseEntity>
+												<Parameters>
+													<ProjectName>Projet-CT-132</ProjectName>
+												</Parameters>
+											</CollapseEntity>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>T-0750</ProjectName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsProjectPresent>
+											<ExpandEntity>
+												<Parameters>
+													<ProjectName>Projet-CT-132</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>T-0750</ProjectName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsProjectPresent>
+											<SelectTask>
+												<Parameters>
+													<projectName>Projet-CT-132</projectName>
+													<taskName>T-0750</taskName>
+												</Parameters>
+											</SelectTask>
+											<CollapseEntity>
+												<Parameters>
+													<ProjectName>Projet-CT-132</ProjectName>
+												</Parameters>
+											</CollapseEntity>
+											<ExpandEntity>
+												<Parameters>
+													<ProjectName>Projet-CT-132</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<CollapseEntity>
+												<Parameters>
+													<ProjectName>Projet-CT-132</ProjectName>
+												</Parameters>
+											</CollapseEntity>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>T-0750</ProjectName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsProjectPresent>
+											<ExpandEntity>
+												<Parameters>
+													<ProjectName>Projet-CT-132</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>T-0750</ProjectName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsProjectPresent>
+											<SelectTask>
+												<Parameters>
+													<projectName>Projet-CT-132</projectName>
+													<taskName>T-0750</taskName>
+												</Parameters>
+											</SelectTask>
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

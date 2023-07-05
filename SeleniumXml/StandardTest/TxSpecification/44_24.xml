@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check functionality of "Target Value" field</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>DUPONT&#160;Jean-Michel</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>SPC Dashboard</modelName>
+						</Parameters>
+					</LaunchModel>
+
+					<WaitForAjax></WaitForAjax>
+					<ReturnSPCDashboardWindow>
+						<Actions>
+							<WaitForAjax></WaitForAjax>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									<ClickOnStatistics>
+										<Parameters>
+											<statisticsName>Calmagine - % metamizole sodium 2019</statisticsName>
+										</Parameters>
+									</ClickOnStatistics>
+									<ReturnTxSpecificationInNewTab>
+										<Actions>
+											<Content>
+												<Actions>
+													<WaitForAjax></WaitForAjax>
+													<ClickOnButtonFromToolbar>
+														<Parameters>
+															<buttonName>Edit current Configuration...</buttonName>
+														</Parameters>
+													</ClickOnButtonFromToolbar>
+													<ReturnEditConfiguration>
+														<Actions>
+															<Content>
+																<Actions>
+																	<Next></Next>
+																	<Next></Next>
+																	<Next></Next>
+																	<Sleep>
+																		<Parameters>
+																			<timeOut>2</timeOut>
+																		</Parameters>
+																	</Sleep>
+																	<ReadTargetValue>
+																		<Parameters>
+																			<targetFieldName>Upper Control limits at</targetFieldName>
+																		</Parameters>
+																		<ExpectedResult>50</ExpectedResult>
+																	</ReadTargetValue><ReadTargetValue>
+																		<Parameters>
+																			<targetFieldName>Upper Oversight limits at</targetFieldName>
+																		</Parameters>
+																		<ExpectedResult>50</ExpectedResult>
+</ReadTargetValue><ReadTargetValue>
+																		<Parameters>
+																			<targetFieldName>Low Oversight limits at</targetFieldName>
+																		</Parameters>
+																		<ExpectedResult>50</ExpectedResult>
+</ReadTargetValue><ReadTargetValue>
+																		<Parameters>
+																			<targetFieldName>Low Control limits at</targetFieldName>
+																		</Parameters>
+																		<ExpectedResult>50</ExpectedResult>
+</ReadTargetValue>
+																	<TargetValue>
+																		<Actions>
+																			<Write>
+																				<Parameters>
+																					<value>45</value>
+																				</Parameters>
+																			</Write></Actions>
+																	</TargetValue>
+																	<Sleep>
+																		<Parameters>
+																			<timeOut>1</timeOut>
+																		</Parameters>
+																	</Sleep>
+																	<ReadTargetValue>
+																		<Parameters>
+																			<targetFieldName>Upper Control limits at</targetFieldName>
+																		</Parameters>
+																		<ExpectedResult>45</ExpectedResult>
+																	</ReadTargetValue><ReadTargetValue>
+																		<Parameters>
+																			<targetFieldName>Upper Oversight limits at</targetFieldName>
+																		</Parameters>
+																		<ExpectedResult>45</ExpectedResult>
+</ReadTargetValue><ReadTargetValue>
+																		<Parameters>
+																			<targetFieldName>Low Oversight limits at</targetFieldName>
+																		</Parameters>
+																		<ExpectedResult>45</ExpectedResult>
+</ReadTargetValue><ReadTargetValue>
+																		<Parameters>
+																			<targetFieldName>Low Control limits at</targetFieldName>
+																		</Parameters>
+																		<ExpectedResult>45</ExpectedResult>
+																		</ReadTargetValue></Actions>
+															</Content></Actions>
+													</ReturnEditConfiguration></Actions>
+											</Content></Actions>
+									</ReturnTxSpecificationInNewTab>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnSPCDashboardWindow>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

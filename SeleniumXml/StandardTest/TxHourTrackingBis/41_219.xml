@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the functionality of Close button in Time Export window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in window  mode with TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInWindow>
+						<Actions>
+							<Content>
+								<Actions>
+									<TxHourTrackingToolBar>
+										<Actions>
+											<TimeExportationInWindow>
+												<Actions>
+													<Content>
+														<Actions>
+															<Refresh></Refresh></Actions>
+													</Content>
+													<Close></Close></Actions>
+											</TimeExportationInWindow></Actions>
+									</TxHourTrackingToolBar></Actions>
+							</Content></Actions>
+					</ReturnTxHourTrackingInWindow></Actions>
+      </MainWindow>
+    </Actions></TxInterface></Actions>

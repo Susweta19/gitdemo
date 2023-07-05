@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Read Export window translation in french</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+					<langage>French</langage>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<Export>
+						<Actions>
+							<ReadHeader>
+								<ExpectedResult>Exportation</ExpectedResult></ReadHeader>
+							<Content>
+								<Actions>
+									<Filtre>
+										<Actions>
+											<Read>
+												<ExpectedResult>Notification type</ExpectedResult></Read>
+											
+											
+											
+										</Actions>
+									</Filtre>
+									<Exports>
+										<Actions>
+											<Read>
+												<ExpectedResult>[Excel] Exportation standard</ExpectedResult></Read></Actions>
+									</Exports>
+									<ObjectsTree>
+										<Actions>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Cocher toutes les Entités</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Décocher toutes les Entités</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Visualiser les Entités cochées</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Importer une présélection à partir d'un fichier texte ou Excel...</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle></Actions>
+									</ObjectsTree>
+									<DataTree>
+										<Actions>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Cocher toutes les Caractéristiques</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Décocher toutes les Caractéristiques</buttonName>
+												</Parameters>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Visualiser les Caractéristiques cochées</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle>
+										</Actions>
+									</DataTree></Actions>
+							</Content></Actions>
+					</Export>
+				</Actions>
+			</MainWindow></Actions></TxInterface></Actions>

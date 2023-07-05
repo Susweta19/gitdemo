@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Login to the user Alice Dupont</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Navigate</buttonName>
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Calendar</buttonName>
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Hour Tracking</buttonName>
+						</Parameters>
+					</ClickOnButton>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

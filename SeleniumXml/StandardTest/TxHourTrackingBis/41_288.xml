@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the Functionality of Add comment function for a task under My Equipments</testDescription>
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in new tab mode without TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInNewTab>
+						<Actions>
+							<ReadBrowserTitle>
+								<ExpectedResult>Hour Tracking - Spent times</ExpectedResult></ReadBrowserTitle>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									<ManageNavigationLayout>
+										<Actions>
+											<ClickOnLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+												</Parameters>
+											</ClickOnLinkBox>
+										</Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Alice Dupont</taskName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>[To be planned]</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Luc Bariol</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Gérard Vaillancourt</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Marguerite Saucier</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Martin Pierre</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Pauline Dufresne</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+										</Actions>
+									</ManageTask>
+									<ManageNavigationLayout>
+										<Actions>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+													
+												</Parameters>
+												<Actions>
+													<SelectAll></SelectAll>
+												</Actions>
+											</ManageLinkBox>
+										</Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>[To be planned]</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Orane Martel</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Administrateur</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+										</Actions>
+									</ManageTask>
+									<ManageNavigationLayout>
+										<Actions>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+													
+												</Parameters>
+												<Actions>
+													<SelectAll></SelectAll>
+													<ViewCheckedObjects></ViewCheckedObjects>
+													<UncheckAll></UncheckAll>
+												</Actions>
+											</ManageLinkBox>
+										</Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>[To be planned]</taskName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Orane Martel</taskName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Administrateur</taskName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTaskPresent>
+										</Actions>
+									</ManageTask>
+									<ManageNavigationLayout>
+										<Actions>
+											<SelectDate>
+												<Actions>
+													<IsCurrentDateSelected>
+														<Parameters>
+															<currentDate>#D#</currentDate>
+														</Parameters>
+														<ExpectedResult>
+															true
+														</ExpectedResult>
+													</IsCurrentDateSelected></Actions>
+											</SelectDate>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+													
+												</Parameters>
+												<Actions>
+													<SelectAll></SelectAll>
+												</Actions>
+											</ManageLinkBox>
+										</Actions>
+									</ManageNavigationLayout>
+									<WaitForAjax></WaitForAjax>
+									<ManageTask>
+										<Actions>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>[To be planned]</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Orane Martel</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Luc Bariol</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>																						
+										</Actions>
+									</ManageTask>
+									<ManageNavigationLayout>
+										<Actions>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+													
+												</Parameters>
+												<Actions>
+													<SelectEntityBox>
+														<Parameters>
+															<nodes>
+																<path>Orane Martel</path>
+															</nodes>
+														</Parameters>
+														<Actions>
+															<Tick></Tick>
+														</Actions>
+													</SelectEntityBox>
+													<SelectEntityBox>
+														<Parameters>
+															<nodes>
+																<path>Administrateur</path>
+															</nodes>
+														</Parameters>
+														<Actions>
+															<Tick></Tick>
+														</Actions>
+													</SelectEntityBox>
+												</Actions>
+											</ManageLinkBox>
+										</Actions>
+									</ManageNavigationLayout>
+								</Actions>
+							</Content>
+							<Close><Parameters></Parameters></Close>
+						</Actions>
+					</ReturnTxHourTrackingInNewTab>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

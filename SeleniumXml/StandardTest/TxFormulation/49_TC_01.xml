@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Trigger from main toolbar</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Recipe</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Recipe 1</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<MainToolbar>
+						<Parameters>
+							<modelName>Launch formulation</modelName>
+						</Parameters>
+					</MainToolbar>
+					<ReturnIngredientWindow>
+						<Actions>
+							<Content>
+								<Actions></Actions>
+							</Content>
+							<Sleep>
+								<Parameters>
+									<timeOut>3</timeOut>
+								</Parameters>
+							</Sleep>
+							<ReadHeader>
+								<ExpectedResult>Select a main ingredient</ExpectedResult>
+							</ReadHeader>
+							<Cancel></Cancel>
+						</Actions>
+					</ReturnIngredientWindow>
+					<ReturnFormulationWindow>
+						<Actions>
+							<ReadHeader>
+								<ExpectedResult>Formulation de l'Entité «Recipe 1» / Masse totale souhaitée : / Masse totale réelle :</ExpectedResult>
+							</ReadHeader>
+							<Cancel></Cancel>
+						</Actions>
+					</ReturnFormulationWindow>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

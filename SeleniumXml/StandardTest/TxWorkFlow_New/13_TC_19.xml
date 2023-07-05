@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Write data in an attribute list form</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>User_Workflow</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Workflow_Tasks</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                  <SelectEntity>
+                    <Parameters><nodes><path>Test TxWF_Task</path></nodes></Parameters>
+                  </SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <MainToolbar>
+          	<Parameters>
+          		<modelName>Available actions form</modelName>
+          	</Parameters>
+          </MainToolbar>
+          <Sleep>
+          	<Parameters>
+          		<timeOut>5</timeOut>
+          	</Parameters>
+          </Sleep>
+          <ReturnWFPromote>
+          	<Actions>
+          		<WriteFormTask>
+          			<Parameters>
+          				<actionName>Attribute list form</actionName>
+          			</Parameters>
+          			<Actions>
+          				<ReadWindowTitle>
+          					<ExpectedResult>Attribute list</ExpectedResult></ReadWindowTitle>
+          				<Content>
+          					<Actions>
+          						<GetLink>
+          							<Parameters>
+          								<attrId>522</attrId>
+          							</Parameters>
+          							<Actions>
+          								<SelectEntityBox>
+          									<Parameters>
+          										<nodes>
+          											<path>Type 1</path></nodes>
+          									</Parameters>
+          									<Actions>
+          										<Read>
+          											<ExpectedResult>
+          												true
+          											</ExpectedResult></Read>
+          									</Actions>
+          								</SelectEntityBox>
+          								<Search>
+          									<Parameters>
+          										<research>Type 2</research>
+          									</Parameters>
+          								</Search>
+          								<SelectEntityBox>
+          									<Parameters>
+          										<nodes>
+          											<path>Type 2</path></nodes>
+          									</Parameters>
+          									<Actions>
+          										<Tick></Tick>
+          										
+          									</Actions>
+          								</SelectEntityBox></Actions>
+          						</GetLink>
+          					</Actions>
+          				</Content>
+          				<Ok>
+          					<Parameters>
+          						<validate>true</validate></Parameters>
+          				</Ok>
+          			</Actions>
+          		</WriteFormTask>
+          	</Actions>
+          </ReturnWFPromote>
+           <ReadForm>
+          	<Actions>
+          		<Read>
+          			<DTText>
+          				<Parameters>
+          					<attrId>522</attrId>
+          				</Parameters>
+          				<ExpectedResult>
+          					<value>Type 2</value>
+          				</ExpectedResult>
+          			</DTText>
+          			
+          		</Read></Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

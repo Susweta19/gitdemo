@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the ability to add new entity</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<ExpandNavigationTree />
+      		<NavigationTree>
+      			<Actions>
+      				<SelectOT>
+      					<Actions>
+      						<Select>
+      							<Parameters>
+      								<value>Type d'essais</value>
+      							</Parameters>
+      						</Select></Actions>
+      				</SelectOT>
+      				<SwitchReadWrite />
+      				<AddObject>
+      					<Parameters />
+      					<Actions>
+      						<Content>
+      							<Actions>
+      								<Write>
+      									<DTText>
+      										<Parameters>
+      											<id>113</id>
+      											<value>
+      												<value>Type admin table 2</value>
+      											</value>
+      										</Parameters>
+      									</DTText>
+      									
+      								</Write></Actions>
+      						</Content>
+      						<Ok>
+      							<Parameters>
+      								<validate>true</validate></Parameters>
+      						</Ok></Actions>
+      				</AddObject>
+      				<Sleep>
+      					<Parameters>
+      						<timeOut>3</timeOut>
+      					</Parameters>
+      				</Sleep>
+      				<SwitchReadWrite></SwitchReadWrite>
+
+
+
+
+
+      			</Actions>
+      		</NavigationTree>
+      		<NavigationTree>
+      			<Actions>
+      				<SelectOT>
+      					<Actions>
+      						<Select>
+      							<Parameters>
+      								<value>Type d'essais</value>
+      							</Parameters>
+      						</Select></Actions>
+      				</SelectOT>
+      				<EntityTree>
+      					<Actions>
+      						<SelectEntity>
+      							<Parameters>
+      								<nodes>
+      									<path>Type admin table 2</path></nodes>
+      							</Parameters>
+      						</SelectEntity></Actions>
+      				</EntityTree></Actions>
+      		</NavigationTree>
+      		<ReadForm>
+      			<Actions>
+      				<Read>
+      					<DTText>
+      						<Parameters>
+      							<attrId>113</attrId>
+      						</Parameters>
+      						<ExpectedResult>
+      							<value>Type admin table 2</value>
+      						</ExpectedResult>
+      					</DTText>
+      					
+      				</Read></Actions>
+      		</ReadForm></Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

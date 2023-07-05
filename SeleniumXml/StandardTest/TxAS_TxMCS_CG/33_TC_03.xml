@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Creating an unrestricted research</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Standard_User_M+</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<ReadBrowserTitle>
+								<ExpectedResult>TxAdvancedSearch</ExpectedResult>
+							</ReadBrowserTitle>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>3</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result>
+												</Parameters>
+											</IfConfirmationPopUpPresent>
+
+
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult>
+											</ReadWindowTitle>
+											<Content>
+												<Actions>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>New Advanced Search...</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+													<multipleWindowActive>true</multipleWindowActive>
+												</Parameters>
+											</Ok>
+											<ReadWindowTitle>
+												<ExpectedResult>Multicriterion Selection - Requirement Set</ExpectedResult>
+											</ReadWindowTitle>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+										</Actions>
+									</SelectAdvancedSearch>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - New Advanced Search</ExpectedResult>
+									</ReadWindowTitle>
+
+									<IsTabPresent>
+										<Parameters>
+											<tabName>Quick View</tabName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsTabPresent>
+									<IsTabPresent>
+										<Parameters>
+											<tabName>Table View</tabName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsTabPresent>
+									<IsButtonPresentByTitle>
+										<Parameters>
+											<buttonName>Load an Advanced Search...</buttonName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsButtonPresentByTitle>
+									<IsButtonPresentByTitle>
+										<Parameters>
+											<buttonName>Save the Advanced Search…</buttonName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsButtonPresentByTitle>
+									<ManageQuestionList>
+										<Actions>
+											<IsSearchBoxPresent>
+												<ExpectedResult>true</ExpectedResult>
+											</IsSearchBoxPresent>
+										</Actions>
+									</ManageQuestionList>
+									<IsShowMoreFiltersPresent>
+										<ExpectedResult>true</ExpectedResult>
+									</IsShowMoreFiltersPresent>
+									<RefreshResult></RefreshResult>
+									<IfConfirmationPopUpPresent>
+										<Parameters>
+											<result>true</result>
+										</Parameters>
+									</IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ShowMoreFilters>
+										<Actions>
+											<ReadWindowTitle>
+												<ExpectedResult>Multicriterion Selection - Requirement Set</ExpectedResult>
+											</ReadWindowTitle>
+										</Actions>
+									</ShowMoreFilters>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

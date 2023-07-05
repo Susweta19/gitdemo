@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--does not clicking on close button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Add a piece (P03) to the entity test "Try in lnk with nuplet 1" Open the application model with it from a step having n uplet in ling mod</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<NavigationTree>
+        		<Actions>
+        			<SelectOT>
+        				<Actions>
+        					<Select>
+        						<Parameters>
+        							<value>Essais</value>
+        						</Parameters>
+        					</Select></Actions>
+        			</SelectOT>
+        			<EntityTree>
+        				<Actions>
+        					<SelectEntity>
+        						<Parameters>
+        							<nodes>
+        								<path>Essai en lnk avec nuplet 1</path></nodes>
+        						</Parameters>
+        					</SelectEntity></Actions>
+        			</EntityTree></Actions>
+        	</NavigationTree>
+        	<Edit>
+        		<Actions>
+        			<Content>
+        				<Actions>
+        					<GetLink>
+        						<Parameters>
+        							<attrId>87</attrId>
+        						</Parameters>
+        						<Actions>
+        							<Search>
+        								<Parameters>
+        									<research>p03</research>
+        								</Parameters>
+        							</Search>
+        							<SelectEntityBox>
+        								<Parameters>
+        									<nodes>
+        										<path>P03</path></nodes>
+        								</Parameters>
+        								<Actions>
+        									<Tick></Tick></Actions>
+        							</SelectEntityBox>
+        						</Actions>
+        					</GetLink></Actions>
+        			</Content>
+        			<Ok>
+        				<Parameters>
+        					<validate>true</validate></Parameters>
+        			</Ok></Actions>
+        	</Edit>
+        	<LaunchModel>
+        		<Parameters>
+        			<modelName>Saisir des résultats d'essai (link)</modelName>
+        		</Parameters>
+        	</LaunchModel>
+        	<ReturnTestResultEntityTest>
+        		<Actions>
+        			<ConditionTable>
+        				<Actions>
+        					<ReadStringValue>
+        						<Parameters>
+        							<rowIndex>1</rowIndex>
+        							<columnIndex>1</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>P01 (Saisie 1)</ExpectedResult>
+        					</ReadStringValue>
+        					<ReadStringValue>
+        						<Parameters>
+        							<rowIndex>2</rowIndex>
+        							<columnIndex>1</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>P01 (Saisie 2)</ExpectedResult>
+        					</ReadStringValue>
+        					<ReadStringValue>
+        						<Parameters>
+        							<rowIndex>3</rowIndex>
+        							<columnIndex>1</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>P02 (Saisie 1)</ExpectedResult>
+        					</ReadStringValue>
+        					<ReadStringValue>
+        						<Parameters>
+        							<rowIndex>4</rowIndex>
+        							<columnIndex>1</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>P02 (Saisie 2)</ExpectedResult>
+        					</ReadStringValue>
+        					<ReadStringValue>
+        						<Parameters>
+        							<rowIndex>5</rowIndex>
+        							<columnIndex>1</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>P03 (Saisie 1)</ExpectedResult>
+        					</ReadStringValue>
+        					<ReadStringValue>
+        						<Parameters>
+        							<rowIndex>6</rowIndex>
+        							<columnIndex>1</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>P03 (Saisie 2)</ExpectedResult>
+        					</ReadStringValue></Actions>
+        			</ConditionTable>
+        			<ResultTable>
+        				<Actions>
+        					<ReadStringValue>
+        						<Parameters>
+        							<rowIndex>1</rowIndex>
+        							<columnIndex>1</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>P01 (Saisie 1)</ExpectedResult>
+        					</ReadStringValue>
+        					<ReadStringValue>
+        						<Parameters>
+        							<rowIndex>2</rowIndex>
+        							<columnIndex>1</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>P01 (Saisie 2)</ExpectedResult>
+        					</ReadStringValue>
+        					<ReadStringValue>
+        						<Parameters>
+        							<rowIndex>3</rowIndex>
+        							<columnIndex>1</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>P02 (Saisie 1)</ExpectedResult>
+        					</ReadStringValue>
+        					<ReadStringValue>
+        						<Parameters>
+        							<rowIndex>4</rowIndex>
+        							<columnIndex>1</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>P02 (Saisie 2)</ExpectedResult>
+        					</ReadStringValue>
+        					<ReadStringValue>
+        						<Parameters>
+        							<rowIndex>5</rowIndex>
+        							<columnIndex>1</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>P03 (Saisie 1)</ExpectedResult>
+        					</ReadStringValue>
+        					<ReadStringValue>
+        						<Parameters>
+        							<rowIndex>6</rowIndex>
+        							<columnIndex>1</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>P03 (Saisie 2)</ExpectedResult>
+        					</ReadStringValue></Actions>
+        			</ResultTable></Actions>
+        	</ReturnTestResultEntityTest>
+        	
+
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

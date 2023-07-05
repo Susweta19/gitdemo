@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Properties' option-->
+<!--we cannot read all datas  of properties window-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check 'Properties' option (Right click on a object) in Readmode</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_BVA_1</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <WaitForAjax></WaitForAjax>
+              <TreeContextMenu>
+                <Actions>
+                  <Properties>
+                    <Parameters>
+                      <nodes>
+                        <path>New</path>
+                      </nodes>
+                    </Parameters>
+                  </Properties>
+                  <IsPropertiesObjectDisabled>
+                    <ExpectedResult>
+											true
+										</ExpectedResult>
+                  </IsPropertiesObjectDisabled>
+                </Actions>
+              </TreeContextMenu>
+            </Actions>
+          </NavigationTree>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Actions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../ConsoleLauncher/bin/DebugGenerate/TxTestsConfig.xsd">
+	<Config>
+		<Parameters>
+			<config>
+				<testsFolderPath>D:\Project\Tags\MADE430Parallel\SeleniumXml\StandardTest\Susweta\43_C2_1_15.xml</testsFolderPath>
+				<serverURL>http://teexma_430.local/</serverURL>
+				<browserType>Chrome</browserType>
+				<language>en</language>
+				<screenshotOnError>true</screenshotOnError>
+				<stringsToReplace>
+					<key>#DocPath#</key>
+					<value>D:\Teexma\CRAndDoc\420\CRAndDB\CRAndDoc\DocumentsToLoad\</value>
+				</stringsToReplace>
+				<!-- <spreadSheet>
+					<spreadSheetId>1ZcytWAWQV13ZAXOMjiYfANJrGr9VGjlwsH-d5MFza3U</spreadSheetId>
+					<prepareSpreadSheet>true</prepareSpreadSheet>
+					<driveFolderId>1k49uVX7rVwW4ISg2moYlELiikMNmAdWJ</driveFolderId>
+				</spreadSheet> -->
+				<userData>true</userData>
+				<downloadDirectory>C:\Users\ROCK ANU\Downloads\</downloadDirectory>
+				<!-- <releaseNumber>51409</releaseNumber>
+				<isAdminTest>true</isAdminTest>
+				<IsTagVersion>true</IsTagVersion>
+				<TagName>ECAR_Example</TagName> -->
+			</config>
+		</Parameters>
+	</Config>
+</Actions>

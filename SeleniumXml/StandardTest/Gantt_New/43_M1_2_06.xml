@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Double click on a Task entity </testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+
+
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Multiressources view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<Sleep>
+						<Parameters>
+							<timeOut>6</timeOut>
+						</Parameters>
+					</Sleep>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<Search>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>T-0601</value>
+												</Parameters>
+											</Write>
+										</Actions>
+									</Search>
+									<PressKeyFromKeyBoard>
+										<Actions>
+											<PressEnter></PressEnter>
+										</Actions>
+									</PressKeyFromKeyBoard>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<DoubleClickOnTask>
+												<Parameters>
+													<projectName>Projet-A-001</projectName>
+													<taskName>T-0601</taskName>
+												</Parameters>
+											</DoubleClickOnTask>
+										</Actions>
+									</ManageTask>
+									<IsAddTaskWindowPresent>
+										<ExpectedResult>true</ExpectedResult>
+									</IsAddTaskWindowPresent>
+									<ReturnObjectForm>
+										<Actions>
+											<IsAttributePresent>
+												<Parameters>
+													<attrbuteName>Start date</attrbuteName>
+												</Parameters>
+											</IsAttributePresent>
+											<IsAttributePresent>
+												<Parameters>
+													<attrbuteName>End date</attrbuteName>
+												</Parameters>
+											</IsAttributePresent>
+											<IsAttributePresent>
+												<Parameters>
+													<attrbuteName>Duration</attrbuteName>
+												</Parameters>
+											</IsAttributePresent>
+											<IsAttributePresent>
+												<Parameters>
+													<attrbuteName>Planned start date</attrbuteName>
+												</Parameters>
+											</IsAttributePresent>
+											<IsAttributePresent>
+												<Parameters>
+													<attrbuteName>Planned duration</attrbuteName>
+												</Parameters>
+											</IsAttributePresent>
+											<IsAttributePresent>
+												<Parameters>
+													<attrbuteName>Planned end date</attrbuteName>
+												</Parameters>
+											</IsAttributePresent>
+											<IsAttributePresent>
+												<Parameters>
+													<attrbuteName>Deadline</attrbuteName>
+												</Parameters>
+											</IsAttributePresent>
+										</Actions>
+									</ReturnObjectForm>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

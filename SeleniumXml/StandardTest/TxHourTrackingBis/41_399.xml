@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Checking the functionality of different button in group My team</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in new tab  mode with TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<ManageNavigationLayout>
+										<Actions>
+											<IsAccordionCollapsed>
+												<Parameters>
+													<accordionName>My team</accordionName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsAccordionCollapsed>
+											<ClickOnLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+												</Parameters>
+											</ClickOnLinkBox></Actions>
+									</ManageNavigationLayout>
+									<ManageNavigationLayout>
+										<Actions>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+												</Parameters>
+												<Actions>
+													<SelectAll></SelectAll>
+													
+												</Actions>
+											</ManageLinkBox></Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Gérard Vaillancourt</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Luc Bariol</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Martin Pierre</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsAddTaskButtonPresent>
+												<Parameters>
+													<resourceName>Luc Bariol</resourceName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsAddTaskButtonPresent>
+
+										</Actions>
+									</ManageTask>
+									<ManageNavigationLayout>
+										<Actions>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+												</Parameters>
+												<Actions>
+													<DeselectAll></DeselectAll>
+												</Actions>
+											</ManageLinkBox></Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Gérard Vaillancourt</taskName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Luc Bariol</taskName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Martin Pierre</taskName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTaskPresent>
+
+										</Actions>
+									</ManageTask>
+									<ManageNavigationLayout>
+										<Actions>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+												</Parameters>
+												<Actions>
+													<ViewCheckedObjects></ViewCheckedObjects></Actions>
+											</ManageLinkBox></Actions>
+									</ManageNavigationLayout></Actions>
+							</Content></Actions>
+					</ReturnTxHourTrackingInNewTab></Actions>
+      </MainWindow>
+    </Actions></TxInterface></Actions>

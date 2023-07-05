@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Verifying the structure of the gantt view</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view 3</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<Sleep>
+						<Parameters>
+							<timeOut>3</timeOut>
+						</Parameters>
+					</Sleep>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<ManageGanttView>
+										<Actions>
+											<ReadCurrentDate>
+												<ExpectedResult>#DD#</ExpectedResult>
+											</ReadCurrentDate>
+										</Actions>
+									</ManageGanttView>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<CollapseEntity>
+												<Parameters>
+													<ProjectName>Alice Dupont</ProjectName>
+												</Parameters>
+											</CollapseEntity>
+											<CollapseEntity>
+												<Parameters>
+													<ProjectName>Dominique Bler</ProjectName>
+												</Parameters>
+											</CollapseEntity>
+											<CollapseEntity>
+												<Parameters>
+													<ProjectName>Gérard Vaillancourt</ProjectName>
+												</Parameters>
+											</CollapseEntity>
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

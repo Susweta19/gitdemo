@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the display mode of TxSpecification module</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>DUPONT&#160;Jean-Michel</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<LaunchModel>
+        		<Parameters>
+        			<modelName>SPC Dashboard</modelName>
+        		</Parameters>
+        	</LaunchModel>
+        	
+        	<WaitForAjax></WaitForAjax>
+        	<ReturnSPCDashboardWindow>
+        		<Actions>
+        			<WaitForAjax></WaitForAjax>
+        			<ReadWindowTitle>
+        				<ExpectedResult>Dashboard Statistical Process Control</ExpectedResult></ReadWindowTitle>
+        			<IsButtonPresent>
+        				<Parameters>
+        					<buttonName>Close</buttonName>
+        				</Parameters>
+        			</IsButtonPresent>
+        			<MinMaxedWindow><Parameters><currentwin>false</currentwin></Parameters></MinMaxedWindow>
+        			<Content>
+        				<Actions>
+        					<IsDBCardPresent>
+        						<Parameters>
+        							<cardName>Out of control chart</cardName>
+        						</Parameters>
+        						<ExpectedResult>true</ExpectedResult>
+        					</IsDBCardPresent>
+        					<IsDBCardPresent>
+        						<Parameters>
+        							<cardName>Attention required</cardName>
+        						</Parameters>
+        						<ExpectedResult>true</ExpectedResult>
+        					</IsDBCardPresent>
+        					<IsDBCardPresent>
+        						<Parameters>
+        							<cardName>In control chart</cardName>
+        						</Parameters>
+        						<ExpectedResult>true</ExpectedResult>
+        					</IsDBCardPresent></Actions>
+        			</Content>
+        			<Close></Close></Actions>
+        	</ReturnSPCDashboardWindow>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

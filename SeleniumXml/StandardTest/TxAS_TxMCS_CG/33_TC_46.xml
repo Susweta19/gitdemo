@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Using a multiple choice question group</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>3</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result>
+												</Parameters>
+											</IfConfirmationPopUpPresent>
+
+
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult>
+											</ReadWindowTitle>
+											<Content>
+												<Actions>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>Materials choice guide</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+
+										</Actions>
+									</SelectAdvancedSearch>
+									<WaitForAjax></WaitForAjax>
+									<ClearAll></ClearAll>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - Materials choice guide</ExpectedResult>
+									</ReadWindowTitle>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<!-- <SelectMultipleAnswer> <Parameters> <questionName>Group 2</questionName> 
+												<answer> Subgroup&#160;2.1 </answer> </Parameters> </SelectMultipleAnswer> -->
+											<DropdownlistForComplexAnswer>
+												<Parameters>
+													<questionName>Group 2</questionName>
+												</Parameters>
+												<Actions>
+													<Select>
+														<Parameters>
+															<value>Subgroup&#160;2.1</value>
+														</Parameters>
+													</Select>
+												</Actions>
+											</DropdownlistForComplexAnswer>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Subgroup 2.1</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Subgroup 2.1</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Subgroup 2.1</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Material type ?</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Acq. date ?</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<ReadCriteriaList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>Metal</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadCriteriaList>
+									<DisplayedResult>
+										<ExpectedResult>1178 filtered out of a total of 2847|1,178 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<RemoveCriterion>
+										<Parameters>
+											<criteriaIndex>1</criteriaIndex>
+										</Parameters>
+									</RemoveCriterion>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Subgroup 2.1</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<IsGroupCollasped>
+												<Parameters>
+													<name>Subgroup 2.1</name>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupCollasped>
+
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Material type ?</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+										</Actions>
+									</ManageQuestionList>
+									<ManageQuestionList>
+										<Actions>
+											<DeleteselectionForComplexAnswer>
+												<Parameters>
+													<questionName>Group 2</questionName>
+												</Parameters>
+											</DeleteselectionForComplexAnswer>
+											
+											<DropdownlistForComplexAnswer>
+												<Parameters>
+													<questionName>Group 2</questionName>
+												</Parameters>
+												<Actions>
+													<Select>
+														<Parameters>
+															<value>Subgroup&#160;2.2</value>
+														</Parameters>
+													</Select>
+												</Actions>
+											</DropdownlistForComplexAnswer>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Subgroup 2.2</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<!-- need to do something for the commented section on script 
+												below -->
+											<!-- <IsGroupPresent> <Parameters> <groupName>Subgroup 1.1</groupName> 
+												</Parameters> <ExpectedResult>false</ExpectedResult> </IsGroupPresent> -->
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Support material type ?</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Formula ?</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>167 filtered out of a total of 2847|167 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<RemoveCriterion>
+										<Parameters>
+											<criteriaIndex>1</criteriaIndex>
+										</Parameters>
+									</RemoveCriterion>
+									<ManageQuestionList>
+										<Actions>
+											<ManageTextField>
+												<Parameters>
+													<questionName>Formula ?</questionName>
+													<value>C</value>
+												</Parameters>
+											</ManageTextField>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>1 filtered out of a total of 2847|1 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<RemoveCriterion>
+										<Parameters>
+											<criteriaIndex>1</criteriaIndex>
+										</Parameters>
+									</RemoveCriterion>
+
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>								
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

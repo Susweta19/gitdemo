@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the display mode of the window title-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Read The Banner through TxBanner OT</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TxBanner</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                  <SelectEntity>
+                    <Parameters>
+                      <nodes>
+                        <path>New</path>
+                      </nodes>
+                    </Parameters>
+                  </SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <Edit>
+            <Actions>
+              <Content>
+                <Actions>
+                  <GetLink>
+                    <Parameters>
+                      <attrId>496</attrId>
+                    </Parameters>
+                    <Actions>
+                      <UncheckAll /><Search>
+                      	<Parameters>
+                      		<research>New2</research>
+                      	</Parameters>
+</Search>
+                    	<SelectEntityBox>
+                        <Parameters>
+                          <nodes>
+                            <path>New2</path>
+                          </nodes>
+                        </Parameters>
+                        <Actions>
+                          <Tick />
+                        </Actions>
+                      </SelectEntityBox>
+                    </Actions>
+                  </GetLink>
+                </Actions>
+              </Content>
+              <Ok>
+                <Parameters>
+                  <validate>true</validate>
+                </Parameters>
+              </Ok>
+            </Actions>
+          </Edit>
+          <ReadBanner>
+            <ExpectedResult>PROJECT TEST (Created by DjibrilCAMARA. Date: 17/07/2013)</ExpectedResult>
+          </ReadBanner>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

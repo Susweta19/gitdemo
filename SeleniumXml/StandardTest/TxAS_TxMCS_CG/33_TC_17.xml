@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Clearing all criteria</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Standard_User_M+</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result>
+												</Parameters>
+											</IfConfirmationPopUpPresent>
+
+
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult>
+											</ReadWindowTitle>
+											<Content>
+												<Actions>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>New Advanced Search...</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+													<multipleWindowActive>true</multipleWindowActive>
+												</Parameters>
+											</Ok>
+											<ReadWindowTitle>
+												<ExpectedResult>Multicriterion Selection - Requirement Set</ExpectedResult>
+											</ReadWindowTitle>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+										</Actions>
+									</SelectAdvancedSearch>
+									<!-- <ShowMoreFilters> <Actions> <Content> <Actions> <SelectedEntity> 
+										<Actions> <SelectEntity> <Parameters> <nodes> <path>Materials database</path> 
+										<path>Description</path> <path>Support Material Type</path> </nodes> </Parameters> 
+										</SelectEntity> </Actions> </SelectedEntity> <Criteria> <Actions> <PreselectionType> 
+										<Parameters> <optionName>Some of the Objects</optionName> </Parameters> <Actions> 
+										<SelectEntityBox> <Parameters> <nodes> <path>Wax</path> </nodes> </Parameters> 
+										<Actions> <Tick></Tick> </Actions> </SelectEntityBox> </Actions> </PreselectionType> 
+										</Actions> </Criteria> </Actions> </Content> <Ok> <Parameters></Parameters> 
+										</Ok> </Actions> </ShowMoreFilters> -->
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - New Advanced Search</ExpectedResult>
+									</ReadWindowTitle>
+									<ManageQuestionList>
+										<Actions>
+											<QuestionSearchBox>
+												<Parameters>
+													<value>ASTM</value>
+												</Parameters>
+											</QuestionSearchBox>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult>
+									<IfConfirmationPopUpPresent>
+										<Parameters>
+											<result>true</result>
+										</Parameters>
+									</IfConfirmationPopUpPresent>
+									<ReadCriteriaList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>ASTM</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadCriteriaList>
+									<DisplayedResult>
+										<ExpectedResult>33 filtered out of a total of 2847|33 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ReadObjectList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>Arcam ASTM F75 CoCr Alloy</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>1</index>
+												</Parameters>
+												<ExpectedResult>Arcam ASTM F75 CoCr Alloy</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadObjectList>
+									<ShowMoreFilters>
+										<Actions>
+											<Content>
+												<Actions>
+													<Settings>
+														<Actions><SelectEntity>
+																<Parameters>
+																	<nodes>
+																		<path>Materials database</path>
+																		<path>Description</path>
+																		<path>Material type</path>
+																	</nodes>
+																</Parameters>
+															</SelectEntity></Actions>
+													</Settings>
+													<Criteria>
+														<Actions>
+															<PreselectionType>
+																<Parameters>
+																	<optionName>Some of the Objects</optionName>
+																</Parameters>
+																<Actions>
+																	<SelectEntityBox>
+																		<Parameters>
+																			<nodes>
+																				<path>Metal</path>
+																			</nodes>
+																		</Parameters>
+																		<Actions>
+																			<Tick></Tick>
+																		</Actions>
+																	</SelectEntityBox>
+																</Actions>
+															</PreselectionType>
+
+
+														</Actions>
+													</Criteria>
+													<Settings>
+														<Actions><SelectEntity>
+																<Parameters>
+																	<nodes>
+																		<path>Materials database</path>
+																		<path>Description</path>
+																		<path>Suppliers</path>
+																		<path>Description</path>
+																		<path>Contact</path>
+																	</nodes>
+																</Parameters>
+															</SelectEntity></Actions>
+													</Settings>
+													<Criteria>
+														<Actions>
+															<PreselectionType>
+																<Parameters>
+																	<optionName>Some of the Objects</optionName>
+																</Parameters>
+																<Actions>
+																	<SelectEntityBox>
+																		<Parameters>
+																			<nodes>
+																				<path>New</path>
+																			</nodes>
+																		</Parameters>
+																		<Actions>
+																			<Tick></Tick>
+																		</Actions>
+																	</SelectEntityBox>
+																</Actions>
+															</PreselectionType>
+
+
+														</Actions>
+													</Criteria>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters></Parameters>
+											</Ok>
+										</Actions>
+									</ShowMoreFilters>
+									<RefreshResult></RefreshResult>
+									<IfConfirmationPopUpPresent>
+										<Parameters>
+											<result>true</result>
+										</Parameters>
+									</IfConfirmationPopUpPresent>
+									<ReadCriteriaList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>ASTM</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>1</index>
+												</Parameters>
+												<ExpectedResult>Metal</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>2</index>
+												</Parameters>
+												<ExpectedResult>All</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>3</index>
+												</Parameters>
+												<ExpectedResult>New</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadCriteriaList>
+									<ManageQuestionList>
+										<Actions>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Material type</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Suppliers</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Contact</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+										</Actions>
+									</ManageQuestionList>
+									<DisplayedResult>
+										<ExpectedResult>1 filtered out of a total of 2847|1 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ReadObjectList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>ASTM A182/A182M - Forged steel flanges, fittings and valves - 01/05/2013 - F316L</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadObjectList>
+									<ClearAll></ClearAll>
+
+									<RefreshResult></RefreshResult>
+									<IfConfirmationPopUpPresent>
+										<Parameters>
+											<result>true</result>
+										</Parameters>
+									</IfConfirmationPopUpPresent>
+
+									<ReadObjectList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>1.4404 Metal Powder</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>1</index>
+												</Parameters>
+												<ExpectedResult>10SPb20</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadObjectList>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

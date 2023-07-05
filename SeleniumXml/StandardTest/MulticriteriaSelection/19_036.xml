@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>TEST_SomeObjects--Click on the 'Check/Uncheck all' buttons, no matter there's highlighted Objects or not, all Objects will be checked/unchecked;</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Message>Login</Message>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <MultiCriteria>
+            <Actions>
+              <Content>
+                <Actions>
+                  <CriteriaTab>
+                    <Actions>
+                      <Content>
+                        <Actions>
+                          <ReqSetObjectType>
+                            <Actions>
+                              <SelectV2>
+                                <Parameters>
+                                  <value>TEST_MulticriteriaSelection</value>
+                                </Parameters>
+                              </SelectV2>
+                            </Actions>
+                          </ReqSetObjectType>
+                          <Sleep>
+                            <Parameters>
+                              <timeOut>5</timeOut>
+                            </Parameters>
+                          </Sleep>
+                          <DefineCriteria>
+                            <Actions>
+                              <Content>
+                                <Actions>
+                                  <PreselectTree>
+                                    <Parameters>
+                                      <open>
+    																	true
+    																</open>
+                                    </Parameters>
+                                    <Actions>
+                                      <SelectEntity>
+                                        <Parameters>
+                                          <nodes>
+                                            <path>New</path>
+                                          </nodes>
+                                        </Parameters>
+                                      </SelectEntity>
+                                      <SelectAll />
+                                      <UncheckAll />
+                                      <SelectEntity>
+                                        <Parameters>
+                                          <nodes>
+                                            <path>New</path>
+                                          </nodes>
+                                        </Parameters>
+                                      </SelectEntity>
+                                      <SelectObjectandchildren />
+                                      <UncheckChildObject />
+                                    </Actions>
+                                  </PreselectTree>
+                                </Actions>
+                              </Content>
+                            </Actions>
+                          </DefineCriteria>
+                        </Actions>
+                      </Content>
+                    </Actions>
+                  </CriteriaTab>
+                </Actions>
+              </Content>
+            </Actions>
+          </MultiCriteria>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

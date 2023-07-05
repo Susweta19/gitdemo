@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the availability of the function 'Utils_Case' -->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the functionality of model application " App_Utils_Date_1 " and "App_Utils_Date_2" </testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Message>Associative test start</Message>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_Date</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<SwitchReadWrite />
+<TreeContextMenu>
+								<Actions>
+									<AdvancedCreation>
+										<Parameters>
+											<creationOption>AC</creationOption>
+											<usesWindow>
+												true
+											</usesWindow>
+										</Parameters>
+										<Actions><Content>
+										<Actions>
+											<Write>
+												<DTDecimalValue>
+													<Parameters>
+														<id>388</id>
+														<value>
+															<min>2</min>
+														</value>
+													</Parameters>
+												</DTDecimalValue>
+
+											</Write>
+										</Actions>
+									</Content>
+									<Ok>
+										<Parameters>
+											<validate>true</validate>
+										</Parameters>
+									</Ok></Actions>
+									</AdvancedCreation></Actions>
+							</TreeContextMenu>
+						</Actions>
+					</NavigationTree>
+					<ReadForm>
+						<Actions>
+							<GetRequiredDate>
+								<Parameters>
+									<dayAfterOrBefore>2</dayAfterOrBefore>
+								</Parameters>
+								<Hashtag>#DateAfterTwoDays#</Hashtag>
+							</GetRequiredDate>
+							<ConvertStringToDTDate>
+								<Parameters>
+									<date>#DateAfterTwoDays#</date>
+								</Parameters>
+								<Hashtag>#DateAfterTwoDays#</Hashtag>
+							</ConvertStringToDTDate>
+							<Read>
+								<DTDate>
+									<Parameters>
+										<attrId>390</attrId>
+									</Parameters>
+									<ExpectedResult>
+										<value>#DateAfterTwoDays#</value>
+									</ExpectedResult>
+								</DTDate>
+
+							</Read>
+							<IsValueContains>
+								<Parameters>
+									<attrId>389</attrId>
+									<value>#DateAfterTwoDays#</value>
+								</Parameters>
+								<ExpectedResult>true</ExpectedResult>
+							</IsValueContains>
+						</Actions>
+					</ReadForm>
+				</Actions>
+
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

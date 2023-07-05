@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the view of Project/Tasks contextualized view</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<Sleep>
+						<Parameters>
+							<timeOut>2</timeOut>
+						</Parameters>
+					</Sleep>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Navigate</buttonName>
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Access to projects</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Projects</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Projet-A-001</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<MainToolbar>
+						<Parameters>
+							<modelName>Project view</modelName>
+						</Parameters>
+					</MainToolbar>
+
+					<Sleep>
+						<Parameters>
+							<timeOut>3</timeOut>
+						</Parameters>
+					</Sleep>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<ManageTask1>
+										
+										<Actions>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>Projet-A-001</ProjectName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsProjectPresent>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>Projet-A-002</ProjectName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsProjectPresent>
+										</Actions>
+									</ManageTask1>
+								</Actions>
+							</Content>
+						</Actions>
+
+					</ReturnGanttInNewTab>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

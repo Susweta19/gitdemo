@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Checking the functionality of "Veiw deatils"</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Projects</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Projet-A-001</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<MainToolbar>
+						<Parameters>
+							<modelName>Multiressouces view</modelName>
+						</Parameters>
+					</MainToolbar>
+
+					<Sleep>
+						<Parameters>
+							<timeOut>3</timeOut>
+						</Parameters>
+					</Sleep>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectScale>
+										<Parameters>
+											<option>Weeks/Days</option>
+										</Parameters>
+									</SelectScale>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<ExpandEntity>
+												<Parameters>
+													<ProjectName>Projet-A-001</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<RightClickOnTask1>
+												<Parameters>
+													<taskName>T-0606</taskName>
+													<option>Select all with same...</option>
+												</Parameters>
+												<Actions></Actions>
+											</RightClickOnTask1>
+											<RightClickOnTask1>
+												<Parameters>
+													<taskName>T-0606</taskName>
+													<option>Sort this level by</option>
+												</Parameters>
+												<Actions></Actions>
+											</RightClickOnTask1>
+										</Actions>
+									</ManageTask>
+
+
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

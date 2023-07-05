@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Configurations>Debug;Release;DebugGenerate</Configurations>
+    <StartupObject>ConsoleLauncher.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="94.0.4606.6100" />
+    <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.30.0" />
+    <PackageReference Include="Selenium.WebDriver.MicrosoftDriver" Version="17.17134.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TxSelenium\TxSelenium.csproj" />
+    <ProjectReference Include="..\TxWebTests\TxWebTests.csproj" />
+    <ProjectReference Include="..\XmlExecutor\XmlExecutor.csproj" />
+  </ItemGroup>
+
+</Project>

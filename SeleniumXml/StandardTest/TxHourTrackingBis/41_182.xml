@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Checking the search field in Task Selection section in Add task(s) window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in window  mode with TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInWindow>
+						<Actions>
+							<Content>
+								<Actions>
+									<ManageNavigationLayout>
+										<Actions>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+													
+												</Parameters>
+												<Actions>
+													<SelectAll></SelectAll>
+													
+													
+												</Actions>
+											</ManageLinkBox></Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+										<ManageCommonMethods>
+												<Actions>
+													<CurrentWeekFirstDay>
+														<Hashtag>#day#</Hashtag></CurrentWeekFirstDay>
+												</Actions>
+											</ManageCommonMethods>
+											<IsAddTaskButtonPresent>
+												<Parameters>
+													<resourceName>Luc Bariol</resourceName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsAddTaskButtonPresent>											
+											<AddTask>
+												<Parameters>
+													<user>Luc Bariol</user></Parameters>
+												<Actions>
+													<Content>
+														<Actions>
+															<SelectTaskV2>
+																<Actions>
+																	<FilterInput>
+																		<Parameters>
+																			<indexColumn>2</indexColumn>
+																			<field>T-063</field>
+																		</Parameters>
+																	</FilterInput>
+																	<PressKeyFromKeyBoard><Actions><PressEnter /></Actions></PressKeyFromKeyBoard>
+																	<ReadValue>
+																		<Parameters>
+																			<Row>1</Row>
+																			<Column>1</Column>
+																		</Parameters>
+																		<ExpectedResult>T-0634</ExpectedResult>
+																	</ReadValue>
+																	<FilterInput>
+																		<Parameters>
+																			<indexColumn>2</indexColumn>
+																			<field></field>
+																		</Parameters>
+																	</FilterInput>
+																	<FilterInput>
+																		<Parameters>
+																			<indexColumn>3</indexColumn>
+																			<field>Projet-B-003</field>
+																		</Parameters>
+																	</FilterInput>
+																	<PressKeyFromKeyBoard><Actions><PressEnter /></Actions></PressKeyFromKeyBoard>
+																	<ReadValue>
+																		<Parameters>
+																			<Row>1</Row>
+																			<Column>2</Column>
+																		</Parameters>
+																		<ExpectedResult>Projet-B-003</ExpectedResult>
+																	</ReadValue>
+																	<FilterInput>
+																		<Parameters>
+																			<indexColumn>3</indexColumn>
+																			<field></field>
+																		</Parameters>
+																	</FilterInput>
+																	<FilterInput>
+																		<Parameters>
+																			<indexColumn>4</indexColumn>
+																			<field>Zone004</field>
+																		</Parameters>
+																	</FilterInput>
+																	<PressKeyFromKeyBoard><Actions><PressEnter /></Actions></PressKeyFromKeyBoard>
+																	<ReadValue>
+																		<Parameters>
+																			<Row>1</Row>
+																			<Column>3</Column>
+																		</Parameters>
+																		<ExpectedResult>Zone004</ExpectedResult>
+																	</ReadValue>
+																	<FilterInput>
+																		<Parameters>
+																			<indexColumn>4</indexColumn>
+																			<field></field>
+																		</Parameters>
+																	</FilterInput></Actions>
+															</SelectTaskV2>
+														</Actions>
+													</Content></Actions>
+											</AddTask>
+
+										</Actions>
+									</ManageTask></Actions>
+							</Content></Actions>
+					</ReturnTxHourTrackingInWindow></Actions>
+      </MainWindow>
+    </Actions></TxInterface></Actions>

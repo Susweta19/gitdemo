@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the right on 'Exportations, Extractions' for ' NoRight_User '</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>NoRight_User</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <!--Wecheckmulicriteriaisdisabled.-->
+          <CheckButtonAvailability>
+            <Parameters>
+              <pictureName>MCS</pictureName>
+            </Parameters>
+            <ExpectedResult>false</ExpectedResult>
+          </CheckButtonAvailability>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

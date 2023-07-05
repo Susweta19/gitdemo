@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription> the Literary expression for a Date and Time Attribute--In the summary, the following sentence will appear :for criteria not using Range :</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Message>Login</Message>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <OpenRequirementSet>
+            <Actions>
+              <Content>
+                <Actions>
+                  <ObjectType>
+                    <Parameters>
+                      <objectType>TEST_MulticriteriaSelection</objectType>
+                    </Parameters>
+                  </ObjectType>
+                  <RequirementSet>
+                    <Parameters>
+                      <requirementSet>DateTime</requirementSet>
+                    </Parameters>
+                  </RequirementSet>
+                  <Open>
+                    <Parameters>
+                      <popUp>false</popUp>
+                    </Parameters>
+                    <Actions>
+                      <Content>
+                        <Actions>
+                          <CriteriaTab>
+                            <Actions>
+                              <Content>
+                                <Actions>
+                                  <WriteExpression />
+                                </Actions>
+                              </Content>
+                            </Actions>
+                          </CriteriaTab>
+                        </Actions>
+                      </Content>
+                    </Actions>
+                  </Open>
+                </Actions>
+              </Content>
+            </Actions>
+          </OpenRequirementSet>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

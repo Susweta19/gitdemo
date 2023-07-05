@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>login BV_Rights user--&gt;[Ex] right on BV_1, [S] right on BV_2 and BV_3 has no right so won't be displayed</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>BV Right</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>BV_2</value>
+                    </Parameters>
+                  </Select>
+                  <Read>
+                    <ExpectedResult>BV_2</ExpectedResult>
+                  </Read>
+                </Actions>
+              </SelectOT>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>BV_1</value>
+                    </Parameters>
+                  </Select>
+                  <Read>
+                    <ExpectedResult>BV_1</ExpectedResult>
+                  </Read>
+                </Actions>
+              </SelectOT>
+            </Actions>
+          </NavigationTree>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

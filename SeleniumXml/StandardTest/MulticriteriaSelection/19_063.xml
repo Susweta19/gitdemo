@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Prasenjit-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Click on the 'Open' option in the 'Admin of the RS' Menu, then select the 'RS Boolean';-- Click on the 'Launch calculation of the selection' button--if the condition is boolean == true :the 14 objects with true as the Attribute's value will be sorted out;if the condition is boolean == false :the 7 objects with false as the Attribut's value will be sorted out;</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Message>Login</Message>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <OpenRequirementSet>
+            <Actions>
+              <Content>
+                <Actions>
+                  <ObjectType>
+                    <Parameters>
+                      <objectType>TEST_MulticriteriaSelection</objectType>
+                    </Parameters>
+                  </ObjectType>
+                  <RequirementSet>
+                    <Parameters>
+                      <requirementSet>Boolean</requirementSet>
+                    </Parameters>
+                  </RequirementSet>
+                  <Open>
+                    <Parameters>
+                      <popUp>false</popUp>
+                    </Parameters>
+                    <Actions>
+                      <Content>
+                        <Actions>
+                          <CriteriaTab>
+                            <Actions>
+                              <Content>
+                                <Actions>
+                                  <LaunchCalculation>
+                                    <Actions>
+                                      <Close />
+                                    </Actions>
+                                  </LaunchCalculation>
+                                </Actions>
+                              </Content>
+                            </Actions>
+                          </CriteriaTab>
+                        </Actions>
+                      </Content>
+                    </Actions>
+                  </Open>
+                </Actions>
+              </Content>
+            </Actions>
+          </OpenRequirementSet>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

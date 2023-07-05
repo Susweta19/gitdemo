@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--does not clicking on close button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Try to Dupplicate one row on the "Standard Edition"/"Edition Analysis"/"Edition by sample" view when option is desactivated</testDescription>
+        
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+
+      </teexmaData>
+    </Parameters>
+  </TestHeader><TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        <NavigationTree>
+        		<Actions>
+        			<SelectOT>
+        				<Actions>
+        					<Select>
+        						<Parameters>
+        							<value>Type&#160;d'essais</value>
+        						</Parameters>
+        					</Select></Actions>
+        			</SelectOT>
+        			<EntityTree>
+        				<Actions>
+        					<SelectEntity>
+        						<Parameters>
+        							<nodes>
+        								<path>TE TestResult</path></nodes>
+        						</Parameters>
+        					</SelectEntity></Actions>
+        			</EntityTree></Actions>
+        	</NavigationTree>
+        <Edit>
+        	<Actions>
+        		<Content>
+        			<Actions>
+        				<WaitForAjax></WaitForAjax>
+        				<Write>
+        					<DTBool>
+        						<Parameters>
+        							<id>124</id>
+        							<value>
+        								<value>true</value>
+        							</value>
+        						</Parameters>
+        					</DTBool>
+        				</Write></Actions>
+        		</Content>
+        		<Ok>
+        			<Parameters>
+        				<validate>true</validate></Parameters>
+        		</Ok></Actions>
+        </Edit>
+        <NavigationTree>
+        		<Actions>
+        			<SelectOT>
+        				<Actions>
+        					<Select>
+        						<Parameters>
+        							<value>Essais</value>
+        						</Parameters>
+        					</Select></Actions>
+        			</SelectOT>
+        			<EntityTree>
+        				<Actions>
+        					<SelectEntity>
+        						<Parameters>
+        							<nodes>
+        								<path>TEST txresult</path></nodes>
+        						</Parameters>
+        					</SelectEntity></Actions>
+        			</EntityTree></Actions>
+        	</NavigationTree>
+        	<LaunchModel>
+        		<Parameters>
+        			<modelName>Saisir des résultats d'essai (link)</modelName>
+        		</Parameters>
+        	</LaunchModel>
+        	<ReturnTestResultEntityTest>
+        		<Actions><WaitForAjax></WaitForAjax>
+        		<Sleep>
+        						<Parameters>
+        							<timeOut>2</timeOut>
+        						</Parameters>
+        					</Sleep>
+        					<ConditionTable>
+        						<Actions>
+        							<isDuplicateLinePresent>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        								</Parameters>
+        								<ExpectedResult>false</ExpectedResult>
+        							</isDuplicateLinePresent>
+
+
+        						</Actions>
+        					</ConditionTable>
+        					
+        					
+        					
+        					
+        				</Actions>
+        	</ReturnTestResultEntityTest>
+
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Using a parametered view</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>									
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Content>
+												<Actions>
+													<IfConfirmationPopUpPresent>
+														<Parameters>
+															<result>false</result>
+														</Parameters>
+													</IfConfirmationPopUpPresent>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>[Materials database] From parametered search</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>											
+										</Actions>
+									</SelectAdvancedSearch>
+									<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result>
+												</Parameters>
+											</IfConfirmationPopUpPresent>
+											<ReadWindowTitle>
+												<ExpectedResult>[Materials database] - From parametered search</ExpectedResult>
+											</ReadWindowTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Test Extraction</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Test Utils ID</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Test Workflow</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonDisabled>
+												<Parameters>
+													<buttonName>Test Utils ID</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonDisabled>
+											<IsButtonDisabled>
+												<Parameters>
+													<buttonName>Test Workflow</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonDisabled>
+											<IsTabPresent>
+												<Parameters>
+													<tabName>Test Quick view</tabName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsTabPresent>
+											<IsTabPresent>
+												<Parameters>
+													<tabName>Test Table view</tabName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsTabPresent>
+											<IsTabPresent>
+												<Parameters>
+													<tabName>Test Sec. Table view</tabName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsTabPresent>
+											<ReadCriteriaList>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>
+																0
+															</index>
+														</Parameters>
+														<ExpectedResult>All</ExpectedResult>
+													</ElementAt></Actions>
+											</ReadCriteriaList>
+											<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+											<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+										<IsTabPresent>
+										<Parameters>
+											<tabName>Parametered View</tabName>
+										</Parameters>
+										<ExpectedResult>
+											false
+										</ExpectedResult>
+									</IsTabPresent>
+									<AddResultView></AddResultView>
+									<WaitForAjax></WaitForAjax>
+									<ManagePopUp>
+										<Actions>
+											<ReadHeader>
+												<ExpectedResult>Choose a view type</ExpectedResult></ReadHeader>
+											<DropDownList>
+												<Actions>
+													<SelectV3>
+														<Parameters>
+															<value>Parametered&#160;view...</value>
+														</Parameters>
+													</SelectV3></Actions>
+											</DropDownList>
+											<CloseWindowPopup>
+												<Parameters>
+													<validate>true</validate></Parameters>
+											</CloseWindowPopup>
+										</Actions>
+									</ManagePopUp>									
+									<EditParameteredView>
+										<Actions>
+											<ReadHeaderName>
+												<Parameters>
+													<currentwindow>false</currentwindow></Parameters>
+												<ExpectedResult>Add a parametered result(s) view</ExpectedResult>
+											</ReadHeaderName>
+											<IsButtonDisabled>
+												<Parameters>
+													<buttonName>Ok</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonDisabled>
+											<ReadValidationMessages>
+												<Parameters></Parameters>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>
+																0
+															</index>
+														</Parameters>
+														<ExpectedResult>You can not save a configuration without any column</ExpectedResult>
+													</ElementAt></Actions>
+											</ReadValidationMessages>
+											<Content>
+												<Actions>
+												<AttributesList>
+														<Actions>
+															<SelectEntities>
+																<Parameters>
+																	<collection>
+																		<collection>
+																			<path>Poisson ratio</path></collection>
+																		<collection>
+																			<path>Support Material Type</path></collection>
+																		<collection>
+																			<path>Material type</path></collection></collection>
+																</Parameters>
+															</SelectEntities></Actions>
+													</AttributesList>
+													<AddAttribute></AddAttribute>
+													<ColumnGrid>
+														<Actions>
+															<ReadLabel>
+																<Parameters>
+																	<orderNum>1</orderNum>
+																</Parameters>
+																<ExpectedResult>Poisson ratio</ExpectedResult>
+															</ReadLabel>
+															<ReadLabel>
+																<Parameters>
+																	<orderNum>2</orderNum>
+																</Parameters>
+																<ExpectedResult>Support Material Type</ExpectedResult>
+															</ReadLabel>
+															<ReadLabel>
+																<Parameters>
+																	<orderNum>3</orderNum>
+																</Parameters>
+																<ExpectedResult>Material type</ExpectedResult>
+															</ReadLabel>
+														</Actions>
+													</ColumnGrid>
+													<AttributesList>
+														<Actions>
+															<SelectEntity>
+																<Parameters>
+																	<nodes>
+																		<path>Post-processed ?</path></nodes>
+																</Parameters>
+															</SelectEntity>
+														</Actions>
+													</AttributesList>
+													<AddAttribute></AddAttribute>
+													<ColumnGrid>
+														<Actions>
+															<NumberOfRow>
+																<ExpectedResult>4</ExpectedResult></NumberOfRow>
+															<ReadLabel>
+																<Parameters>
+																	<orderNum>4</orderNum>
+																</Parameters>
+																<ExpectedResult>Post-processed ?</ExpectedResult>
+															</ReadLabel>
+															<SelectRow>
+																<Parameters>
+																	<orderNum>4</orderNum>
+																</Parameters>
+															</SelectRow>
+														</Actions>
+													</ColumnGrid>
+													<DeleteAttribute></DeleteAttribute>
+													<ColumnGrid>
+														<Actions>
+															<NumberOfRow>
+																<ExpectedResult>3</ExpectedResult></NumberOfRow></Actions>
+													</ColumnGrid>
+													<ConfigName>
+														<Actions>
+															<Write>
+																<Parameters>
+																	<value>Parametered View</value>
+																</Parameters>
+															</Write></Actions>
+													</ConfigName>
+													</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>
+														true
+													</validate></Parameters>
+											</Ok></Actions>
+									</EditParameteredView>
+									<IsTabPresent>
+										<Parameters>
+											<tabName>Parametered View</tabName>
+										</Parameters>
+										<ExpectedResult>
+											true
+										</ExpectedResult>
+									</IsTabPresent>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<!-- <DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult></DisplayedResult> -->
+									<ReturnTableView>
+										<Actions>
+											<ReadColumName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>1</index>
+														</Parameters>
+														<ExpectedResult>Object(s)</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>2</index>
+														</Parameters>
+														<ExpectedResult>Poisson ratio</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>3</index>
+														</Parameters>
+														<ExpectedResult>Support Material Type</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>4</index>
+														</Parameters>
+														<ExpectedResult>Material type</ExpectedResult>
+													</ElementAt>
+													</Actions>
+											</ReadColumName></Actions>
+									</ReturnTableView>
+									<ShowMoreFilters>
+										<Actions>
+											<Content>
+												<Actions>
+													<SelectedEntity>
+														<Actions>
+															<SelectEntity>
+																<Parameters>
+																	<nodes>
+																		<path>Materials database</path>
+																		<path>Description</path>
+																		<path>Poisson ratio</path>
+																	</nodes>
+																</Parameters>
+															</SelectEntity>
+														</Actions>
+													</SelectedEntity>
+													<Criteria>
+														<Actions>
+															<TheValueMustBe>
+																<Parameters>
+																	<value>Equal&#160;to&#160;a&#160;value</value>
+																</Parameters>
+															</TheValueMustBe>
+															<TargetValue>
+																<Parameters>
+																	<value>0.33</value>
+																</Parameters>
+															</TargetValue>
+															
+														</Actions>
+													</Criteria>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+										</Actions>
+									</ShowMoreFilters>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<RemoveCriterion>
+										<Parameters>
+											<criteriaIndex>2</criteriaIndex></Parameters>
+									</RemoveCriterion>
+									<ManageQuestionList>
+										<Actions>
+											<ManageDecimalSingleValue>
+												<Parameters>
+													<questionName>Poisson ratio</questionName>
+													<min>0.33</min>
+												</Parameters>
+											</ManageDecimalSingleValue></Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<ReadCriteriaList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>All</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>1</index>
+												</Parameters>
+												<ExpectedResult>0.33</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadCriteriaList>
+									<Sleep>
+										<Parameters>
+											<timeOut>5</timeOut>
+										</Parameters>
+									</Sleep>
+									<ReturnTableView>
+										<Actions>
+										<!-- Need to fix code for displayed result for this script -->
+											<!-- <ReadValue>
+												<Parameters>
+													<Row>1</Row>
+													<Column>2</Column>
+												</Parameters>
+												<ExpectedResult>ASTM - A240/A240M - Stainless steel sheet (addition of chromium and chromium-nickel) - 01/05/2014 - 316L</ExpectedResult>
+											</ReadValue> -->
+											</Actions>
+									</ReturnTableView>
+									
+									
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

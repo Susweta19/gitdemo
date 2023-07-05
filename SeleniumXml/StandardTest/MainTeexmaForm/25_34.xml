@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Try to open 'Multicriterion Selection - Requirement Set' window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+					<langage>English</langage>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<MultiCriteria>
+						<Actions>
+							<Content>
+								<Actions></Actions>
+							</Content>
+							<ReadHeader>
+								<ExpectedResult>Multicriterion Selection - Requirement Set</ExpectedResult></ReadHeader>
+							<Content>
+								<Actions>
+									<CriteriaTab>
+										<Actions>
+											<IsButtonPresent>
+												<Parameters>
+													<buttonName>Define Criteria</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresent>
+											<IsButtonPresent>
+												<Parameters>
+													<buttonName>Start calculation of selection</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresent>
+											<IsButtonPresent>
+												<Parameters>
+													<buttonName>Add a group of criteria</buttonName>
+												</Parameters>
+											</IsButtonPresent>
+											<IsButtonPresent>
+												<Parameters>
+													<buttonName>Edit…</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresent>
+											<IsButtonPresent>
+												<Parameters>
+													<buttonName>Save</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresent>
+											<IsButtonPresent>
+												<Parameters>
+													<buttonName>Export in XML format</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresent>
+											
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Delete the Requirement Set</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresent>
+												<Parameters>
+													<buttonName>Literary expression</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresent>
+										</Actions>
+									</CriteriaTab>
+									<ResultsTab>
+										<Actions>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>View the checked Objects</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Select all results</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Deselect all results</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresent>
+												<Parameters>
+													<buttonName>Export to Excel format</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresent>
+											
+											<IsButtonPresent>
+												<Parameters>
+													<buttonName>Export ...</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresent>
+										</Actions>
+									</ResultsTab>
+								</Actions>
+							</Content></Actions>
+					</MultiCriteria>
+				</Actions>
+			</MainWindow></Actions></TxInterface></Actions>

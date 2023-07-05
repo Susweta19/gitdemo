@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the Literary expression for a Criteria Group--In the summary, the following sentence in English and a translation in French will appear :'The Objects of the Object Type OT name must meet the following group of criteria :' ;The sentence and its translation will be in bold</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Message>Login</Message>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <OpenRequirementSet>
+            <Actions>
+              <Content>
+                <Actions>
+                  <New>
+                    <Actions>
+                      <Content>
+                        <Actions>
+                          <CriteriaTab>
+                            <Actions>
+                              <Content>
+                                <Actions>
+                                  <AddNewGroup>
+                                    <Actions>
+                                      <Content>
+                                        <Actions>
+                                          <Name>
+                                            <Parameters>
+                                              <groupName>Literary Expression ckeck of the group</groupName>
+                                            </Parameters>
+                                          </Name>
+                                        </Actions>
+                                      </Content>
+                                      <Ok>
+                                        <Parameters>
+                                          <validate>
+    																			true
+    																		</validate>
+                                        </Parameters>
+                                      </Ok>
+                                    </Actions>
+                                  </AddNewGroup>
+                                  <WriteExpression />
+                                </Actions>
+                              </Content>
+                            </Actions>
+                          </CriteriaTab>
+                        </Actions>
+                      </Content>
+                    </Actions>
+                  </New>
+                </Actions>
+              </Content>
+            </Actions>
+          </OpenRequirementSet>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

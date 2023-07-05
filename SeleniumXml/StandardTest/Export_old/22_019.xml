@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the ability to open the 'Export' window-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check The Functionlity of Close</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_Export</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+              	<Actions>
+              		<SelectEntity>
+              			<Parameters>
+              				<nodes>
+              					<path>New</path></nodes>
+              			</Parameters>
+              		</SelectEntity>
+              	</Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <Export>
+            <Actions>
+              <ReadHeader>
+              	<ExpectedResult>Export</ExpectedResult></ReadHeader>
+              <Close></Close>
+            </Actions>
+          </Export>
+          <Edit>
+          	<Actions>
+          		<Cancel></Cancel></Actions>
+          </Edit>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

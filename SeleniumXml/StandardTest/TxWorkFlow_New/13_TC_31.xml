@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>WF on N objects (irrelevant actions)</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>User_Workflow</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Workflow_Use&#160;Cases</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                  <SelectEntity>
+                    <Parameters><nodes><path>Test TxWF_Use Cases</path></nodes></Parameters>
+                  </SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <MainToolbar>
+          	<Parameters>
+          		<modelName>WF on N objects</modelName>
+          	</Parameters>
+          </MainToolbar>
+          <Sleep>
+          	<Parameters>
+          		<timeOut>3</timeOut>
+          	</Parameters>
+          </Sleep>
+          <ReturnLinkedObject>
+          	<Actions>
+          		<Content>
+          			<Actions>
+          				<WaitForAjax></WaitForAjax>
+          				<ReadSelectedList>
+          					<Actions>
+          						<ElementAt>
+          							<Parameters>
+          								<index>0</index>
+          							</Parameters>
+          							<ExpectedResult>Test TxWF_Use Cases</ExpectedResult>
+          						</ElementAt></Actions>
+          				</ReadSelectedList>
+          				
+          				<ReadActionList>
+          					<Actions>
+          						<ElementAt>
+          							<Parameters>
+          								<index>0</index>
+          							</Parameters>
+          							<ExpectedResult>Data writting</ExpectedResult>
+          						</ElementAt>
+          						<ElementAt>
+          							<Parameters>
+          								<index>1</index>
+          							</Parameters>
+          							<ExpectedResult>Attribute form</ExpectedResult>
+          						</ElementAt></Actions>
+          				</ReadActionList>
+<HideIrreliventActions>
+          					<Actions>
+          						<Read>
+          							<ExpectedResult>true</ExpectedResult></Read>
+          						<Tick></Tick>
+          						<Read>
+          							<ExpectedResult>false</ExpectedResult></Read></Actions>
+          				</HideIrreliventActions>
+          				<ReadActionList>
+          					<Actions>
+          						<ElementAt>
+          							<Parameters>
+          								<index>0</index>
+          							</Parameters>
+          							<ExpectedResult>Data writting</ExpectedResult>
+          						</ElementAt>
+          						<ElementAt>
+          							<Parameters>
+          								<index>1</index>
+          							</Parameters>
+          							<ExpectedResult>Attribute form</ExpectedResult>
+          						</ElementAt>
+          						<ElementAt>
+          							<Parameters>
+          								<index>2</index>
+          							</Parameters>
+          							<ExpectedResult>Irrelevant action</ExpectedResult>
+          						</ElementAt></Actions>
+          				</ReadActionList>
+          				
+          			</Actions>
+          		</Content>
+          		<Close></Close></Actions>
+          </ReturnLinkedObject>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

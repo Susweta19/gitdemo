@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Try to open 'Multicriterion Selection - Requirement Set' window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Open in portal</modelName>
+						</Parameters>
+					</LaunchModel>
+					
+					<LaunchModel>
+						<Parameters>
+							<modelName>Open in new tab</modelName>
+						</Parameters>
+					</LaunchModel>
+					<CloseBrowserTab></CloseBrowserTab>
+					<LaunchModel>
+						<Parameters>
+						<modelName>Open in modal window</modelName>
+					</Parameters>
+					</LaunchModel>
+					<ReturnTxCalendarInWindow>
+						<Actions>
+							<Cancel></Cancel></Actions>
+					</ReturnTxCalendarInWindow>
+					
+					<Logout>
+						<Actions>
+							<ClosePopUp>
+								<Parameters>
+									<result>true</result>
+								</Parameters>
+							</ClosePopUp></Actions>
+					</Logout>
+				</Actions>
+			</MainWindow></Actions></TxInterface></Actions>

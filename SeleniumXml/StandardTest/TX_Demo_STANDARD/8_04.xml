@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Actions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription></testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Daniel&#160;MASSETTI</login>
+          <password>aaaaa</password>
+          <langage>French</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<ReturnTxPortal>
+      			<Actions>
+      				<ExpandSlidebarItem>
+      					<Parameters>
+      						<title>Tâches </title>
+      					</Parameters>
+      				</ExpandSlidebarItem>
+      				<Sleep>
+      					<Parameters>
+      						<timeOut>3</timeOut>
+      					</Parameters>
+      				</Sleep>
+      				<ClickOnPortalSubLink>
+      					<Parameters>
+      						<linkTitle>Ajouter une tâche</linkTitle>
+      					</Parameters>
+      				</ClickOnPortalSubLink>
+      				
+      				
+      			</Actions>
+      		</ReturnTxPortal>
+      		<ReturnEditForm>
+      			<Actions>
+      				<Content>
+      					<Actions>
+      						<GetLink>
+      							<Parameters>
+      								<attrId>1670</attrId>
+      							</Parameters>
+      							<Actions>
+      								<Search>
+      									<Parameters>
+      										<research>Traction</research>
+      									</Parameters>
+      								</Search>
+      								<SelectEntityBox>
+      									<Parameters>
+      										<nodes>
+      											<path>Traction</path></nodes>
+      									</Parameters>
+      									<Actions>
+      										<Tick></Tick></Actions>
+      								</SelectEntityBox>
+      							</Actions>
+      						</GetLink>
+      						<IsGroupDisplayed>
+      							<Parameters>
+      								<groupId>901</groupId>
+      							</Parameters>
+      						</IsGroupDisplayed></Actions>
+      				</Content></Actions>
+      		</ReturnEditForm>
+      	</Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

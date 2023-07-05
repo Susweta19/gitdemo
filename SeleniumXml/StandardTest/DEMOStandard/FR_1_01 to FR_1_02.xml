@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Actions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>FR_1_01 to FR_1_02</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions><!--01-->
+      <Login>
+        <Parameters>
+          <login>1_Daniel&#160;MASSETTI</login>
+          <password>ddddd</password>
+          <langage>French</langage>
+
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<ReadBanner>
+      			<ExpectedResult>Accueil</ExpectedResult></ReadBanner><!--02-->
+      			<ClickOnPortalTab>
+      			<Parameters>
+      				<tabName>Projets</tabName>
+      				<frame>5_fr</frame>
+      			</Parameters>
+			</ClickOnPortalTab>
+			<ReadButtonList><Parameters><iframe>5_fr</iframe></Parameters>
+      			<Actions>
+      				<ElementAt>
+      					<Parameters>
+      						<index>0</index>
+      					</Parameters>
+      					<ExpectedResult>Projets Bureau d'Etude</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>1</index>
+      					</Parameters>
+      					<ExpectedResult>Projets Recherche et Développement</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>2</index>
+      					</Parameters>
+      					<ExpectedResult>Mes projets en cours 3</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>3</index>
+      					</Parameters>
+      					<ExpectedResult>Rechercher un projet</ExpectedResult>
+      				</ElementAt></Actions>
+</ReadButtonList>
+      		<ClickOnPortalTab>
+      			<Parameters>
+      				<tabName>Produits</tabName>
+      				<frame>5_fr</frame>
+      			</Parameters>
+			</ClickOnPortalTab>
+			<ReadButtonList><Parameters><iframe>5_fr</iframe></Parameters>
+      			<Actions>
+      				<ElementAt>
+      					<Parameters>
+      						<index>0</index>
+      					</Parameters>
+      					<ExpectedResult>Eoliennes</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>1</index>
+      					</Parameters>
+      					<ExpectedResult>Pylônes</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>2</index>
+      					</Parameters>
+      					<ExpectedResult>Rotors</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>3</index>
+      					</Parameters>
+      					<ExpectedResult>Pâles</ExpectedResult>
+      				</ElementAt></Actions>
+</ReadButtonList>
+			<ClickOnPortalTab>
+      			<Parameters>
+      				<tabName>Pilotage</tabName>
+      				<frame>5_fr</frame>
+      			</Parameters>
+			</ClickOnPortalTab>
+			<ReadButtonList><Parameters><iframe>5_fr</iframe></Parameters>
+      			<Actions>
+      				<ElementAt>
+      					<Parameters>
+      						<index>0</index>
+      					</Parameters>
+      					<ExpectedResult>Mes études à valider 5</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>1</index>
+      					</Parameters>
+      					<ExpectedResult>Saisie des résultats 10</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>2</index>
+      					</Parameters>
+      					<ExpectedResult>Répartition des REX déclarés</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>3</index>
+      					</Parameters>
+      					<ExpectedResult>Répartition annuelle par type d'essais</ExpectedResult>
+      				</ElementAt></Actions>
+</ReadButtonList>
+			<ClickOnPortalTab>
+      			<Parameters>
+      				<tabName>Essais</tabName>
+      				<frame>5_fr</frame>
+      			</Parameters>
+			</ClickOnPortalTab>
+			<ReadButtonList><Parameters><iframe>5_fr</iframe></Parameters>
+      			<Actions>
+      				<ElementAt>
+      					<Parameters>
+      						<index>0</index>
+      					</Parameters>
+      					<ExpectedResult>Essais Bureau d'Etude</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>1</index>
+      					</Parameters>
+      					<ExpectedResult>Essais Recherche et Développement</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>2</index>
+      					</Parameters>
+      					<ExpectedResult>Mes essais en cours 11</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>3</index>
+      					</Parameters>
+      					<ExpectedResult>Ajouter un essai</ExpectedResult>
+      				</ElementAt></Actions>
+</ReadButtonList>
+			<ClickOnPortalTab>
+      			<Parameters>
+      				<tabName>Matériaux</tabName>
+      				<frame>5_fr</frame>
+      			</Parameters>
+			</ClickOnPortalTab>
+			<ReadButtonList><Parameters><iframe>5_fr</iframe></Parameters>
+      			<Actions>
+      				<ElementAt>
+      					<Parameters>
+      						<index>0</index>
+      					</Parameters>
+      					<ExpectedResult>Métaux - Alliages</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>1</index>
+      					</Parameters>
+      					<ExpectedResult>Céramiques</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>2</index>
+      					</Parameters>
+      					<ExpectedResult>Polymères</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>3</index>
+      					</Parameters>
+      					<ExpectedResult>Composites</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>4</index>
+      					</Parameters>
+      					<ExpectedResult>Semi-conducteurs</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>5</index>
+      					</Parameters>
+      					<ExpectedResult>Rechercher un métal</ExpectedResult>
+      				</ElementAt></Actions>
+</ReadButtonList>
+      		
+      	</Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

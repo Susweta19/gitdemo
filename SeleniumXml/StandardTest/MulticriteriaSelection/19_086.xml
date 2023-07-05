@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Prasenjit-->
+<!--we should check number results without clicking -->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check in the Detailed results table--'At least one' / 'All' / 'A single one' radiobutton ticked :the Objects will be extendable, the target Objects will be displayed in the 'Link_Mul_Direct' column;when extended, the target Objects meeting the conditions will be displayed;'None' radiobutton ticked :the 'Link_Mul_Direct' column will be empty</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Message>Login</Message>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <OpenRequirementSet>
+            <Actions>
+              <Content>
+                <Actions>
+                  <ObjectType>
+                    <Parameters>
+                      <objectType>TEST_MulticriteriaSelection</objectType>
+                    </Parameters>
+                  </ObjectType>
+                  <RequirementSet>
+                    <Parameters>
+                      <requirementSet>Multiple Link</requirementSet>
+                    </Parameters>
+                  </RequirementSet>
+                  <Open>
+                    <Parameters>
+                      <popUp>false</popUp>
+                    </Parameters>
+                    <Actions>
+                      <Content>
+                        <Actions>
+                          <ResultsTab>
+                            <Actions>
+                              <Close />
+                            </Actions>
+                          </ResultsTab>
+                        </Actions>
+                      </Content>
+                    </Actions>
+                  </Open>
+                </Actions>
+              </Content>
+             
+            </Actions>
+          </OpenRequirementSet>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

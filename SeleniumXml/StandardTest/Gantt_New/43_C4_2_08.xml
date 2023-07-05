@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Test the lock </testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+
+
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view 4</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<ExpandEntity>
+												<Parameters>
+													<ProjectName>Dominique Bler</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<RightClickOnTask1>
+												<Parameters>
+													<taskName>T-0699</taskName>
+													<option>View details</option>
+												</Parameters>
+												<Actions></Actions>
+											</RightClickOnTask1>
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<ReadBanner>
+						<ExpectedResult>T-0699</ExpectedResult>
+					</ReadBanner>
+					<ReadForm>
+						<Actions>
+							<Read>
+								<DTBool>
+									<Parameters>
+										<attrId>168</attrId>
+									</Parameters>
+									<ExpectedResult>
+										<value>false</value>
+									</ExpectedResult>
+								</DTBool>
+
+							</Read>
+						</Actions>
+					</ReadForm>
+					<Edit>
+						<Actions>
+							<Sleep>
+								<Parameters>
+									<timeOut>5</timeOut>
+								</Parameters>
+							</Sleep>
+							<Content>
+								<Actions>
+									<Write>
+										<DTBool>
+											<Parameters>
+												<id>168</id>
+												<value>
+													<value>true</value>
+												</value>
+											</Parameters>
+										</DTBool>
+									</Write>
+								</Actions>
+							</Content>
+							<Ok>
+								<Parameters>
+									<validate>true</validate>
+								</Parameters>
+							</Ok>
+						</Actions>
+					</Edit>
+					<ReadForm>
+						<Actions>
+							<Read>
+								<DTBool>
+									<Parameters>
+										<attrId>168</attrId>
+									</Parameters>
+									<ExpectedResult>
+										<value>true</value>
+									</ExpectedResult>
+								</DTBool>
+
+							</Read>
+						</Actions>
+					</ReadForm>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

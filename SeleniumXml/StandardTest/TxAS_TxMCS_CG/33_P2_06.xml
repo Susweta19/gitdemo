@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Relation between the attribute checkbox(Left side) and the define criteria(Right side)---&gt;Check the functionality of "Select all Attributes" button</testDescription>
+				<testBugRef>14</testBugRef>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<IfPopUpPresent></IfPopUpPresent><NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_CG+AS</value>
+										</Parameters>
+									</Select></Actions>
+							</SelectOT></Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>TxMCS</modelName>
+						</Parameters>
+					</LaunchModel>
+					<TxMCS>
+						<Actions>
+							<Content>
+								<Actions>
+									<BlankRequirementSet>
+										<Parameters>
+											<objectType>TEST_CG+AS</objectType>
+										</Parameters>
+									</BlankRequirementSet><!--we did not select anything-->
+									<Settings>
+										<Actions>
+
+											<SelectAll /><!--Only TEST_TxMCS will be ticked--><UncheckAll />
+											<SelectEntityBox>
+												<Parameters><nodes><path>TEST_CG+AS</path></nodes></Parameters>
+												<Actions>
+													<Tick />
+												</Actions>
+</SelectEntityBox><!--other attributes will not be ticked -->
+											<SelectEntityBox>
+												<Parameters><nodes><path>TEST_CG+AS</path><path>Bool/Date/Str/Text</path><path>Bool/Date/Str/Text</path><path>Boolean</path></nodes></Parameters>
+												<Actions>
+													<Read>
+														<ExpectedResult>false</ExpectedResult>
+													</Read></Actions>
+											</SelectEntityBox>
+											<DeselectAll /><!--We will select  TEST_TxMCS then all will be ticked--><SelectEntity>
+												<Parameters><nodes><path>TEST_CG+AS</path></nodes></Parameters>
+</SelectEntity>
+											<SelectAll />
+											
+											<SelectEntitiesBox>
+												<Parameters>
+													<collection>
+														<collection>
+															<path>TEST_CG+AS</path></collection>
+														<collection>
+															<path>TEST_CG+AS</path>
+													<path>Bool/Date/Str/Text</path>
+													<path>Bool/Date/Str/Text</path>
+													<path>Boolean</path></collection>
+														<collection>
+															<path>TEST_CG+AS</path>
+													<path>Bool/Date/Str/Text</path>
+													<path>Bool/Date/Str/Text</path>
+													<path>Date</path></collection></collection>
+												</Parameters>
+												<Actions>
+													<Read>
+														<Actions><ElementAt><Parameters><index>0</index></Parameters><ExpectedResult>
+																true
+															</ExpectedResult></ElementAt><ElementAt><Parameters><index>1</index></Parameters><ExpectedResult>true</ExpectedResult></ElementAt><ElementAt><Parameters><index>2</index></Parameters><ExpectedResult>true</ExpectedResult></ElementAt></Actions>
+													</Read></Actions>
+											</SelectEntitiesBox>
+											<DeselectAll /><!--we will select a group , the ot will be checked and also the attributes of the selected group-->
+											<SelectEntities>
+												<Parameters>
+													<collection>
+														<collection>
+															<path>TEST_CG+AS</path>
+															<path>Bool/Date/Str/Text</path>
+															<path>Bool/Date/Str/Text</path></collection></collection>
+												</Parameters>
+											</SelectEntities>
+											<SelectAll />
+											<SelectEntitiesBox>
+												<Parameters>
+													<collection>
+														<collection>
+															<path>TEST_CG+AS</path></collection>
+														<collection>
+															<path>TEST_CG+AS</path>
+															<path>Bool/Date/Str/Text</path>
+															<path>Bool/Date/Str/Text</path>
+															<path>Boolean</path></collection>
+														<collection>
+															<path>TEST_CG+AS</path>
+															<path>Bool/Date/Str/Text</path>
+															<path>Bool/Date/Str/Text</path>
+															<path>Date</path></collection>
+														<collection>
+															<path>TEST_CG+AS</path>
+															<path>Decimal</path>
+															<path>Decimal</path>
+															<path>Dec_Adv</path></collection></collection>
+												</Parameters>
+												<Actions>
+													<Read>
+														<Actions><ElementAt><Parameters><index>0</index></Parameters><ExpectedResult>
+																true
+															</ExpectedResult></ElementAt><ElementAt><Parameters><index>1</index></Parameters><ExpectedResult>
+																true
+															</ExpectedResult></ElementAt><ElementAt><Parameters><index>2</index></Parameters><ExpectedResult>
+																true
+															</ExpectedResult></ElementAt><ElementAt><Parameters><index>3</index></Parameters><ExpectedResult>false</ExpectedResult></ElementAt></Actions>
+													</Read></Actions>
+											</SelectEntitiesBox>
+											<DeselectAll /><!--we will select only one attribute , only this and the ot will be ticked and others will be unticked--><SelectEntity>
+												<Parameters><nodes><path>TEST_CG+AS</path><path>Decimal</path><path>Decimal</path><path>Dec_Adv</path></nodes></Parameters>
+</SelectEntity>
+											<SelectAll />
+											<SelectEntitiesBox>
+												<Parameters>
+													<collection>
+														<collection>
+															<path>TEST_CG+AS</path>
+															<path>Decimal</path>
+															<path>Decimal</path>
+															<path>Dec_Adv</path></collection>
+														<collection>
+															<path>TEST_CG+AS</path></collection>
+														<collection>
+															<path>TEST_CG+AS</path>
+															<path>Bool/Date/Str/Text</path>
+															<path>Bool/Date/Str/Text</path>
+															<path>Boolean</path>
+														</collection></collection>
+												</Parameters>
+												<Actions>
+													<Read>
+														<Actions><ElementAt><Parameters><index>0</index></Parameters><ExpectedResult>
+																true
+															</ExpectedResult></ElementAt><ElementAt><Parameters><index>1</index></Parameters><ExpectedResult>
+																true
+															</ExpectedResult></ElementAt><ElementAt><Parameters><index>2</index></Parameters><ExpectedResult>false</ExpectedResult></ElementAt></Actions>
+													</Read></Actions>
+											</SelectEntitiesBox>
+										</Actions>
+									</Settings>
+								</Actions>
+							</Content></Actions>
+					</TxMCS></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

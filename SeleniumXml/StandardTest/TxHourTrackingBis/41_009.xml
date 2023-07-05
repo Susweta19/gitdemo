@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the functionality of "Previous tasks" button in Add task window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in window mode without TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInWindow>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									<TxHourTrackingToolBar>
+										<Actions>
+											<PreviousWeek></PreviousWeek>
+										</Actions>
+									</TxHourTrackingToolBar>
+									<ManageTask>
+										<Actions>
+											<DeleteAllPresentTask></DeleteAllPresentTask>
+										</Actions>
+									</ManageTask>
+									<TxHourTrackingToolBar>
+										<Actions>
+											<NextWeek></NextWeek>
+										</Actions>
+									</TxHourTrackingToolBar>
+									<ManageTask>
+										<Actions>
+											<DeleteAllPresentTask></DeleteAllPresentTask>
+											<WaitForAjax></WaitForAjax>
+											<AddTask>
+												<Parameters>
+													<user>Alice Dupont</user>
+												</Parameters>
+												<Actions>
+													<Content>
+														<Actions>
+															<PreviousWeekTask></PreviousWeekTask>
+															<ManagePopUp>
+																<Actions>
+																	<ReadPopUpMessage>
+																		<Actions>
+																			<ElementAt>
+																				<Parameters>
+																					<index>0</index>
+																				</Parameters>
+																				<ExpectedResult>No task found.</ExpectedResult>
+																			</ElementAt>
+																		</Actions>
+																	</ReadPopUpMessage>
+																	<ClosePopUp>
+																		<Parameters>
+																			<result>true</result>
+																		</Parameters>
+																	</ClosePopUp>
+																</Actions>
+															</ManagePopUp>
+															<IsButtonDisabled>
+																<Parameters>
+																	<buttonName>Previous tasks</buttonName>
+																</Parameters>
+																<ExpectedResult>true</ExpectedResult>
+															</IsButtonDisabled>
+														</Actions>
+													</Content>
+													<Cancel></Cancel>
+												</Actions>
+											</AddTask>
+										</Actions>
+									</ManageTask><!--Adding task on previous date -->
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxHourTrackingInWindow>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

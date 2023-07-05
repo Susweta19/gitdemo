@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>No rights on a given advanced duplication</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Jean&#160;Faure</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<ExpandNavigationTree></ExpandNavigationTree>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Agency</value>
+										</Parameters>
+									</Select></Actions>
+							</SelectOT>
+							<SwitchReadWrite></SwitchReadWrite>
+							<TreeContextMenu>
+								<Actions>
+									<IsOptionsDisable>
+										<Parameters>
+											<title>Advanced duplication(s)</title>
+											<collection>
+												<collection>
+													<path>Perpignan</path></collection></collection>
+										</Parameters>
+										<ExpectedResult>
+											true
+										</ExpectedResult>
+									</IsOptionsDisable></Actions>
+							</TreeContextMenu></Actions>
+					</NavigationTree>
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

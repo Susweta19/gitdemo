@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Open a document</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Portals</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Welcome_Test</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<ButtonPortal>
+						<Parameters>
+							<link>My Dashboard</link>
+							<hasSpan>true</hasSpan>
+						</Parameters>
+					</ButtonPortal>
+					<ReturnTxTableView>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									
+									<WaitForAjax></WaitForAjax>
+									<Sleep>
+										<Parameters>
+											<timeOut>25</timeOut>
+										</Parameters>
+									</Sleep>
+									<EditStringValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>43</Column>
+										</Parameters>
+										<Actions>
+											<Clear></Clear>
+											<Write>
+												<Parameters>
+													<value>C:\User\user\Picture4.jpg</value>
+												</Parameters>
+											</Write>
+											<PressEnter></PressEnter></Actions>
+									</EditStringValue>
+									<ManagePreviewData>
+										<Parameters>
+											<rowindex>1</rowindex>
+											<columnindex>43</columnindex>
+										</Parameters>
+										<Actions>
+											<PreviewLink>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>0</index>
+														</Parameters>
+														<Actions>
+															<GetText>
+																<ExpectedResult>http://C:\User\user\Picture4.jpg</ExpectedResult></GetText></Actions>
+													</ElementAt></Actions>
+											</PreviewLink>
+											<Goto>
+												<Parameters>
+													<index>0</index>
+												</Parameters></Goto></Actions>
+									</ManagePreviewData>
+																		
+								
+
+
+								</Actions>
+							</Content></Actions>
+					</ReturnTxTableView>
+					<ReadUrlNewTab>
+						<ExpectedResult>http://c/User/user/Picture4.jpg</ExpectedResult></ReadUrlNewTab>
+					
+
+
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

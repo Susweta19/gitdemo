@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Checking the functionality of "Veiw deatils"</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view 2</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<Sleep>
+						<Parameters>
+							<timeOut>3</timeOut>
+						</Parameters>
+					</Sleep>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectScale>
+										<Parameters>
+											<option>Weeks/Days</option>
+										</Parameters>
+									</SelectScale>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<RightClickOnTask1>
+												<Parameters>
+													<taskName>Alice Dupont</taskName>
+													<option>View details</option>
+												</Parameters>
+												<Actions></Actions>
+											</RightClickOnTask1>
+										</Actions>
+									</ManageTask>
+
+
+								</Actions>
+							</Content>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<ReadBanner>
+						<ExpectedResult>Alice Dupont</ExpectedResult>
+					</ReadBanner>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<ExpandEntity>
+												<Parameters>
+													<ProjectName>Alice Dupont</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<RightClickOnTask1>
+												<Parameters>
+													<taskName>T-0767</taskName>
+													<option>View details</option>
+												</Parameters>
+												<Actions></Actions>
+											</RightClickOnTask1>
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<ReadBanner>
+						<ExpectedResult>T-0767</ExpectedResult>
+					</ReadBanner>
+
+
+
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

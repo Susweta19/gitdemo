@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Unfold the parent entity and select a task </testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+						</Parameters>
+					</ClickOnButton><ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view</buttonName>
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Content>
+								<Actions><ManageTask>
+										<Actions>
+											<ExpandEntity>
+												<Parameters>
+													<ProjectName>Dominique Bler</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<SelectTask>
+												<Parameters>
+													<projectName>Dominique Bler</projectName>
+													<taskName>T-0618</taskName>
+												</Parameters>
+											</SelectTask>
+											<RightClickOnTask>
+												<Parameters>
+													<taskName>T-0618</taskName>
+													<optionToMove>Select all with same...</optionToMove>
+												</Parameters>
+												<Actions><!--Need to read the options--></Actions>
+											</RightClickOnTask><ExpandEntity>
+												<Parameters>
+													<ProjectName>[To be planned]</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<SelectTask>
+												<Parameters>
+													<projectName>[To be planned]</projectName>
+													<taskName>réunion de coordination</taskName>
+												</Parameters>
+											</SelectTask></Actions>
+									</ManageTask>
+									<Refresh></Refresh>
+									<ManageTask>
+										<Actions><ExpandEntity>
+												<Parameters>
+													<ProjectName>[To be planned]</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<DoubleClickOnTask>
+												<Parameters>
+													<projectName>[To be planned]</projectName>
+													<taskName>réunion de coordination</taskName>
+												</Parameters>
+											</DoubleClickOnTask></Actions>
+									</ManageTask></Actions>
+							</Content></Actions>
+					</ReturnGanttInNewTab>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

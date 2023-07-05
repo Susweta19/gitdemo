@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the tranlation in French</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+          <langage>French</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<ReadPortalName>
+        		<ExpectedResult>Ceci est le portail français</ExpectedResult></ReadPortalName>
+        	<HideNavigationTree></HideNavigationTree>
+        	<MultiCriteria>
+        		<Actions>
+        			<ReadHeader>
+        				<ExpectedResult>Sélection Multicritère - Cahier des Charges</ExpectedResult></ReadHeader>
+        			<Close></Close></Actions>
+        	</MultiCriteria>
+        	<WaitForAjax></WaitForAjax>
+        	<ChoiceGuide>
+        		<Actions>
+        			<ReadHeader>
+        				<ExpectedResult>Guide de Choix</ExpectedResult></ReadHeader>
+        			<Close></Close></Actions>
+        	</ChoiceGuide>
+        	<WaitForAjax></WaitForAjax>
+        	<OpenRequirementSet>
+        		<Actions>
+        			<ReadHeader>
+        				<ExpectedResult>Sélection Multicritère - Cahier des Charges</ExpectedResult></ReadHeader>
+        			<Close></Close></Actions>
+        	</OpenRequirementSet>
+        	<WaitForAjax></WaitForAjax>
+        	<CurveModule>
+        		<Actions>
+        			<Changetab>
+        				<Parameters>
+        					<indexTab>0</indexTab>
+        				</Parameters>
+        			</Changetab>
+        			<Changetab>
+        				<Parameters>
+        					<indexTab>0</indexTab>
+        				</Parameters>
+        			</Changetab>
+        			
+        		</Actions>
+        	</CurveModule>
+        	<WaitForAjax></WaitForAjax>
+        	<Export>
+        		<Actions>
+        			<ReadHeader>
+        				<ExpectedResult>Exportation</ExpectedResult></ReadHeader>
+        			<Close></Close></Actions>
+        	</Export>
+        	<WaitForAjax></WaitForAjax>
+        	<SearchBox>
+        		<Parameters>
+        			<research>New</research>
+        		</Parameters>
+        		<Actions>
+        			<ReadHeader>
+        				<ExpectedResult>Recherche textuelle</ExpectedResult></ReadHeader>
+        			<Close></Close>
+        			<WaitForAjax></WaitForAjax></Actions>
+        	</SearchBox>
+        	<Logout>
+        		<Actions>
+        			<ReadConfirmationPopUpMessage>
+        				<Actions>
+        					<ElementAt>
+        						<Parameters>
+        							<index>0</index>
+        						</Parameters>
+        						<ExpectedResult>Souhaitez-vous vraiment quitter TEEXMA ?</ExpectedResult>
+        					</ElementAt></Actions>
+        			</ReadConfirmationPopUpMessage>
+        			<CloseConfirmationPopup>
+        				<Parameters>
+        					<result>true</result>
+        				</Parameters>
+        			</CloseConfirmationPopup>
+        		</Actions>
+        	</Logout>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

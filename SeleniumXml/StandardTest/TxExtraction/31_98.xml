@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>"Check the translated language for attribute name when Login with language 'English'
+</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+          <langage>English</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Test&#160;Extraction</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                	<SelectEntity>
+                		<Parameters>
+                			<nodes>
+                				<path>Entité Test Word/Excel</path></nodes>
+                		</Parameters>
+                	</SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <MainToolbar>
+          	<Parameters>
+          		<modelName>ExtractionMainToolBar</modelName>
+          	</Parameters>
+          </MainToolbar>
+          <ReturnExtraction>
+          	<Actions>
+          		<Content>
+          			<Actions>
+          				<Extractions>
+          					<Actions>
+          						<Sleep>
+          							<Parameters>
+          								<timeOut>2</timeOut>
+          							</Parameters>
+          						</Sleep>
+          						<ReadAllListItem>
+          							<Actions>
+          								<ElementAt>
+          									<Parameters>
+          										<index>0</index>
+          									</Parameters>
+          									<ExpectedResult>[PDF] Extraction Word - Généralités - PDF - OnefileperObject</ExpectedResult>
+          								</ElementAt>
+          								<ElementAt>
+          									<Parameters>
+          										<index>1</index>
+          									</Parameters>
+          									<ExpectedResult>[Word] Extraction Word - Généralités - Docx - OnefileperObject</ExpectedResult>
+          								</ElementAt>
+          								<ElementAt>
+          									<Parameters>
+          										<index>2</index>
+          									</Parameters>
+          									<ExpectedResult>[Word] Extraction Word - Généralités - Docm - OnefileperObject</ExpectedResult>
+          								</ElementAt>
+          								<ElementAt>
+          									<Parameters>
+          										<index>3</index>
+          									</Parameters>
+          									<ExpectedResult>[PDF] Extraction Word - Généralités - PDF - OnefileforAllObjects</ExpectedResult>
+          								</ElementAt>
+          								<ElementAt>
+          									<Parameters>
+          										<index>4</index>
+          									</Parameters>
+          									<ExpectedResult>[Word] Extraction Word - Caractéristiques basiques</ExpectedResult>
+          								</ElementAt>
+          								<ElementAt>
+          									<Parameters>
+          										<index>5</index>
+          									</Parameters>
+          									<ExpectedResult>[PDF] Extraction Word - Caractéristiques Texte</ExpectedResult>
+          								</ElementAt>
+          								<ElementAt>
+          									<Parameters>
+          										<index>6</index>
+          									</Parameters>
+          									<ExpectedResult>[PDF] Extraction Word - Caractéristiques Fichiers</ExpectedResult>
+          								</ElementAt></Actions>
+          						</ReadAllListItem></Actions>
+          				</Extractions></Actions>
+          		</Content>
+          	</Actions>
+          </ReturnExtraction>
+
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

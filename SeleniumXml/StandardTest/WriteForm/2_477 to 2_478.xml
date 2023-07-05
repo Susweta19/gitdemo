@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Create 1 regular string,Edit 1 regular string</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Standard_User_M+</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_Locking_Automatic</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+            </Actions>
+          </NavigationTree>
+          <LaunchModel>
+          	<Parameters>
+          		<modelName>Create 1 regular string</modelName>
+          	</Parameters>
+          </LaunchModel>
+          <ReturnEditForm>
+          	<Actions>
+          		<Content>
+          			<Actions>
+          				<OkButtonDisable>
+          					<ExpectedResult>true</ExpectedResult></OkButtonDisable>
+          				<Write>
+          					<DTText>
+          						<Parameters>
+          							<id>507</id>
+          							<value>
+          								<value>String value</value>
+          							</value>
+          						</Parameters>
+          					</DTText>
+          					
+          				</Write>
+          				
+          				<OkButtonDisable>
+          					<ExpectedResult>false</ExpectedResult></OkButtonDisable></Actions>
+          		</Content>
+          		<Ok>
+          			<Parameters>
+          				<validate>true</validate></Parameters>
+          		</Ok></Actions>
+          </ReturnEditForm>
+          <ReadForm>
+          	<Actions>
+          		<WaitForAjax></WaitForAjax>
+          		<AttributeIsDiplayed>
+          			<Parameters>
+          				<attrId>507</attrId>
+          			</Parameters>
+          			<ExpectedResult>true</ExpectedResult>
+          		</AttributeIsDiplayed>
+          		<Read>
+          			<DTText>
+          				<Parameters>
+          					<attrId>507</attrId>
+          				</Parameters>
+          				<ExpectedResult>
+          					<value>String value</value>
+          				</ExpectedResult>
+          			</DTText>
+          			
+          		</Read>
+          		
+          		
+
+          	</Actions>
+          </ReadForm>
+          <Edit>
+          	<Actions><Content>
+          			<Actions>
+          				<CancelDisable>
+          					<ExpectedResult>false</ExpectedResult></CancelDisable>
+          				<CrossDisable>
+          					<ExpectedResult>false</ExpectedResult></CrossDisable>
+          				<OkButtonDisable>
+          					<ExpectedResult>false</ExpectedResult></OkButtonDisable>
+          				<Write>
+          					<DTText>
+          						<Parameters>
+          							<id>507</id>
+          							<value>
+          								<value>String value modified</value>
+          							</value>
+          						</Parameters>
+          					</DTText>
+          					
+          				</Write>
+          				</Actions>
+          		</Content>
+          		<IsCountDownStarted>
+          			<ExpectedResult>true</ExpectedResult></IsCountDownStarted>
+          		<Ok>
+          			<Parameters>
+          				<validate>true</validate></Parameters>
+          		</Ok></Actions>
+          </Edit>
+          <ReadForm>
+          	<Actions>
+          		<WaitForAjax></WaitForAjax>
+          		<Read>
+          			<DTText>
+          				<Parameters>
+          					<attrId>507</attrId>
+          				</Parameters>
+          				<ExpectedResult>
+          					<value>String value modified</value>
+          				</ExpectedResult>
+          			</DTText>
+          			
+          		</Read>
+          		
+          		
+
+          	</Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

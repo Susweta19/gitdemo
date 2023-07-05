@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Select the String attribute  and see the right side</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<IfPopUpPresent></IfPopUpPresent><NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_CG+AS</value>
+										</Parameters>
+									</Select></Actions>
+							</SelectOT></Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>TxMCS</modelName>
+						</Parameters>
+					</LaunchModel>
+					<TxMCS>
+						<Actions>
+							<Content>
+								<Actions>
+									<BlankRequirementSet>
+										<Parameters>
+											<objectType>TEST_CG+AS</objectType>
+										</Parameters>
+									</BlankRequirementSet>
+									<Settings>
+										<Actions>
+											<SelectEntity>
+												<Parameters><nodes><path>TEST_CG+AS</path><path>Bool/Date/Str/Text</path><path>Bool/Date/Str/Text</path><path>String</path></nodes></Parameters>
+											</SelectEntity></Actions>
+									</Settings>
+									<Criteria>
+										<Actions>
+
+											<TextMustContain>
+												<Actions>
+													<Write>
+														<Parameters>
+															<value>test</value>
+														</Parameters>
+													</Write></Actions>
+											</TextMustContain>
+										</Actions>
+									</Criteria>
+									
+									
+								</Actions>
+							</Content></Actions>
+					</TxMCS></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

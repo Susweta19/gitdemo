@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--bug-->
+<!--reading unit is manual-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Select the Dec_SV_MultiUnit_NoBounds attribute  and see the right side</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<IfPopUpPresent></IfPopUpPresent><NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_CG+AS</value>
+										</Parameters>
+									</Select></Actions>
+							</SelectOT></Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>TxMCS</modelName>
+						</Parameters>
+					</LaunchModel>
+					<TxMCS>
+						<Actions>
+							<Content>
+								<Actions>
+									<BlankRequirementSet>
+										<Parameters>
+											<objectType>TEST_CG+AS</objectType>
+										</Parameters>
+									</BlankRequirementSet>
+									<Settings>
+										<Actions>
+											<SelectEntity>
+												<Parameters><nodes><path>TEST_CG+AS</path><path>Decimal</path><path>Decimal</path><path>Dec_SV_MultiUnit_NoBounds</path></nodes></Parameters>
+											</SelectEntity></Actions>
+									</Settings>
+									<WaitForAjax></WaitForAjax>
+									<Criteria>
+										<Actions>
+											<TheValueMustBe>
+												<Parameters>
+													<value>Equal&#160;to&#160;a&#160;value</value>
+												</Parameters>
+											</TheValueMustBe>
+											<TargetValue>
+												<Parameters>
+													<value>50</value>
+												</Parameters>
+											</TargetValue>
+											<Tolerancevalue>
+												<Parameters>
+													<value>50</value>
+												</Parameters>
+											</Tolerancevalue><!--we will test it manually-->
+
+											<!-- <NumericalEqualitySlider>
+												<Parameters>
+													<left>122</left>
+												</Parameters>
+											</NumericalEqualitySlider> -->
+											<TheValueMustBe>
+												<Parameters>
+													<value>Within&#160;an&#160;range</value>
+												</Parameters>
+											</TheValueMustBe>
+											<MaxValue>
+												<Parameters>
+													<value>120</value>
+												</Parameters>
+											</MaxValue>
+											<MinValue>
+												<Parameters>
+													<value>200</value>
+												</Parameters>
+											</MinValue><!--we will test it manually-->
+
+
+											<!-- <NumericalEqualitySlider>
+												<Parameters>
+													<left>120</left>
+													<right>200</right>
+													<withInRange>
+														true
+													</withInRange>
+												</Parameters>
+											</NumericalEqualitySlider> -->
+										</Actions>
+									</Criteria>
+									
+									
+								</Actions>
+							</Content></Actions>
+					</TxMCS></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

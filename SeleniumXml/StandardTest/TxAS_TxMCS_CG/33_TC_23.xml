@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Changing the table view configuration</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Content>
+												<Actions>
+													<IfConfirmationPopUpPresent>
+														<Parameters>
+															<result>false</result>
+														</Parameters>
+													</IfConfirmationPopUpPresent>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>[Materials database] From parametered search</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>											
+										</Actions>
+									</SelectAdvancedSearch>
+									<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result>
+												</Parameters>
+											</IfConfirmationPopUpPresent>
+											<ReadWindowTitle>
+												<ExpectedResult>[Materials database] - From parametered search</ExpectedResult>
+											</ReadWindowTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Test Extraction</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Test Utils ID</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Test Workflow</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonDisabled>
+												<Parameters>
+													<buttonName>Test Utils ID</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonDisabled>
+											<IsButtonDisabled>
+												<Parameters>
+													<buttonName>Test Workflow</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonDisabled>
+											<IsTabPresent>
+												<Parameters>
+													<tabName>Test Quick view</tabName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsTabPresent>
+											<IsTabPresent>
+												<Parameters>
+													<tabName>Test Table view</tabName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsTabPresent>
+											<IsTabPresent>
+												<Parameters>
+													<tabName>Test Sec. Table view</tabName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsTabPresent>
+											<ChangeTab>
+												<Parameters>
+													<tabName>Test Sec. Table view</tabName>
+												</Parameters>
+											</ChangeTab>
+											<ReadCriteriaList>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>
+																0
+															</index>
+														</Parameters>
+														<ExpectedResult>All</ExpectedResult>
+													</ElementAt></Actions>
+											</ReadCriteriaList>
+											<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+											<WaitForAjax></WaitForAjax>
+											<ReturnTableView>
+												<Actions>
+													<!--Bug in Table View, Script is incomplete because of the bug, need to fix sccript when bug is fixed-->
+													<ReadValue>
+												<Parameters>
+													<Row>1</Row>
+													<Column>0</Column>
+												</Parameters>
+												<ExpectedResult>Administrator</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>2</Row>
+													<Column>0</Column>
+												</Parameters>
+												<ExpectedResult>New</ExpectedResult>
+											</ReadValue>
+													</Actions>
+											</ReturnTableView>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Select the option ""Days/Hours"" select the option "None" from the button "Paging scale"</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+
+
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Projects/Tasks view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<SelectScale>
+										<Parameters>
+											<option>Days/Hours</option>
+										</Parameters>
+									</SelectScale>
+									<SelectPaging>
+										<Parameters>
+											<option>None</option>
+										</Parameters>
+									</SelectPaging>
+									<ManageGanttView>
+										<Actions>
+											<ReadGanttFirstHeader>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>1</index>
+														</Parameters>
+														<Hashtag>#datewithmonth#</Hashtag>
+													</ElementAt>
+												</Actions>
+											</ReadGanttFirstHeader>
+											<ReadGanttSecondHeader>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>1</index>
+														</Parameters>
+														<Hashtag>#hour#</Hashtag>
+													</ElementAt>
+												</Actions>
+											</ReadGanttSecondHeader>
+										</Actions>
+									</ManageGanttView>
+									<SelectPaging>
+										<Parameters>
+											<option>Day</option>
+										</Parameters>
+									</SelectPaging>
+									<SelectPaging>
+										<Parameters>
+											<option>None</option>
+										</Parameters>
+									</SelectPaging>
+									<ManageGanttView>
+										<Actions>
+											<ManageCommonMethods>
+												<Actions></Actions>
+											</ManageCommonMethods>
+											<ReadGanttFirstHeader>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>1</index>
+														</Parameters>
+														<ExpectedResult>#datewithmonth#</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadGanttFirstHeader>
+											<ReadGanttSecondHeader>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>1</index>
+														</Parameters>
+														<ExpectedResult>#hour#</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadGanttSecondHeader>
+										</Actions>
+									</ManageGanttView>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

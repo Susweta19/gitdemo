@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Time To display three widget in portal</testDescription>
+        <testFuncTimer>ExpandCollapseEntity</testFuncTimer>
+        <testFuncTimer>TimeToWaitForAjax</testFuncTimer>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <EntityTree>
+                <Actions>
+                  <SelectEntity>
+                    <Parameters>
+                      <nodes>
+                        <path>Portal3</path>
+                      </nodes>
+                    </Parameters>
+                  </SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <TxTableView>
+            <Parameters>
+              <sTagTableview>PerfTableView</sTagTableview>
+            </Parameters>
+            <Actions>
+              <WaitForAjax></WaitForAjax>
+              <Refresh />
+            </Actions>
+          </TxTableView>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

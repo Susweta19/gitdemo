@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Percentage column - Several percentage columns forbidden</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Recipe</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<SwitchReadWrite></SwitchReadWrite>
+							<AddObject>
+								<Parameters></Parameters>
+								<Actions>
+									<Content>
+										<Actions>
+											<Write>
+												<DTText>
+													<Parameters>
+														<id>91</id>
+														<value>
+															<value>Recipe 21</value>
+														</value>
+													</Parameters>
+												</DTText>
+												
+											</Write></Actions>
+									</Content>
+									<Ok>
+										<Parameters>
+											<validate>true</validate></Parameters>
+									</Ok></Actions>
+							</AddObject>
+						</Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Launch formulation - Several percentage column</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ManagePopUp>
+						<Actions>
+							<ClosePopUp>
+								<Parameters>
+									<result>true</result>
+								</Parameters>
+							</ClosePopUp></Actions>
+					</ManagePopUp>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

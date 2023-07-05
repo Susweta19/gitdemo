@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Checking the search field in Task Selection section in Add task(s) window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in new tab  mode with TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Actions>
+										<DeleteAllPresentTask></DeleteAllPresentTask>
+											<AddTask>
+												<Parameters>
+													<user>Alice Dupont</user>
+												</Parameters>
+												<Actions>
+													<Content>
+														<Actions>
+															<Sleep>
+																<Parameters>
+																	<timeOut>3</timeOut>
+																</Parameters>
+															</Sleep><!--Checking weather the task remains disabled or 
+																not -->
+															
+															<WaitForAjax></WaitForAjax>
+															<ReturnTableView>
+																<Actions>
+																	<CheckallObjects></CheckallObjects>
+																	<UnCheckallObjects></UnCheckallObjects><FilterInput>
+																		<Parameters>
+																			<indexColumn>2</indexColumn>
+																			<field>Ré</field>
+																		</Parameters>
+																	</FilterInput>
+																	<PressKeyFromKeyBoard>
+																		<Actions>
+																			<PressEnter></PressEnter></Actions>
+																	</PressKeyFromKeyBoard>
+																	<ReadValue>
+																		<Parameters>
+																			<Row>1</Row>
+																			<Column>1</Column>
+																			
+																		</Parameters>
+																		<ExpectedResult>Réunion</ExpectedResult>
+																	</ReadValue>
+																	
+																	<FilterInput>
+																		<Parameters>
+																			<indexColumn>2</indexColumn>
+																			<field>Ré</field>
+																		</Parameters>
+																	</FilterInput>
+																	<ReadColumName>
+																		<Actions>
+																			<ElementAt>
+																				<Parameters>
+																					<index>1</index>
+																				</Parameters>
+																				<ExpectedResult>Objects</ExpectedResult>
+																			</ElementAt>
+																			<ElementAt>
+																				<Parameters>
+																					<index>2</index>
+																				</Parameters>
+																				<ExpectedResult>Project</ExpectedResult>
+																			</ElementAt>
+																			<ElementAt>
+																				<Parameters>
+																					<index>3</index>
+																				</Parameters>
+																				<ExpectedResult>Zones</ExpectedResult>
+																			</ElementAt></Actions>
+																	</ReadColumName>
+																</Actions>
+															</ReturnTableView>
+															<!-- Not Checking the default button for windows i.e Park, 
+																Min/Max and Close -->
+														</Actions>
+													</Content>
+													<Ok>
+														<Parameters>
+															<validate>false</validate>
+														</Parameters>
+													</Ok>
+												</Actions>
+											</AddTask>
+										
+										</Actions>
+									</ManageTask>
+									<!--Reading toolbar buttons --><!--Reading the buttons present in the lower part 
+										of the window --><!--Reading the week range in the toolbar --></Actions>
+							</Content></Actions>
+					</ReturnTxHourTrackingInNewTab>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

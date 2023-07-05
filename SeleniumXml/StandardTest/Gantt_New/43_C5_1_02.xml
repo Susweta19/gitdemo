@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Go to the "Gantt" tab and select "Contacts/Tasks view 5" tab</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Projects/Tasks view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Close>
+								<Parameters></Parameters>
+							</Close>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<RefreshWebPage></RefreshWebPage>
+					<WaitForAjax></WaitForAjax>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Machines/Tasks view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Close>
+								<Parameters></Parameters>
+							</Close>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<RefreshWebPage></RefreshWebPage>
+					<WaitForAjax></WaitForAjax>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Close>
+								<Parameters></Parameters>
+							</Close>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<RefreshWebPage></RefreshWebPage>
+					<WaitForAjax></WaitForAjax>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view 2</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Close>
+								<Parameters></Parameters>
+							</Close>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<RefreshWebPage></RefreshWebPage>
+					<WaitForAjax></WaitForAjax>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view 3</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Close>
+								<Parameters></Parameters>
+							</Close>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<RefreshWebPage></RefreshWebPage>
+					<WaitForAjax></WaitForAjax>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view 4</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Close>
+								<Parameters></Parameters>
+							</Close>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<RefreshWebPage></RefreshWebPage>
+					<WaitForAjax></WaitForAjax>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Multiressources view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Close>
+								<Parameters></Parameters>
+							</Close>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<RefreshWebPage></RefreshWebPage>
+					<WaitForAjax></WaitForAjax>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Multiressources view 2</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Close>
+								<Parameters></Parameters>
+							</Close>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<RefreshWebPage></RefreshWebPage>
+					<WaitForAjax></WaitForAjax>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Multiressources view 3</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Close>
+								<Parameters></Parameters>
+							</Close>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<RefreshWebPage></RefreshWebPage>
+					<WaitForAjax></WaitForAjax>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view 5</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<ChoseContact>
+										<Actions>
+											<Content>
+												<Actions>
+													<SelectAll></SelectAll>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+										</Actions>
+									</ChoseContact>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>Alice Dupont</ProjectName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsProjectPresent>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>Gérard Vaillancourt</ProjectName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsProjectPresent>
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+							<Close>
+								<Parameters></Parameters>
+							</Close>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

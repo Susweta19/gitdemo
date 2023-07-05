@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Login with No_Rights_User and check the right on 'Multicriteria Selection and Choice Guides' that should not be present</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>NoRight_User</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <!--Multicriteriashouldbedeactivated-->
+          <!--Choiceguideshouldbedeactivated-->
+          <CheckButtonAvailability>
+            <Parameters>
+              <pictureName>MCS</pictureName>
+            </Parameters>
+            <ExpectedResult>false</ExpectedResult>
+          </CheckButtonAvailability>
+          <CheckButtonAvailability>
+            <Parameters>
+              <pictureName>ChoiceGuide</pictureName>
+            </Parameters>
+            <ExpectedResult>false</ExpectedResult>
+          </CheckButtonAvailability>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

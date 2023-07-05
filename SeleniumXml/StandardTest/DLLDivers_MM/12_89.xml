@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the availability of the function 'Get_Banner'-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the functionality of model application "[Object] Export current object"</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Message>Associative test start</Message>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_TO_1</value>
+										</Parameters>
+									</Select>
+									
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Export_12_02/12/2019</path></nodes>
+										</Parameters>
+									</SelectEntity></Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>[Object] Export current object</modelName>
+						</Parameters>
+					</LaunchModel>
+					<Sleep>
+						<Parameters>
+							<timeOut>10</timeOut>
+						</Parameters>
+					</Sleep>
+					<WaitForAjax></WaitForAjax>
+					<ReadForm>
+						<Actions>
+							<WaitForAjax></WaitForAjax>
+							<Sleep>
+								<Parameters>
+									<timeOut>2</timeOut>
+								</Parameters>
+							</Sleep>
+							<ChangeTab>
+								<Parameters>
+									<tabIndex>1</tabIndex>
+								</Parameters>
+							</ChangeTab>
+							<ChangeTab>
+								<Parameters>
+									<tabIndex>1</tabIndex>
+								</Parameters>
+							</ChangeTab>
+							<WaitForAjax></WaitForAjax>
+							<IsValueContains>
+								<Parameters>
+									<attrId>3395</attrId>
+									<value>_Export_ForModelApplication[Object]_Export_current_object.xlsm</value>
+								</Parameters>
+								<ExpectedResult>true</ExpectedResult>
+							</IsValueContains>
+						</Actions>
+					</ReadForm>
+
+
+				</Actions>
+			</MainWindow></Actions></TxInterface></Actions>

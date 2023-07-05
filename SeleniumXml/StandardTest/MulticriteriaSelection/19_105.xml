@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Try to open 'Multicriterion Selection - Requirement Set' window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+					<langage>Spanish</langage>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_MulticriteriaSelection</value>
+										</Parameters>
+									</Select></Actions>
+							</SelectOT></Actions>
+					</NavigationTree>
+					<MultiCriteria>
+						<Actions>
+							<Content>
+								<Actions></Actions>
+							</Content>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Definir los Criterios</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Iniciar el Cálculo de Selección</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Añadir un grupo...</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Modificar el grupo...</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Eliminar el grupo</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Modificar...</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Guardar</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Exportar en formato XML</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Eliminar el pliego de condiciones</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Declaración escrita</buttonName>
+								</Parameters>
+							</IsButtonPresent></Actions>
+					</MultiCriteria>
+				</Actions>
+			</MainWindow></Actions></TxInterface></Actions>

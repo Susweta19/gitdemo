@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- click on the Link 'To Standard Visible Object Import_1' and the Link 'To Standard Invisible Object IV_1'-->
+<!--We don't check after reload teexma , OT not display.-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the availability of the link to an Object Standard OT</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <LinkPortal>
+            <Parameters>
+              <link>To Choice Guide 'CG_1'</link>
+              
+            </Parameters>
+          </LinkPortal>
+          <ReturnChoiceGuide>
+          	<Actions>
+          		<Content>
+          			<Actions>
+          				<ReadTitle>
+          					<ExpectedResult>CG_1</ExpectedResult></ReadTitle>
+          				<ChoiceGuideFrom>
+          					<Actions>
+          						<Select>
+          							<Parameters></Parameters>
+          							<Actions></Actions>
+          						</Select></Actions>
+          				</ChoiceGuideFrom></Actions>
+          		</Content></Actions>
+          </ReturnChoiceGuide>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

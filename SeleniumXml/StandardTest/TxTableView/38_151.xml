@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Long text</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Portals</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Welcome_Test</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<ButtonPortal>
+						<Parameters>
+							<link>My Dashboard</link>
+							<hasSpan>true</hasSpan>
+						</Parameters>
+					</ButtonPortal>
+					<ReturnTxTableView>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									
+									<WaitForAjax></WaitForAjax>
+									<Sleep>
+										<Parameters>
+											<timeOut>25</timeOut>
+										</Parameters>
+									</Sleep>
+									<EditTextValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>16</Column>
+										</Parameters>
+										<Actions>
+											<Content>
+												<Actions>
+													<Clear></Clear>
+													<Write>
+														<Parameters>
+															<value>TEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMA</value>
+														</Parameters>
+													</Write></Actions>
+											</Content>
+											<Ok>
+												<Parameters></Parameters>
+											</Ok></Actions>
+									</EditTextValue>
+									<ReadValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>17</Column>
+										</Parameters>
+										<ExpectedResult>TEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMATEEXMA</ExpectedResult>
+									</ReadValue>
+
+								</Actions>
+							</Content></Actions>
+					</ReturnTxTableView>
+
+
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

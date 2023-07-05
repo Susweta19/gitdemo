@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Create 1 richtext,Edit 1 richtext</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Standard_User_M+</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_Locking_Automatic</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+            </Actions>
+          </NavigationTree>
+          <LaunchModel>
+          	<Parameters>
+          		<modelName>Create 1 richtext</modelName>
+          	</Parameters>
+          </LaunchModel>
+          <ReturnEditForm>
+          	<Actions>
+          		<Content>
+          			<Actions>
+          				<OkButtonDisable>
+          					<ExpectedResult>true</ExpectedResult></OkButtonDisable><RichText>
+          					<Parameters>
+          						<attrId>659</attrId>
+          					</Parameters>
+          					<Actions>
+          						<Write>
+          							<Parameters>
+          								<value>Text value</value>
+          							</Parameters>
+          						</Write></Actions>
+          				</RichText>
+          				
+          				<OkButtonDisable>
+          					<ExpectedResult>false</ExpectedResult></OkButtonDisable>
+          				</Actions>
+          		</Content>
+          		<Ok>
+          			<Parameters>
+          				<validate>true</validate></Parameters>
+          		</Ok></Actions>
+          </ReturnEditForm>
+          <ReadForm>
+          	<Actions>
+          		<WaitForAjax></WaitForAjax>
+          		<AttributeIsDiplayed>
+          			<Parameters>
+          				<attrId>659</attrId>
+          			</Parameters>
+          			<ExpectedResult>true</ExpectedResult>
+          		</AttributeIsDiplayed>
+          		<Read>
+          			<DTRichText>
+          				<Parameters>
+          					<attrId>659</attrId>
+          				</Parameters>
+          				<ExpectedResult>
+          					<value>Text value</value>
+          				</ExpectedResult>
+          			</DTRichText>
+          			
+          			
+          		</Read>
+          		
+          		
+
+          	</Actions>
+          </ReadForm>
+          <Edit>
+          	<Actions><Content>
+          			<Actions>
+          				<CancelDisable>
+          					<ExpectedResult>false</ExpectedResult></CancelDisable>
+          				<CrossDisable>
+          					<ExpectedResult>false</ExpectedResult></CrossDisable>
+          				<OkButtonDisable>
+          					<ExpectedResult>false</ExpectedResult></OkButtonDisable>
+          				<RichText>
+          					<Parameters>
+          						<attrId>659</attrId>
+          					</Parameters>
+          					<Actions>
+          						<IsFullScreenPresent>
+          							<ExpectedResult>
+          								true
+          							</ExpectedResult></IsFullScreenPresent>
+          						<FullScreen></FullScreen></Actions>
+          				</RichText>
+          				<OkButtonDisable>
+          					<ExpectedResult>true</ExpectedResult></OkButtonDisable>
+          				<CrossDisable>
+          					<ExpectedResult>true</ExpectedResult></CrossDisable><CancelDisable>
+	<ExpectedResult>true</ExpectedResult></CancelDisable>
+          				<Sleep>
+          					<Parameters>
+          						<timeOut>120</timeOut>
+          					</Parameters>
+          				</Sleep>
+
+          			</Actions>
+          		</Content>
+          		<ChangeObjectLocking></ChangeObjectLocking>
+          		<IsCountDownStarted>
+          			<ExpectedResult>true</ExpectedResult></IsCountDownStarted>
+          		<Content>
+          			<Actions>
+          			<ManagePopUp>
+          					<Actions>
+          						<CloseConfirmationPopup>
+          							<Parameters>
+          								<result>true</result>
+          							</Parameters>
+          						</CloseConfirmationPopup>
+          					</Actions>
+          				</ManagePopUp>
+          				<CancelDisable>
+          					<ExpectedResult>true</ExpectedResult></CancelDisable>
+          				<CrossDisable>
+          					<ExpectedResult>true</ExpectedResult></CrossDisable>
+          				<OkButtonDisable>
+          					<ExpectedResult>true</ExpectedResult></OkButtonDisable>
+          				<RichText>
+          					<Parameters>
+          						<attrId>659</attrId>
+          					</Parameters>
+          					<Actions>
+          						<Clear></Clear>
+          						<Write>
+          							<Parameters>
+          								<value>Text value modified</value>
+          							</Parameters>
+          						</Write></Actions>
+          				</RichText></Actions>
+          		</Content>
+          		<Minimize></Minimize>
+          		<Content>
+          			<Actions>
+          				<CancelDisable>
+          					<ExpectedResult>false</ExpectedResult></CancelDisable>
+          				<CrossDisable>
+          					<ExpectedResult>false</ExpectedResult></CrossDisable>
+          				<OkButtonDisable>
+          					<ExpectedResult>false</ExpectedResult></OkButtonDisable>
+          				<Read>
+          					<DTRichText>
+          						<Parameters>
+          							<id>659</id>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>Text value modified</value>
+          						</ExpectedResult>
+          					</DTRichText>
+          					
+          				</Read></Actions>
+          		</Content>
+          		<Ok>
+          			<Parameters>
+          				<validate>true</validate></Parameters>
+          		</Ok></Actions>
+          </Edit>
+          <ReadForm>
+          	<Actions>
+          		<WaitForAjax></WaitForAjax>
+          		<Read>
+          			<DTRichText>
+          				<Parameters>
+          					<attrId>659</attrId>
+          				</Parameters>
+          				<ExpectedResult>
+          					<value>Text value modified</value>
+          				</ExpectedResult>
+          			</DTRichText>
+          			
+          			
+          		</Read>
+          		
+          		
+
+          	</Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

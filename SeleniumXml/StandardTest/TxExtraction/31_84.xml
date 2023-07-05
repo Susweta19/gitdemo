@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Select the extraction [Excel] Extraction Excel - Généralités - Xlsm</testDescription>
+        <!--comment-->
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Test Extraction</value>
+                    </Parameters>
+                  </Select>
+                  <Read>
+                    <ExpectedResult>Test Extraction</ExpectedResult>
+                  </Read>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                	<SelectEntity>
+                		<Parameters>
+                			<nodes>
+                				<path>Entité Test Word/Excel</path></nodes>
+                		</Parameters>
+                	</SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <MainToolbar>
+          	<Parameters>
+          		<modelName>ExtractionMainToolBar</modelName>
+          	</Parameters>
+          </MainToolbar>
+          
+          <ReturnExtraction>
+            <Actions>
+              <Content>
+                <Actions>
+                  <Extractions>
+                  	<Actions>
+                  		<Select>
+                  			<Parameters>
+                  				<value>[Excel]&#160;Extraction&#160;Excel&#160;-&#160;Généralités&#160;-&#160;Xlsm</value>
+                  			</Parameters>
+                  		</Select></Actions>
+                  </Extractions>
+                  <Objects>
+                    <Actions>
+                      <UncheckAll />
+                      
+                      <SelectEntitiesBox>
+                      	<Parameters>
+                      		<collection>
+                      			<collection>
+                      				<path>Entité Test Word/Excel</path></collection></collection>
+                      	</Parameters>
+                      	<Actions>
+                      		<Tick /></Actions>
+                      </SelectEntitiesBox>
+                    </Actions>
+                  </Objects>
+                  <Extract>
+                  	<Parameters />
+                  	<Actions />
+                  </Extract>
+                </Actions>
+              </Content>
+            </Actions>
+          </ReturnExtraction>
+          <DownloadFileChecking>
+          	<Parameters>
+          		<DownloadDirectory>#DownloadDirectory#</DownloadDirectory>
+          		<fileName>ChaineDeCaractere_Date</fileName>
+          		<contains>true</contains>
+          	</Parameters>
+          	<ExpectedResult>true</ExpectedResult>
+          </DownloadFileChecking>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

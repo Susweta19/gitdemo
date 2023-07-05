@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Search a "échantillon" by modification date</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>Search samples</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									<ManageQuestionList>
+										<Actions>
+											<DateLowerBound>
+												<Parameters>
+													<questionName>Modification date</questionName>
+												</Parameters>
+												<Actions>
+													<Year>
+														<Parameters>
+															<year>2020</year>
+														</Parameters>
+													</Year>
+													<Month>
+														<Parameters>
+															<month>Sep</month>
+														</Parameters>
+													</Month>
+													<Day>
+														<Parameters>
+															<day>4</day>
+														</Parameters>
+													</Day>
+												</Actions>
+											</DateLowerBound>
+											<DateUpperbound>
+												<Parameters>
+													<questionName>Modification date</questionName>
+												</Parameters>
+												<Actions>
+													<Year>
+														<Parameters>
+															<year>2020</year>
+														</Parameters>
+													</Year>
+													<Month>
+														<Parameters>
+															<month>Sep</month>
+														</Parameters>
+													</Month>
+													<Day>
+														<Parameters>
+															<day>9</day>
+														</Parameters>
+													</Day>
+												</Actions>
+											</DateUpperbound>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult>
+									<ReturnTableView>
+										<Actions>
+											<WaitForAjax></WaitForAjax><!--row1-->
+											<ReadValue>
+												<Parameters>
+													<Row>1</Row>
+													<Column>1</Column>
+												</Parameters>
+												<ExpectedResult>Part Other request_002</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>1</Row>
+													<Column>2</Column>
+												</Parameters>
+												<ExpectedResult>04/09/2020 20:40:07|09/04/2020 20:40:07</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>1</Row>
+													<Column>3</Column>
+												</Parameters>
+												<ExpectedResult>04/09/2020 22:40:07|09/04/2020 22:40:07</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>1</Row>
+													<Column>4</Column>
+												</Parameters>
+												<ExpectedResult>Part Other request</ExpectedResult>
+											</ReadValue>
+											<!--row2-->
+											<ReadValue>
+												<Parameters>
+													<Row>2</Row>
+													<Column>1</Column>
+												</Parameters>
+												<ExpectedResult>Part Other request_003</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>2</Row>
+													<Column>2</Column>
+												</Parameters>
+												<ExpectedResult>04/09/2020 20:40:07|09/04/2020 20:40:07</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>2</Row>
+													<Column>3</Column>
+												</Parameters>
+												<ExpectedResult>04/09/2020 22:40:07|09/04/2020 22:40:07</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>2</Row>
+													<Column>4</Column>
+												</Parameters>
+												<ExpectedResult>Part Other request</ExpectedResult>
+											</ReadValue>
+											<!--row3-->
+											<ReadValue>
+												<Parameters>
+													<Row>3</Row>
+													<Column>1</Column>
+												</Parameters>
+												<ExpectedResult>Part Other request_004</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>3</Row>
+													<Column>2</Column>
+												</Parameters>
+												<ExpectedResult>04/09/2020 20:40:07|09/04/2020 20:40:07</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>3</Row>
+													<Column>3</Column>
+												</Parameters>
+												<ExpectedResult>04/09/2020 22:40:07|09/04/2020 22:40:07</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>3</Row>
+													<Column>4</Column>
+												</Parameters>
+												<ExpectedResult>Part Other request</ExpectedResult>
+											</ReadValue>
+											</Actions>
+									</ReturnTableView>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

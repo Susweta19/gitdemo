@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Creation of EA-Check that the fields Country, Site/Entity, Family of activity are completed, that auto fields are completed (creator, date of creation, etc).</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Portals</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Welcome_Test</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<ButtonPortal>
+						<Parameters>
+							<link>My Dashboard</link>
+							<hasSpan>true</hasSpan>
+						</Parameters>
+					</ButtonPortal>
+					<ReturnTxTableView>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									
+									<WaitForAjax></WaitForAjax>
+									<Sleep>
+										<Parameters>
+											<timeOut>25</timeOut>
+										</Parameters>
+									</Sleep>
+									<ClickOnCell>
+										<Parameters>
+											<Row>2</Row>
+											<Column>8</Column>
+										</Parameters>
+									</ClickOnCell>
+									<ReadValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>12</Column>
+										</Parameters>
+										<ExpectedResult>Building 1042 ; Building 1044</ExpectedResult>
+									</ReadValue>
+									<EditMultipleLink>
+										<Parameters>
+											<Row>1</Row>
+											<Column>11</Column>
+										</Parameters>
+										<Actions>
+											<Content>
+												<Actions>
+													<UncheckAll></UncheckAll>
+												</Actions>
+											</Content>
+											<Save></Save>
+										</Actions>
+									</EditMultipleLink>
+									<ReadValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>12</Column>
+										</Parameters>
+										<ExpectedResult>#NoSpace#</ExpectedResult>
+									</ReadValue>
+									
+
+								</Actions>
+							</Content></Actions>
+					</ReturnTxTableView>
+
+
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

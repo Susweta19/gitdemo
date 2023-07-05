@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Listing column - Correct display</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Recipe</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Recipe 23</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Launch formulation - Listing column</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnFormulationWindow>
+						<Actions>
+							<Content>
+								<Actions>
+									<ReadCellHeader>
+										<Parameters>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>Raw materials</ExpectedResult>
+									</ReadCellHeader>
+									<ReadCellValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0001 - VERT PVGG A 1%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>2</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0002 - BLEU 08 A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>3</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0003 - BLEU PVB2G A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>4</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0004 - BLEU BCSD A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>5</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0005 - VERT PVGG A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>6</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0006 - ROUGE PVE3B A 1% M</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>7</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0007 - ROUGE K3911 A 1%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>8</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0008 - BLEU PV2G A 1% M</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellHeader>
+										<Parameters>
+											<Column>2</Column>
+										</Parameters>
+										<ExpectedResult>Description</ExpectedResult>
+									</ReadCellHeader>
+									<ReadCellValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>2</Column>
+										</Parameters>
+										<ExpectedResult>VERT PVGG A 1%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellHeader>
+										<Parameters>
+											<Column>3</Column>
+										</Parameters>
+										<ExpectedResult>Listing</ExpectedResult>
+									</ReadCellHeader>
+									<ReadCellValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>3</Column>
+										</Parameters>
+										<Hashtag>#empty#</Hashtag>
+									</ReadCellValue>
+									<ReadCellHeader>
+										<Parameters>
+											<Column>4</Column>
+										</Parameters>
+										<ExpectedResult>Listing - Mandatory</ExpectedResult>
+									</ReadCellHeader>
+									<ReadCellValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>4</Column>
+										</Parameters>
+										<Hashtag>#empty2#</Hashtag>
+									</ReadCellValue>
+									<ReadCellHeader>
+										<Parameters>
+											<Column>5</Column>
+										</Parameters>
+										<ExpectedResult>Listing default</ExpectedResult>
+									</ReadCellHeader>
+									<ReadCellValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>5</Column>
+										</Parameters>
+										<ExpectedResult>PE Neutre</ExpectedResult>
+									</ReadCellValue></Actions>
+							</Content></Actions>
+					</ReturnFormulationWindow>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

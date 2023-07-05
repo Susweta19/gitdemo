@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>"Converting a Word file:
+Only 1 file in charac. A
+The charac. D must be empty
+Launch the model twice
+[clear destination "" no "", delete source "" no ""] 
+
+Select an object ""Test"", click on the ""Switch to read or write mode"" button to create a new entity. In attribute A, publish a new document and click on Ok button. After that Launch the model ""[TxLibrary] Convert A -&gt; D (destination list)"" in the model menu twice."</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Test</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <SwitchReadWrite />
+              <AddObject>
+                <Parameters />
+                <Actions>
+                  <Content>
+                    <Actions>
+                      <PublishDocumentFile>
+                        <Parameters>
+                          <attrId>3361</attrId>
+                          <pathFile>#DocPath#TxLibraryFiles/File1.docx</pathFile>
+                        </Parameters>
+                      </PublishDocumentFile>
+                    </Actions>
+                  </Content>
+                  <Ok>
+                    <Parameters />
+                  </Ok>
+                </Actions>
+              </AddObject>
+            </Actions>
+          </NavigationTree>
+          <LaunchModel>
+            <Parameters>
+              <modelName>[TxLibrary] Convert A -&gt; D (destination list)</modelName>
+            </Parameters>
+          </LaunchModel>
+          <Sleep>
+            <Parameters>
+              <timeOut>5</timeOut>
+            </Parameters>
+          </Sleep>
+          <ReadForm>
+            <Actions>
+              <Read>
+                <WEGLink>
+                  <Parameters>
+                    <attrId>3364</attrId>
+                  </Parameters>
+                  <Actions>
+                    <GetText>
+                      <ExpectedResult>File1(5).pdf</ExpectedResult>
+                    </GetText>
+                  </Actions>
+                </WEGLink>
+              </Read>
+            </Actions>
+          </ReadForm>
+          <LaunchModel>
+            <Parameters>
+              <modelName>[TxLibrary] Convert A -&gt; D (destination list)</modelName>
+            </Parameters>
+          </LaunchModel>
+          <Sleep>
+            <Parameters>
+              <timeOut>5</timeOut>
+            </Parameters>
+          </Sleep>
+          <ReadForm>
+            <Actions>
+              <ReadListLink>
+                <Parameters>
+                  <attrId>3364</attrId>
+                </Parameters>
+                <Actions>
+                  <ElementAt>
+                    <Parameters>
+                      <index>1</index>
+                    </Parameters>
+                    <Actions>
+                      <GetText>
+                        <ExpectedResult>File1(5)(1).pdf</ExpectedResult>
+                      </GetText>
+                    </Actions>
+                  </ElementAt>
+                </Actions>
+              </ReadListLink>
+            </Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

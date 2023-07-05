@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Using an extraction application</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>3</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result>
+												</Parameters>
+											</IfConfirmationPopUpPresent>
+
+
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult>
+											</ReadWindowTitle>
+											<Content>
+												<Actions>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>Parametered search 1</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+
+										</Actions>
+									</SelectAdvancedSearch>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - Parametered search 1</ExpectedResult>
+									</ReadWindowTitle>
+									<ClearAll></ClearAll>
+									<RefreshResult></RefreshResult>
+									<IfConfirmationPopUpPresent>
+										<Parameters>
+											<result>true</result>
+										</Parameters>
+									</IfConfirmationPopUpPresent>
+									<CheckBoxInResultView>
+										<Parameters>
+											<objId>4584</objId>
+										</Parameters>
+										<Actions>
+											<Tick></Tick>
+										</Actions>
+									</CheckBoxInResultView>
+									<ClickOnToolBarButtons>
+										<Parameters>
+											<btnName>Test Extraction</btnName>
+										</Parameters>
+									</ClickOnToolBarButtons>
+									<Extraction>
+										<Actions>
+											<ReadWindowTitle>
+												<ExpectedResult>Extraction</ExpectedResult>
+											</ReadWindowTitle>
+											<Content>
+												<Actions>
+													<Filter>
+														<Actions>
+															<Read>
+																<ExpectedResult>Materials database</ExpectedResult>
+															</Read>
+															<Select>
+																<Parameters>
+																	<value>Materials&#160;database</value>
+																</Parameters>
+															</Select>
+														</Actions>
+													</Filter>
+													<Extractions>
+														<Actions>
+															<Read>
+																<ExpectedResult>[Excel] Materials database</ExpectedResult>
+															</Read>
+															<Select>
+																<Parameters>
+																	<value>[Excel]&#160;Materials&#160;database</value>
+																</Parameters>
+															</Select>
+														</Actions>
+													</Extractions>
+													<Objects>
+														<Actions>
+															<IsTaskPresent>
+																<Parameters>
+																	<taskName>1.4404 Metal Powder</taskName>
+																</Parameters>
+																<ExpectedResult>true</ExpectedResult>
+															</IsTaskPresent>
+															<IsTaskPresent>
+																<Parameters>
+																	<taskName>15-5AM</taskName>
+																</Parameters>
+																<ExpectedResult>false</ExpectedResult>
+															</IsTaskPresent>
+															<IsTaskSelected>
+																<Parameters>
+																	<taskName>1.4404 Metal Powder</taskName>
+																</Parameters>
+																<ExpectedResult>true</ExpectedResult>
+															</IsTaskSelected>
+															<DisplayTheEntireTree></DisplayTheEntireTree>
+															<Sleep>
+																<Parameters>
+																	<timeOut>5</timeOut>
+																</Parameters>
+															</Sleep>
+															<WaitForAjax></WaitForAjax>
+															<IsTaskPresent>
+																<Parameters>
+																	<taskName>ASTM A182/A182M - Forged steel flanges, fittings and valves - 01/05/2013 - F316L</taskName>
+																</Parameters>
+																<ExpectedResult>true</ExpectedResult>
+															</IsTaskPresent>
+															<IsTaskPresent>
+																<Parameters>
+																	<taskName>ASTM A182/A182M - Forged steel flanges, fittings and valves- 01/05/2013 - F316LN</taskName>
+																</Parameters>
+																<ExpectedResult>true</ExpectedResult>
+															</IsTaskPresent>
+															<IsTaskSelected>
+																<Parameters>
+																	<taskName>ASTM A182/A182M - Forged steel flanges, fittings and valves - 01/05/2013 - F316L</taskName>
+																</Parameters>
+																<ExpectedResult>false</ExpectedResult>
+															</IsTaskSelected>
+															<IsTaskSelected>
+																<Parameters>
+																	<taskName>ASTM A182/A182M - Forged steel flanges, fittings and valves- 01/05/2013 - F316LN</taskName>
+																</Parameters>
+																<ExpectedResult>false</ExpectedResult>
+															</IsTaskSelected>
+														</Actions>
+													</Objects>
+													<Extract>
+														<Parameters>
+															<automaticPublication>false</automaticPublication>
+														</Parameters>
+														<Actions></Actions>
+													</Extract>
+													<WaitForAjax></WaitForAjax>
+													<Sleep>
+														<Parameters>
+															<timeOut>30</timeOut>
+														</Parameters>
+													</Sleep>
+
+													<DownloadFileChecking>
+														<Parameters>
+															<DownloadDirectory>#DownloadDirectory#</DownloadDirectory>
+															<fileName>Materials</fileName>
+															<contains>true</contains>
+														</Parameters>
+													</DownloadFileChecking>
+													<ManageDownloadedFiles>
+														<Actions>
+															<GetLastDownloadedFile>
+																<Parameters>
+																	<DownloadDirectory>#DownloadDirectory#</DownloadDirectory>
+																</Parameters>
+																<Hashtag>#File#</Hashtag>
+															</GetLastDownloadedFile>
+															<ReadExcelFile>
+																<Parameters>
+																	<filePath>#File#</filePath>
+																	<sheetName>SHEET 1</sheetName>
+																	<row>1</row>
+																	<uptoCol>1</uptoCol>
+																</Parameters>
+																<Actions>
+																	<ElementAt>
+																		<Parameters>
+																			<index>0</index>
+																		</Parameters>
+																		<ExpectedResult>Entered date</ExpectedResult>
+																	</ElementAt>
+																</Actions>
+															</ReadExcelFile>
+														</Actions>
+													</ManageDownloadedFiles>
+												</Actions>
+											</Content>
+										</Actions>
+									</Extraction>
+
+
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

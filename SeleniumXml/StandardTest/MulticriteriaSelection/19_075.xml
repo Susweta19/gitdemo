@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Prasenjit-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Select the RS 'Dec_SV' then launch calculation--8 Objects will be sorted out of which the Date Attribute value meet the following conditions :strictly greater than 50;less than (600 + 120);if we untick the 'strictly' checkbox for 'greater than', 1 more Object will be sorted out;if we delete the tolerance, 2 less Objects will be sorted out</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Message>Login</Message>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <OpenRequirementSet>
+            <Actions>
+              <Content>
+                <Actions>
+                  <ObjectType>
+                    <Parameters>
+                      <objectType>TEST_MulticriteriaSelection</objectType>
+                    </Parameters>
+                  </ObjectType>
+                  <RequirementSet>
+                    <Parameters>
+                      <requirementSet>Dec_SV</requirementSet>
+                    </Parameters>
+                  </RequirementSet>
+                  <Open>
+                    <Parameters>
+                      <popUp>false</popUp>
+                    </Parameters>
+                    <Actions>
+                      <Content>
+                        <Actions>
+                          <CriteriaTab>
+                            <Actions>
+                              <Content>
+                                <Actions>
+                                  <LaunchCalculation>
+                                    <Actions>
+                                      <Close />
+                                    </Actions>
+                                  </LaunchCalculation>
+                                </Actions>
+                              </Content>
+                            </Actions>
+                          </CriteriaTab>
+                        </Actions>
+                      </Content>
+                    </Actions>
+                  </Open>
+                </Actions>
+              </Content>
+            </Actions>
+          </OpenRequirementSet>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

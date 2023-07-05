@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Allow the ability to link samples unrelated to parent</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Demandes</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Request VF</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Manage and route samples</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnManageSample>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									<ListOfAttributes>
+										<Actions>
+											<SelectEntity>
+												<Parameters>
+													<nodes>
+														<path>Request VF</path>
+														<path>AutoName_Test 1 Request VF</path>
+													</nodes>
+												</Parameters>
+											</SelectEntity>
+										</Actions>
+									</ListOfAttributes>
+									<SampleGrid>
+										<Actions>
+											<WaitForAjax></WaitForAjax>
+											<ReadFilteredResult>
+												<ExpectedResult>11 filtered out of a total of 120</ExpectedResult>
+											</ReadFilteredResult>
+										</Actions>
+									</SampleGrid>
+									<SelectOption>
+										<Parameters>
+											<option>Allow to select Samples not linked to the parent</option>
+										</Parameters>
+									</SelectOption>
+									<SampleGrid>
+										<Actions>
+											<WaitForAjax></WaitForAjax>
+											<ReadFilteredResult>
+												<ExpectedResult>120 filtered out of a total of 120</ExpectedResult>
+											</ReadFilteredResult>
+										</Actions>
+									</SampleGrid>
+									<SelectOption>
+										<Parameters>
+											<option>Allow to select Samples not linked to the parent</option>
+										</Parameters>
+									</SelectOption>
+									<SampleGrid>
+										<Actions>
+											<WaitForAjax></WaitForAjax>
+											<ReadFilteredResult>
+												<ExpectedResult>11 filtered out of a total of 120|12 filtered out of a total of 121</ExpectedResult>
+											</ReadFilteredResult>
+										</Actions>
+									</SampleGrid>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnManageSample>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--does not clicking on close button -->
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Click on the headers, on the storage arrows</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<ChangePortalTab>
+						<Parameters>
+							<index>1</index>
+						</Parameters>
+					</ChangePortalTab>
+					<ButtonPortal>
+						<Parameters>
+							<link>&#160;Table view Link</link>
+							<hasSpan>false</hasSpan>
+						</Parameters>
+					</ButtonPortal>
+					<ReturnTxTestResultInNewTab>
+						<Actions>
+						<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<ReadObjectName>
+										<Parameters>
+											<rowindex>1</rowindex>
+											<columnindex>3</columnindex>
+										</Parameters>
+										<ExpectedResult>Endurance</ExpectedResult>
+									</ReadObjectName>
+									<ReadObjectName>
+										<Parameters>
+											<rowindex>2</rowindex>
+											<columnindex>3</columnindex>
+										</Parameters>
+										<ExpectedResult>BlackBox</ExpectedResult>
+									</ReadObjectName>
+									<ReadObjectName>
+										<Parameters>
+											<rowindex>3</rowindex>
+											<columnindex>3</columnindex>
+										</Parameters>
+										<ExpectedResult>Whale type d'essai</ExpectedResult>
+									</ReadObjectName>
+									<SortColumn>
+										<Parameters>
+											<indexColumn>3</indexColumn>
+											<Ascending>true</Ascending>
+										</Parameters>
+									</SortColumn>
+									<WaitForAjax></WaitForAjax>
+									<ReadObjectName>
+										<Parameters>
+											<rowindex>1</rowindex>
+											<columnindex>3</columnindex>
+										</Parameters>
+										<ExpectedResult>BlackBox</ExpectedResult>
+									</ReadObjectName>
+									<ReadObjectName>
+										<Parameters>
+											<rowindex>2</rowindex>
+											<columnindex>3</columnindex>
+										</Parameters>
+										<ExpectedResult>Compression</ExpectedResult>
+									</ReadObjectName>
+									<SortColumn>
+										<Parameters>
+											<indexColumn>3</indexColumn>
+											<Ascending>false</Ascending>
+										</Parameters>
+									</SortColumn>
+									<WaitForAjax></WaitForAjax>
+									<ReadObjectName>
+										<Parameters>
+											<rowindex>1</rowindex>
+											<columnindex>3</columnindex>
+										</Parameters>
+										<ExpectedResult>Whale type d'essai</ExpectedResult>
+									</ReadObjectName>
+									<ReadObjectName>
+										<Parameters>
+											<rowindex>2</rowindex>
+											<columnindex>3</columnindex>
+										</Parameters>
+										<ExpectedResult>Type d'essais N°1</ExpectedResult>
+									</ReadObjectName>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxTestResultInNewTab>
+
+
+
+
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

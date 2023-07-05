@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Reconnecting to TEEXMA and charging last research (without previous results)</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<IfConfirmationPopUpPresent>
+										<Parameters>
+											<result>false</result></Parameters>
+									</IfConfirmationPopUpPresent>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>5</timeOut>
+												</Parameters>
+											</Sleep>
+
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult>
+											</ReadWindowTitle>
+											<Content>
+												<Actions>
+													<IfConfirmationPopUpPresent>
+														<Parameters>
+															<result>false</result>
+														</Parameters>
+													</IfConfirmationPopUpPresent>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>Materials choice guide</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+
+										</Actions>
+									</SelectAdvancedSearch>
+									<WaitForAjax></WaitForAjax>
+									<Sleep>
+										<Parameters>
+											<timeOut>5</timeOut>
+										</Parameters>
+									</Sleep>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - Materials choice guide</ExpectedResult>
+									</ReadWindowTitle>
+									<ClearAll></ClearAll>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+								</Actions>
+							</Content>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+							
+						</Actions>
+					</ReturnTxAdvancedSearch>
+					<Logout>
+						<Actions>
+							<ClosePopUp>
+								<Parameters>
+									<result>true</result>
+								</Parameters>
+							</ClosePopUp>
+						</Actions>
+					</Logout>
+
+				</Actions>
+			</MainWindow>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+				<MainToolbar>
+				<Parameters>
+					<modelName>TxAdvancedSearch</modelName>
+				</Parameters>
+			</MainToolbar>
+			<WaitForAjax></WaitForAjax>
+			<ReturnTxAdvancedSearch>
+				<Actions>
+					<Content>
+						<Actions>
+							<IfConfirmationPopUpPresent>
+								<Parameters>
+									<result>true</result>
+								</Parameters>
+							</IfConfirmationPopUpPresent>
+							<WaitForAjax></WaitForAjax>
+							<IfConfirmationPopUpPresent>
+								<Parameters>
+									<result>false</result>
+								</Parameters>
+							</IfConfirmationPopUpPresent>
+							<Sleep>
+								<Parameters>
+									<timeOut>5</timeOut>
+								</Parameters>
+							</Sleep>
+							<ReadWindowTitle>
+								<ExpectedResult>[Materials database] - Materials choice guide</ExpectedResult>
+							</ReadWindowTitle>
+							<ClearAll></ClearAll>
+							<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+							<DisplayedResult>
+								<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult>
+							</DisplayedResult>
+							<IsTabPresent>
+								<Parameters>
+									<tabName>Quick View</tabName>
+								</Parameters>
+								<ExpectedResult>
+									true
+								</ExpectedResult>
+							</IsTabPresent>
+							<IsTabPresent>
+								<Parameters>
+									<tabName>Test Table view</tabName>
+								</Parameters>
+								<ExpectedResult>false</ExpectedResult>
+							</IsTabPresent>
+							<IsTabPresent>
+								<Parameters>
+									<tabName>Test Sec. Table view</tabName>
+								</Parameters>
+								<ExpectedResult>false</ExpectedResult>
+							</IsTabPresent>
+							<IsButtonPresentByTitle>
+								<Parameters>
+									<buttonName>Test Extraction</buttonName>
+								</Parameters>
+								<ExpectedResult>false</ExpectedResult>
+							</IsButtonPresentByTitle>
+							<IsButtonPresentByTitle>
+								<Parameters>
+									<buttonName>Test Utils ID</buttonName>
+								</Parameters>
+								<ExpectedResult>false</ExpectedResult>
+							</IsButtonPresentByTitle>
+							<IsButtonPresentByTitle>
+								<Parameters>
+									<buttonName>Test Workflow</buttonName>
+								</Parameters>
+								<ExpectedResult>false</ExpectedResult>
+							</IsButtonPresentByTitle>
+							<IsButtonPresentByTitle>
+								<Parameters>
+									<buttonName>Load an Advanced Search...</buttonName>
+								</Parameters>
+								<ExpectedResult>true</ExpectedResult>
+							</IsButtonPresentByTitle>
+							<IsButtonPresentByTitle>
+								<Parameters>
+									<buttonName>Export…</buttonName>
+								</Parameters>
+								<ExpectedResult>true</ExpectedResult>
+							</IsButtonPresentByTitle>
+							<IsButtonPresentByTitle>
+								<Parameters>
+									<buttonName>Save the Advanced Search…</buttonName>
+								</Parameters>
+								<ExpectedResult>true</ExpectedResult>
+							</IsButtonPresentByTitle>
+							<IsShowMoreFiltersPresent>
+								<ExpectedResult>true</ExpectedResult>
+							</IsShowMoreFiltersPresent>
+							<ManageQuestionList>
+								<Actions>
+									<IsGroupPresent>
+										<Parameters>
+											<groupName>Group 1</groupName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsGroupPresent>
+									<IsGroupPresent>
+										<Parameters>
+											<groupName>Group 2</groupName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsGroupPresent>
+									<IsSearchBoxPresent>
+										<ExpectedResult>
+											true
+										</ExpectedResult>
+									</IsSearchBoxPresent>
+								</Actions>
+							</ManageQuestionList>
+						</Actions>
+					</Content>
+				</Actions>
+			</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+
+		</Actions>
+	</TxInterface>
+</Actions>

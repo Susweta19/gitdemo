@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Opening a parametered search (2)</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>3</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result>
+												</Parameters>
+											</IfConfirmationPopUpPresent>
+
+
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult>
+											</ReadWindowTitle>
+											<Content>
+												<Actions>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>Parametered search 1</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+
+										</Actions>
+									</SelectAdvancedSearch>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - Parametered search 1</ExpectedResult>
+									</ReadWindowTitle>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>true</click>
+										</Parameters>
+										<Actions>
+											<Content>
+												<Actions>
+													<IfConfirmationPopUpPresent>
+														<Parameters>
+															<result>false</result>
+														</Parameters>
+													</IfConfirmationPopUpPresent>
+													<WaitForAjax></WaitForAjax>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>My Advanced Searches</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<WaitForAjax></WaitForAjax>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<WaitForAjax></WaitForAjax>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<WaitForAjax></WaitForAjax>
+													<ReadConfigList>
+														<Parameters>
+															<objectType>Materials database</objectType>
+														</Parameters>
+														<Actions>
+															<ElementAt>
+																<Parameters>
+																	<index>0</index>
+																</Parameters>
+																<ExpectedResult>New Advanced Search...</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>1</index>
+																</Parameters>
+																<ExpectedResult>Parametered search 1</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>2</index>
+																</Parameters>
+																<ExpectedResult>Parametered search 2</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>3</index>
+																</Parameters>
+																<ExpectedResult>Parametered search 3</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>4</index>
+																</Parameters>
+																<ExpectedResult>Materials choice guide</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>5</index>
+																</Parameters>
+																<ExpectedResult>Materials choice guide 2</ExpectedResult>
+															</ElementAt>
+														</Actions>
+													</ReadConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>Parametered search 2</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+										</Actions>
+									</SelectAdvancedSearch>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - Parametered search 2</ExpectedResult></ReadWindowTitle>
+									<IsTabPresent>
+												<Parameters>
+													<tabName>Test Quick view</tabName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsTabPresent>
+											<IsTabPresent>
+												<Parameters>
+													<tabName>Test Table view</tabName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTabPresent>
+											<IsTabPresent>
+												<Parameters>
+													<tabName>Test Sec. Table view</tabName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTabPresent>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Test Extraction</buttonName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Test Utils ID</buttonName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Test Workflow</buttonName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsShowMoreFiltersPresent>
+												<ExpectedResult>false</ExpectedResult></IsShowMoreFiltersPresent>
+											<ManageQuestionList>
+												<Actions>
+													<IsGroupPresent>
+														<Parameters>
+															<groupName>Group 1</groupName>
+														</Parameters>
+														<ExpectedResult>false</ExpectedResult>
+													</IsGroupPresent></Actions>
+											</ManageQuestionList>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

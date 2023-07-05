@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Manage routing from tests</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Demandes</value>
+										</Parameters>
+									</Select></Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Request VF</path></nodes>
+										</Parameters>
+									</SelectEntity></Actions>
+							</EntityTree></Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Manage and route samples</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnManageSample>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									<SampleGrid>
+										<Actions>
+											<CheckBox>
+												<Parameters>
+													<Row>12</Row>
+													<Column>0</Column>
+												</Parameters>
+												<Actions>
+													<Tick></Tick></Actions>
+											</CheckBox></Actions>
+									</SampleGrid>
+									<ChangeTab>
+										<Parameters>
+											<tabName>Manage "Essais"</tabName>
+										</Parameters>
+									</ChangeTab>
+									<SampleRoutingTable>
+										<Actions>
+											<ReadCellValue>
+												<Parameters>
+													<row>12</row>
+													<col>1</col>
+													<fixedColumn>
+														true
+													</fixedColumn>
+												</Parameters>
+												<ExpectedResult>Part Other request_002</ExpectedResult>
+											</ReadCellValue>
+											<ReadCellValue>
+												<Parameters>
+													<row>12</row>
+													<col>2</col>
+													<fixedColumn>
+														true
+													</fixedColumn>
+												</Parameters>
+												<ExpectedResult>Part Other request</ExpectedResult>
+											</ReadCellValue>
+											<ReadCellValue>
+												<Parameters>
+													<row>12</row>
+													<col>1</col>
+													<fixedColumn>false</fixedColumn>
+												</Parameters>
+												<ExpectedResult> Assigned</ExpectedResult>
+											</ReadCellValue>
+											<ReadCellValue>
+												<Parameters>
+													<row>12</row>
+													<col>2</col>
+													<fixedColumn>false</fixedColumn>
+												</Parameters>
+												<ExpectedResult> Assigned</ExpectedResult>
+											</ReadCellValue></Actions>
+									</SampleRoutingTable></Actions>
+							</Content></Actions>
+					</ReturnManageSample></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

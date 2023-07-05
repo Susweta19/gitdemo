@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Prasenjit-->
+<!--we should check number results without clicking -->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Select the RS 'Multiple Link' then launch calculation--'At least one' radiobutton ticked :17 Objects will be sorted out of which there's at least one target Object for the Attribute 'Link_Single_Direct'; in addition the target Objects should meet another condition :the value of the Attribute 'Dec_Range_NoUnit_NoBounds' should be less than 60;'All' radiobutton ticked : 14 Objects will be sorted out of which all Objects of the target OT are ticked for the Attribute 'Link_Single_Direct'; in addition the target Objects shoud meet another condition :the value of the Attribute 'Dec_Range_NoUnit_NoBounds' should be less than 60;'A single one' radiobutton ticked : 2 Objects will be sorted out of which there's only one target Object for the Attribute 'Link_Single_Direct' or there're several target Objects for the Attribute 'Link_Single_Direct' but only one of these ticked target Objects meet the other condition :the value of the Attribute 'Dec_Range_NoUnit_NoBounds' should be less than 60;</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Message>Login</Message>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <OpenRequirementSet>
+            <Actions>
+              <Content>
+                <Actions>
+                  <ObjectType>
+                    <Parameters>
+                      <objectType>TEST_MulticriteriaSelection</objectType>
+                    </Parameters>
+                  </ObjectType>
+                  <RequirementSet>
+                    <Parameters>
+                      <requirementSet>Multiple Link</requirementSet>
+                    </Parameters>
+                  </RequirementSet>
+                  <Open>
+                    <Parameters>
+                      <popUp>false</popUp>
+                    </Parameters>
+                    <Actions>
+                      <Content>
+                        <Actions>
+                          <CriteriaTab>
+                            <Actions>
+                              <Content>
+                                <Actions>
+                                  <LaunchCalculation>
+                                    <Actions>
+                                      <Close />
+                                    </Actions>
+                                  </LaunchCalculation>
+                                </Actions>
+                              </Content>
+                            </Actions>
+                          </CriteriaTab>
+                        </Actions>
+                      </Content>
+                    </Actions>
+                  </Open>
+                </Actions>
+              </Content>
+             
+            </Actions>
+          </OpenRequirementSet>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

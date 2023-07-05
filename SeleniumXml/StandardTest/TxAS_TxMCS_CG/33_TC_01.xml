@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Initiating module</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Standard_User_M+</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<Sleep>
+										<Parameters>
+											<timeOut>10</timeOut>
+										</Parameters>
+									</Sleep>
+									<WaitForAjax></WaitForAjax>
+									<Sleep>
+										<Parameters>
+											<timeOut>5</timeOut>
+										</Parameters>
+									</Sleep></Actions>
+							</Content>
+							<ReadBrowserTitle>
+								<ExpectedResult>TxAdvancedSearch</ExpectedResult>
+							</ReadBrowserTitle>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>3</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result>
+												</Parameters>
+											</IfConfirmationPopUpPresent>
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult>
+											</ReadWindowTitle>
+											<Content>
+												<Actions>
+													<WaitForAjax></WaitForAjax>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>My Advanced Searches</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<WaitForAjax></WaitForAjax>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>TEST_CG+AS</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<WaitForAjax></WaitForAjax>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>TEST_CG+AS</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<WaitForAjax></WaitForAjax>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<WaitForAjax></WaitForAjax>
+													<ReadConfigList>
+														<Parameters>
+															<objectType>Materials database</objectType>
+														</Parameters>
+														<Actions>
+															<ElementAt>
+																<Parameters>
+																	<index>0</index>
+																</Parameters>
+																<ExpectedResult>New Advanced Search...</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>1</index>
+																</Parameters>
+																<ExpectedResult>Parametered search 1</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>2</index>
+																</Parameters>
+																<ExpectedResult>Parametered search 2</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>3</index>
+																</Parameters>
+																<ExpectedResult>Parametered search 3</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>4</index>
+																</Parameters>
+																<ExpectedResult>Materials choice guide</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>5</index>
+																</Parameters>
+																<ExpectedResult>Materials choice guide 2</ExpectedResult>
+															</ElementAt>
+														</Actions>
+													</ReadConfigList>
+												</Actions>
+											</Content>
+										</Actions>
+									</SelectAdvancedSearch>
+									<DisplayOtherObjectTypes></DisplayOtherObjectTypes>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Content>
+												<Actions>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Direct Ml_TEST</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Direct Ml_TEST</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Direct SL_TEST</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Direct SL_TEST</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>People</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>People</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+												</Actions>
+											</Content>
+											<Close></Close>
+										</Actions>
+									</SelectAdvancedSearch>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the availability of the display previous page and display last page button</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface><Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<IfPopUpPresent></IfPopUpPresent><SearchBox>
+						<Parameters>
+							<research>New</research>
+						</Parameters>
+						<Actions>
+							<Content>
+								<Actions>
+									<DisplayPreviousPage />
+									
+									<DisplayLastPage>
+										<Parameters>
+											<NextPrevious>0</NextPrevious>
+										</Parameters>
+									</DisplayLastPage>
+								</Actions>
+							</Content></Actions>
+					</SearchBox></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

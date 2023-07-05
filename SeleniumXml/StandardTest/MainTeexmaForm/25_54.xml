@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the Export window in French Translation</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+					<langage>French</langage>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<ExpandNavigationTree></ExpandNavigationTree>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_ReadView</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>New</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<Export>
+						<Actions>
+							<ReadHeader>
+								<ExpectedResult>Exportation</ExpectedResult>
+							</ReadHeader>
+							<Content>
+								<Actions>
+									<Filtre>
+										<Actions>
+											<Read>
+												<ExpectedResult>TEST_ReadView</ExpectedResult>
+											</Read>
+										</Actions>
+									</Filtre>
+									<Exports>
+										<Actions>
+											<Read>
+												<ExpectedResult>[Excel] Exportation standard</ExpectedResult>
+											</Read>
+										</Actions>
+									</Exports>
+									<ObjectsTree>
+										<Actions>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Visualisez l'intégralité de l'arborescence</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Cocher toutes les Entités</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Décocher toutes les Entités</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Importer une présélection à partir d'un fichier texte ou Excel...</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+										</Actions>
+									</ObjectsTree>
+									<DataTree>
+										<Actions>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Visualiser les Caractéristiques cochées</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Cocher toutes les Caractéristiques</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Décocher toutes les Caractéristiques</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonPresentByTitle>
+										</Actions>
+									</DataTree>
+									
+								</Actions>
+							</Content>
+							<IsButtonPresentByTitle>
+										<Parameters>
+											<buttonName>Exporter</buttonName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsButtonPresentByTitle>
+									<IsButtonPresentByTitle>
+										<Parameters>
+											<buttonName>Fermer</buttonName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsButtonPresentByTitle>
+						</Actions>
+					</Export>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

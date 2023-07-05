@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Actions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>EN_6_10</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Daniel&#160;MASSETTI</login>
+          <password>aaaaa</password>
+          <langage>French</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<ReturnTxPortal>
+      			<Actions>
+      				<ExpandSlidebarItem>
+      					<Parameters>
+      						<title>Produits</title>
+      					</Parameters>
+      				</ExpandSlidebarItem>
+      				<Sleep>
+      					<Parameters>
+      						<timeOut>3</timeOut>
+      					</Parameters>
+      				</Sleep>
+      				<ClickOnPortalSubLink>
+      					<Parameters>
+      						<linkTitle>Eoliennes</linkTitle>
+      					</Parameters>
+      				</ClickOnPortalSubLink>
+      			</Actions>
+      		</ReturnTxPortal>
+      		
+      			
+      			<ReadForm>
+      				<Actions>
+      					<ReadTab>
+      						<Parameters>
+      							<tabId>2</tabId>
+      						</Parameters>
+      						<ExpectedResult>Spécifications techniques</ExpectedResult>
+      					</ReadTab>
+      					<ChangeTab>
+      						<Parameters>
+      							<tabIndex>2</tabIndex>
+      						</Parameters>
+      					</ChangeTab>
+      					<IsGroupExtend>
+      						<Parameters>
+      							<groupName>Caractéristiques techniques</groupName>
+      						</Parameters>
+      						<ExpectedResult>true</ExpectedResult>
+      					</IsGroupExtend>
+      					<IsGroupExtend>
+      						<Parameters>
+      							<groupName>Masses</groupName>
+      						</Parameters>
+      						<ExpectedResult>true</ExpectedResult>
+      					</IsGroupExtend>
+      					<IsGroupExtend>
+      						<Parameters>
+      							<groupName>Spécifications</groupName>
+      						</Parameters>
+      						<ExpectedResult>true</ExpectedResult>
+      					</IsGroupExtend>
+
+
+      				</Actions>
+      			</ReadForm>
+      	</Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

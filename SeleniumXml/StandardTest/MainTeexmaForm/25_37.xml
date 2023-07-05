@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Read the translation of Search window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+					<langage>English</langage>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<SearchBox>
+						<Parameters>
+							<research>New</research>
+							<byClick>true</byClick>
+						</Parameters>
+						<Actions>
+							<ReadHeader>
+								<ExpectedResult>Text Search</ExpectedResult></ReadHeader>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Display advanced settings</buttonName>
+								</Parameters>
+								<ExpectedResult>true</ExpectedResult>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Search</buttonName>
+								</Parameters>
+								<ExpectedResult>true</ExpectedResult>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Close</buttonName>
+								</Parameters>
+								<ExpectedResult>true</ExpectedResult>
+							</IsButtonPresent>
+							
+							<Close></Close></Actions>
+					</SearchBox>
+				</Actions>
+			</MainWindow></Actions></TxInterface></Actions>

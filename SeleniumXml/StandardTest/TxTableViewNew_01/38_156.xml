@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Creation of EA</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Portals</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Welcome_Test</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<ButtonPortal>
+						<Parameters>
+							<link>My Dashboard</link>
+							<hasSpan>true</hasSpan>
+						</Parameters>
+					</ButtonPortal>
+					<ReturnTxTableView>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									
+									<WaitForAjax></WaitForAjax>
+									<Sleep>
+										<Parameters>
+											<timeOut>25</timeOut>
+										</Parameters>
+									</Sleep>
+									<ClickOnCell>
+										<Parameters>
+											<Row>1</Row>
+											<Column>8</Column>
+										</Parameters>
+									</ClickOnCell>
+									
+									<ModelActionByTitle>
+										<Parameters>
+											<modelTitle>Create EA</modelTitle>
+										</Parameters>
+									</ModelActionByTitle>
+									<WaitForAjax></WaitForAjax>
+									
+									<ReadValue>
+										<Parameters>
+											<Row>2</Row>
+											<Column>6</Column>
+										</Parameters>
+										<Hashtag>#NewObjectName#</Hashtag>
+									</ReadValue>
+									<ReadValue>
+										<Parameters>
+											<Row>2</Row>
+											<Column>10</Column>
+										</Parameters>
+										<ExpectedResult>France</ExpectedResult>
+									</ReadValue>
+									<ReadValue>
+										<Parameters>
+											<Row>2</Row>
+											<Column>11</Column>
+										</Parameters>
+										<ExpectedResult>Site 28</ExpectedResult>
+									</ReadValue>
+									<ReadValue>
+										<Parameters>
+											<Row>2</Row>
+											<Column>14</Column>
+										</Parameters>
+										<ExpectedResult>Famille 2</ExpectedResult>
+									</ReadValue>
+									<EditTextValue>
+										<Parameters>
+											<Row>2</Row>
+											<Column>16</Column>
+										</Parameters>
+										<Actions>
+											<Content>
+												<Actions>
+													<Write>
+														<Parameters>
+															<value>sub-activity 2</value>
+														</Parameters>
+													</Write></Actions>
+											</Content>
+											<Ok>
+												<Parameters></Parameters>
+											</Ok></Actions>
+									</EditTextValue>
+									<EditTextValue>
+										<Parameters>
+											<Row>2</Row>
+											<Column>19</Column>
+										</Parameters>
+										<Actions>
+											<Content>
+												<Actions>
+													<Write>
+														<Parameters>
+															<value>aspect description</value>
+														</Parameters>
+													</Write></Actions>
+											</Content>
+											<Ok>
+												<Parameters></Parameters>
+											</Ok></Actions>
+									</EditTextValue>
+									<EditListing>
+										<Parameters>
+											<Row>2</Row>
+											<Column>32</Column>
+										</Parameters>
+										<Actions>
+											<SelectByText>
+												<Parameters>
+													<text>2</text>
+												</Parameters>
+											</SelectByText></Actions>
+									</EditListing>
+									<EditStringValue>
+										<Parameters>
+											<Row>2</Row>
+											<Column>43</Column>
+										</Parameters>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>EMP</value>
+												</Parameters>
+											</Write></Actions>
+									</EditStringValue>
+									<SaveSingleChanges>
+										<Parameters>
+											<row>2</row>
+										</Parameters>
+									</SaveSingleChanges>
+									
+
+								</Actions>
+							</Content></Actions>
+					</ReturnTxTableView>
+
+
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Right click on the tasks tree and choose "Select all with the same":- Zones/Machines/Deadline and choose "Sort this level by"/"Name descending"/Name Ascending/Start date Ascending/ Start date descending</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+
+
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Multiressources view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<Sleep>
+						<Parameters>
+							<timeOut>5</timeOut>
+						</Parameters>
+					</Sleep>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<ExpandEntity>
+												<Parameters>
+													<ProjectName>Projet-A-001</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+										</Actions>
+									</ManageTask>
+									<RightClickOnTaskByName>
+										<Parameters>
+											<name>T-0630</name>
+											<optionToMove>Select all with same...</optionToMove>
+										</Parameters>
+										<Actions>
+											<Zones></Zones>
+										</Actions>
+									</RightClickOnTaskByName>
+									<RightClickOnTaskByName>
+										<Parameters>
+											<name>T-0630</name>
+											<optionToMove>Sort this level by</optionToMove>
+										</Parameters>
+										<Actions>
+											<NameAssending></NameAssending>
+										</Actions>
+									</RightClickOnTaskByName>
+									<RightClickOnTaskByName>
+										<Parameters>
+											<name>T-0600</name>
+											<optionToMove>Sort this level by</optionToMove>
+										</Parameters>
+										<Actions>
+											<NameDescending></NameDescending>
+										</Actions>
+									</RightClickOnTaskByName>
+									<RightClickOnTaskByName>
+										<Parameters>
+											<name>Task_00919</name>
+											<optionToMove>Sort this level by</optionToMove>
+										</Parameters>
+										<Actions>
+											<StartAateAscending></StartAateAscending>
+										</Actions>
+									</RightClickOnTaskByName>
+									<RightClickOnTaskByName>
+										<Parameters>
+											<name>T-0648</name>
+											<optionToMove>Sort this level by</optionToMove>
+										</Parameters>
+										<Actions>
+											<StartDateDescending></StartDateDescending>
+										</Actions>
+									</RightClickOnTaskByName>
+									<RightClickOnTaskByName>
+										<Parameters>
+											<name>Task_00926</name>
+											<optionToMove>Select all with same...</optionToMove>
+										</Parameters>
+										<Actions>
+											<Deadline></Deadline>
+										</Actions>
+									</RightClickOnTaskByName>
+									<RightClickOnTaskByName>
+										<Parameters>
+											<name>Task_00926</name>
+											<optionToMove>Select all with same...</optionToMove>
+										</Parameters>
+										<Actions>
+											<Machine></Machine>
+										</Actions>
+									</RightClickOnTaskByName>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Click on the button "?" in the toolbar </testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+
+
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Projects/Tasks view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<ClickOnTogglelegend></ClickOnTogglelegend>
+									<ReadToggleName>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>Unscheduled</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>1</index>
+												</Parameters>
+												<ExpectedResult>Unstarted</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>2</index>
+												</Parameters>
+												<ExpectedResult>In progress</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>3</index>
+												</Parameters>
+												<ExpectedResult>Finished</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>4</index>
+												</Parameters>
+												<ExpectedResult> Locked</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>5</index>
+												</Parameters>
+												<ExpectedResult>Delayed</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>6</index>
+												</Parameters>
+												<ExpectedResult>Late</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadToggleName>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

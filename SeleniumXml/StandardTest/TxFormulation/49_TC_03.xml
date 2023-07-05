@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Trigger from new tab tableview</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<TableViewInNewTab>
+						<Parameters>
+							<ByClickingNewTab>true</ByClickingNewTab></Parameters>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<ClickOnCell>
+										<Parameters>
+											<Row>2</Row>
+											<Column>4</Column>
+										</Parameters>
+									</ClickOnCell></Actions>
+							</Content>
+						</Actions>
+					</TableViewInNewTab>					
+					<ReturnIngredientWindow>
+						<Actions>
+							<ReadHeader>
+								<ExpectedResult>Select a main ingredient</ExpectedResult>
+							</ReadHeader>
+							<Cancel></Cancel>
+		</Actions>
+					</ReturnIngredientWindow>
+					<ReturnFormulationWindow>
+						<Actions>
+							<ReadHeader>
+								<ExpectedResult>Formulation de l'Entité «Recipe 1» / Masse totale souhaitée : / Masse totale réelle :</ExpectedResult>
+							</ReadHeader>
+							<Cancel></Cancel>
+						</Actions>
+					</ReturnFormulationWindow>
+					<TableViewInCurrentTab>
+						<Actions>
+							<ClickOnCell>
+								<Parameters>
+									<Row>12</Row>
+									<Column>4</Column>
+								</Parameters>
+							</ClickOnCell></Actions>
+					</TableViewInCurrentTab>
+					
+					<ReturnIngredientWindow>
+						<Actions>
+							<ReadHeader>
+								<ExpectedResult>Select a main ingredient</ExpectedResult>
+							</ReadHeader>
+							<Cancel></Cancel>
+						</Actions>
+					</ReturnIngredientWindow>
+					<ReturnFormulationWindow>
+						<Actions>
+							<ReadHeader>
+								<ExpectedResult>Formulation de l'Entité «Recipe 2» / Masse totale souhaitée : / Masse totale réelle :</ExpectedResult>
+							</ReadHeader>
+							<Cancel></Cancel>
+						</Actions>
+					</ReturnFormulationWindow>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

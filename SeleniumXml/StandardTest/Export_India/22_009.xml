@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the ability to open the 'Export' window-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check The Functionlity of View Checked Object in Object List</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_Export</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+            </Actions>
+          </NavigationTree>
+          <Export>
+            <Actions>
+              <Content>
+                <Actions>
+                	<Filtre>
+                		<Actions>
+                			<Select>
+                				<Parameters>
+                					<value>Notification&#160;type</value>
+                				</Parameters>
+                			</Select></Actions>
+                	</Filtre>
+                	<ObjectsTree>
+                		<Actions>
+                			<EntitytPresence>
+                				<Parameters>
+                					<nodes>
+                						<path>Validation in progress</path></nodes>
+                					<presence>true</presence>
+                				</Parameters>
+                			</EntitytPresence>
+                			<EntitytPresence>
+                				<Parameters>
+                					<nodes>
+                						<path>Validation cancelled</path></nodes>
+                					<presence>true</presence>
+                				</Parameters>
+                			</EntitytPresence>
+                			<SelectEntityBox>
+                				<Parameters>
+                					<nodes>
+                						<path>Validation in progress</path></nodes>
+                				</Parameters>
+                				<Actions>
+                					<Tick></Tick></Actions>
+                			</SelectEntityBox>
+                			<ViewCheckedObjects></ViewCheckedObjects>
+                			
+                			<EntitytPresence>
+                				<Parameters>
+                					<nodes>
+                						<path>Validation cancelled</path></nodes>
+                					<presence>false</presence>
+                				</Parameters>
+                			</EntitytPresence>
+                			<EntitytPresence>
+                				<Parameters>
+                					<nodes>
+                						<path>Validation in progress</path></nodes>
+                					<presence>true</presence>
+                				</Parameters>
+                			</EntitytPresence></Actions>
+                	</ObjectsTree>
+                </Actions>
+              </Content>
+              <Close></Close>
+            </Actions>
+          </Export>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

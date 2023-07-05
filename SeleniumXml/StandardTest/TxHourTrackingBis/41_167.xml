@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the Functionality of View Details function for a task under My Equipments</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in window  mode with TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInWindow>
+						<Actions>
+							<Content>
+								<Actions>
+									<ManageNavigationLayout>
+										<Actions>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My Equipments</linkName>
+													
+												</Parameters>
+												<Actions>
+													<SelectAll></SelectAll>
+													
+													
+												</Actions>
+											</ManageLinkBox></Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+										<DeleteAllPresentTask></DeleteAllPresentTask>											
+											<AddTask>
+												<Parameters>
+													<user>Machine009</user></Parameters>
+												<Actions>
+													<Content>
+														<Actions>
+															<SelectTaskV2>
+																<Actions>
+																	<CheckBox>
+																		<Parameters>
+																			<Row>1</Row>
+																			<Column>1</Column>
+																		</Parameters>
+																		<Actions>
+																			<Tick></Tick></Actions>
+																	</CheckBox>
+																	<ReadValue>
+																		<Parameters>
+																			<Row>1</Row>
+																			<Column>1</Column>
+																		</Parameters>
+																		<Hashtag>#task#</Hashtag>
+																	</ReadValue></Actions>
+															</SelectTaskV2>
+														</Actions>
+													</Content>
+													<Ok>
+														<Parameters>
+															<validate>true</validate></Parameters>
+													</Ok></Actions>
+											</AddTask>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>#task#</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<TaskContextMenu>
+												<Parameters>
+													<colIndex>3</colIndex>
+													<taskName>#task#</taskName>
+												</Parameters>
+												<Actions>
+													
+													<IsFunctionDisabled>
+														<Parameters>
+															<functionName>View details</functionName>
+														</Parameters>
+														<ExpectedResult>false</ExpectedResult>
+													</IsFunctionDisabled>
+													<ViewDetails></ViewDetails>
+												</Actions>
+											</TaskContextMenu>
+
+
+										</Actions>
+									</ManageTask></Actions>
+							</Content>
+							<Cancel></Cancel>
+						</Actions>
+					</ReturnTxHourTrackingInWindow>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Read>
+										<ExpectedResult>Tasks</ExpectedResult></Read></Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<ReadHighlightedEntity>
+										<ExpectedResult>#task#</ExpectedResult></ReadHighlightedEntity></Actions>
+							</EntityTree></Actions>
+					</NavigationTree></Actions>
+      </MainWindow>
+    </Actions></TxInterface></Actions>

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the abitlity to add a new column in the status table (List of Choice)</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<ExpandNavigationTree />
+      		<NavigationTree>
+      			<Actions>
+      				<SelectOT>
+      					<Actions>
+      						<Select>
+      							<Parameters>
+      								<value>Type d'essais</value>
+      							</Parameters>
+      						</Select></Actions>
+      				</SelectOT>
+      				<EntityTree>
+      					<Actions>
+      						<SelectEntity>
+      							<Parameters>
+      								<nodes>
+      									<path>Type admin table 2</path></nodes></Parameters>
+      						</SelectEntity></Actions>
+      				</EntityTree>
+
+
+
+
+
+      			</Actions>
+      		</NavigationTree>
+      		<LaunchModel>
+      			<Parameters>
+      				<modelName>Administration des tableaux modèles</modelName>
+      			</Parameters>
+      		</LaunchModel>
+      		<ReturnAdministrationModelTables>
+      			<Actions>
+      				<Content>
+      					<Actions>
+      						<AddColumn>
+      							<Actions>
+      								<Content>
+      									<Actions>
+      										<Name>
+      											<Actions>
+      												<Write>
+      													<Parameters>
+      														<value>List of choices</value>
+      													</Parameters>
+      												</Write></Actions>
+      										</Name>
+      										
+      										<Type>
+      											<Actions>
+      												<Select>
+      													<Parameters>
+      														<value>List&#160;of&#160;choices</value>
+      													</Parameters>
+      												</Select></Actions>
+      										</Type>
+      										<SettingsForChoices>
+      											<Parameters>
+      												<choice>entry 1</choice>
+      												<choice>entry 2</choice>
+      												<choice>entry 3</choice></Parameters>
+      										</SettingsForChoices>
+      										<ChangeTab>
+      											<Parameters>
+      												<tabId>Description</tabId>
+      											</Parameters>
+      										</ChangeTab>
+      										<Description>
+      											<Actions>
+      												<Write>
+      													<Parameters>
+      														<value>ChoiceDescription</value>
+      													</Parameters>
+      												</Write></Actions>
+      										</Description></Actions>
+      								</Content><Ok>
+      									<Parameters>
+      										<validate>true</validate></Parameters>
+      								</Ok></Actions>
+      						</AddColumn>
+      						<EditRuleForListChoices>
+      							<Parameters>
+      								<rowIndex>1</rowIndex>
+      								<columnIndex>2</columnIndex>
+      							</Parameters>
+      							<Actions>
+      								<Content>
+      									<Actions>
+      										<Defaultvalue>
+      											<Actions>
+      												<Select>
+      													<Parameters>
+      														<value>entry&#160;1</value>
+      													</Parameters>
+      												</Select></Actions>
+      										</Defaultvalue>
+      										<ListOfChoices>
+      											<Parameters>
+      												<choices>entry 3</choices>
+      												<delete>
+      													true
+      												</delete></Parameters>
+      										</ListOfChoices></Actions>
+      								</Content></Actions>
+      						</EditRuleForListChoices>
+      					</Actions>
+      				</Content>
+      				<Ok>
+      					<Parameters>
+      						<validate>true</validate></Parameters>
+      				</Ok></Actions>
+      		</ReturnAdministrationModelTables></Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

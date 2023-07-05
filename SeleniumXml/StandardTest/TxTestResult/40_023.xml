@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--does not clicking on close button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Try to open the data input interface with no sample in it</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<NavigationTree>
+        		<Actions>
+        			<SelectOT>
+        				<Actions>
+        					<Select>
+        						<Parameters>
+        							<value>Essais</value>
+        						</Parameters>
+        					</Select></Actions>
+        			</SelectOT>
+        			<EntityTree>
+        				<Actions>
+        					<SelectEntity>
+        						<Parameters>
+        							<nodes><path>Essai avec template mais sans echantillon</path></nodes></Parameters>
+        					</SelectEntity></Actions>
+        			</EntityTree></Actions>
+        	</NavigationTree>
+        	<LaunchModel>
+        		<Parameters>
+        			<modelName>Saisir des résultats d'essai (link)</modelName>
+        		</Parameters>
+        	</LaunchModel>
+        	<ReturnTxTestResult>
+        		<Actions>	<ManagePopUp>
+        										<Actions>
+        											<ReadPopUpMessage>
+        												<Actions>
+        													<ElementAt>
+        														<Parameters>
+        															<index>
+        																0
+        															</index>
+        														</Parameters>
+        														<ExpectedResult>The table 'Conditions d'essai' of the Object 'Essai avec template mais sans echantillon' contains no sample.</ExpectedResult>
+        													</ElementAt></Actions>
+        											</ReadPopUpMessage>
+        										</Actions>
+        									</ManagePopUp></Actions>
+        	</ReturnTxTestResult>
+        	
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

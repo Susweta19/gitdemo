@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Search a "échantillon" by its "test"</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>Search samples</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									<ManageQuestionList>
+										<Actions>
+											<ManageLinkBox>
+												<Parameters>
+													<questionName>Pièces</questionName>
+												</Parameters>
+												<Actions>
+													<Search>
+														<Parameters>
+															<research>Part VF2</research>
+														</Parameters>
+													</Search>
+													<SelectEntityBox>
+														<Parameters>
+															<nodes>
+																<path>Part VF2</path></nodes>
+														</Parameters>
+														<Actions>
+															<Tick></Tick></Actions>
+													</SelectEntityBox></Actions>
+											</ManageLinkBox>
+											<ManageLinkBox>
+												<Parameters>
+													<questionName>Essais</questionName>
+												</Parameters>
+												<Actions>
+													<Search>
+														<Parameters>
+															<research>AutoName_Test 1 Request VF</research>
+														</Parameters>
+													</Search>
+													<SelectEntityBox>
+														<Parameters>
+															<nodes>
+																<path>AutoName_Test 1 Request VF</path></nodes>
+														</Parameters>
+														<Actions>
+															<Tick></Tick></Actions>
+													</SelectEntityBox>
+													<Search>
+														<Parameters>
+															<research>AutoName_Test 2 request VF</research>
+														</Parameters>
+													</Search>
+													<SelectEntityBox>
+														<Parameters>
+															<nodes>
+																<path>AutoName_Test 2 request VF</path></nodes>
+														</Parameters>
+														<Actions>
+															<Tick></Tick></Actions>
+													</SelectEntityBox></Actions>
+											</ManageLinkBox>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult>
+									<ReturnTableView>
+										<Actions>
+											<WaitForAjax></WaitForAjax><!--row1-->
+											<ReadValue>
+												<Parameters>
+													<Row>1</Row>
+													<Column>1</Column>
+												</Parameters>
+												<ExpectedResult>Part VF2_001</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>1</Row>
+													<Column>2</Column>
+												</Parameters>
+												<ExpectedResult>30/07/2020 18:40:33|07/30/2020 18:40:33</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>1</Row>
+													<Column>3</Column>
+												</Parameters>
+												<ExpectedResult>30/07/2020 18:45:54|07/30/2020 18:45:54</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>1</Row>
+													<Column>4</Column>
+												</Parameters>
+												<ExpectedResult>Part VF2</ExpectedResult>
+											</ReadValue>
+											<!--row2-->
+											<ReadValue>
+												<Parameters>
+													<Row>2</Row>
+													<Column>1</Column>
+												</Parameters>
+												<ExpectedResult>Part VF2_002</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>2</Row>
+													<Column>2</Column>
+												</Parameters>
+												<ExpectedResult>30/07/2020 18:40:33|07/30/2020 18:40:33</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>2</Row>
+													<Column>3</Column>
+												</Parameters>
+												<ExpectedResult>30/07/2020 18:45:54|07/30/2020 18:45:54</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>2</Row>
+													<Column>4</Column>
+												</Parameters>
+												<ExpectedResult>Part VF2</ExpectedResult>
+											</ReadValue>
+											<!--row3-->
+											<ReadValue>
+												<Parameters>
+													<Row>3</Row>
+													<Column>1</Column>
+												</Parameters>
+												<ExpectedResult>Part VF2_003</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>3</Row>
+													<Column>2</Column>
+												</Parameters>
+												<ExpectedResult>30/07/2020 18:40:33|07/30/2020 18:40:33</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>3</Row>
+													<Column>3</Column>
+												</Parameters>
+												<ExpectedResult>30/07/2020 18:40:33|07/30/2020 20:40:33</ExpectedResult>
+											</ReadValue>
+											<ReadValue>
+												<Parameters>
+													<Row>3</Row>
+													<Column>4</Column>
+												</Parameters>
+												<ExpectedResult>Part VF2</ExpectedResult>
+											</ReadValue>
+											</Actions>
+									</ReturnTableView>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

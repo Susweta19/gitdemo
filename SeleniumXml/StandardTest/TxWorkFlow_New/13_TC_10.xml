@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Mandatory attribute in a default form</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>User_Workflow</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Workflow_Tasks</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                  <SelectEntity>
+                    <Parameters><nodes><path>Test TxWF_Task</path></nodes></Parameters>
+                  </SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <MainToolbar>
+          	<Parameters>
+          		<modelName>Available actions form</modelName>
+          	</Parameters>
+          </MainToolbar>
+          <Sleep>
+          	<Parameters>
+          		<timeOut>5</timeOut>
+          	</Parameters>
+          </Sleep>
+          <ReturnWFPromote>
+          	<Actions>
+          		<WriteFormTask>
+          			<Parameters>
+          				<actionName>Mandatory attributes Attributes list</actionName>
+          			</Parameters>
+          			<Actions>
+          				<ReadWindowTitle>
+          					<ExpectedResult>Mandatory attributes</ExpectedResult></ReadWindowTitle>
+          				<Content>
+          					<Actions>
+          						<AttributeIsDiplayed>
+          							<Parameters>
+          								<attrId>525</attrId>
+          							</Parameters>
+          							<ExpectedResult>
+          								true
+          							</ExpectedResult>
+          						</AttributeIsDiplayed>
+          						<AttributeIsDiplayed>
+          							<Parameters>
+          								<attrId>578</attrId>
+          							</Parameters>
+          							<ExpectedResult>
+          								true
+          							</ExpectedResult>
+          						</AttributeIsDiplayed>
+          						<OkDisable></OkDisable></Actions>
+          				</Content>
+          				<ReadValidationMessages>
+          					<Parameters>
+          						<attrId>525</attrId></Parameters>
+          					<Actions>
+          						<ElementAt>
+          							<Parameters>
+          								<index>0</index>
+          							</Parameters>
+          							<ExpectedResult>The field "Decimal_Mandatory" is required</ExpectedResult>
+          						</ElementAt></Actions>
+          				</ReadValidationMessages>
+          				<ReadValidationMessages>
+          					<Parameters>
+          						<attrId>578</attrId></Parameters>
+          					<Actions>
+          						<ElementAt>
+          							<Parameters>
+          								<index>1</index>
+          							</Parameters>
+          							<ExpectedResult>The field "String_Mandatory" is required</ExpectedResult>
+          						</ElementAt></Actions>
+          				</ReadValidationMessages>
+          				<Content>
+          					<Actions>
+          					
+          					
+          					<Write>
+          							<DTText>
+          								<Parameters>
+          									<id>578</id>
+          									<value>
+          										<value>Text short</value>
+          									</value>
+          								</Parameters>
+          							</DTText>
+          							
+          						</Write>
+          						<OkDisable></OkDisable>
+          					<Write>
+          							<DTDecimalValue>
+          								<Parameters>
+          									<id>525</id>
+          									<value>
+          										<min>10</min></value>
+          								</Parameters>
+          							</DTDecimalValue>
+          							
+          						</Write>
+          						</Actions>
+          				</Content>
+          				<Ok>
+          					<Parameters>
+          						<validate>true</validate></Parameters>
+          				</Ok>
+          			</Actions>
+          		</WriteFormTask>
+          	</Actions>
+          </ReturnWFPromote>
+          <ReadForm>
+          	<Actions>
+          		<Read>
+          			<DTText>
+          				<Parameters>
+          					<attrId>578</attrId>
+          				</Parameters>
+          				<ExpectedResult>
+          					<value>Text short</value>
+          				</ExpectedResult>
+          			</DTText>
+          			
+          			
+          			
+          		</Read>
+          		<Read>
+          			<DTDecimalValue>
+          				<Parameters>
+          					<attrId>525</attrId>
+          				</Parameters>
+          				<ExpectedResult>
+          					<min>10</min></ExpectedResult>
+          			</DTDecimalValue>
+          			
+          		</Read></Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

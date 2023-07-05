@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDependencies>49_TC_63</testDependencies>
+				<testDescription>Listing column - Value must belong to the list of choices</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Recipe</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Recipe 23</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Launch formulation - Listing column</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnFormulationWindow>
+						<Actions>
+							<Content>
+								<Actions>
+									<ReadCellHeader>
+										<Parameters>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>Raw materials</ExpectedResult>
+									</ReadCellHeader>
+									<ReadCellValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0001 - VERT PVGG A 1%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>2</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0002 - BLEU 08 A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>3</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0003 - BLEU PVB2G A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>4</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0004 - BLEU BCSD A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>5</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0005 - VERT PVGG A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>6</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0006 - ROUGE PVE3B A 1% M</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>7</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0007 - ROUGE K3911 A 1%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>8</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0008 - BLEU PV2G A 1% M</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>9</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>MAAAC0002 - ACETATE 105E1R26033</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>9</Row>
+											<Column>4</Column>
+										</Parameters>
+										<ExpectedResult>PE Neutre</ExpectedResult>
+									</ReadCellValue>
+									<RawMaterialsInput>
+										<Parameters>
+											<Row>9</Row>
+											<Column>3</Column>
+										</Parameters>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>not a choice</value>
+												</Parameters>
+											</Write>
+											<PressEnter></PressEnter></Actions>
+									</RawMaterialsInput>
+									<SelectRawMaterials>
+										<Parameters>
+											<Row>2</Row>
+											<Column>3</Column>
+										</Parameters>
+										<Actions>
+											<Select>
+												<Parameters>
+													<value>Papier&#160;Neutre</value>
+												</Parameters>
+											</Select></Actions>
+									</SelectRawMaterials></Actions>
+							</Content>
+							<Ok>
+								<Parameters>
+									<validate>true</validate></Parameters>
+							</Ok></Actions>
+					</ReturnFormulationWindow>
+					<ReadForm>
+						<Actions>
+							<AttributeIsDiplayed>
+								<Parameters>
+									<attrId>95</attrId>
+								</Parameters>
+								<ExpectedResult>true</ExpectedResult>
+							</AttributeIsDiplayed></Actions>
+					</ReadForm>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>No rights on a given customized export for user Jean Faure</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Jean&#160;Faure</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Agency</value>
+										</Parameters>
+									</Select></Actions>
+							</SelectOT></Actions>
+					</NavigationTree>
+					<Export>
+						<Actions>
+							<Content>
+								<Actions>
+									<Filtre>
+										<Actions>
+											<Read>
+												<ExpectedResult>Agency</ExpectedResult></Read></Actions>
+									</Filtre>
+									<Exports>
+										<Actions>
+											<ReadAllListItem>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>
+																0
+															</index>
+														</Parameters>
+														<ExpectedResult>[Excel] Standard Export</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>
+																1
+															</index>
+														</Parameters>
+														<ExpectedResult>[XML] Standard Export</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>
+																2
+															</index>
+														</Parameters>
+														<ExpectedResult>[Text] Standard Export</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>
+																3
+															</index>
+														</Parameters>
+														<ExpectedResult>[Word] Standard Export</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>
+																4
+															</index>
+														</Parameters>
+														<ExpectedResult>[Files] Standard Export</ExpectedResult>
+													</ElementAt></Actions>
+											</ReadAllListItem></Actions>
+									</Exports></Actions>
+							</Content></Actions>
+					</Export>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

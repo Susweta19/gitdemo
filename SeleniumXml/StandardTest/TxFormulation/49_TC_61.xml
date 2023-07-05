@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDependencies>49_TC_60</testDependencies>
+				<testDescription>Text column - Forbidden characters</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Recipe</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Recipe 22</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Launch formulation - Text column</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnFormulationWindow>
+						<Actions>
+							<Content>
+								<Actions>
+								    <ReadCellHeader>
+										<Parameters>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>Raw materials</ExpectedResult>
+									</ReadCellHeader>
+									<ReadCellValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0001 - VERT PVGG A 1%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>2</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0002 - BLEU 08 A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>3</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0003 - BLEU PVB2G A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>4</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0004 - BLEU BCSD A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>5</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0005 - VERT PVGG A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>6</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0006 - ROUGE PVE3B A 1% M</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>7</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0007 - ROUGE K3911 A 1%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>8</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0008 - BLEU PV2G A 1% M</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>9</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>MAAAC0002 - ACETATE 105E1R26033</ExpectedResult>
+									</ReadCellValue>
+									<EditCellValue>
+										<Parameters>
+											<row>9</row>
+											<col>3</col>
+										</Parameters>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>my forbidden character is | and i try it</value>
+												</Parameters>
+											</Write>
+											<PressEnter></PressEnter></Actions>
+									</EditCellValue>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnFormulationWindow>
+					<NotificationManager>
+						<Actions>
+							<ReadToastMessage>
+								<ExpectedResult>La cellule 'Text ' de la ligne '9' contient des caractères interdits. Ils ont été retirés.</ExpectedResult></ReadToastMessage></Actions>
+					</NotificationManager>
+					<ReturnFormulationWindow>
+						<Actions>
+							<Content>
+								<Actions>
+									<EditCellValue>
+										<Parameters>
+											<row>9</row>
+											<col>3</col>
+										</Parameters>
+										<Actions>
+											<Clear></Clear>
+											<WriteWithoutClear>
+												<Parameters>
+													<value>my forbidden character is my forbidden character is &lt;v&gt; and i try it</value>
+												</Parameters>
+											</WriteWithoutClear>
+											<PressEnter></PressEnter></Actions>
+									</EditCellValue></Actions>
+							</Content></Actions>
+					</ReturnFormulationWindow>
+					<NotificationManager>
+						<Actions>
+							<ReadToastMessage>
+								<ExpectedResult>La cellule 'Text ' de la ligne '9' contient des caractères interdits. Ils ont été retirés.</ExpectedResult></ReadToastMessage></Actions>
+					</NotificationManager>
+					<ReturnFormulationWindow>
+						<Actions>
+							<Ok>
+								<Parameters>
+									<validate>true</validate></Parameters>
+							</Ok></Actions>
+					</ReturnFormulationWindow>
+					<ReadForm>
+						<Actions>
+							<AttributeIsDiplayed>
+								<Parameters>
+									<attrId>95</attrId>
+								</Parameters>
+								<ExpectedResult>true</ExpectedResult>
+							</AttributeIsDiplayed></Actions>
+					</ReadForm>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

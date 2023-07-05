@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Verifying user rights</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Test_User_TxAS</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<ReadBrowserTitle>
+								<ExpectedResult>TxAdvancedSearch</ExpectedResult>
+							</ReadBrowserTitle>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>3</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result>
+												</Parameters>
+											</IfConfirmationPopUpPresent>
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult>
+											</ReadWindowTitle>
+											<Content>
+												<Actions>
+													<WaitForAjax></WaitForAjax>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<WaitForAjax></WaitForAjax>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<WaitForAjax></WaitForAjax>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<WaitForAjax></WaitForAjax>
+													<ReadConfigList>
+														<Parameters>
+															<objectType>Materials database</objectType>
+														</Parameters>
+														<Actions>
+															<ElementAt>
+																<Parameters>
+																	<index>0</index>
+																</Parameters>
+																<ExpectedResult>New Advanced Search...</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>1</index>
+																</Parameters>
+																<ExpectedResult>Parametered search 1</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>2</index>
+																</Parameters>
+																<ExpectedResult>Parametered search 2</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>3</index>
+																</Parameters>
+																<ExpectedResult>Parametered search 3</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>4</index>
+																</Parameters>
+																<ExpectedResult>Materials choice guide</ExpectedResult>
+															</ElementAt>
+														</Actions>
+													</ReadConfigList>
+													<IsConfigurationPresent>
+														<Parameters>
+															<configName>Materials choice guide 2</configName>
+														</Parameters>
+														<ExpectedResult>false</ExpectedResult>
+													</IsConfigurationPresent>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>Parametered search 1</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+										</Actions>
+									</SelectAdvancedSearch>
+									<WaitForAjax></WaitForAjax>
+									<WaitForAjax></WaitForAjax>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - Parametered search 1</ExpectedResult>
+									</ReadWindowTitle>
+									<ClearAll></ClearAll>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<ManageQuestionList>
+										<Actions>
+											<QuestionSearchBox>
+												<Parameters>
+													<value>Nouveau</value>
+												</Parameters>
+											</QuestionSearchBox>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<ReadCriteriaList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>Nouveau</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadCriteriaList>
+									<DisplayedResult>
+										<ExpectedResult>0 filtered out of a total of 2847|0 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<RemoveCriterion>
+										<Parameters>
+											<criteriaIndex>1</criteriaIndex>
+										</Parameters>
+									</RemoveCriterion>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<Sleep>
+										<Parameters>
+											<timeOut>2</timeOut>
+										</Parameters>
+									</Sleep>
+									<CheckBoxInResultView>
+										<Parameters>
+											<objId>4584</objId>
+										</Parameters>
+										<Actions>
+											<Tick></Tick>
+										</Actions>
+									</CheckBoxInResultView>
+									<IsButtonPresentByTitle>
+										<Parameters>
+											<buttonName>Test Utils ID</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonPresentByTitle>
+									<IsButtonPresentByTitle>
+										<Parameters>
+											<buttonName>Test Extraction</buttonName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsButtonPresentByTitle>
+									<ManageQuestionList>
+										<Actions>
+											<DropdownlistForComplexAnswer>
+												<Parameters>
+													<questionName>Group 2</questionName>
+												</Parameters>
+												<Actions>
+													<Select>
+														<Parameters>
+															<value>Subgroup&#160;2.2</value>
+														</Parameters>
+													</Select>
+												</Actions>
+											</DropdownlistForComplexAnswer>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Subgroup 2.2</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Support material type ?</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+										</Actions>
+									</ManageQuestionList>
+									<AddResultView></AddResultView>
+									<ManagePopUp>
+										<Actions>
+											<ReadHeader>
+												<ExpectedResult>Choose a view type</ExpectedResult>
+											</ReadHeader>
+											<DropDownList>
+												<Actions>
+													<Select>
+														<Parameters>
+															<value>Parametered&#160;view...</value>
+														</Parameters>
+													</Select>
+												</Actions>
+											</DropDownList>
+											<CloseWindowPopup>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</CloseWindowPopup>
+										</Actions>
+									</ManagePopUp>
+									<EditParameteredView>
+										<Actions>
+											<ReadHeaderName>
+												<Parameters>
+													<currentwindow>false</currentwindow>
+												</Parameters>
+												<ExpectedResult>Add a parametered result(s) view</ExpectedResult>
+											</ReadHeaderName>
+											<IsButtonDisabled>
+												<Parameters>
+													<buttonName>Ok</buttonName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsButtonDisabled>
+											<Content>
+												<Actions>
+													<AttributesList>
+														<Actions>
+															<EntitytPresence>
+																<Parameters>
+																	<nodes>
+																		<path>Support Material Type</path></nodes>
+																	<presence>false</presence>
+																</Parameters>
+															</EntitytPresence>
+															
+														</Actions>
+													</AttributesList>
+												</Actions>
+											</Content>
+											<Cancel></Cancel>
+											
+										</Actions>
+									</EditParameteredView>
+									<IsTabPresent>
+										<Parameters>
+											<tabName>Parametered View</tabName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsTabPresent>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

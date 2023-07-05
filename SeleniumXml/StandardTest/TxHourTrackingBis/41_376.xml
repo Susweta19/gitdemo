@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the functionality of Refresh button in task linkbox in Add task window</testDescription>
+				<testBugRef>15893</testBugRef>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in new tab  mode with TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<ManageNavigationLayout>
+										<Actions>
+											<ClickOnLinkBox>
+												<Parameters>
+													<linkName>My Equipments</linkName>
+												</Parameters>
+											</ClickOnLinkBox>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My Equipments</linkName>
+												</Parameters>
+												<Actions>
+													<SelectAll></SelectAll>
+
+
+												</Actions>
+											</ManageLinkBox>
+										</Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+											<DeleteAllPresentTask></DeleteAllPresentTask>
+											<IsAddTaskButtonPresent>
+												<Parameters>
+													<resourceName>Machine009</resourceName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsAddTaskButtonPresent>
+											<AddTask>
+												<Parameters>
+													<user>Machine009</user>
+												</Parameters>
+												<Actions>
+													<Content>
+														<Actions>
+															<SelectTaskV2>
+																<Actions>
+																	<Refresh></Refresh>
+																	<ReadValue>
+																		<Parameters>
+																			<Row>1</Row>
+																			<Column>1</Column>
+																		</Parameters>
+																		<ExpectedResult>T-0603</ExpectedResult>
+																	</ReadValue>
+																</Actions>
+															</SelectTaskV2>
+														</Actions>
+													</Content>
+													<Ok>
+														<Parameters>
+															<validate>false</validate>
+														</Parameters>
+													</Ok>
+												</Actions>
+											</AddTask>
+
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxHourTrackingInNewTab>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

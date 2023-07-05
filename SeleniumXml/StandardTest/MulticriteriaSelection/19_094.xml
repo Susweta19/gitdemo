@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Select a Requirement Set and click on the 'Launch calculation of the selection' button--We'll turn to the tab 'Results';In the 'Results' tab, all Object meeting (not extremely) the Requirement Set will be dispalyed in the 'Selected Objects' list, with 'number of selected objects/total number of objects' in parenthesisThe sorted objects will be in different colors according to their Adequacies to the Requriement Set;Double click on a result Object, the Object will be highlighted in the Objects list in TEEXMA interface</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Message>Login</Message>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_MulticriteriaSelection</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+            </Actions>
+          </NavigationTree>
+          <MultiCriteria>
+            <Actions>
+              <Content>
+                <Actions>
+                  <CriteriaTab>
+                    <Actions>
+                      <Content>
+                        <Actions>
+                          <LaunchCalculation>
+                            <Actions>
+                              <Close />
+                            </Actions>
+                          </LaunchCalculation>
+                        </Actions>
+                      </Content>
+                    </Actions>
+                  </CriteriaTab>
+                </Actions>
+              </Content>
+            </Actions>
+          </MultiCriteria>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

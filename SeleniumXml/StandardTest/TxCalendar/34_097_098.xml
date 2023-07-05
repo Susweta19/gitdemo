@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Try to open 'Multicriterion Selection - Requirement Set' window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<ClickOnPortalTab>
+						<Parameters>
+							<tabName>Opening mode</tabName>
+						</Parameters>
+					</ClickOnPortalTab>
+					<ClickOnPortalTab>
+						<Parameters>
+							<tabName>Rights options</tabName>
+						</Parameters>
+					</ClickOnPortalTab>
+					<ClickOnPortalTab>
+						<Parameters>
+							<tabName>Display options</tabName>
+						</Parameters>
+					</ClickOnPortalTab>
+					<ClickOnPortalTab>
+						<Parameters>
+							<tabName>Worktime options</tabName>
+						</Parameters>
+					</ClickOnPortalTab>
+					<ClickOnPortalTab>
+						<Parameters>
+							<tabName>Multi-type of tasks and ressources</tabName>
+						</Parameters>
+					</ClickOnPortalTab>
+					<LaunchModel>
+						<Parameters>
+							<modelName>1 ressource, 2 types of tasks</modelName>
+						</Parameters>
+					</LaunchModel>
+					<Logout>
+						<Actions>
+							<ClosePopUp>
+								<Parameters>
+									<result>true</result>
+								</Parameters>
+							</ClosePopUp></Actions>
+					</Logout></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

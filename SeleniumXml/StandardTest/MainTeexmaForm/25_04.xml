@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the availability of the 'Choice Guide' button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>open the multicriteria selection window</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_ReadView</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+            </Actions>
+          </NavigationTree>
+          <MultiCriteria>
+            <Actions>
+              <Content>
+                <Actions>
+                  <CriteriaTab>
+                    <Actions>
+                      <Content>
+                        <Actions>
+                          <ReqSetObjectType>
+                            <Actions>
+                              <ReadV2>
+                                <ExpectedResult>TEST_ReadView</ExpectedResult>
+                              </ReadV2>
+                            </Actions>
+                          </ReqSetObjectType>
+                        </Actions>
+                      </Content>
+                    </Actions>
+                  </CriteriaTab>
+                </Actions>
+              </Content>
+              <Close />
+            </Actions>
+          </MultiCriteria>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

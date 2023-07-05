@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the tranlation using language "Chinese"</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+					<langage>Chinese</langage>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<IfPopUpPresent></IfPopUpPresent><SearchBox>
+						<Parameters>
+							<research>research</research>
+						</Parameters>
+						<Actions>
+							<ReadHeader>
+								<ExpectedResult>文字查找</ExpectedResult></ReadHeader>
+							<IsAttributePresent>
+								<Parameters>
+									<attrbuteName>包含全部字词：</attrbuteName>
+								</Parameters>
+							</IsAttributePresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>查找</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<Content>
+								<Actions>
+									<AllOfTheFollowingWords>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>New</value>
+												</Parameters>
+											</Write></Actions>
+									</AllOfTheFollowingWords>
+									<SearchButton></SearchButton><Sleep><Parameters><timeOut>3</timeOut></Parameters></Sleep>
+									<DisplayedObjects>
+										<Parameters>
+											<otName> 所有实体类型</otName></Parameters>
+										<ExpectedResult>121|5</ExpectedResult>
+									</DisplayedObjects></Actions>
+							</Content></Actions>
+					</SearchBox>
+
+
+				</Actions>
+			</MainWindow></Actions></TxInterface></Actions>

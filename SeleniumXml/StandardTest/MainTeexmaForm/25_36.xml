@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Read Export window translation</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+					<langage>English</langage>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<Export>
+						<Actions>
+							<ReadHeader>
+								<ExpectedResult>Export</ExpectedResult></ReadHeader>
+							<Content>
+								<Actions>
+									<Filtre>
+										<Actions>
+											<Read>
+												<ExpectedResult>Notification type</ExpectedResult></Read>
+											
+											
+											
+										</Actions>
+									</Filtre>
+									<Exports>
+										<Actions>
+											<Read>
+												<ExpectedResult>[Excel] Standard Export</ExpectedResult></Read>
+										</Actions>
+									</Exports>
+									<ObjectsTree>
+										<Actions>
+											<SelectAll></SelectAll>
+											<UncheckAll></UncheckAll>
+											<ViewCheckedObjects></ViewCheckedObjects>
+
+											
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Import a preselection from a text or Excel file...</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle>
+										</Actions>
+									</ObjectsTree>
+									<DataTree>
+										<Actions>
+											<DeselectAll></DeselectAll>
+											<SelectAll></SelectAll>
+											<ViewCheckedObjects></ViewCheckedObjects>
+										</Actions>
+									</DataTree></Actions>
+							</Content>
+							<Close></Close></Actions>
+					</Export>
+				</Actions>
+			</MainWindow></Actions></TxInterface></Actions>

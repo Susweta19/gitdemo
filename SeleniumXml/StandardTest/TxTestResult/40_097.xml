@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--does not clicking on close button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>See the data entered on differents view</testDescription>
+        <testBugRef>16063</testBugRef>
+
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<NavigationTree>
+        		<Actions>
+        			<SelectOT>
+        				<Actions>
+        					<Select>
+        						<Parameters>
+        							<value>Essais</value>
+        						</Parameters>
+        					</Select></Actions>
+        			</SelectOT>
+        			<EntityTree>
+        				<Actions>
+        					<SelectEntity>
+        						<Parameters>
+        							<nodes>
+        								<path>Traction 5 pour plan de test LNK</path></nodes>
+        						</Parameters>
+        					</SelectEntity></Actions>
+        			</EntityTree></Actions>
+        	</NavigationTree>
+        	<LaunchModel>
+        		<Parameters>
+        			<modelName>Saisir des résultats d'essai (link)</modelName>
+        		</Parameters>
+        	</LaunchModel>
+        	<WaitForAjax></WaitForAjax>
+        	<ReturnTestResultEntityTest>
+        		<Actions>
+        			<WaitForAjax></WaitForAjax>
+        			<Sleep>
+        						<Parameters>
+        							<timeOut>3</timeOut>
+        						</Parameters>
+        					</Sleep>
+        					<ChangeTab>
+        						<Parameters>
+        							<tabName>Edition by sample</tabName>
+        						</Parameters>
+        					</ChangeTab>
+        			<TractionTable>
+        				<Actions>
+        				<ModifyStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>14</columnIndex>
+        								</Parameters>
+        								<Actions>
+        									<Write>
+        										<Parameters>
+        											<value>10</value>
+        										</Parameters>
+        									</Write>
+        									<PressKeyFromKeyBoard><Actions><PressEnter /></Actions></PressKeyFromKeyBoard></Actions>
+        							</ModifyStringValue>
+        				<ModifyStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>37</columnIndex>
+        								</Parameters>
+        								<Actions>
+        									<Write>
+        										<Parameters>
+        											<value>2</value>
+        										</Parameters>
+        									</Write>
+        									<PressKeyFromKeyBoard><Actions><PressEnter /></Actions></PressKeyFromKeyBoard></Actions>
+        							</ModifyStringValue>
+        							<ModifyStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>38</columnIndex>
+        								</Parameters>
+        								<Actions>
+        									<Write>
+        										<Parameters>
+        											<value>15</value>
+        										</Parameters>
+        									</Write>
+        									<PressKeyFromKeyBoard><Actions><PressEnter /></Actions></PressKeyFromKeyBoard></Actions>
+        							</ModifyStringValue>
+        							<ModifyStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>34</columnIndex>
+        								</Parameters>
+        								<Actions>
+        									<Write>
+        										<Parameters>
+        											<value>8</value>
+        										</Parameters>
+        									</Write>
+        									<PressKeyFromKeyBoard><Actions><PressEnter /></Actions></PressKeyFromKeyBoard></Actions>
+        							</ModifyStringValue>
+        							<ModifyStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>35</columnIndex>
+        								</Parameters>
+        								<Actions>
+        									<Write>
+        										<Parameters>
+        											<value>5</value>
+        										</Parameters>
+        									</Write>
+        									<PressKeyFromKeyBoard><Actions><PressEnter /></Actions></PressKeyFromKeyBoard></Actions>
+        							</ModifyStringValue>        							
+        				</Actions>
+        			</TractionTable>
+
+
+        			<ChangeTab>
+        						<Parameters>
+        							<tabName>Edition by analysis</tabName>
+        						</Parameters>
+        					</ChangeTab>
+							<ResultTable>
+        				<Actions>
+        				<ReadStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>3</columnIndex>
+        								</Parameters>
+        								<ExpectedResult>10</ExpectedResult>
+        				</ReadStringValue> 
+        				<ReadStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>26</columnIndex>
+        								</Parameters>
+        								<ExpectedResult>2</ExpectedResult>
+        				</ReadStringValue>
+        				<ReadStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>27</columnIndex>
+        								</Parameters>
+        								<ExpectedResult>15</ExpectedResult>
+        				</ReadStringValue>  
+        				<ReadStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>28</columnIndex>
+        								</Parameters>
+        								<ExpectedResult>30</ExpectedResult>
+        				</ReadStringValue>  
+        				<ReadStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>23</columnIndex>
+        								</Parameters>
+        								<ExpectedResult>8</ExpectedResult>
+        				</ReadStringValue> 
+        				<ReadStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>24</columnIndex>
+        								</Parameters>
+        								<ExpectedResult>5</ExpectedResult>
+        				</ReadStringValue>      							
+        				</Actions>
+        			</ResultTable>
+
+        		</Actions>
+        	</ReturnTestResultEntityTest>
+
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

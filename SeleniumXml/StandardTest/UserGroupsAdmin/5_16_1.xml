@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>login ExportExtract_Rights user--&gt;[Ex] right on Export_1, [S] right on Export_2, no right on Export_3 so it will not display</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_UsergroupAdmin</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+            </Actions>
+          </NavigationTree>
+          <Export>
+            <Actions>
+              <Content>
+                <Actions>
+                  <WaitForAjax></WaitForAjax>
+                  <Exports>
+                    <Actions>
+                      <Select>
+                        <Parameters>
+                          <value>[Excel] Export_1</value>
+                        </Parameters>
+                      </Select>
+                    </Actions>
+                  </Exports>
+                  <WaitForAjax></WaitForAjax>
+                  <ObjectsTree>
+                    <Actions>
+                      <SelectAll />
+                    </Actions>
+                  </ObjectsTree>
+                  <Export /><WaitForAjax></WaitForAjax>
+                </Actions>
+              </Content>
+              <Close />
+            </Actions>
+          </Export>
+          <Export>
+            <Actions>
+              <Content>
+                <Actions>
+                  <WaitForAjax></WaitForAjax>
+                  <Exports>
+                    <Actions>
+                      <Select>
+                        <Parameters>
+                          <value>[Excel] Export_2</value>
+                        </Parameters>
+                      </Select>
+                    </Actions>
+                  </Exports>
+                  <WaitForAjax></WaitForAjax>
+                  <ObjectsTree>
+                    <Actions>
+                      <SelectAll />
+                    </Actions>
+                  </ObjectsTree>
+                  <Export /><WaitForAjax></WaitForAjax>
+                </Actions>
+              </Content>
+              <Close />
+            </Actions>
+          </Export>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

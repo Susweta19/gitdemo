@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Add a new column on an existing group</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<ExpandNavigationTree />
+      		<NavigationTree>
+      			<Actions>
+      				<SelectOT>
+      					<Actions>
+      						<Select>
+      							<Parameters>
+      								<value>Type d'essais</value>
+      							</Parameters>
+      						</Select></Actions>
+      				</SelectOT>
+      				<EntityTree>
+      					<Actions>
+      						<SelectEntity>
+      							<Parameters>
+      								<nodes>
+      									<path>Type admin table 2</path></nodes></Parameters>
+      						</SelectEntity></Actions>
+      				</EntityTree>
+
+
+
+
+
+      			</Actions>
+      		</NavigationTree>
+      		<LaunchModel>
+      			<Parameters>
+      				<modelName>Administration des tableaux modèles</modelName>
+      			</Parameters>
+      		</LaunchModel>
+      		<ReturnAdministrationModelTables>
+      			<Actions>
+      				<Content>
+      					<Actions>
+      						<AddColumn>
+      							<Actions>
+      								<Content>
+      									<Actions>
+      										<Name>
+      											<Actions>
+      												<Write>
+      													<Parameters>
+      														<value>Group1</value>
+      													</Parameters>
+      												</Write></Actions>
+      										</Name>
+      										<AddGroup></AddGroup>
+      										<ManagePopUp>
+      											<Actions>
+      												<ManageInputBox>
+      													<Parameters>
+      														<value>Add123</value>
+      														<okOrCancel>
+      															true
+      														</okOrCancel>
+      													</Parameters>
+      												</ManageInputBox></Actions>
+      										</ManagePopUp>
+      										<Group>
+      											<Actions>
+      												<Select>
+      													<Parameters>
+      														<value>Add123</value>
+      													</Parameters>
+      												</Select></Actions>
+      										</Group></Actions>
+      								</Content></Actions>
+      						</AddColumn></Actions>
+      				</Content>
+      				<Ok>
+      					<Parameters></Parameters>
+      				</Ok></Actions>
+      		</ReturnAdministrationModelTables></Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

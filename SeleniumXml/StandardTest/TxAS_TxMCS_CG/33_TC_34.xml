@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Navigating between pages of a view</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click></Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>3</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result></Parameters>
+											</IfConfirmationPopUpPresent>
+											
+											
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+											
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult></ReadWindowTitle>
+											<Content>
+												<Actions>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>Parametered search 1</configName>
+														</Parameters>
+													</SelectConfiguration></Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>
+														true
+													</validate></Parameters>
+											</Ok>
+											
+										</Actions>
+									</SelectAdvancedSearch>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - Parametered search 1</ExpectedResult></ReadWindowTitle>
+									<ClearAll></ClearAll>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult></DisplayedResult>
+									<IsButtonPresentByTitle>
+										<Parameters>
+											<buttonName>Display the first page</buttonName>
+										</Parameters>
+										<ExpectedResult>
+											true
+										</ExpectedResult>
+									</IsButtonPresentByTitle>
+									<IsButtonPresentByTitle>
+										<Parameters>
+											<buttonName>Show previous page</buttonName>
+										</Parameters>
+										<ExpectedResult>
+											true
+										</ExpectedResult>
+									</IsButtonPresentByTitle>
+									<IsButtonPresentByTitle>
+										<Parameters>
+											<buttonName>Display next page</buttonName>
+										</Parameters>
+										<ExpectedResult>
+											true
+										</ExpectedResult>
+									</IsButtonPresentByTitle>
+									<IsButtonPresentByTitle>
+										<Parameters>
+											<buttonName>Display the last page</buttonName>
+										</Parameters>
+										<ExpectedResult>
+											true
+										</ExpectedResult>
+									</IsButtonPresentByTitle>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display the first page</buttonName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Show previous page</buttonName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display next page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display the last page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<ClickOnToolBarButtons>
+										<Parameters>
+											<btnName>Display next page</btnName>
+										</Parameters>
+									</ClickOnToolBarButtons>
+									<ReadObjectList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>Acrylonitrile styrene acrylate (ASA)</ExpectedResult>
+											</ElementAt></Actions>
+									</ReadObjectList>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display the first page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Show previous page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display next page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display the last page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<ClickOnToolBarButtons>
+										<Parameters>
+											<btnName>Display the last page</btnName>
+										</Parameters>
+									</ClickOnToolBarButtons>
+									<ReadObjectList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>Windform FX</ExpectedResult>
+											</ElementAt></Actions>
+									</ReadObjectList>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display the first page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Show previous page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display next page</buttonName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display the last page</buttonName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsButtonDisabled>
+									<ClickOnToolBarButtons>
+										<Parameters>
+											<btnName>Show previous page</btnName>
+										</Parameters>
+									</ClickOnToolBarButtons>
+									<ReadObjectList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>Ultracur3D RG25 LV</ExpectedResult>
+											</ElementAt></Actions>
+									</ReadObjectList>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display the first page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Show previous page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display next page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display the last page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<ClickOnToolBarButtons>
+										<Parameters>
+											<btnName>Display the first page</btnName>
+										</Parameters>
+									</ClickOnToolBarButtons>
+									<ReadObjectList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>1.4404 Metal Powder</ExpectedResult>
+											</ElementAt></Actions>
+									</ReadObjectList>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display the first page</buttonName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Show previous page</buttonName>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display next page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<IsButtonDisabled>
+										<Parameters>
+											<buttonName>Display the last page</buttonName>
+										</Parameters>
+										<ExpectedResult>false</ExpectedResult>
+									</IsButtonDisabled>
+									<SelectPageNumber>
+										<Parameters>
+											<pageNumber>2</pageNumber>
+										</Parameters>
+									</SelectPageNumber>
+									<ReadObjectList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>Acrylonitrile styrene acrylate (ASA)</ExpectedResult>
+											</ElementAt></Actions>
+									</ReadObjectList>
+									<SelectPageNumberBySearchBox>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>7</value>
+												</Parameters>
+											</Write>
+											<PressEnter></PressEnter></Actions>
+									</SelectPageNumberBySearchBox>
+									<SelectPageNumberAfterGivingInputInSearchBox></SelectPageNumberAfterGivingInputInSearchBox>
+									<ReadObjectList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>FS IN718</ExpectedResult>
+											</ElementAt></Actions>
+									</ReadObjectList>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

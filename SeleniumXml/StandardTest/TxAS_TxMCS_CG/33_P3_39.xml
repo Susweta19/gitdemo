@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Imputation of a time when adding a task</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+          <langage>German</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<IfPopUpPresent></IfPopUpPresent><ChoiceGuide>
+      			<Actions>
+      				
+      				<Content>
+      					<Actions>
+      						<ChoiceGuideFromTemplate>
+      							<Parameters>
+      								<template>AdvancedQuestion_ForceTheCriterionUnticked</template></Parameters>
+      							<Actions>
+      								<Content>
+      									<Actions>
+      										<ReadAllButtons>
+      											<Actions>
+      												<ElementAt>
+      													<Parameters>
+      														<index>
+      															0
+      														</index>
+      													</Parameters>
+      													<ExpectedResult>Größer als    &gt;</ExpectedResult>
+      												</ElementAt><ElementAt>
+      													<Parameters>
+      														<index>1</index>
+      													</Parameters>
+      													<ExpectedResult>Kleiner als    &lt;</ExpectedResult>
+      												</ElementAt><ElementAt>
+      													<Parameters>
+      														<index>2</index>
+      													</Parameters>
+      													<ExpectedResult>Gleich    =</ExpectedResult>
+      												</ElementAt><ElementAt>
+      													<Parameters>
+      														<index>3</index>
+      													</Parameters>
+      													<ExpectedResult>Intervall</ExpectedResult>
+      												</ElementAt></Actions>
+      										</ReadAllButtons></Actions>
+      								</Content></Actions>
+      						</ChoiceGuideFromTemplate></Actions>
+      				</Content></Actions>
+      		</ChoiceGuide></Actions>
+      </MainWindow>
+    </Actions></TxInterface></Actions>

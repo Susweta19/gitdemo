@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Using a unique choice question group</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>3</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result>
+												</Parameters>
+											</IfConfirmationPopUpPresent>
+
+
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult>
+											</ReadWindowTitle>
+											<Content>
+												<Actions>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>Materials choice guide</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+
+										</Actions>
+									</SelectAdvancedSearch>
+									<WaitForAjax></WaitForAjax>
+									<ClearAll></ClearAll>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - Materials choice guide</ExpectedResult>
+									</ReadWindowTitle>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<DropdownlistForComplexAnswer>
+												<Parameters>
+													<questionName>Group 1</questionName>
+												</Parameters>
+												<Actions>
+													<Select>
+														<Parameters>
+															<value>Subgroup&#160;1.1</value>
+														</Parameters>
+													</Select>
+												</Actions>
+											</DropdownlistForComplexAnswer>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Subgroup 1.1</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Subgroup 1.1</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Subgroup 1.1</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Poisson ratio ?</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Density ?</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+											<ManageDecimalSingleValue>
+												<Parameters>
+													<questionName>Poisson ratio ?</questionName>
+													<min>0.33</min>
+												</Parameters>
+											</ManageDecimalSingleValue>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<ReadCriteriaList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>0.33</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadCriteriaList>
+									<DisplayedResult>
+										<ExpectedResult>12 filtered out of a total of 2847|12 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<RemoveCriterion>
+										<Parameters>
+											<criteriaIndex>1</criteriaIndex>
+										</Parameters>
+									</RemoveCriterion>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Subgroup 1.1</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<IsGroupCollasped>
+												<Parameters>
+													<name>Subgroup 1.1</name>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsGroupCollasped>
+											
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Poisson ratio ?</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+										</Actions>
+									</ManageQuestionList>
+									<ManageQuestionList>
+										<Actions>
+											<DropdownlistForComplexAnswer>
+												<Parameters>
+													<questionName>Group 1</questionName>
+												</Parameters>
+												<Actions>
+													<Select>
+														<Parameters>
+															<value>Subgroup&#160;1.2</value>
+														</Parameters>
+													</Select>
+												</Actions>
+											</DropdownlistForComplexAnswer>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Subgroup 1.2</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<!-- need to do something for the commented section on script below -->
+											<!-- <IsGroupPresent>
+												<Parameters>
+													<groupName>Subgroup 1.1</groupName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsGroupPresent> -->
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Entered date ?</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Post-processed ?</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+											<MinDate>
+												<Parameters>
+													<groupName>Entered date ?</groupName>
+												</Parameters>
+												<Actions>
+													<Today></Today>
+												</Actions>
+											</MinDate>
+											
+											
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>0 filtered out of a total of 2847|0 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<MinDate>
+												<Parameters>
+													<groupName>Entered date ?</groupName>
+												</Parameters>
+												<Actions>
+													<Year>
+														<Parameters>
+															<year>2019</year>
+														</Parameters>
+													</Year>
+													<Month>
+														<Parameters>
+															<month>Jun</month>
+														</Parameters>
+													</Month>
+													<Day>
+														<Parameters>
+															<day>11</day>
+														</Parameters>
+													</Day>
+												</Actions>
+											</MinDate>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>501 filtered out of a total of 2847|501 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<RemoveStartDate>
+												<Parameters>
+													<groupName>Entered date ?</groupName>
+												</Parameters>
+											</RemoveStartDate>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<ManageBooleanList>
+												<Parameters>
+													<BooleanFieldname>Post-processed ?</BooleanFieldname>
+													<yes>true</yes>
+												</Parameters>
+											</ManageBooleanList>
+										</Actions>
+									</ManageQuestionList>
+									<ReadCriteriaList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>Yes</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadCriteriaList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>508 filtered out of a total of 2847|508 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<ManageBooleanList>
+												<Parameters>
+													<BooleanFieldname>Post-processed ?</BooleanFieldname>
+													<yes>true</yes>
+												</Parameters>
+											</ManageBooleanList>
+										</Actions>
+									</ManageQuestionList>
+									<ReadCriteriaList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>No</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadCriteriaList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2300 filtered out of a total of 2847|2,300 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<ManageBooleanList>
+												<Parameters>
+													<BooleanFieldname>Post-processed ?</BooleanFieldname>
+													<yes>true</yes>
+												</Parameters>
+											</ManageBooleanList>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

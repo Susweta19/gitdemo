@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the avaiablity of the User information option</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<ChangePassword>
+        		<Parameters>
+        			<newPassword>ddddd</newPassword>
+        			<oldPassword>aaaaa</oldPassword>
+        			<ok>true</ok>
+        		</Parameters>
+        	</ChangePassword>
+        	<ChangePassword>
+        		<Parameters>
+        			<newPassword>aaaaa</newPassword>
+        			<oldPassword>ddddd</oldPassword>
+        			<ok>true</ok>
+        		</Parameters>
+        	</ChangePassword>
+        	<Logout>
+        		<Actions>
+        			<CloseConfirmationPopup>
+        				<Parameters>
+        					<result>true</result>
+        				</Parameters>
+        			</CloseConfirmationPopup></Actions>
+        	</Logout>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

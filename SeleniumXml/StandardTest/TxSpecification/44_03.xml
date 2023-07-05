@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the ability to open TxSpecification module in new tab</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>DUPONT&#160;Jean-Michel</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<LaunchModel>
+        		<Parameters>
+        			<modelName>SPC Dashboard</modelName>
+        		</Parameters>
+        	</LaunchModel>
+        	
+        	<WaitForAjax></WaitForAjax>
+        	<ReturnSPCDashboardWindow>
+        		<Actions>
+        			<WaitForAjax></WaitForAjax>
+        			<Content>
+        				<Actions>
+        					<ClickOnStatistics>
+        						<Parameters>
+        							<statisticsName>Calmagine - % metamizole sodium 2019</statisticsName>
+        						</Parameters>
+        					</ClickOnStatistics>
+        					<ReturnTxSpecificationInNewTab>
+        						<Actions>
+        							<ReadBrowserTitle>
+        								<ExpectedResult>TxSPC</ExpectedResult></ReadBrowserTitle></Actions>
+        					</ReturnTxSpecificationInNewTab></Actions>
+        			</Content></Actions>
+        	</ReturnSPCDashboardWindow>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

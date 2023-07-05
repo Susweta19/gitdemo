@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the functionality of Refresh button in task linkbox in Add task window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in new tab  mode with TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Actions>
+										<DeleteAllPresentTask></DeleteAllPresentTask>
+											<AddTask>
+												<Parameters>
+													<user>Alice Dupont</user>
+												</Parameters>
+												<Actions>
+													<ReadHeader>
+														<ExpectedResult>Add task(s)</ExpectedResult>
+													</ReadHeader>
+													<Content>
+														<Actions>
+															<!-- We are adding task first just to check weather selected 
+																task remains disabled in the Task Selection window --><ReturnTableView>
+																<Actions>
+																	<Refresh></Refresh>
+																</Actions>
+</ReturnTableView>
+
+
+														</Actions>
+													</Content>
+												</Actions>
+											</AddTask>
+										</Actions>
+									</ManageTask>
+									<!--Reading toolbar buttons --><!--Reading the buttons present in the lower part 
+										of the window --><!--Reading the week range in the toolbar --></Actions>
+							</Content></Actions>
+					</ReturnTxHourTrackingInNewTab>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

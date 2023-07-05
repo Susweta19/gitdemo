@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Right Click on one Object and then select an advanced Duplication from the Advanced Duplication List</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_TreeView</value>
+                    </Parameters>
+                  </Select>
+                  <Read>
+                    <ExpectedResult>TEST_TreeView</ExpectedResult>
+                  </Read>
+                </Actions>
+              </SelectOT>
+              <SwitchReadWrite />
+              <TreeContextMenu>
+                <Actions>
+                  <AdvancedDuplicate>
+                    <Parameters>
+                      <nodes>
+                        <path>New1</path>
+                      </nodes>
+                      <advDuplicateName>test_advanced duplication_1</advDuplicateName>
+                    </Parameters>
+                    <Actions />
+                  </AdvancedDuplicate>
+                </Actions>
+              </TreeContextMenu>
+            </Actions>
+          </NavigationTree>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

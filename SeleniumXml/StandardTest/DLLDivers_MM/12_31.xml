@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>"File copy of a linked entity: Recovering files in multiple linked entities, one file per entity in this test.
+The destination is linked to the starting entity in this test. We copy the files of the carac. A 'of several entities linked to the starting entity via a link N. [reference mode "" no "", clear destination "" no "", delete source "" no ""] 
+
+-- Select an object "" Test' "", click on the ""Switch to read or write mode"" button to create two new entities. In one entity, publish a new file for attribute A'. Do the same for another entity.
+--  Select an object ""Test"", click on the ""Switch to read or write mode"" button to create a new entity. In attribute Test', select those two just newly created entities and click on Ok button. After that, Launch the model ""[TxLibrary] Copy A' -&gt; D (linked data)"" in the model menu."</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Test'</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <SwitchReadWrite />
+              <AddObject>
+                <Parameters />
+                <Actions>
+                  <Content>
+                    <Actions>
+                      <PublishDocumentFile>
+                        <Parameters>
+                          <attrId>3367</attrId>
+                          <pathFile>#DocPath#TxLibraryFiles/File4.docx</pathFile>
+                        </Parameters>
+                      </PublishDocumentFile>
+                    </Actions>
+                  </Content>
+                  <Ok>
+                    <Parameters />
+                  </Ok>
+                </Actions>
+              </AddObject>
+              <RenameInput>
+                <Parameters>
+                  <newName>Test 1'-1</newName>
+                </Parameters>
+              </RenameInput>
+              <AddObject>
+                <Parameters />
+                <Actions>
+                  <Content>
+                    <Actions>
+                      <PublishDocumentFile>
+                        <Parameters>
+                          <attrId>3367</attrId>
+                          <pathFile>#DocPath#TxLibraryFiles/File5.docx</pathFile>
+                        </Parameters>
+                      </PublishDocumentFile>
+                    </Actions>
+                  </Content>
+                  <Ok>
+                    <Parameters />
+                  </Ok>
+                </Actions>
+              </AddObject>
+              <RenameInput>
+                <Parameters>
+                  <newName>Test 1'-2</newName>
+                </Parameters>
+              </RenameInput>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Test</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <AddObject>
+                <Parameters />
+                <Actions>
+                  <Content>
+                    <Actions>
+                      <GetLink>
+                        <Parameters>
+                          <attrId>3363</attrId>
+                        </Parameters>
+                        <Actions>
+                          <SelectEntitiesBox>
+                            <Parameters>
+                              <collection>
+                                <collection>
+                                  <path>Test 1'-1</path>
+                                </collection>
+                                <collection>
+                                  <path>Test 1'-2</path>
+                                </collection>
+                              </collection>
+                            </Parameters>
+                            <Actions>
+                              <Tick />
+                            </Actions>
+                          </SelectEntitiesBox>
+                        </Actions>
+                      </GetLink>
+                    </Actions>
+                  </Content>
+                  <Ok>
+                    <Parameters />
+                  </Ok>
+                </Actions>
+              </AddObject>
+            </Actions>
+          </NavigationTree>
+          <LaunchModel>
+            <Parameters>
+              <modelName>[TxLibrary] Copy A' -&gt; D (linked data)</modelName>
+            </Parameters>
+          </LaunchModel>
+          <ReadForm>
+            <Actions>
+              <ReadListLink>
+                <Parameters>
+                  <attrId>3364</attrId>
+                </Parameters>
+                <Actions>
+                  <ElementAt>
+                    <Parameters>
+                      <index>0</index>
+                    </Parameters>
+                    <Actions>
+                      <GetText>
+                        <ExpectedResult>File4(1).docx</ExpectedResult>
+                      </GetText>
+                    </Actions>
+                  </ElementAt>
+                  <ElementAt>
+                    <Parameters>
+                      <index>1</index>
+                    </Parameters>
+                    <Actions>
+                      <GetText>
+                        <ExpectedResult>File5(1).docx</ExpectedResult>
+                      </GetText>
+                    </Actions>
+                  </ElementAt>
+                </Actions>
+              </ReadListLink>
+            </Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

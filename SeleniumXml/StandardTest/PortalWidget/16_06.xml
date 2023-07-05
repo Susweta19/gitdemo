@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- click on the Link 'To Standard Visible Object Import_1' and the Link 'To Standard Invisible Object IV_1'-->
+<!--We don't check after reload teexma , OT not display.-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the availability of the link to an Object Standard OT</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <LinkPortal>
+            <Parameters>
+              <link>To Another Portal 'Home_2'</link>
+              
+            </Parameters>
+          </LinkPortal>
+          <ReadHeader>
+          	<ExpectedResult>This is the second portal for test</ExpectedResult></ReadHeader>
+          
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

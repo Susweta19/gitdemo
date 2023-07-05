@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the availability of 'Add a linked Object' option</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_business_1</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <SwitchReadWrite />
+              <AddLinkedObject>
+                <Parameters>
+                  <nodes>
+                    <path>New</path>
+                  </nodes>
+                </Parameters>
+                <Actions>
+                  <AddLink>
+                    <Parameters>
+                      <okOrCancel>true</okOrCancel>
+                    </Parameters>
+                    <Actions>
+                      <Ok>
+                        <Parameters>
+                          <validate>true</validate>
+                        </Parameters>
+                      </Ok>
+                    </Actions>
+                  </AddLink>
+                </Actions>
+              </AddLinkedObject>
+            </Actions>
+          </NavigationTree>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

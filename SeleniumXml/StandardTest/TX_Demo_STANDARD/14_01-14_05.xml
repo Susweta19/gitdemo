@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription></testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Daniel&#160;MASSETTI</login>
+          <password>aaaaa</password>
+          <langage>French</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<SearchBox>
+      			<Parameters>
+      				<research>316l</research>
+      				<byClick>false</byClick>
+      			</Parameters>
+      			<Actions>
+      				<Content>
+      					<Actions>
+      						<DisplayedObjects>
+      							<Parameters>
+      								<otName> Métaux / Alliages</otName></Parameters>
+      							<ExpectedResult>3</ExpectedResult>
+      						</DisplayedObjects>
+      						<DisplayedObjects>
+      							<Parameters>
+      								<otName> Projets</otName></Parameters>
+      							<ExpectedResult>1</ExpectedResult>
+      						</DisplayedObjects>
+      						<SelectObjectType>
+      							<Parameters>
+      								<ObjectTypeName> Métaux / Alliages</ObjectTypeName>
+      							</Parameters>
+      						</SelectObjectType>
+      						<Results>
+      							<Actions>
+      								<EntitytPresence>
+      									<Parameters>
+      										<nodes>
+      											<path>X2CrNiMo17-12</path></nodes>
+      										<presence>true</presence>
+      									</Parameters>
+      								</EntitytPresence>
+      								<EntitytPresence>
+      									<Parameters>
+      										<nodes>
+      											<path>X2CrNiMo17-12-FR (316L)</path></nodes>
+      										<presence>true</presence>
+      									</Parameters>
+      								</EntitytPresence>
+      							</Actions>
+      						</Results>
+      						<SelectObjectType>
+      							<Parameters>
+      								<ObjectTypeName> Projets</ObjectTypeName>
+      							</Parameters>
+      						</SelectObjectType>
+      						<Results>
+      							<Actions>
+      								<EntitytPresence>
+      									<Parameters>
+      										<nodes>
+      											<path>V2354 - Vieillissement des poutres MSC-452</path></nodes>
+      										<presence>true</presence>
+      									</Parameters>
+      								</EntitytPresence>
+      								<DoubleClickEntity>
+      									<Parameters>
+      										<nodes>
+      											<path>V2354 - Vieillissement des poutres MSC-452</path></nodes>
+      									</Parameters>
+      								</DoubleClickEntity>
+
+      							</Actions>
+      						</Results></Actions>
+      				</Content>
+      				<Close></Close></Actions>
+      		</SearchBox>
+      		<Sleep>
+      			<Parameters>
+      				<timeOut>5</timeOut>
+      			</Parameters>
+      		</Sleep>
+      		<ReadForm>
+      			<Actions>
+      				<Read>
+      					<WEGLink>
+      						<Parameters>
+      							<attrId>2509</attrId>
+      						</Parameters>
+      						<Actions>
+      							<GetText>
+      								<ExpectedResult>X2CrNiMo17-12-FR (316L)</ExpectedResult></GetText></Actions>
+      					</WEGLink>
+      				</Read>
+      			</Actions>
+      		</ReadForm>
+      		<SearchBox>
+      			<Parameters>
+      				<research>316l</research>
+      				<byClick>false</byClick>
+      			</Parameters>
+      			<Actions>
+      				<Content>
+      					<Actions>
+      						<SelectObjectType>
+      							<Parameters>
+      								<ObjectTypeName> Métaux / Alliages</ObjectTypeName>
+      							</Parameters>
+      						</SelectObjectType>
+      						<Results>
+      							<Actions>
+      								<DoubleClickEntity>
+      									<Parameters>
+      										<nodes>
+      											<path>X2CrNiMo17-12-FR (316L)</path></nodes>
+      									</Parameters>
+      								</DoubleClickEntity>
+
+      							</Actions>
+      						</Results></Actions>
+      				</Content>
+      				<Close></Close></Actions>
+      		</SearchBox>
+      		<NavigationTree>
+      			<Actions>
+      				<EntityTree>
+      					<Actions>
+      						<ReadHighlightedEntity>
+      							<ExpectedResult>X2CrNiMo17-12-FR (316L)</ExpectedResult></ReadHighlightedEntity></Actions>
+      				</EntityTree></Actions>
+      		</NavigationTree>
+      	</Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

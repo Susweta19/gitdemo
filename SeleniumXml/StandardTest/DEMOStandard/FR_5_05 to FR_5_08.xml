@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Actions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>FR_5_05 to FR_5_08</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>1_Daniel&#160;MASSETTI</login>
+          <password>ddddd</password>
+         <langage>French</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<ChangePortalTab>
+      			<Parameters>
+      				<index>4</index>
+      			</Parameters>
+      		</ChangePortalTab>
+      		<NavigateToTableView>
+      			<Parameters>
+      				<index>3</index>
+      			</Parameters>
+      			<Actions>
+      				<ReadColumName>
+      					<Actions>
+      						<ElementAt>
+      							<Parameters>
+      								<index>0</index>
+      							</Parameters>
+      							<ExpectedResult>Essais</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>1</index>
+      							</Parameters>
+      							<ExpectedResult>Date de début</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>2</index>
+      							</Parameters>
+      							<ExpectedResult>Projet associé</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>3</index>
+      							</Parameters>
+      							<ExpectedResult>Etude associée</ExpectedResult>
+      						</ElementAt>
+      						<!-- <ElementAt>
+      							<Parameters>
+      								<index>4</index>
+      							</Parameters>
+      							<ExpectedResult>Module d'Young (GPa)</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>5</index>
+      							</Parameters>
+      							<ExpectedResult>Machine d'essai associée</ExpectedResult>
+      						</ElementAt> -->
+      						<!-- <ElementAt>
+      							<Parameters>
+      								<index>5</index>
+      							</Parameters>
+      							<ExpectedResult>Module d'Young (GPa)</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>6</index>
+      							</Parameters>
+      							<ExpectedResult>Test machine</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>7</index>
+      							</Parameters>
+      							<ExpectedResult>Finished products</ExpectedResult>
+      						</ElementAt> --></Actions>
+      				</ReadColumName>
+      				<FilterInput>
+      					<Parameters>
+      						<indexColumn>5</indexColumn>
+      						<field>V2354</field>
+      					</Parameters>
+      				</FilterInput>
+      				<Sleep>
+      					<Parameters>
+      						<timeOut>3</timeOut>
+      					</Parameters>
+      				</Sleep>
+      				<Filter>
+      					<Parameters>
+      						<indexColumn>5</indexColumn>
+      					</Parameters>
+      					<Actions>
+      						<DeleteFilter></DeleteFilter></Actions>
+      				</Filter>
+      				<Sleep>
+      					<Parameters>
+      						<timeOut>3</timeOut>
+      					</Parameters>
+      				</Sleep>
+      				<SelectLine>
+      					<Parameters>
+      						<rowindex>1</rowindex>
+      					</Parameters>
+      				</SelectLine>
+      				<EditStringValue>
+      					<Parameters>
+      						<Row>1</Row>
+      						<Column>7</Column>
+      					</Parameters>
+      					<Actions>
+      						<Write>
+      							<Parameters>
+      								<value>215</value>
+      							</Parameters>
+      						</Write>
+      						<PressKeyFromKeyBoard>
+      						<Actions>
+      						<PressEnter></PressEnter>
+      						</Actions>
+      						</PressKeyFromKeyBoard></Actions>
+      				</EditStringValue>
+      				
+      				<Save></Save>
+      				<IfPopUpPresent></IfPopUpPresent>
+      				
+      				<Sleep><Parameters><timeOut>4</timeOut></Parameters></Sleep>
+      				<ReadValue>
+      					<Parameters>
+      						<Row>1</Row>
+      						<Column>7</Column>
+      					</Parameters>
+      					<ExpectedResult>215</ExpectedResult>
+      				</ReadValue>
+      				<OpenInNewTab>
+      					<Actions>
+      						<Close>
+      							<Parameters></Parameters>
+      						</Close>
+      					</Actions>
+      				</OpenInNewTab>
+      			</Actions>
+      		</NavigateToTableView></Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

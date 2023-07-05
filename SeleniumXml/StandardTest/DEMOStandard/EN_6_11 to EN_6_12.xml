@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Actions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>EN_6_11 to EN_6_12</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>1_Mickael&#160;SMITH</login>
+          <password>mmmmm</password>
+          <langage>English</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<SearchBox>
+      			<Parameters>
+      				<research>316</research>
+      			</Parameters>
+      			<Actions>
+      				<Content>
+      					<Actions>
+      						<SelectObjectType>
+      							<Parameters>
+      								<ObjectTypeName>Metals / Alloys</ObjectTypeName>
+      							</Parameters>
+      						</SelectObjectType>
+      						<Results>
+      							<Actions>
+      								<DoubleClickEntity>
+      									<Parameters>
+      										<nodes>
+      											<path>X2CrNiMo17 - 12 (316L)</path></nodes>
+      									</Parameters>
+      								</DoubleClickEntity></Actions>
+      						</Results></Actions>
+      				</Content>
+      				<Close>
+      					<Parameters>
+      						<multipleWindowActive>false</multipleWindowActive></Parameters>
+      				</Close></Actions>
+      		</SearchBox>
+      		<ReadBanner>
+      			<ExpectedResult>X2CrNiMo17 - 12 (316L)</ExpectedResult></ReadBanner>
+      		<ReadForm>
+      			<Actions>
+      				<ChangeTab>
+      					<Parameters>
+      						<tabIndex>2</tabIndex>
+      					</Parameters>
+      				</ChangeTab>
+      				<ChangeUnit>
+      					<Parameters>
+      						<attrId>284</attrId>
+      						<unit>K</unit>
+      					</Parameters>
+      				</ChangeUnit>
+      				<ChangeUnit>
+      					<Parameters>
+      						<attrId>282</attrId>
+      						<unit>K</unit>
+      					</Parameters>
+      				</ChangeUnit>
+      				<ChangeUnit>
+      					<Parameters>
+      						<attrId>281</attrId>
+      						<unit>K</unit>
+      					</Parameters>
+      				</ChangeUnit>
+      				<Read>
+      					<WEGLink>
+      						<Parameters>
+      							<attrId>277</attrId>
+      						</Parameters>
+      						<Actions>
+      							<Click></Click></Actions>
+      					</WEGLink>
+      				</Read></Actions>
+      		</ReadForm>
+      		<NavigationTree>
+      			<Actions>
+      				<TreeContextMenu>
+      					<Actions>
+      						<ModificationsHistory>
+      							<Parameters>
+      								<nodes>
+      									<path>Steels</path>
+      									<path>Stainless steels</path>
+      									<path>Austenitic stainless steels</path>
+      									<path>X2CrNiMo17 - 12 (316L)</path></nodes>
+      							</Parameters>
+      							<Actions>
+      								<Close>
+      									<Parameters>
+      										<multipleWindowActive>false</multipleWindowActive></Parameters>
+      								</Close>
+      							</Actions>
+      						</ModificationsHistory></Actions>
+      				</TreeContextMenu></Actions>
+      		</NavigationTree></Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

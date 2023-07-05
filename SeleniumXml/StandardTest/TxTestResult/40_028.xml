@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--does not clicking on close button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Avoid saving the entered data</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<NavigationTree>
+        		<Actions>
+        			<SelectOT>
+        				<Actions>
+        					<Select>
+        						<Parameters>
+        							<value>Essais</value>
+        						</Parameters>
+        					</Select></Actions>
+        			</SelectOT>
+        			<EntityTree>
+        				<Actions>
+        					<SelectEntity>
+        						<Parameters>
+        							<nodes><path>Traction 5 pour plan de test LNK</path></nodes></Parameters>
+        					</SelectEntity></Actions>
+        			</EntityTree></Actions>
+        	</NavigationTree>
+        	<LaunchModel>
+        		<Parameters>
+        			<modelName>Saisir des résultats d'essai (link)</modelName>
+        		</Parameters>
+        	</LaunchModel>
+        	<ReturnTestResultEntityTest>
+        		<Actions>
+        					<ConditionTable>
+        						<Actions>
+        						<Sleep>
+        						<Parameters>
+        							<timeOut>2</timeOut>
+        						</Parameters>
+        					</Sleep>
+        							<ModifyStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>2</columnIndex>
+        								</Parameters>
+        								<Actions>
+        									<Write>
+        										<Parameters>
+        											<value>Test</value>
+        										</Parameters>
+        									</Write></Actions>
+        							</ModifyStringValue></Actions>
+        					</ConditionTable>
+        					<Ok>
+        						<Parameters>
+        							<validate>false</validate></Parameters>
+        					</Ok></Actions>
+        	</ReturnTestResultEntityTest>
+        	<ReadForm>
+        		<Actions>
+        			<Read>
+        				<DTTable>
+        					<Parameters>
+        						<attrId>95</attrId>
+        					</Parameters>
+        					<Actions>
+        						<GetValue>
+        							<Parameters>
+        								<rowIndex>2</rowIndex>
+        								<colIndex>3</colIndex>
+        							</Parameters>
+        							<ExpectedResult>#Space#</ExpectedResult>
+        						</GetValue></Actions>
+        				</DTTable>
+        				
+        			</Read></Actions>
+        	</ReadForm>
+        	<LaunchModel>
+        		<Parameters>
+        			<modelName>Saisir des résultats d'essai (link)</modelName>
+        		</Parameters>
+        	</LaunchModel>
+        	<ReturnTestResultEntityTest>
+        		<Actions>
+        					<ConditionTable>
+        						<Actions>
+        							<ReadStringValue>
+        								<Parameters>
+        									<rowIndex>1</rowIndex>
+        									<columnIndex>2</columnIndex>
+        								</Parameters>
+        								<ExpectedResult>#Space#</ExpectedResult>
+        							</ReadStringValue></Actions>
+        					</ConditionTable></Actions>
+        	</ReturnTestResultEntityTest>
+        	
+
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

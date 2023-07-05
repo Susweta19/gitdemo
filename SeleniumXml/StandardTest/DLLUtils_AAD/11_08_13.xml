@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the availability of the function 'Utils_Case' -->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the functionality of model application " App_Utils_IntToStr" </testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Message>Associative test start</Message>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_IntToStr</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<SwitchReadWrite />
+							<TreeContextMenu>
+								<Actions>
+									<AdvancedDuplicate>
+										<Parameters>
+											<nodes>
+												<path>New</path>
+											</nodes>
+											<advDuplicateName>AD</advDuplicateName>
+										</Parameters>
+										<Actions></Actions>
+									</AdvancedDuplicate>
+								</Actions>
+							</TreeContextMenu>
+						</Actions>
+					</NavigationTree>
+					<ReadForm>
+						<Actions>
+							<Read>
+								<DTText>
+									<Parameters>
+										<attrId>422</attrId>
+									</Parameters>
+									<ExpectedResult>
+										<value>10</value>
+									</ExpectedResult>
+								</DTText>
+
+
+
+
+
+							</Read>
+						</Actions>
+					</ReadForm>
+				</Actions>
+
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

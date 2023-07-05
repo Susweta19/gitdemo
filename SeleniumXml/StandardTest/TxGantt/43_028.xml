@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the view of Machines/Tasks view</testDescription>
+				<testBugRef>16150</testBugRef>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<Sleep>
+						<Parameters>
+							<timeOut>2</timeOut>
+						</Parameters>
+					</Sleep>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Machines/Tasks view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<Sleep>
+						<Parameters>
+							<timeOut>2</timeOut>
+						</Parameters>
+					</Sleep>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<RightClickOnTask>
+										<Parameters>
+											<index>1</index>
+											<optionToMove>Sort this level by</optionToMove>
+										</Parameters>
+										<Actions>
+											<NameAssending></NameAssending>
+										</Actions>
+									</RightClickOnTask>
+									<ManageGanttView>
+										<Actions>
+											<ReadCurrentDate>
+												<ExpectedResult>#DD#</ExpectedResult></ReadCurrentDate></Actions>
+									</ManageGanttView>
+									<ManageTask1>
+										<Actions>
+											<ReadTaskName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>0</index>
+														</Parameters>
+														<ExpectedResult>Machine003</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadTaskName>
+										</Actions>
+									</ManageTask1>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the Translation</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+          <langage>English</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<ReadPortalName>
+        		<ExpectedResult>This is the english portal</ExpectedResult></ReadPortalName>
+        	<HideNavigationTree></HideNavigationTree>
+        	<MultiCriteria>
+        		<Actions>
+        			<ReadHeader>
+        				<ExpectedResult>Multicriterion Selection - Requirement Set</ExpectedResult></ReadHeader>
+        			<Close></Close></Actions>
+        	</MultiCriteria>
+        	<WaitForAjax></WaitForAjax>
+        	<ChoiceGuide>
+        		<Actions>
+        			<ReadHeader>
+        				<ExpectedResult>Choice Guide</ExpectedResult></ReadHeader>
+        			<Close></Close></Actions>
+        	</ChoiceGuide>
+        	<WaitForAjax></WaitForAjax>
+        	<OpenRequirementSet>
+        		<Actions>
+        			<ReadHeader>
+        				<ExpectedResult>Multicriterion Selection - Requirement Set</ExpectedResult></ReadHeader>
+        			<Close></Close></Actions>
+        	</OpenRequirementSet>
+        	<WaitForAjax></WaitForAjax>
+        	<CurveModule>
+        		<Actions>
+        			<Changetab>
+        				<Parameters>
+        					<indexTab>0</indexTab>
+        				</Parameters>
+        			</Changetab>
+        			<Changetab>
+        				<Parameters>
+        					<indexTab>0</indexTab>
+        				</Parameters>
+        			</Changetab>
+        			
+        		</Actions>
+        	</CurveModule>
+        	<WaitForAjax></WaitForAjax>
+        	<Export>
+        		<Actions>
+        			<ReadHeader>
+        				<ExpectedResult>Export</ExpectedResult></ReadHeader>
+        			<Close></Close></Actions>
+        	</Export>
+        	<WaitForAjax></WaitForAjax>
+        	<SearchBox>
+        		<Parameters>
+        			<research>New</research>
+        		</Parameters>
+        		<Actions>
+        			<ReadHeader>
+        				<ExpectedResult>Text Search</ExpectedResult></ReadHeader>
+        			<Close></Close>
+        			<WaitForAjax></WaitForAjax></Actions>
+        	</SearchBox>
+        	<Logout>
+        		<Actions>
+        			<CloseConfirmationPopup>
+        				<Parameters>
+        					<result>true</result>
+        				</Parameters>
+        			</CloseConfirmationPopup>
+        		</Actions>
+        	</Logout>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

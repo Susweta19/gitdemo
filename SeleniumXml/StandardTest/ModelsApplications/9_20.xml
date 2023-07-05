@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Go to TEEXMA WEB, select OT 'ModelApplications'. Turn to the Tab 'Tab_3',The Attribute 'TEST_Launch_On tab displayed_Tab3' won't be filled automatically filled</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>ModelApplications</value>
+                    </Parameters>
+                  </Select>
+                  <Read>
+                  	<ExpectedResult>ModelApplications</ExpectedResult></Read>
+                </Actions>
+              </SelectOT>
+              <SwitchReadWrite />
+              <AddObject>
+              	<Parameters />
+              	<Actions>
+              		<Ok>
+              			<Parameters>
+              				<validate>true</validate></Parameters>
+              		</Ok></Actions>
+              </AddObject>
+            </Actions>
+          </NavigationTree>
+          <ReadForm>
+          	<Actions>
+          		<ChangeTab>
+          			<Parameters>
+          				<tabIndex>2</tabIndex>
+          			</Parameters>
+          		</ChangeTab>
+          		<ChangeTab>
+              	<Parameters>
+              		<tabIndex>0</tabIndex>
+              	</Parameters>
+              </ChangeTab>
+          	<ChangeTab>
+              	<Parameters>
+              		<tabIndex>2</tabIndex>
+              	</Parameters>
+              </ChangeTab>
+          		<Read>
+          			<DTDecimalValue>
+          				<Parameters>
+          					<attrId>492</attrId>
+          				</Parameters>
+          				<ExpectedResult>
+          					<min>66</min></ExpectedResult>
+          			</DTDecimalValue>
+          			
+          		</Read></Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Start the search interface</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+					<langage>French</langage>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>Search samples</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax><Sleep>
+										<Parameters>
+											<timeOut>3</timeOut>
+										</Parameters>
+</Sleep>
+									<RefreshResult></RefreshResult>
+									<ManagePopUp>
+										<Actions>
+											<ReadConfirmationPopUpMessage>
+												<Parameters></Parameters>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>0</index>
+														</Parameters>
+														<ExpectedResult>Il n'y a pas de filtres actifs, la recherche peut prendre du temps... Voulez-vous continuer?</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadConfirmationPopUpMessage>
+										</Actions>
+									</ManagePopUp>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

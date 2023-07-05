@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Click on the button "Group By" from the toolbar and select "Groupement par zone équipement"</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+
+
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Machines/Tasks view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<SelectScale>
+										<Parameters>
+											<option>Days/Hours</option>
+										</Parameters>
+									</SelectScale>
+									<SelectPaging>
+										<Parameters>
+											<option>None</option>
+										</Parameters>
+									</SelectPaging>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>Zone001</ProjectName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsProjectPresent>
+										</Actions>
+									</ManageTask>
+									<SelectGroup>
+										<Parameters>
+											<option>Groupement par zone</option>
+										</Parameters>
+									</SelectGroup>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>Zone001</ProjectName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsProjectPresent>
+										</Actions>
+									</ManageTask>
+									<SelectGroup>
+										<Parameters>
+											<option>None</option>
+										</Parameters>
+									</SelectGroup>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>Zone001</ProjectName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsProjectPresent>
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

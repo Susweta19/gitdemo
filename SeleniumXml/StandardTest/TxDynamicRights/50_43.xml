@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Max rights on a given choice guide for user Jeremy Trin</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Jeremy&#160;Trin</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<Sleep>
+						<Parameters>
+							<timeOut>5</timeOut>
+						</Parameters>
+					</Sleep>
+					<IsButtonPresentByTitle>
+						<Parameters>
+							<buttonName>Choice Guide</buttonName>
+						</Parameters>
+						<ExpectedResult>true</ExpectedResult>
+					</IsButtonPresentByTitle>
+					<ChoiceGuide>
+						<Actions>
+							<Content>
+								<Actions>
+									<ChoiceGuideFromTemplate>
+										<Parameters>
+											<template>AdvancedSearch Agency</template></Parameters>
+										<Actions>
+											<Content>
+												<Actions>
+													<Formulaire>
+														<Actions>
+															<ReadQuestion>
+																<Parameters>
+																	<id>2</id>
+																</Parameters>
+																<ExpectedResult>The agency was inaugurated in 2021 ?</ExpectedResult>
+															</ReadQuestion>
+															<SingleAnswer>
+																<Parameters>
+																	<id>2</id>
+																	<userChoice>true</userChoice>
+																</Parameters>
+															</SingleAnswer></Actions>
+													</Formulaire>
+													<Select>
+														<Parameters></Parameters>
+														<Actions>
+															<Content>
+																<Actions>
+																	<ResultsTab>
+																		<Actions>
+																			<Content>
+																				<Actions>
+																					<TreeTabResults>
+																						<Actions>
+																							<ReadEntityRow>
+																								<Parameters>
+																									<nodes>
+																										<path> Marseille</path></nodes>
+																									<ExpectedValue>
+																										<collection>100%</collection>
+																										<collection>11/03/2021</collection></ExpectedValue>
+																								</Parameters>
+																							</ReadEntityRow></Actions>
+																					</TreeTabResults></Actions>
+																			</Content></Actions>
+																	</ResultsTab></Actions>
+															</Content>
+															<Close></Close></Actions>
+													</Select></Actions>
+											</Content></Actions>
+									</ChoiceGuideFromTemplate>
+									<ReadTitle>
+										<ExpectedResult>AdvancedSearch Agency</ExpectedResult></ReadTitle></Actions>
+							</Content></Actions>
+					</ChoiceGuide>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

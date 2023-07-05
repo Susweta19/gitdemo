@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Preview button</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Portals</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Welcome_Test</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<ButtonPortal>
+						<Parameters>
+							<link>My Dashboard</link>
+							<hasSpan>true</hasSpan>
+						</Parameters>
+					</ButtonPortal>
+					<ReturnTxTableView>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									
+									<WaitForAjax></WaitForAjax>
+									<Sleep>
+										<Parameters>
+											<timeOut>25</timeOut>
+										</Parameters>
+									</Sleep>
+									<EditMultipleLink>
+										<Parameters>
+											<Row>1</Row>
+											<Column>11</Column>
+										</Parameters>
+										<Actions>
+											<Content>
+												<Actions>
+													<SelectAll></SelectAll></Actions>
+											</Content>
+											<Ok>
+												<Parameters></Parameters>
+											</Ok></Actions>
+									</EditMultipleLink>
+									<ManagePreviewData>
+										<Parameters>
+											<rowindex>1</rowindex>
+											<columnindex>11</columnindex>
+										</Parameters>
+										<Actions>
+											<PreviewLink>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>
+																0
+															</index>
+														</Parameters>
+														<Actions>
+															<GetText>
+																<ExpectedResult>Building 1042</ExpectedResult></GetText></Actions>
+													</ElementAt>
+													<LastElement>
+														<Actions>
+															<GetText>
+																<ExpectedResult>Building 1117</ExpectedResult></GetText></Actions>
+													</LastElement></Actions>
+											</PreviewLink></Actions>
+									</ManagePreviewData>
+																		
+								
+
+
+								</Actions>
+							</Content></Actions>
+					</ReturnTxTableView>
+					
+
+
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

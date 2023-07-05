@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Opening the time entry interface</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<TxHourTracking>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									<Sleep>
+										<Parameters>
+											<timeOut>15</timeOut>
+										</Parameters>
+									</Sleep>
+									<ManageTask>
+										<Actions>
+											<IsCurrentWeekDaysDisplayed>
+												<ExpectedResult>
+													true
+												</ExpectedResult></IsCurrentWeekDaysDisplayed>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Administrateur</taskName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsTaskPresent>
+											
+										</Actions>
+									</ManageTask>
+									<ManageNavigationLayout>
+										<Actions>
+											<ClickOnLinkBox>
+												<Parameters>
+													<linkName>My Team</linkName>
+												</Parameters>
+											</ClickOnLinkBox>
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+										</Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Boris Franitch</taskName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsTaskPresent>
+											
+										</Actions>
+									</ManageTask>
+									<ManageNavigationLayout>
+										<Actions>
+											<ClickOnLinkBox>
+												<Parameters>
+													<linkName>Machine</linkName>
+												</Parameters>
+											</ClickOnLinkBox>
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+										</Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Machine A</taskName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsTaskPresent>
+											
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+							<Cancel></Cancel>
+							
+						</Actions>
+					</TxHourTracking>
+					<Logout>
+						<Actions>
+							<CloseConfirmationPopup>
+								<Parameters>
+									<result>true</result>
+								</Parameters>
+							</CloseConfirmationPopup></Actions>
+					</Logout>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

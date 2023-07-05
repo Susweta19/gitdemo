@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Prasenjit-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Launch a Multicriteria Selection then view the detailed results. Click on the button--The Objects, the Detailed Results will be exported in a Excel File:'Discarded or questionable elements' checked : the Objects of which the Adequacy is not certain will also be exported;'Discarded or questionable elements' unchecked : the Objects of which the Adequacy is not certain won't be exported</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Message>Login</Message>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <MultiCriteria>
+            <Actions>
+              <Content>
+                <Actions>
+                  <ResultsTab>
+                    <Actions>
+                      <Content>
+                        <Actions>
+                          <DiscardedElements>
+                            <Actions>
+                              <Tick />
+                            </Actions>
+                          </DiscardedElements>
+                          <TreeTabResults>
+                          	<Actions>
+                          		<SelectAll></SelectAll></Actions>
+                          </TreeTabResults>
+                          <ExportToExcelFormat />
+                          <DiscardedElements>
+                            <Actions>
+                              <Tick />
+                            </Actions>
+                          </DiscardedElements>
+                          <TreeTabResults>
+                          	<Actions>
+                          		<SelectAll></SelectAll></Actions>
+                          </TreeTabResults>
+                          <ExportToExcelFormat />
+                        </Actions>
+                      </Content>
+                    </Actions>
+                  </ResultsTab>
+                </Actions>
+              </Content>
+            </Actions>
+          </MultiCriteria>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

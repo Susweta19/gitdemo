@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Fill in the Attributes 'What', 'With' and 'String' with string valules, then turn back to ReadForm and check the value of the Attribute 'StrReplace_Answer'	'* If the 'String' value contains the 'What' value, then the value of the Attribute 'StrReplace_Answer' will be the value of the Attribute 'String', with the part that is same with 'What' replaced by the value of the Attribute 'With';* Else, the value of the Attribute 'StrReplace_Answer' will be the same as 'String'(example : String = ''What is this'', What = ''is this'', With = ''was that'';then the StrReplace_Answer will be ''What was that'')'</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_Utils</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                  <SelectEntity>
+                    <Parameters>
+                      <nodes>
+                        <path>New</path>
+                      </nodes>
+                    </Parameters>
+                  </SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <Edit>
+            <Actions>
+              <Content>
+                <Actions>
+                  <ChangeTab>
+                    <Parameters>
+                      <tabIndex>3</tabIndex>
+                    </Parameters>
+                  </ChangeTab>
+                  <Write>
+                    <DTText>
+                      <Parameters>
+                        <id>185</id>
+                        <!--input for attr "string"-->
+                        <value>
+                          <value>What is this?</value>
+                        </value>
+                      </Parameters>
+                    </DTText>
+                  </Write>
+                  <Write>
+                    <DTText>
+                      <Parameters>
+                        <id>186</id>
+                        <!--input for attr "with"-->
+                        <value>
+                          <value>was that</value>
+                        </value>
+                      </Parameters>
+                    </DTText>
+                  </Write>
+                  <Write>
+                    <DTText>
+                      <Parameters>
+                        <id>187</id>
+                        <!--input for attr "what?"-->
+                        <value>
+                          <value>is this</value>
+                        </value>
+                      </Parameters>
+                    </DTText>
+                  </Write>
+                </Actions>
+              </Content>
+              <Ok>
+                <Parameters>
+                  <validate>true</validate>
+                </Parameters>
+              </Ok>
+            </Actions>
+          </Edit>
+          <ReadForm>
+            <Actions>
+              <ChangeTab>
+                <Parameters>
+                  <tabIndex>3</tabIndex>
+                </Parameters>
+              </ChangeTab>
+              <Read>
+                <DTText>
+                  <Parameters>
+                    <attrId>184</attrId>
+                  </Parameters>
+                  <!--outputforattr"StrReplace_Answer"-->
+                  <ExpectedResult>
+                    <value>What was that?</value>
+                  </ExpectedResult>
+                </DTText>
+              </Read>
+            </Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

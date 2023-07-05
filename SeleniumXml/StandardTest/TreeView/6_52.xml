@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>When opening Export window (through dedicated
+					button in toolbar),--&gt;The checkboxes are tickable/untickable;We can
+					tick one or several checkboxes at the same time</testDescription>
+        <testBugRef>5</testBugRef>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <Export>
+            <Actions>
+              <Content>
+                <Actions>
+                  <WaitForAjax></WaitForAjax>
+                  <Filtre>
+                    <Actions>
+                      <Select>
+                        <Parameters>
+                          <value>TEST_TreeView</value>
+                        </Parameters>
+                      </Select>
+                      <WaitForAjax></WaitForAjax>
+                      <Read>
+                        <ExpectedResult>TEST_TreeView</ExpectedResult>
+                      </Read>
+                    </Actions>
+                  </Filtre>
+                  <ObjectsTree>
+                    <Actions>
+                      <SelectEntitiesBox>
+                        <Parameters>
+                          <collection>
+                            <collection>
+                              <path>New</path>
+                            </collection>
+                            <collection>
+                              <path>New1</path>
+                            </collection>
+                          </collection>
+                        </Parameters>
+                        <Actions>
+                        </Actions>
+                      </SelectEntitiesBox>
+                    </Actions>
+                  </ObjectsTree>
+                </Actions>
+              </Content>
+            </Actions>
+          </Export>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

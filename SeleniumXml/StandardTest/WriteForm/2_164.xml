@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the unavailability of source of an attribute</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_WriteView</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                  <SelectEntity>
+                    <Parameters><nodes><path>New</path></nodes></Parameters>
+                  </SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <Edit>
+            <Actions>
+              <Content>
+              	<Actions>
+              		<IsSourcePresent>
+              			<Parameters>
+              				<attrId>97</attrId>
+              			</Parameters>
+              			<ExpectedResult>false</ExpectedResult>
+              		</IsSourcePresent>
+              		<Source>
+              			<Parameters>
+              				<attrId>97</attrId>
+              			</Parameters>
+              			<Actions><Content>
+            				<Actions>
+            				<Read>
+            					<DTText>
+            						<Parameters>
+            							<id>140</id>
+            						</Parameters>
+            						<ExpectedResult>
+            							<value />
+            						</ExpectedResult>
+            					</DTText>
+            					
+            				</Read>
+            				<ChangeTab>
+            						<Parameters>
+            							<tabIndex>1</tabIndex>
+            						</Parameters>
+            					</ChangeTab>
+            					<Read>
+            						<DTDecimalValue>
+            							<Parameters>
+            								<id>142</id>
+            							</Parameters>
+            							<ExpectedResult>
+            								<min /></ExpectedResult>
+            						</DTDecimalValue>
+            						
+            					
+            				</Read>
+            				<Read>
+            						<DTDecimalValue>
+            							<Parameters>
+            								<id>145</id>
+            							</Parameters>
+            							<ExpectedResult>
+            								<min /></ExpectedResult>
+            						</DTDecimalValue>
+            						
+            					
+            				</Read>
+            				<Read>
+            						<DTDecimalValue>
+            							<Parameters>
+            								<id>143</id>
+            							</Parameters>
+            							<ExpectedResult>
+            								<min />
+            								<max />
+            								<mean /></ExpectedResult>
+            						</DTDecimalValue>
+            						
+            					
+            				</Read>
+            				<Read>
+            						<DTDecimalValue>
+            							<Parameters>
+            								<id>146</id>
+            							</Parameters>
+            							<ExpectedResult>
+            								<min /></ExpectedResult>
+            						</DTDecimalValue>
+            						
+            					
+            				</Read>
+            				<Read>
+            						<DTDecimalValue>
+            							<Parameters>
+            								<id>144</id>
+            							</Parameters>
+            							<ExpectedResult>
+            								<min />
+            								<max /></ExpectedResult>
+            						</DTDecimalValue>
+            						
+            					
+            				</Read>
+            				
+            					<ChangeTab>
+            						<Parameters>
+            							<tabIndex>2</tabIndex>
+            						</Parameters>
+            					</ChangeTab>
+            					<MailAndURL>
+            						<Parameters>
+            							<attrId>151</attrId>
+            						</Parameters>
+            						<Actions>
+            							<ManageInput>
+            								<Actions>
+            									<Read>
+            										<ExpectedResult /></Read></Actions>
+            							</ManageInput></Actions>
+            					</MailAndURL>
+            					<MailAndURL>
+            						<Parameters>
+            							<attrId>150</attrId>
+            						</Parameters>
+            						<Actions>
+            							<ManageInput>
+            								<Actions>
+            									<Read>
+            										<ExpectedResult /></Read></Actions>
+            							</ManageInput></Actions>
+            					</MailAndURL>
+            					<ChangeTab>
+            						<Parameters>
+            							<tabIndex>3</tabIndex>
+            						</Parameters>
+            					</ChangeTab>
+            					<Read>
+            						<DTDate>
+            							<Parameters>
+            								<id>155</id>
+            							</Parameters>
+            							<ExpectedResult>
+            								<value />
+            							</ExpectedResult>
+            						</DTDate>
+            						
+            					</Read>
+            					<Read>
+            						<DTDate>
+            							<Parameters>
+            								<id>154</id>
+            							</Parameters>
+            							<ExpectedResult>
+            								<value />
+            							</ExpectedResult>
+            						</DTDate>
+            						
+            					</Read>
+            					<ChangeTab>
+            						<Parameters>
+            							<tabIndex>4</tabIndex>
+            						</Parameters>
+            					</ChangeTab>
+            					
+            					<ChangeTab>
+            						<Parameters>
+            							<tabIndex>5</tabIndex>
+            						</Parameters>
+            					</ChangeTab></Actions>
+            			</Content>
+              				<Close >
+              					</Close></Actions>
+              		</Source>
+              		
+
+              	</Actions>
+              </Content>
+              <Ok>
+              	<Parameters>
+              		<validate>false</validate></Parameters>
+              </Ok>
+              
+            </Actions>
+          </Edit>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

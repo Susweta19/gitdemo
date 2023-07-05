@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Addition right on a given object type(For User Alice Dupont)</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Alice&#160;Dupont</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Company</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <SwitchReadWrite></SwitchReadWrite>
+              <AddObject>
+              	<Parameters></Parameters>
+              	<Actions>
+              		<Content>
+              			<Actions>
+              				<Write>
+              					<DTText>
+              						<Parameters>
+              							<id>78</id>
+              							<value>
+              								<value>Company 2</value>
+              							</value>
+              						</Parameters>
+              					</DTText>
+              					
+              				</Write></Actions>
+              		</Content>
+              		<Ok>
+              			<Parameters>
+              				<validate>true</validate></Parameters>
+              		</Ok></Actions>
+              </AddObject>
+            </Actions>
+          </NavigationTree>
+          <Edit>
+          	<Actions>
+          		<Content>
+          			<Actions>
+          				<Write>
+          					<DTText>
+          						<Parameters>
+          							<id>82</id>
+          							<value>
+          								<value>Zeshan.......</value>
+          							</value>
+          						</Parameters>
+          					</DTText>
+          					
+          				</Write></Actions>
+          		</Content>
+          		<Ok>
+          			<Parameters>
+          				<validate>true</validate></Parameters>
+          		</Ok></Actions>
+          </Edit>
+          <NavigationTree>
+          	<Actions>
+          		<EntityTree>
+          			<Actions>
+          				<SelectEntity>
+          					<Parameters>
+          						<nodes>
+          							<path>Company 1</path></nodes>
+          					</Parameters>
+          				</SelectEntity></Actions>
+          		</EntityTree></Actions>
+          </NavigationTree>
+
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

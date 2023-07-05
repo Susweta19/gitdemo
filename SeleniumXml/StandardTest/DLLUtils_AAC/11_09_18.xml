@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the availability of the function 'Utils_Case' -->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the functionality of model application " App_Utils_Min" </testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Message>Associative test start</Message>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_Min</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<SwitchReadWrite />
+<TreeContextMenu>
+								<Actions>
+									<AdvancedCreation>
+										<Parameters>
+											<creationOption>AC</creationOption>
+											<usesWindow>
+												true
+											</usesWindow>
+										</Parameters>
+										<Actions><Content>
+										<Actions>
+											<Write>
+												<DTDecimalValue>
+													<Parameters>
+														<id>447</id>
+														<value>
+															<min>55</min>
+														</value>
+													</Parameters>
+												</DTDecimalValue>
+
+
+
+
+
+
+
+
+											</Write>
+											<Write>
+												<DTDecimalValue>
+													<Parameters>
+														<id>446</id>
+														<value>
+															<min>78</min>
+														</value>
+													</Parameters>
+												</DTDecimalValue>
+
+
+											</Write>
+											<Write>
+												<DTDecimalValue>
+													<Parameters>
+														<id>445</id>
+														<value>
+															<min>52</min>
+														</value>
+													</Parameters>
+												</DTDecimalValue>
+
+											</Write>
+										</Actions>
+									</Content>
+									<Ok>
+										<Parameters>
+											<validate>true</validate>
+										</Parameters>
+									</Ok></Actions>
+									</AdvancedCreation></Actions>
+							</TreeContextMenu>
+						</Actions>
+					</NavigationTree>
+					<ReadForm>
+						<Actions>
+							<Read>
+								<DTDecimalValue>
+									<Parameters>
+										<attrId>444</attrId>
+									</Parameters>
+									<ExpectedResult>
+										<min>52</min>
+									</ExpectedResult>
+								</DTDecimalValue>
+
+
+
+
+
+
+							</Read>
+						</Actions>
+					</ReadForm>
+				</Actions>
+
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

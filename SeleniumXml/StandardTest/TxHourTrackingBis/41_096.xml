@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the Functionality of Delete Time function for a task under My team</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in window mode without TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInWindow>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									<ManageNavigationLayout>
+										<Actions>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+													
+												</Parameters>
+												<Actions>
+													<SelectAll></SelectAll></Actions>
+											</ManageLinkBox></Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+											<DeleteAllPresentTask></DeleteAllPresentTask>
+											
+											<AddTask>
+												<Parameters>
+													<user>Orane Martel</user>
+												</Parameters>
+												<Actions>
+													<WaitForAjax></WaitForAjax>
+													<ReadHeader>
+														<ExpectedResult>Add task(s)</ExpectedResult>
+													</ReadHeader>
+													<Content>
+														<Actions>
+															<IsButtonDisabled>
+																<Parameters>
+																	<buttonName>Ok</buttonName>
+																</Parameters>
+																<ExpectedResult>true</ExpectedResult>
+															</IsButtonDisabled>
+															<ManageCommonMethods>
+																<Actions>
+																	<GetCurrentWeekDays>
+																		<Parameters></Parameters>
+																		<Actions>
+																			<ElementAt>
+																				<Parameters>
+																					<index>0</index>
+																				</Parameters>
+																				<Hashtag>#date#</Hashtag>
+																			</ElementAt>
+																		</Actions>
+																	</GetCurrentWeekDays>
+																</Actions>
+															</ManageCommonMethods>
+															<SelectTask>
+																<Actions>
+																	<Search>
+																		<Parameters>
+																			<research>646</research>
+																		</Parameters>
+																	</Search>
+																	<SelectEntitiesBox>
+																		<Parameters>
+																			<collection>
+																				<collection>
+																					<path>T-0646</path>
+																				</collection>
+																			</collection>
+																		</Parameters>
+																		<Actions>
+																			<Tick></Tick>
+																		</Actions>
+																	</SelectEntitiesBox>
+																</Actions>
+															</SelectTask>
+															<SelectDate>
+																<Actions>
+																	<Day>
+																		<Parameters>
+																			<day>#date#</day>
+																		</Parameters>
+																	</Day>
+																</Actions>
+															</SelectDate>
+															<WriteDuration>
+																<Actions>
+																	<Write>
+																		<Parameters>
+																			<value>2</value>
+																		</Parameters>
+																	</Write>
+																</Actions>
+															</WriteDuration>
+															<IsButtonDisabled>
+																<Parameters>
+																	<buttonName>Ok</buttonName>
+																</Parameters>
+																<ExpectedResult>false</ExpectedResult>
+															</IsButtonDisabled>
+														</Actions>
+													</Content>
+													<Ok>
+														<Parameters>
+															<validate>true</validate>
+														</Parameters>
+													</Ok>
+												</Actions>
+											</AddTask>
+											<PressKeyFromKeyBoard>
+												<Actions>
+													<PressEnter />
+												</Actions>
+											</PressKeyFromKeyBoard>
+											<WaitForSaving></WaitForSaving>
+											<TaskContextMenu>
+												<Parameters>
+													<colIndex>5</colIndex>
+													<taskName>T-0646</taskName>
+												</Parameters>
+												<Actions>
+													<DeleteTime></DeleteTime>
+
+
+
+
+												</Actions>
+											</TaskContextMenu>
+											<ReadCell>
+												<Parameters>
+
+													<colIndex>5</colIndex>
+													<taskName>T-0646</taskName>
+												</Parameters>
+												<ExpectedResult></ExpectedResult>
+											</ReadCell>
+
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+							<Close></Close>
+
+						</Actions>
+					</ReturnTxHourTrackingInWindow>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

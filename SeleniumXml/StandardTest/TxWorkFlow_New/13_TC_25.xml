@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Traceability and comment</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>User_Workflow</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Workflow_Use&#160;Cases</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                  <SelectEntity>
+                    <Parameters><nodes><path>Test TxWF_Use Cases</path></nodes></Parameters>
+                  </SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <MainToolbar>
+          	<Parameters>
+          		<modelName>Available actions</modelName>
+          	</Parameters>
+          </MainToolbar>
+          <Sleep>
+          	<Parameters>
+          		<timeOut>5</timeOut>
+          	</Parameters>
+          </Sleep>
+          <ReturnWFPromote>
+          	<Actions>
+          		<WFAction>
+          			<Parameters>
+          				<actionName>Action 2 - Information message</actionName>
+          			</Parameters>
+          		</WFAction>
+          		
+          		
+          	</Actions>
+          </ReturnWFPromote>
+          <ManagePopUp>
+          	<Actions>
+          		<ReadPopUpMessage>
+          			<Actions>
+          				<ElementAt>
+          					<Parameters>
+          						<index>0</index>
+          					</Parameters>
+          					<ExpectedResult>This is an information message from the object Test TxWF_Use Cases by User_Workflow</ExpectedResult>
+          				</ElementAt></Actions>
+          		</ReadPopUpMessage>
+          		<ClosePopUp>
+          			<Parameters>
+          				<result>true</result>
+          			</Parameters>
+          		</ClosePopUp>
+          		
+          		<ManageInputBox>
+          			<Parameters>
+          				<value>test comment 2</value>
+          				<okOrCancel>true</okOrCancel>
+          			</Parameters>
+          		</ManageInputBox>
+          		
+          	</Actions>
+          </ManagePopUp>
+          <NavigationTree>
+          	<Actions>
+          		<EntityTree>
+          			<Actions>
+          				<SelectEntity>
+          					<Parameters>
+          						<nodes>
+          							<path>WF_Use Cases 1</path></nodes>
+          					</Parameters>
+          				</SelectEntity>
+          				<SelectEntity>
+          					<Parameters>
+          						<nodes>
+          							<path>Test TxWF_Use Cases</path></nodes>
+          					</Parameters>
+          				</SelectEntity></Actions>
+          		</EntityTree></Actions>
+          </NavigationTree>
+          <ReadForm>
+          	<Actions>
+          		<AttributeIsDiplayed>
+          			<Parameters>
+          				<attrId>556</attrId>
+          			</Parameters>
+          			<ExpectedResult>true</ExpectedResult>
+          		</AttributeIsDiplayed>
+          	</Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Shubhajit -->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the function of "Bold" tool</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<Sleep>
+						<Parameters>
+							<timeOut>5</timeOut>
+						</Parameters>
+					</Sleep>
+					<ExpandCollapseTxCommunity></ExpandCollapseTxCommunity>
+					<TxCommunity>
+						<Actions>
+							<AddNewThread>
+								<Actions>
+									<WhatsOnYourMind>
+										<Actions>
+											<!--Click on the Tool then Write -->
+											<Bold />
+											<Write>
+												<Parameters>
+													<value>LOVE</value>
+												</Parameters>
+											</Write>
+										</Actions>
+									</WhatsOnYourMind>
+									<PeopleToNotify>
+										<Actions>
+											<SelectEntityBox>
+												<Parameters>
+													<nodes>
+														<path>Administrator</path>
+													</nodes>
+												</Parameters>
+												<Actions>
+													<Tick />
+												</Actions>
+											</SelectEntityBox>
+										</Actions>
+									</PeopleToNotify>
+									<Post />
+								</Actions>
+							</AddNewThread>
+						</Actions>
+					</TxCommunity>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

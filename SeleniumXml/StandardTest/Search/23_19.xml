@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the tranlation using language "English"</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+					<langage>English</langage>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<IfPopUpPresent></IfPopUpPresent><SearchBox>
+						<Parameters>
+							<research>research</research>
+						</Parameters>
+						<Actions>
+							<ReadHeader>
+								<ExpectedResult>Text Search</ExpectedResult></ReadHeader><IsAttributePresent>
+								<Parameters>
+									<attrbuteName>All of the following words:</attrbuteName>
+								</Parameters>
+							</IsAttributePresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Search</buttonName>
+								</Parameters>
+								<ExpectedResult>true</ExpectedResult>
+							</IsButtonPresent>
+							<Content>
+								<Actions>
+									<AllOfTheFollowingWords>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>New</value>
+												</Parameters>
+											</Write></Actions>
+									</AllOfTheFollowingWords>
+									<SearchButton></SearchButton><Sleep><Parameters><timeOut>3</timeOut></Parameters></Sleep>
+									<DisplayedObjects>
+										<Parameters>
+											<otName> All Object Types</otName></Parameters>
+										<ExpectedResult>121|5</ExpectedResult>
+									</DisplayedObjects></Actions>
+							</Content></Actions>
+					</SearchBox>
+
+				</Actions>
+			</MainWindow></Actions></TxInterface></Actions>

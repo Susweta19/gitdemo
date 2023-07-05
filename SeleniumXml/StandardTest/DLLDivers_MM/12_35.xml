@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>"Copy of a file with deletion of the source:
+Make sure the file in A is not referenced anywhere else.
+[clear destination "" no "", delete source "" yes ""] 
+
+Select an object ""Test"", click on the ""Switch to read or write mode"" button to create a new entity. In attribute A, publish a new document and click on Ok button. After that Launch the model ""[TxLibrary] Convert A -&gt; C (delete source)"" in the model menu."</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Test</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <SwitchReadWrite />
+              <AddObject>
+                <Parameters />
+                <Actions>
+                  <Content>
+                    <Actions>
+                      <PublishDocumentFile>
+                        <Parameters>
+                          <attrId>3361</attrId>
+                          <pathFile>#DocPath#TxLibraryFiles/File1.docx</pathFile>
+                        </Parameters>
+                      </PublishDocumentFile>
+                    </Actions>
+                  </Content>
+                  <Ok>
+                    <Parameters />
+                  </Ok>
+                </Actions>
+              </AddObject>
+            </Actions>
+          </NavigationTree>
+          <LaunchModel>
+            <Parameters>
+              <modelName>[TxLibrary] Convert A -&gt; C (delete source)</modelName>
+            </Parameters>
+          </LaunchModel>
+          <Sleep>
+            <Parameters>
+              <timeOut>5</timeOut>
+            </Parameters>
+          </Sleep>
+          <ReadForm>
+            <Actions>
+              <Read>
+                <WEGLink>
+                  <Parameters>
+                    <attrId>3365</attrId>
+                  </Parameters>
+                  <Actions>
+                    <GetText>
+                      <ExpectedResult>File1(7).pdf</ExpectedResult>
+                    </GetText>
+                  </Actions>
+                </WEGLink>
+              </Read>
+            </Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the Functionality of Delete Time function for a task under My Eqipments</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in new tab  mode with TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<ManageNavigationLayout>
+										<Actions>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My Equipments</linkName>
+												</Parameters>
+												<Actions>
+													<SelectAll></SelectAll>
+													
+													
+												</Actions>
+											</ManageLinkBox></Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+										<DeleteAllPresentTask></DeleteAllPresentTask>											
+											<AddTask>
+												<Parameters>
+													<user>Machine009</user></Parameters>
+												<Actions>
+													<Content>
+														<Actions>
+															<SelectTaskV2>
+																<Actions><FilterInput>
+	<Parameters>
+		<indexColumn>2</indexColumn>
+		<field>T-0765</field>
+	</Parameters>
+</FilterInput>
+																	<CheckBox>
+																		<Parameters>
+																			<Row>1</Row>
+																			<Column>1</Column>
+																		</Parameters>
+																		<Actions>
+																			<Tick></Tick></Actions>
+																	</CheckBox></Actions>
+															</SelectTaskV2>
+														</Actions>
+													</Content>
+													<Ok>
+														<Parameters>
+															<validate>true</validate></Parameters>
+													</Ok></Actions>
+											</AddTask>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>T-0765</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<DelayedByCustomer>
+												<Parameters>
+													<taskName>T-0765</taskName>
+													<colNum>14</colNum>
+												</Parameters>
+												<Actions>
+													<Write>
+														<Parameters>
+															<value>120</value>
+														</Parameters>
+													</Write></Actions>
+											</DelayedByCustomer>
+											<NormalWork>
+												<Parameters>
+													<taskName>T-0765</taskName>
+													<colNum>14</colNum>
+												</Parameters>
+												<Actions>
+													<Write>
+														<Parameters>
+															<value></value>
+														</Parameters>
+													</Write></Actions>
+											</NormalWork>
+											
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+											
+											<ReadCell>
+												<Parameters>
+													<colIndex>15</colIndex>
+													<taskName>T-0765</taskName>
+												</Parameters>
+												<ExpectedResult>120.00</ExpectedResult>
+											</ReadCell>
+											<TaskContextMenu>
+												<Parameters>
+													<colIndex>14</colIndex>
+													<taskName>T-0765</taskName>
+												</Parameters>
+												<Actions>
+													
+													<IsFunctionDisabled>
+														<Parameters>
+															<functionName>Delete Time</functionName>
+														</Parameters>
+														<ExpectedResult>false</ExpectedResult>
+													</IsFunctionDisabled>
+													<DeleteTime></DeleteTime>
+													
+												</Actions>
+											</TaskContextMenu>
+											<ReadCell>
+												<Parameters>
+													<colIndex>15</colIndex>
+													<taskName>T-0765</taskName>
+												</Parameters>
+												<ExpectedResult>0</ExpectedResult>
+											</ReadCell>
+
+
+										</Actions>
+									</ManageTask></Actions>
+							</Content></Actions>
+					</ReturnTxHourTrackingInNewTab></Actions>
+      </MainWindow>
+    </Actions></TxInterface></Actions>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the availability of the   'All of the following words' textbox or in the 'At least one of the following words' textboxes</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface><Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<IfPopUpPresent></IfPopUpPresent><SearchBox>
+						<Parameters>
+							<research>abb</research>
+							<byClick>false</byClick>
+						</Parameters>
+						<Actions>
+							<Content>
+								
+							<Actions>
+									<DisplayAdavancedSettings />
+									<AllOfTheFollowingWords>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>Steel</value>
+												</Parameters>
+											</Write></Actions>
+									</AllOfTheFollowingWords>
+									<SearchButton />
+								<DisplayedObjects><Parameters></Parameters>
+										<ExpectedResult>46</ExpectedResult>
+									</DisplayedObjects>
+									<AllOfTheFollowingWords>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>steel</value>
+												</Parameters>
+											</Write></Actions>
+									</AllOfTheFollowingWords>
+									<NoneOfTheFollowingWords>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>alloy</value>
+												</Parameters>
+											</Write></Actions>
+									</NoneOfTheFollowingWords>
+									<SearchBothDataAndObjectNames>
+										<Actions>
+											<Read>
+												<ExpectedResult>
+														true
+													</ExpectedResult>
+											</Read>
+										</Actions>
+									</SearchBothDataAndObjectNames>
+									
+									<SearchButton />
+								<DisplayedObjects><Parameters></Parameters>
+										<ExpectedResult>34</ExpectedResult>
+									</DisplayedObjects>
+									<AllOfTheFollowingWords>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>steel</value>
+												</Parameters>
+											</Write></Actions>
+									</AllOfTheFollowingWords>
+									<NoneOfTheFollowingWords>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>alloy acid</value>
+												</Parameters>
+											</Write></Actions>
+									</NoneOfTheFollowingWords>
+									
+									<SearchButton />
+									<DisplayedObjects><Parameters></Parameters>
+										<ExpectedResult>29</ExpectedResult>
+									</DisplayedObjects></Actions></Content>
+							<Close >
+								</Close></Actions>
+					</SearchBox></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

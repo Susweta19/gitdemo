@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Checking the functionality of Delete task times button</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in new tab  mode with TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<ManageCommonMethods>
+										<Actions>
+											<GetCurrentWeekDays>
+												<Parameters></Parameters>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>
+																0
+															</index>
+														</Parameters>
+														<Hashtag>#date#</Hashtag>
+													</ElementAt></Actions>
+											</GetCurrentWeekDays></Actions>
+									</ManageCommonMethods>
+									<ManageTask>
+										<Actions>
+										<DeleteAllPresentTask></DeleteAllPresentTask>
+											<AddTask>
+												<Parameters>
+													<user>Alice Dupont</user>
+												</Parameters>
+												<Actions>
+													<Content>
+														<Actions>
+															<!-- We are adding task first just to check weather selected 
+																task remains disabled in the Task Selection window -->
+															<ReturnTableView>
+																<Actions>
+																	<UnCheckallObjects></UnCheckallObjects></Actions>
+															</ReturnTableView>
+															<SelectTaskV2>
+																<Actions>
+																	<FilterInput>
+																		<Parameters>
+																			<indexColumn>2</indexColumn>
+																			<field>Réunion</field>
+																		</Parameters>
+																	</FilterInput>
+																	<CheckBox>
+																		<Parameters>
+																			<Row>1</Row>
+																			<Column>1</Column>
+																		</Parameters>
+																		<Actions>
+																			<Tick></Tick></Actions>
+																	</CheckBox></Actions>
+															</SelectTaskV2>
+															<SelectDate>
+																<Actions>
+																	<Day>
+																		<Parameters>
+																			<day>#date#</day>
+																		</Parameters>
+																	</Day>
+																</Actions>
+															</SelectDate>
+															<WriteDuration>
+																<Actions>
+																	<Write>
+																		<Parameters>
+																			<value>8</value>
+																		</Parameters>
+																	</Write></Actions>
+															</WriteDuration>
+
+
+
+														</Actions>
+													</Content>
+													<Ok>
+														<Parameters>
+															<validate>true</validate>
+														</Parameters>
+													</Ok>
+												</Actions>
+											</AddTask>
+											<PressKeyFromKeyBoard>
+												<Actions>
+													<PressEnter></PressEnter>
+
+
+
+
+												</Actions>
+											</PressKeyFromKeyBoard>
+											<PressKeyFromKeyBoard>
+												<Actions>
+													<PressEnter></PressEnter></Actions>
+											</PressKeyFromKeyBoard>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Réunion</taskName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsTaskPresent>
+											<RemoveTaskByName>
+												<Parameters>
+													<taskName>Réunion</taskName>
+												</Parameters>
+											</RemoveTaskByName>
+											<ManagePopUp>
+												<Actions>
+													<ReadPopUpMessage>
+														<Actions>
+															<ElementAt>
+																<Parameters>
+																	<index>
+																		0
+																	</index>
+																</Parameters>
+																<ExpectedResult>Delete this task times ?</ExpectedResult>
+															</ElementAt></Actions>
+													</ReadPopUpMessage>
+													<ClosePopUp>
+														<Parameters>
+															<result>
+																true
+															</result>
+														</Parameters>
+													</ClosePopUp></Actions>
+											</ManagePopUp>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Réunion</taskName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTaskPresent>
+											
+
+
+										</Actions>
+									</ManageTask></Actions>
+							</Content></Actions>
+					</ReturnTxHourTrackingInNewTab>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

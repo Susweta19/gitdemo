@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Read the translation of Multi-Criteria Selection window and requirement set window in french</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+					<langage>French</langage>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<MultiCriteria>
+						<Actions>
+							<Content>
+								<Actions></Actions>
+							</Content>
+							<ReadHeader>
+								<ExpectedResult>Sélection Multicritère - Cahier des Charges</ExpectedResult></ReadHeader>
+							<Content>
+								<Actions>
+									<CriteriaTab>
+										<Actions>
+											<IsButtonPresent>
+												<Parameters>
+													<buttonName>Définir les Critères</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresent>
+											<IsButtonPresent>
+												<Parameters>
+													<buttonName>Lancer le Calcul de Sélection</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresent>
+											<IsButtonPresent>
+												<Parameters>
+													<buttonName>Ajouter un groupe...</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresent>
+										</Actions>
+									</CriteriaTab>
+									<ResultsTab>
+										<Actions>
+											<IsButtonPresentByTitle>
+												<Parameters><!--Visualiser les Entités cochées-->
+													<buttonName>Visualiser les Entités cochées</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle>
+											
+											
+											<IsButtonPresentByTitle>
+												<Parameters>
+													<buttonName>Cocher tous les résultats</buttonName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsButtonPresentByTitle>
+										</Actions>
+									</ResultsTab>
+								</Actions>
+							</Content></Actions>
+					</MultiCriteria>
+				</Actions>
+			</MainWindow></Actions></TxInterface></Actions>

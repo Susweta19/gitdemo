@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>When opening  Export window (through dedicated button in toolbar), Enter the keywords to search for an Object in the Object list then press 'Enter' button. Once the Search operation is done, the 'display' button on the left side of the 'Search' textbox is automatically pressed down. If there exists Objects whose Datas contain the whole keyword, these Objects will be filtered out and displayed in the Objects list;If there's no Objects whose Datas contain the whole keyword, there'll be no Object in the Objects list;Click on the 'display' button on the left side of the 'Search' textbox. All Objects of this OT will be displayed in the Objects list.</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <Export>
+            <Actions>
+              <Content>
+                <Actions>
+                  <Filtre>
+                    <Actions>
+                      <Select>
+                        <Parameters>
+                          <value>TEST_TreeView</value>
+                        </Parameters>
+                      </Select>
+                      <Read>
+                        <ExpectedResult>TEST_TreeView</ExpectedResult>
+                      </Read>
+                    </Actions>
+                  </Filtre>
+                  <ObjectsTree>
+                    <Actions>
+                      <Search>
+                        <Parameters>
+                          <research>abcd</research>
+                        </Parameters>
+                      </Search>
+                      <PressHereToSee />
+                      <Search>
+                        <Parameters>
+                          <research>New</research>
+                        </Parameters>
+                      </Search>
+                      <PressHereToSee />
+                    </Actions>
+                  </ObjectsTree>
+                </Actions>
+              </Content>
+            </Actions>
+          </Export>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the availability of the Inheritances using MultipleLink(When "Transpose in case of multiple inheritance" is Unticked in Admin)</testDescription>
+
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_WriteView_Inheritance</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                  <SelectEntity>
+                    <Parameters><nodes><path>T_R_I_1</path></nodes></Parameters>
+                  </SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <Edit>
+            <Actions>
+              <Content>
+              	<Actions>
+              		<GetLink>
+              			<Parameters>
+              				<attrId>645</attrId>
+              			</Parameters>
+              			<Actions>
+              				<UncheckAll></UncheckAll>
+              				<Search>
+              					<Parameters>
+              						<research>aaaaa</research>
+              					</Parameters>
+              				</Search>
+              				<DisplayTheEntireTree></DisplayTheEntireTree>
+              				<SelectEntitiesBox>
+              					<Parameters>
+              						<collection>
+              							<collection>
+              								<path>AllDataPresentToInherit</path></collection>
+              							<collection>
+              								<path>NoDataPresentToInherit</path></collection>
+              							<collection>
+              								<path>OnlyOneDataToInherit</path></collection></collection>
+              					</Parameters>
+              					<Actions>
+              						<Tick></Tick></Actions>
+              				</SelectEntitiesBox></Actions>
+              		</GetLink>
+
+              	</Actions>
+              </Content>
+              <Ok>
+              	<Parameters></Parameters>
+              </Ok>
+            </Actions>
+          </Edit>
+          <ReadForm>
+          	<Actions>
+          		<ChangeTab>
+          			<Parameters>
+          				<tabIndex>3</tabIndex>
+          			</Parameters>
+          		</ChangeTab>
+          		<ReadAsso>
+          			<Parameters>
+          				<attrId>645</attrId>
+          			</Parameters>
+          			<Actions>
+          				<Value>
+          					<DTBool>
+          						<Parameters>
+          							<colIndex>2</colIndex>
+          							<rowIndex>3</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>false</value>
+          						</ExpectedResult>
+          					</DTBool>
+          					
+          				</Value>
+          				<Value>
+          					<DTDate>
+          						<Parameters>
+          							<colIndex>2</colIndex>
+          							<rowIndex>4</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>13/12/2018|12/13/2018</value>
+          						</ExpectedResult>
+          					</DTDate>
+          					
+          				</Value>
+          				<Value>
+          					<DTText>
+          						<Parameters>
+          							<colIndex>2</colIndex>
+          							<rowIndex>5</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>13/12/2018 15:32:36|12/13/2018 15:32:36</value>
+          						</ExpectedResult>
+          					</DTText>
+          					
+          				</Value>
+          				<!-- <Value>
+          					<DTRichText>
+          						<Parameters>
+          							<colIndex>5</colIndex>
+          							<rowIndex>2</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>I have all data to Inhiret</value>
+          						</ExpectedResult>
+          					</DTRichText>
+          					
+          				</Value> -->
+          				<Value>
+          					<DTText>
+          						<Parameters>
+          							<colIndex>2</colIndex>
+          							<rowIndex>6</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>I have all data to Inhiret</value>
+          						</ExpectedResult>
+          					</DTText>
+          					
+          				</Value>
+          				<Value>
+          					<DTText>
+          						<Parameters>
+          							<colIndex>2</colIndex>
+          							<rowIndex>7</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>Hi, I am prefect</value>
+          						</ExpectedResult>
+          					</DTText>
+          					
+          				</Value>
+          				<!--For the 2nd row.-->
+          				<Value>
+          					<DTText>
+          						<Parameters>
+          							<colIndex>3</colIndex>
+          							<rowIndex>3</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>#Space</value>
+          						</ExpectedResult>
+          					</DTText>       					
+                         </Value>
+                         <Value>
+          					<DTText>
+          						<Parameters>
+          							<colIndex>3</colIndex>
+          							<rowIndex>4</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>#Space</value>
+          						</ExpectedResult>
+          					</DTText>       					
+                         </Value>
+                         <Value>
+          					<DTText>
+          						<Parameters>
+          							<colIndex>3</colIndex>
+          							<rowIndex>5</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>#Space</value>
+          						</ExpectedResult>
+          					</DTText>       					
+                         </Value>
+                         <!--For the 3rd row.-->
+                         <Value>
+          					<DTText>
+          						<Parameters>
+          							<colIndex>4</colIndex>
+          							<rowIndex>6</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>#Space</value>
+          						</ExpectedResult>
+          					</DTText>       					
+                         </Value>
+                         <Value>
+          					<DTText>
+          						<Parameters>
+          							<colIndex>4</colIndex>
+          							<rowIndex>7</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>There is only one data present</value>
+          						</ExpectedResult>
+          					</DTText>
+          					
+          				</Value>
+                         </Actions>
+          		</ReadAsso></Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the functionality of "Cancel" button in Add task window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in new tab mode without TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									<ManageNavigationLayout>
+										<Actions>
+											<ClickOnLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+												</Parameters>
+											</ClickOnLinkBox>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+												</Parameters>
+												<Actions>
+													<SelectAll></SelectAll></Actions>
+											</ManageLinkBox></Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+											<DeleteAllPresentTask></DeleteAllPresentTask>
+											<WaitForAjax></WaitForAjax>
+											<AddTask>
+												<Parameters>
+													<user>Orane Martel</user>
+												</Parameters>
+												<Actions>
+													<WaitForAjax></WaitForAjax>
+													<ReadHeader><ExpectedResult>Add task(s)</ExpectedResult></ReadHeader>
+
+
+													<Content>
+														<Actions>
+															<IsButtonDisabled>
+																<Parameters>
+																	<buttonName>Ok</buttonName>
+																</Parameters>
+																<ExpectedResult>true</ExpectedResult>
+															</IsButtonDisabled>
+															<IsDateFillDisabled>
+																<ExpectedResult>true</ExpectedResult>
+															</IsDateFillDisabled>
+															<IsDurationDisabled>
+																<ExpectedResult>true</ExpectedResult>
+															</IsDurationDisabled>
+															<SelectTask>
+																<Actions>
+																	<Search>
+																		<Parameters>
+																			<research>646</research>
+																		</Parameters>
+																	</Search>
+																	<SelectEntitiesBox>
+																		<Parameters>
+																			<collection>
+																				<collection>
+																					<path>T-0646</path>
+																				</collection>
+																			</collection>
+																		</Parameters>
+																		<Actions>
+																			<Tick></Tick>
+																		</Actions>
+																	</SelectEntitiesBox>																	
+																</Actions>
+															</SelectTask>
+															<SelectDate>
+																<Actions>
+																	<Today></Today>
+																</Actions>
+															</SelectDate>
+															<IsDateFillDisabled>
+																<ExpectedResult>false</ExpectedResult>
+															</IsDateFillDisabled>
+															<IsCommentSectionDisabled>
+																<ExpectedResult>false</ExpectedResult>
+															</IsCommentSectionDisabled>
+															<IsDurationDisabled>
+																<ExpectedResult>false</ExpectedResult>
+															</IsDurationDisabled>
+															<IsButtonDisabled>
+																<Parameters>
+																	<buttonName>Ok</buttonName>
+																</Parameters>
+																<ExpectedResult>false</ExpectedResult>
+															</IsButtonDisabled>
+														</Actions>
+													</Content>
+													<Cancel></Cancel>
+													
+												</Actions>
+											</AddTask>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>T-0646</taskName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTaskPresent>
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+							<Close><Parameters></Parameters></Close>
+							
+						</Actions>
+					</ReturnTxHourTrackingInNewTab>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Using object name and data textual research</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click></Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>3</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result></Parameters>
+											</IfConfirmationPopUpPresent>
+											
+											
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+											
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult></ReadWindowTitle>
+											<Content>
+												<Actions>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>Parametered search 2</configName>
+														</Parameters>
+													</SelectConfiguration></Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>
+														true
+													</validate></Parameters>
+											</Ok>
+											
+										</Actions>
+									</SelectAdvancedSearch>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - Parametered search 2</ExpectedResult></ReadWindowTitle>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult></DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<QuestionSearchBox>
+												<Parameters>
+													<value>alpha</value>
+												</Parameters>
+											</QuestionSearchBox></Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>135 filtered out of a total of 2847|135 filtered out of a total of 2,847</ExpectedResult></DisplayedResult>
+									<ReadObjectList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>10SPb20</ExpectedResult>
+											</ElementAt>
+											<ElementAt>
+												<Parameters>
+													<index>1</index>
+												</Parameters>
+												<ExpectedResult>3DMIX HAP Hydroxyapatite Calcium Phosphate</ExpectedResult>
+											</ElementAt>
+											</Actions>
+									</ReadObjectList>
+									<RemoveCriterion>
+										<Parameters>
+											<criteriaIndex>1</criteriaIndex></Parameters>
+									</RemoveCriterion>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult></DisplayedResult>
+
+
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

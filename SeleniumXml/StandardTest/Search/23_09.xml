@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the availability of the  'At least one of the following words' textboxes</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface><Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<IfPopUpPresent></IfPopUpPresent><SearchBox>
+						<Parameters>
+							<research>abb</research>
+							<byClick>true</byClick>
+						</Parameters>
+						<Actions>
+							<Content>
+								
+							<Actions>
+									<DisplayAdavancedSettings />
+									<AtLeastOneOfTheFollowingWords>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>steel</value>
+												</Parameters>
+											</Write></Actions>
+									</AtLeastOneOfTheFollowingWords>
+									<SearchBothDataAndObjectNames>
+										<Actions>
+											<Tick /></Actions>
+									</SearchBothDataAndObjectNames>
+
+									
+									<SearchButton />
+								<DisplayedObjects><Parameters></Parameters>
+										<ExpectedResult>0</ExpectedResult>
+									</DisplayedObjects>
+									<AtLeastOneOfTheFollowingWords>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>steel alloy</value>
+												</Parameters>
+											</Write></Actions>
+									</AtLeastOneOfTheFollowingWords>
+									
+									<SearchButton />
+								<DisplayedObjects><Parameters></Parameters>
+										<ExpectedResult>0</ExpectedResult>
+									</DisplayedObjects>
+									<AtLeastOneOfTheFollowingWords>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>steel alloy ball</value>
+												</Parameters>
+											</Write></Actions>
+									</AtLeastOneOfTheFollowingWords>
+									
+									<SearchButton />
+								<DisplayedObjects><Parameters></Parameters>
+										<ExpectedResult>0</ExpectedResult>
+									</DisplayedObjects>
+									<AtLeastOneOfTheFollowingWords>
+										<Actions>
+											<Write>
+												<Parameters>
+													<value>steel alloy ball br</value>
+												</Parameters>
+											</Write></Actions>
+									</AtLeastOneOfTheFollowingWords>
+									
+									<SearchButton />
+								<DisplayedObjects><Parameters></Parameters>
+										<ExpectedResult>0</ExpectedResult>
+									</DisplayedObjects></Actions></Content>
+							<Close >
+								</Close></Actions>
+					</SearchBox></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

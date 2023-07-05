@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--does not clicking on close button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Click on a try having no template relate but with samples (Link mode on the portal, entity:"Try without template but with sample)</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<NavigationTree>
+        		<Actions>
+        			<SelectOT>
+        				<Actions>
+        					<Select>
+        						<Parameters>
+        							<value>Essais</value>
+        						</Parameters>
+        					</Select></Actions>
+        			</SelectOT>
+        			<EntityTree>
+        				<Actions>
+        					<SelectEntity>
+        						<Parameters>
+        							<nodes>
+        								<path>Essai sans template mais avec échantillon</path></nodes>
+        						</Parameters>
+        					</SelectEntity></Actions>
+        			</EntityTree></Actions>
+        	</NavigationTree>
+        	<LaunchModel>
+        		<Parameters>
+        			<modelName>Saisir des résultats d'essai (link)</modelName>
+        		</Parameters>
+        	</LaunchModel>
+        	<ReturnTxTestResult>
+        		<Actions>	<ManagePopUp>
+        										<Actions>
+        											<ReadPopUpMessage>
+        												<Actions>
+        													<ElementAt>
+        														<Parameters>
+        															<index>
+        																0
+        															</index>
+        														</Parameters>
+        														<ExpectedResult>The Object 'Essai sans template mais avec échantillon' is not linked to any template Object Type.</ExpectedResult>
+        													</ElementAt></Actions>
+        											</ReadPopUpMessage></Actions>
+        									</ManagePopUp></Actions>
+        	</ReturnTxTestResult>
+        	
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

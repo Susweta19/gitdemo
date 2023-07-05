@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the display mode of the window title-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Read the French translation of all buttons in the TxChart window</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+          <langage>French</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <LinkPortal>
+            <Parameters>
+              <link>Link to TxCharts</link>
+            </Parameters>
+          </LinkPortal>
+          <ReturnChartInNewTab>
+          	<Actions>
+          		<Content>
+          			<Actions>
+          				<AddNewCurve>
+          					<Actions>
+          						<ReadHeader>
+          							<ExpectedResult>Ajouter un nouveau graphique</ExpectedResult></ReadHeader>
+          						<Content>
+          							<Actions>
+          								<Next></Next>
+          								<Finish></Finish></Actions>
+          						</Content></Actions>
+          				</AddNewCurve>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Nouveau graphique</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Sauvegarder le graphique</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Exportation du graphique…</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Calculer l'interpolation</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Calculer la régression…</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Paramètres du graphique…</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<SelectCurve>
+          					<Parameters>
+          						<curveName>Série 1</curveName>
+          					</Parameters>
+          				</SelectCurve>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Modifier la courbe</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Supprimer la courbe</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle></Actions>
+          		</Content></Actions>
+          </ReturnChartInNewTab>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

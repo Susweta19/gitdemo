@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the display mode of the window title-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Read the English translation of all buttons in the TxChart window</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+          <langage>English</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <LinkPortal>
+            <Parameters>
+              <link>Link to TxCharts</link>
+            </Parameters>
+          </LinkPortal>
+          <ReturnChartInNewTab>
+          	<Actions>
+          		<Content>
+          			<Actions>
+          				<AddNewCurve>
+          					<Actions>
+          						<ReadHeader>
+          							<ExpectedResult>Add a new chart</ExpectedResult></ReadHeader>
+          						<Content>
+          							<Actions>
+          								<Next></Next>
+          								<Finish></Finish></Actions>
+          						</Content></Actions>
+          				</AddNewCurve>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>New chart</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Save chart</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Export chart…</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Calculate an interpolation…</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Calculate a regression…</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Chart settings…</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<SelectCurve>
+          					<Parameters>
+          						<curveName>Series 1</curveName>
+          					</Parameters>
+          				</SelectCurve>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Modify the curve</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Delete curve</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle></Actions>
+          		</Content></Actions>
+          </ReturnChartInNewTab>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

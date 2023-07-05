@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Double click on parent entity</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+
+
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<RightClickOnTask1>
+												<Parameters>
+													<taskName>Dominique Bler</taskName>
+													<option>View details</option>
+												</Parameters>
+												<Actions></Actions>
+											</RightClickOnTask1>
+										</Actions>
+									</ManageTask>
+									<Sleep>
+										<Parameters>
+											<timeOut>2</timeOut>
+										</Parameters>
+									</Sleep>
+								</Actions>
+							</Content>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<ReadBanner>
+						<ExpectedResult>Dominique Bler</ExpectedResult>
+					</ReadBanner>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<ExpandEntity>
+												<Parameters>
+													<ProjectName>Dominique Bler</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<RightClickOnTask1>
+												<Parameters>
+													<taskName>T-0699</taskName>
+													<option>View details</option>
+												</Parameters>
+												<Actions></Actions>
+											</RightClickOnTask1>
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<ReadBanner>
+						<ExpectedResult>T-0699</ExpectedResult>
+					</ReadBanner>
+					<ReadForm>
+						<Actions>
+							<Read>
+								<WEGLink>
+									<Parameters>
+										<attrId>166</attrId>
+									</Parameters>
+									<Actions>
+										<GetText>
+											<ExpectedResult>Dominique Bler</ExpectedResult>
+										</GetText>
+									</Actions>
+								</WEGLink>
+							</Read>
+						</Actions>
+					</ReadForm>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<DoubleClickOnProject>
+												<Parameters>
+													<projectName>Dominique Bler</projectName>
+												</Parameters>
+											</DoubleClickOnProject>
+										</Actions>
+									</ManageTask>
+									<IsAddTaskWindowPresent>
+										<ExpectedResult>false</ExpectedResult>
+									</IsAddTaskWindowPresent>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

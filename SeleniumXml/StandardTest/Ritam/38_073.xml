@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the availability of the 'Bold' button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the availability of the 'Bold' button</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<Sleep>
+        		<Parameters>
+        			<timeOut>7</timeOut>
+        		</Parameters>
+        	</Sleep>
+        	<NavigationTree>
+        		<Actions>
+        			<SelectOT>
+        				<Actions>
+        					<Select>
+        						<Parameters>
+        							<value>Portals</value>
+        						</Parameters>
+        					</Select></Actions>
+        			</SelectOT>
+        			<EntityTree>
+        				<Actions>
+        					<SelectEntity>
+        						<Parameters>
+        							<nodes>
+        								<path>Test India</path></nodes>
+        						</Parameters>
+        					</SelectEntity></Actions>
+        			</EntityTree></Actions>
+        	</NavigationTree>
+        	<HideNavigationTree></HideNavigationTree>
+        	<TableViewInWidget2>
+        		<Parameters>
+        			<writemode>true</writemode>
+        		</Parameters>
+        		<Actions>
+        			<ReadValue>
+        				<Parameters>
+        					<Row>1</Row>
+        					<Column>8</Column>
+        				</Parameters>
+        				<Hashtag>#Value#</Hashtag>
+        			</ReadValue>
+        			<ReadValue>
+        				<Parameters>
+        					<Row>1</Row>
+        					<Column>13</Column>
+        				</Parameters>
+        				<Hashtag>#Value1#</Hashtag>
+        			</ReadValue>
+        			<SwitchToLinearGridView>
+        				<Parameters>
+        					<linear>false</linear></Parameters>
+        			</SwitchToLinearGridView>
+        			<ReadValue>
+        				<Parameters>
+        					<Row>1</Row>
+        					<Column>8</Column>
+        				</Parameters>
+        				<ExpectedResult>#Value#</ExpectedResult>
+        			</ReadValue>
+        			<ReadValue>
+        				<Parameters>
+        					<Row>1</Row>
+        					<Column>13</Column>
+        				</Parameters>
+        				<ExpectedResult>#Value1#</ExpectedResult>
+        			</ReadValue></Actions>
+        	</TableViewInWidget2>
+        	
+        	
+
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

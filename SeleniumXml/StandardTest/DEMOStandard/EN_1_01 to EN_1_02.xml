@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Actions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>EN_1_01 to EN_1_02</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions><!--01-->
+      <Login>
+        <Parameters>
+          <login>1_Mickael&#160;SMITH</login>
+          <password>mmmmm</password>
+          <langage>English</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions><!--02-->
+      			<ClickOnPortalTab>
+      			<Parameters>
+      				<tabName>Projects</tabName>
+      				<frame>3287</frame>
+      			</Parameters>
+			</ClickOnPortalTab>
+			<ReadButtonList>
+			<Parameters></Parameters>
+      			<Actions>
+      				<ElementAt>
+      					<Parameters>
+      						<index>0</index>
+      					</Parameters>
+      					<ExpectedResult>Research and development project</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>1</index>
+      					</Parameters>
+      					<ExpectedResult>Design office project</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>2</index>
+      					</Parameters>
+      					<ExpectedResult>My projects in progress|My projects in progress 2</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>3</index>
+      					</Parameters>
+      					<ExpectedResult>Search for a project</ExpectedResult>
+      				</ElementAt></Actions>
+</ReadButtonList>
+      		<ClickOnPortalTab>
+      			<Parameters>
+      				<tabName>Products</tabName>
+      				<frame>3287</frame>
+      			</Parameters>
+			</ClickOnPortalTab>
+			<ReadButtonList>
+			<Parameters></Parameters>
+      			<Actions>
+      				<ElementAt>
+      					<Parameters>
+      						<index>0</index>
+      					</Parameters>
+      					<ExpectedResult>Wind turbine</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>1</index>
+      					</Parameters>
+      					<ExpectedResult>Pylon</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>2</index>
+      					</Parameters>
+      					<ExpectedResult>Rotor</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>3</index>
+      					</Parameters>
+      					<ExpectedResult>Blade</ExpectedResult>
+      				</ElementAt></Actions>
+</ReadButtonList>
+			<ClickOnPortalTab>
+      			<Parameters>
+      				<tabName>Steering</tabName>
+      				<frame>3287</frame>
+      			</Parameters>
+			</ClickOnPortalTab>
+			<ReadButtonList>
+			<Parameters></Parameters>
+      			<Actions>
+      				<ElementAt>
+      					<Parameters>
+      						<index>0</index>
+      					</Parameters>
+      					<ExpectedResult>My studies to validate|My studies to validate 3</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>1</index>
+      					</Parameters>
+      					<ExpectedResult>Enter test results|Enter test results 6</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>2</index>
+      					</Parameters>
+      					<ExpectedResult>KPI - Feedback analysis</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>3</index>
+      					</Parameters>
+      					<ExpectedResult>KPI - Annual distribution of test types</ExpectedResult>
+      				</ElementAt></Actions>
+</ReadButtonList>
+			<ClickOnPortalTab>
+      			<Parameters>
+      				<tabName>Tests</tabName>
+      				<frame>3287</frame>
+      			</Parameters>
+			</ClickOnPortalTab>
+			<ReadButtonList><Parameters></Parameters>
+      			<Actions>
+      				<ElementAt>
+      					<Parameters>
+      						<index>0</index>
+      					</Parameters>
+      					<ExpectedResult>Design office tests</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>1</index>
+      					</Parameters>
+      					<ExpectedResult>Research and development tests</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>2</index>
+      					</Parameters>
+      					<ExpectedResult>Tests in progress|Tests in progress10</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>3</index>
+      					</Parameters>
+      					<ExpectedResult>Add a test</ExpectedResult>
+      				</ElementAt></Actions>
+</ReadButtonList>
+			<ClickOnPortalTab>
+      			<Parameters>
+      				<tabName>Materials</tabName>
+      				<frame>3287</frame>
+      			</Parameters>
+			</ClickOnPortalTab>
+			<ReadButtonList><Parameters></Parameters>
+      			<Actions>
+      				<ElementAt>
+      					<Parameters>
+      						<index>0</index>
+      					</Parameters>
+      					<ExpectedResult>Metals - Alloys</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>1</index>
+      					</Parameters>
+      					<ExpectedResult>Ceramics</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>2</index>
+      					</Parameters>
+      					<ExpectedResult>Polymers</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>3</index>
+      					</Parameters>
+      					<ExpectedResult>Composites</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>4</index>
+      					</Parameters>
+      					<ExpectedResult>Semiconductors</ExpectedResult>
+      				</ElementAt>
+      				<ElementAt>
+      					<Parameters>
+      						<index>5</index>
+      					</Parameters>
+      					<ExpectedResult>Search for a metal</ExpectedResult>
+      				</ElementAt></Actions>
+</ReadButtonList>
+      		
+      	</Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

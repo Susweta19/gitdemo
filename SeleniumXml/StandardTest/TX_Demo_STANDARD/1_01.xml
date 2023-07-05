@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Actions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>EN_6_10</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Daniel&#160;MASSETTI</login>
+          <password>aaaaa</password>
+          <langage>English</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<ReturnTxPortal>
+      			<Actions>
+      				<ReadSideBar>
+      					<Actions>
+      						<ElementAt>
+      							<Parameters>
+      								<index>0</index>
+      							</Parameters>
+      							<ExpectedResult>Accueil</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>1</index>
+      							</Parameters>
+      							<ExpectedResult>Projets 12</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>2</index>
+      							</Parameters>
+      							<ExpectedResult>Phases projet 7</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>3</index>
+      							</Parameters>
+      							<ExpectedResult>Tâches 35
+
+</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>4</index>
+      							</Parameters>
+      							<ExpectedResult>Produits</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>5</index>
+      							</Parameters>
+      							<ExpectedResult>Matériaux</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>6</index>
+      							</Parameters>
+      							<ExpectedResult>Equipements</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>7</index>
+      							</Parameters>
+      							<ExpectedResult>Documents 23</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>8</index>
+      							</Parameters>
+      							<ExpectedResult>Indicateurs</ExpectedResult>
+      						</ElementAt>
+      						<ElementAt>
+      							<Parameters>
+      								<index>9</index>
+      							</Parameters>
+      							<ExpectedResult>Autres portails</ExpectedResult>
+      						</ElementAt></Actions>
+      				</ReadSideBar></Actions>
+      		</ReturnTxPortal></Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

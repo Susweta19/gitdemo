@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Using an advanced question (numerical)</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>3</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result>
+												</Parameters>
+											</IfConfirmationPopUpPresent>
+
+
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult>
+											</ReadWindowTitle>
+											<Content>
+												<Actions>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>Materials choice guide</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+
+										</Actions>
+									</SelectAdvancedSearch>
+									<WaitForAjax></WaitForAjax>
+									<ClearAll></ClearAll>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - Materials choice guide</ExpectedResult>
+									</ReadWindowTitle>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2847 filtered out of a total of 2847|2,847 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Advanced question test (num)</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+											<ValueMustBe>
+												<Parameters>
+													<questionName>Advanced question test (num)</questionName>
+													<value>Within&#160;an&#160;range</value>
+												</Parameters>
+											</ValueMustBe>
+											<LowerBound>
+												<Parameters>
+													<questionName>Advanced question test (num)</questionName>
+													<min>5</min>
+												</Parameters>
+											</LowerBound>
+											<UpperBound>
+												<Parameters>
+													<questionName>Advanced question test (num)</questionName>
+													<min>15</min>
+												</Parameters>
+											</UpperBound>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<ReadCriteriaList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>From 5 to 15</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadCriteriaList>
+									<DisplayedResult>
+										<ExpectedResult>1001 filtered out of a total of 2847|1,001 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<StrictlyLowerThan>
+												<Parameters>
+													<questionName>Advanced question test (num)</questionName>
+												</Parameters>
+											</StrictlyLowerThan>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>1000 filtered out of a total of 2847|1,000 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Group 1</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<ExpandCollaspedGroup>
+												<Parameters>
+													<groupName>Group 2</groupName>
+												</Parameters>
+											</ExpandCollaspedGroup>
+											<StrictlyUpperThan>
+												<Parameters>
+													<questionName>Advanced question test (num)</questionName>
+												</Parameters>
+											</StrictlyUpperThan>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>999 filtered out of a total of 2847|999 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<StrictlyLowerThan>
+												<Parameters>
+													<questionName>Advanced question test (num)</questionName>
+												</Parameters>
+											</StrictlyLowerThan>
+											<StrictlyUpperThan>
+												<Parameters>
+													<questionName>Advanced question test (num)</questionName>
+												</Parameters>
+											</StrictlyUpperThan>
+											<UpperTolerance>
+												<Parameters>
+													<questionName>Advanced question test (num)</questionName>
+													<min>2</min>
+												</Parameters>
+											</UpperTolerance>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>801 filtered out of a total of 2847|801 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Advanced question test (num)</groupName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsGroupPresent>
+											<ValueMustBe>
+												<Parameters>
+													<questionName>Advanced question test (num)</questionName>
+													<value>Equal&#160;to&#160;a&#160;value</value>
+												</Parameters>
+											</ValueMustBe>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<ReadCriteriaList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>5</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadCriteriaList>
+									<DisplayedResult>
+										<ExpectedResult>1 filtered out of a total of 2847|1 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<ManageQuestionList>
+										<Actions>
+											<LowerTolerance>
+												<Parameters>
+													<questionName>Advanced question test (num)</questionName>
+													<min>2</min>
+												</Parameters>
+											</LowerTolerance>
+										</Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>201 filtered out of a total of 2847|201 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+									<RemoveCriterion>
+										<Parameters>
+											<criteriaIndex>1</criteriaIndex>
+										</Parameters>
+									</RemoveCriterion>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<DisplayedResult>
+										<ExpectedResult>2845 filtered out of a total of 2847|2,845 filtered out of a total of 2,847</ExpectedResult>
+									</DisplayedResult>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

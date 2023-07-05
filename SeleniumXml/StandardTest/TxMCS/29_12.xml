@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the Functionality of UnCheck all button in the define criteria (Right side) on selecting OT in attribute list</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_CG+AS</value>
+										</Parameters>
+									</Select></Actions>
+							</SelectOT></Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>TxMCS</modelName>
+						</Parameters>
+					</LaunchModel>
+					<TxMCS>
+						<Actions>
+							<Content>
+								<Actions>
+									<BlankRequirementSet>
+										<Parameters>
+											<objectType>TEST_CG+AS</objectType>
+										</Parameters>
+									</BlankRequirementSet>
+									<Settings>
+										<Actions>
+											<SelectEntity>
+												<Parameters><nodes><path>TEST_CG+AS</path></nodes></Parameters>
+											</SelectEntity></Actions>
+									</Settings>
+									<Criteria>
+										<Actions>
+											<PreselectionType>
+												<Parameters>
+													<optionName>Some of the Objects</optionName>
+												</Parameters>
+												<Actions><!--we uncheck all object-->
+													<SelectAll />
+													<DeselectAll />
+													<SelectEntitiesBox>
+														<Parameters>
+															<collection>
+																<collection>
+																	<path>New</path></collection>
+																<collection>
+																	<path>New1</path></collection></collection>
+														</Parameters>
+														<Actions>
+															<Read>
+																<Actions><ElementAt><Parameters><index>0</index></Parameters><ExpectedResult>false</ExpectedResult></ElementAt><ElementAt><Parameters><index>1</index></Parameters><ExpectedResult>false</ExpectedResult></ElementAt></Actions>
+															</Read></Actions>
+													</SelectEntitiesBox>
+													<!--we uncheck only selected object--><SelectAll />
+													<SelectEntity>
+														<Parameters><nodes><path>New</path></nodes></Parameters>
+</SelectEntity>
+													<DeselectAll />
+													<SelectEntitiesBox>
+														<Parameters>
+															<collection>
+																<collection>
+																	<path>New</path></collection>
+																<collection>
+																	<path>New1</path></collection></collection>
+														</Parameters>
+														<Actions>
+															<Read>
+																<Actions><ElementAt><Parameters><index>0</index></Parameters><ExpectedResult>false</ExpectedResult></ElementAt><ElementAt><Parameters><index>1</index></Parameters><ExpectedResult>true</ExpectedResult></ElementAt></Actions>
+															</Read></Actions>
+													</SelectEntitiesBox>
+													<!--we will untick a father object, all the child Object(s) will be unticked--><SelectAll />
+													<SelectEntity>
+														<Parameters><nodes><path>New1</path></nodes></Parameters>
+													</SelectEntity>
+													<DeselectAll />
+													
+													<SelectEntitiesBox>
+														<Parameters>
+															<collection>
+																<collection>
+																	<path>New1</path>
+																	<path>New6</path></collection>
+																<collection>
+																	<path>New5</path></collection>
+																<collection>
+																	<path>New6</path></collection>
+																<collection>
+																	<path>New</path></collection></collection>
+														</Parameters>
+														<Actions>
+															<Read>
+																<Actions><ElementAt><Parameters><index>0</index></Parameters><ExpectedResult>false</ExpectedResult></ElementAt><ElementAt><Parameters><index>1</index></Parameters><ExpectedResult>false</ExpectedResult></ElementAt><ElementAt><Parameters><index>2</index></Parameters><ExpectedResult>false</ExpectedResult></ElementAt><ElementAt><Parameters><index>3</index></Parameters><ExpectedResult>
+																		true
+																	</ExpectedResult></ElementAt></Actions>
+															</Read></Actions>
+													</SelectEntitiesBox>
+												</Actions>
+											</PreselectionType></Actions>
+									</Criteria>
+									
+									
+								</Actions>
+							</Content></Actions>
+					</TxMCS></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Massive addition of secondary ingredients - Selection in tree mode</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Recipe</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Recipe 11</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+							<TreeContextMenu>
+								<Actions>
+									<LaunchFormulation>
+										<Parameters>
+											<collection>
+												<collection>
+													<path>Recipe 11</path></collection></collection></Parameters>
+										<Actions></Actions>
+									</LaunchFormulation></Actions>
+							</TreeContextMenu>
+						</Actions>
+					</NavigationTree>
+					<ReturnFormulationWindow>
+						<Actions>
+							<Content>
+								<Actions>
+									<ReadCellValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0001 - VERT PVGG A 1%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>2</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0002 - BLEU 08 A 10%</ExpectedResult>
+									</ReadCellValue>
+									<ReadCellValue>
+										<Parameters>
+											<Row>3</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0003 - BLEU PVB2G A 10%</ExpectedResult>
+									</ReadCellValue>
+									<AddObject>
+										<Actions>
+											<ReadWindowTitle>
+												<ExpectedResult>Add Raw materials</ExpectedResult></ReadWindowTitle>
+											<Content>
+												<Actions>
+													<SelectIngredient>
+														<Actions>
+															<Search>
+																<Parameters>
+																	<research>IAADI0001</research>
+																</Parameters>
+															</Search>
+															<ReadEntityRow>
+																<Parameters>
+																	<nodes>
+																		<path>IAADI0001 - VERT PVGG A 1%</path></nodes>
+																	<ExpectedValue>
+																		<collection>IAADI0001 - VERT PVGG A 1%</collection></ExpectedValue>
+																</Parameters>
+															</ReadEntityRow></Actions>
+													</SelectIngredient></Actions>
+											</Content>
+											<IsButtonDisabled>
+												<Parameters>
+													<buttonName>Ok</buttonName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsButtonDisabled>
+											<Content>
+												<Actions>
+													<SelectIngredient>
+														<Actions>
+															<Search>
+																<Parameters>
+																	<research>maaac</research>
+																</Parameters>
+															</Search>
+															<ReadEntityRow>
+																<Parameters>
+																	<nodes>
+																		<path>MAAAC0001 - ACETATE 105E1R26033 POUDRE</path></nodes>
+																	<ExpectedValue>
+																		<collection>MAAAC0001 - ACETATE 105E1R26033 POUDRE</collection></ExpectedValue>
+																</Parameters>
+															</ReadEntityRow>
+															<ReadEntityRow>
+																<Parameters>
+																	<nodes>
+																		<path>MAAAC0002 - ACETATE 105E1R26033</path></nodes>
+																	<ExpectedValue>
+																		<collection>MAAAC0002 - ACETATE 105E1R26033</collection></ExpectedValue>
+																</Parameters>
+															</ReadEntityRow>
+															<SelectEntityBox>
+																<Parameters>
+																	<nodes>
+																		<path>MAAAC0001 - ACETATE 105E1R26033 POUDRE</path></nodes>
+																</Parameters>
+																<Actions>
+																	<Tick></Tick>
+																	<Read>
+																		<ExpectedResult>
+																			true
+																		</ExpectedResult></Read></Actions>
+															</SelectEntityBox>
+															<SelectEntityBox>
+																<Parameters>
+																	<nodes>
+																		<path>MAAAC0002 - ACETATE 105E1R26033</path>
+																	</nodes>
+																</Parameters>
+																<Actions>
+																	<Tick></Tick>
+																	<Read>
+																		<ExpectedResult>
+																			true
+																		</ExpectedResult></Read></Actions>
+															</SelectEntityBox></Actions>
+													</SelectIngredient></Actions>
+											</Content></Actions>
+									</AddObject></Actions>
+							</Content></Actions>
+					</ReturnFormulationWindow>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

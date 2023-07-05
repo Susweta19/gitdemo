@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Read user information box translation</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+          <langage>French</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<Logout>
+        		<Actions>
+        			<ReadConfirmationPopUpMessage>
+        				<Actions>
+        					<ElementAt>
+        						<Parameters>
+        							<index>0</index>
+        						</Parameters>
+        						<ExpectedResult>Souhaitez-vous vraiment quitter TEEXMA ?</ExpectedResult>
+        					</ElementAt></Actions>
+        			</ReadConfirmationPopUpMessage>
+        			<CloseConfirmationPopup>
+        				<Parameters>
+        					<result>false</result>
+        				</Parameters>
+        			</CloseConfirmationPopup></Actions>
+        	</Logout>
+        	<Logout>
+        		<Actions>
+        			<ReadConfirmationPopUpMessage>
+        				<Actions>
+        					<ElementAt>
+        						<Parameters>
+        							<index>0</index>
+        						</Parameters>
+        						<ExpectedResult>Souhaitez-vous vraiment quitter TEEXMA ?</ExpectedResult>
+        					</ElementAt></Actions>
+        			</ReadConfirmationPopUpMessage>
+        			<CloseConfirmationPopup>
+        				<Parameters>
+        					<result>true</result>
+        				</Parameters>
+        			</CloseConfirmationPopup></Actions>
+        	</Logout>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

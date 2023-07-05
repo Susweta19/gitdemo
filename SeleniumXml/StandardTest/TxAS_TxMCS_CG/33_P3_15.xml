@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the display mode text field question-->
+<!--we can not resize the textbox-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription> resize the textbox using the button on the bottom right of the textbox(manually checked)</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface><Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+				<IfPopUpPresent></IfPopUpPresent><ChoiceGuide>
+						<Actions>
+							<Content>
+								<Actions>
+					<ChoiceGuideFromTemplate>
+						<Parameters>
+							<template>TEST_AllQustions</template>
+						</Parameters>
+						<Actions>
+							<Content>
+								<Actions>
+									<Formulaire>
+										<Actions>
+											<CheckBox>
+												<Parameters>
+													<id>13</id>
+													
+												</Parameters>
+												<Actions>
+													<Tick /></Actions>
+											</CheckBox>
+											<Write>
+												<Parameters>
+													<id>16</id>
+													<firstValue>ayuehuhwj</firstValue>
+												</Parameters>
+											</Write></Actions>
+									</Formulaire></Actions>
+							</Content></Actions>
+					</ChoiceGuideFromTemplate></Actions></Content></Actions></ChoiceGuide></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

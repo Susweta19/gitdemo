@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the availability of the function 'Utils_Case' -->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the functionality of model application "App_Utils_MonthOf" </testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Message>Associative test start</Message>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_MonthOf</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<SwitchReadWrite />
+							<TreeContextMenu>
+								<Actions>
+									<AdvancedDuplicate>
+										<Parameters>
+											<nodes>
+												<path>New</path></nodes>
+											<advDuplicateName>AD</advDuplicateName>
+										</Parameters>
+										<Actions></Actions>
+									</AdvancedDuplicate></Actions>
+							</TreeContextMenu>
+
+						</Actions>
+					</NavigationTree>
+					<ReadForm>
+						<Actions>
+							<Read>
+								<DTDecimalValue>
+									<Parameters>
+										<attrId>371</attrId>
+									</Parameters>
+									<ExpectedResult>
+										<min>5</min>
+									</ExpectedResult>
+								</DTDecimalValue>
+
+
+							</Read>
+							<Read>
+								<DTDecimalValue>
+									<Parameters>
+										<attrId>370</attrId>
+									</Parameters>
+									<ExpectedResult>
+										<min>6</min>
+									</ExpectedResult>
+								</DTDecimalValue>
+
+
+							</Read>
+						</Actions>
+					</ReadForm>
+				</Actions>
+
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

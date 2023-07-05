@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>"Converting a Word file:
+Make sure there is only 1 file in carac. B
+The carac. C must be empty
+[clear destination "" no "", delete source "" no ""] 
+
+Select an object ""Test"", click on the ""Switch to read or write mode"" button to create a new entity. In attribute B, publish a new document and click on Ok button. After that Launch the model ""[TxLibrary] Convert B -&gt; C (one file in list)"" in the model menu."</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Test</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <SwitchReadWrite />
+              <AddObject>
+                <Parameters />
+                <Actions>
+                  <Content>
+                    <Actions>
+                      <PublishDocumentFile>
+                        <Parameters>
+                          <attrId>3366</attrId>
+                          <pathFile>#DocPath#TxLibraryFiles/File2.docx</pathFile>
+                        </Parameters>
+                      </PublishDocumentFile>
+                    </Actions>
+                  </Content>
+                  <Ok>
+                    <Parameters />
+                  </Ok>
+                </Actions>
+              </AddObject>
+            </Actions>
+          </NavigationTree>
+          <LaunchModel>
+            <Parameters>
+              <modelName>[TxLibrary] Convert B -&gt; C (one file in list)</modelName>
+            </Parameters>
+          </LaunchModel>
+          <Sleep>
+            <Parameters>
+              <timeOut>5</timeOut>
+            </Parameters>
+          </Sleep>
+          <ReadForm>
+            <Actions>
+              <Read>
+                <WEGLink>
+                  <Parameters>
+                    <attrId>3365</attrId>
+                  </Parameters>
+                  <Actions>
+                    <GetText>
+                      <ExpectedResult>File2(3).pdf</ExpectedResult>
+                    </GetText>
+                  </Actions>
+                </WEGLink>
+              </Read>
+            </Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

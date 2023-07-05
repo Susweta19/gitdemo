@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the functionality of "Check all / Uncheck all" button in task linkbox in Add task window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in new tab  mode with TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Actions>
+											<DeleteAllPresentTask></DeleteAllPresentTask>
+											<AddTask>
+												<Parameters>
+													<user>Alice Dupont</user>
+												</Parameters>
+												<Actions>
+													<ReadHeader>
+														<ExpectedResult>Add task(s)</ExpectedResult>
+													</ReadHeader>
+													<Content>
+														<Actions>
+															<!-- We are adding task first just to check weather selected 
+																task remains disabled in the Task Selection window -->
+															<ReturnTableView>
+																<Actions>
+																	<CheckallObjects></CheckallObjects>
+																</Actions>
+															</ReturnTableView>
+															<IsDurationDisabled>
+																<ExpectedResult>true</ExpectedResult>
+															</IsDurationDisabled>
+															<ReturnTableView>
+																<Actions>
+																	<UnCheckallObjects></UnCheckallObjects>
+																</Actions>
+															</ReturnTableView>
+															<SelectTaskV2>
+																<Actions>
+																	<FilterInput>
+																		<Parameters>
+																			<indexColumn>2</indexColumn>
+																			<field>Réunion</field>
+																		</Parameters>
+																	</FilterInput>
+																	<CheckBox>
+																		<Parameters>
+																			<Row>1</Row>
+																			<Column>1</Column>
+																		</Parameters>
+																		<Actions>
+																			<Tick></Tick></Actions>
+																	</CheckBox>
+																</Actions>
+															</SelectTaskV2>
+
+
+														</Actions>
+													</Content>
+													<Ok>
+														<Parameters>
+															<validate>true</validate>
+														</Parameters>
+													</Ok>
+												</Actions>
+											</AddTask>
+											<PressKeyFromKeyBoard>
+												<Actions>
+													<PressEnter></PressEnter>
+												</Actions>
+											</PressKeyFromKeyBoard>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Réunion</taskName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsTaskPresent>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Task_000910</taskName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTaskPresent>
+										</Actions>
+									</ManageTask>
+									<!--Reading toolbar buttons --><!--Reading the buttons present in the lower part of the window --><!--Reading the week range in the toolbar -->
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxHourTrackingInNewTab>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

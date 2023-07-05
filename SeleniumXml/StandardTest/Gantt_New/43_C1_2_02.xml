@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Click on the button "Group By" from the toolbar and select "Group by Project"</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+
+
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<SelectScale>
+										<Parameters>
+											<option>Days/Hours</option>
+										</Parameters>
+									</SelectScale>
+									<SelectPaging>
+										<Parameters>
+											<option>None</option>
+										</Parameters>
+									</SelectPaging>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>Projet-A-001</ProjectName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsProjectPresent>
+										</Actions>
+									</ManageTask>
+									<SelectGroup>
+										<Parameters>
+											<option>Group by project</option>
+										</Parameters>
+									</SelectGroup>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>Projet-A-001</ProjectName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsProjectPresent>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>Projet-CT-132</ProjectName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsProjectPresent>
+										</Actions>
+									</ManageTask>
+									<SelectGroup>
+										<Parameters>
+											<option>None</option>
+										</Parameters>
+									</SelectGroup>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>Projet-A-001</ProjectName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsProjectPresent>
+											<IsProjectPresent>
+												<Parameters>
+													<ProjectName>Projet-CT-132</ProjectName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsProjectPresent>
+											<ReadTaskName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>0</index>
+														</Parameters>
+														<ExpectedResult>Alice Dupont</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadTaskName>
+											<ReadTaskName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>1</index>
+														</Parameters>
+														<ExpectedResult>Dominique Bler</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadTaskName>
+											<ReadTaskName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>2</index>
+														</Parameters>
+														<ExpectedResult>Gérard Vaillancourt</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadTaskName>
+											<ReadTaskName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>3</index>
+														</Parameters>
+														<ExpectedResult>Luc Bariol</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadTaskName>
+											<ReadTaskName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>4</index>
+														</Parameters>
+														<ExpectedResult>Marguerite Saucier</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadTaskName>
+											<ReadTaskName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>5</index>
+														</Parameters>
+														<ExpectedResult>Martin Pierre</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadTaskName>
+											<ReadTaskName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>6</index>
+														</Parameters>
+														<ExpectedResult>Orane Martel</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadTaskName>
+											<ReadTaskName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>7</index>
+														</Parameters>
+														<ExpectedResult>Pauline Dufresne</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadTaskName>
+											<ReadTaskName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>8</index>
+														</Parameters>
+														<ExpectedResult>Xavier Petrie</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadTaskName>
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

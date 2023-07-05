@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the availability of the 'MultiCriteria Selection' button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Read the english translation of all buttons in the Choice Guide window</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+          <langage>English</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<LinkPortal>
+        		<Parameters>
+        			<link>To Choice Guide 'CG_1'</link>
+        		</Parameters>
+        	</LinkPortal>
+        	<ReturnChoiceGuide>
+        		<Actions>
+        			<ReadHeader>
+        				<ExpectedResult>Choice Guide</ExpectedResult></ReadHeader>
+        			<IsButtonPresent>
+        				<Parameters>
+        					<buttonName>Select...</buttonName>
+        				</Parameters>
+        				<ExpectedResult>true</ExpectedResult>
+        			</IsButtonPresent>
+        			<IsButtonPresent>
+        				<Parameters>
+        					<buttonName>Reset</buttonName>
+        				</Parameters>
+        				<ExpectedResult>true</ExpectedResult>
+        			</IsButtonPresent>
+        			<IsButtonPresent>
+        				<Parameters>
+        					<buttonName>Extract</buttonName>
+        				</Parameters>
+        				<ExpectedResult>true</ExpectedResult>
+        			</IsButtonPresent>
+        			<IsButtonPresent>
+        				<Parameters>
+        					<buttonName>Print</buttonName>
+        				</Parameters>
+        				<ExpectedResult>true</ExpectedResult>
+        			</IsButtonPresent>
+        			<IsButtonPresent>
+        				<Parameters>
+        					<buttonName>Export</buttonName>
+        				</Parameters>
+        				<ExpectedResult>true</ExpectedResult>
+        			</IsButtonPresent>
+        		</Actions>
+        	</ReturnChoiceGuide>
+
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

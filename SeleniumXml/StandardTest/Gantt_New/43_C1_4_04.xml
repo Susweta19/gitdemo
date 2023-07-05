@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Double click on children entity</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+
+
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<ExpandEntity>
+												<Parameters>
+													<ProjectName>Dominique Bler</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<DoubleClickOnTask>
+												<Parameters>
+													<projectName>Dominique Bler</projectName>
+													<taskName>T-0699</taskName>
+												</Parameters>
+											</DoubleClickOnTask>
+										</Actions>
+									</ManageTask>
+									<IsAddTaskWindowPresent>
+										<ExpectedResult>true</ExpectedResult>
+									</IsAddTaskWindowPresent>
+									<ReturnObjectForm>
+										<Actions>
+											<IsAttributePresent>
+												<Parameters>
+													<attrbuteName>Start date</attrbuteName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsAttributePresent>
+											<IsAttributePresent>
+												<Parameters>
+													<attrbuteName>End date</attrbuteName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsAttributePresent>
+											<IsAttributePresent>
+												<Parameters>
+													<attrbuteName>Duration</attrbuteName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsAttributePresent>
+											<IsAttributePresent>
+												<Parameters>
+													<attrbuteName>Deadline</attrbuteName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsAttributePresent>
+											<IsAttributePresent>
+												<Parameters>
+													<attrbuteName>Technician charge</attrbuteName>
+												</Parameters>
+												<ExpectedResult>true</ExpectedResult>
+											</IsAttributePresent>
+										</Actions>
+									</ReturnObjectForm>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

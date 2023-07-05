@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the abitlity to add a new column in the status table (Text)</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<ExpandNavigationTree />
+      		<NavigationTree>
+      			<Actions>
+      				<SelectOT>
+      					<Actions>
+      						<Select>
+      							<Parameters>
+      								<value>Type d'essais</value>
+      							</Parameters>
+      						</Select></Actions>
+      				</SelectOT>
+      				<EntityTree>
+      					<Actions>
+      						<SelectEntity>
+      							<Parameters>
+      								<nodes>
+      									<path>Type admin table 2</path></nodes></Parameters>
+      						</SelectEntity></Actions>
+      				</EntityTree>
+
+
+
+
+
+      			</Actions>
+      		</NavigationTree>
+      		<LaunchModel>
+      			<Parameters>
+      				<modelName>Administration des tableaux modèles</modelName>
+      			</Parameters>
+      		</LaunchModel>
+      		<ReturnAdministrationModelTables>
+      			<Actions>
+      				<Content>
+      					<Actions>
+      						<AddColumn>
+      							<Actions>
+      								<Content>
+      									<Actions>
+      										<Name>
+      											<Actions>
+      												<Write>
+      													<Parameters>
+      														<value>test 1 Text</value>
+      													</Parameters>
+      												</Write></Actions>
+      										</Name>
+      										<Type>
+      											<Actions>
+      												<Select>
+      													<Parameters>
+      														<value>Text</value>
+      													</Parameters>
+      												</Select></Actions>
+      										</Type>
+      										<ChangeTab>
+      											<Parameters>
+      												<tabId>Description</tabId>
+      											</Parameters>
+      										</ChangeTab>
+      										<Description>
+      											<Actions>
+      												<Write>
+      													<Parameters>
+      														<value>DescriptionForText</value>
+      													</Parameters>
+      												</Write></Actions>
+      										</Description></Actions>
+      								</Content>
+      								<Ok>
+      									<Parameters>
+      										<validate>true</validate></Parameters>
+      								</Ok></Actions>
+      						</AddColumn>
+      						<EditRuleForTextLinkDataCalculatedFormulaLinkBoolean>
+      							<Parameters>
+      								<rowIndex>1</rowIndex>
+      								<columnIndex>2</columnIndex>
+      							</Parameters>
+      							<Actions>
+      								<Content>
+      									<Actions>
+      										<Defaultvalue>
+      											<Actions>
+      												<Write>
+      													<Parameters>
+      														<value>25</value>
+      													</Parameters>
+      												</Write></Actions>
+      										</Defaultvalue>
+      										<RequiredField>
+      											<Actions>
+      												<Tick></Tick></Actions>
+      										</RequiredField>
+      										<ChangeTab>
+      											<Parameters>
+      												<tabName>Advanced Settings</tabName>
+      											</Parameters>
+      										</ChangeTab>
+      										<DuplicationOfValue>
+      											<Actions>
+      												<Tick></Tick></Actions>
+      										</DuplicationOfValue></Actions>
+      								</Content>
+      								<Ok>
+      									<Parameters>
+      										<validate>true</validate></Parameters>
+      								</Ok></Actions>
+      						</EditRuleForTextLinkDataCalculatedFormulaLinkBoolean>
+      					</Actions>
+      				</Content></Actions>
+      		</ReturnAdministrationModelTables></Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

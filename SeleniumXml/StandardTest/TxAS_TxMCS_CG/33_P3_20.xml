@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the display mode multiple choice question-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check that all sub groups of the Multiple Choice Question and the Question Group will be displayed.</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface><Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+				<IfPopUpPresent></IfPopUpPresent><ChoiceGuide>
+						<Actions>
+							<Content>
+								<Actions>
+					<ChoiceGuideFromTemplate>
+						<Parameters>
+							<template>TEST_AllQustions</template>
+						</Parameters>
+						<Actions>
+							<Content>
+								<Actions>
+									<Formulaire>
+										<Actions>
+											<CheckBox>
+												<Parameters>
+													<id>20</id>
+												</Parameters>
+												<Actions>
+													<Tick /></Actions>
+											</CheckBox>
+											<TreeListe>
+												<Parameters>
+													<id>24</id>
+												</Parameters>
+												<Actions>
+													<SelectAll /></Actions>
+											</TreeListe>
+											<CheckBox>
+												<Parameters>
+													<id>26</id>
+												</Parameters>
+												<Actions>
+													<Read>
+														<ExpectedResult>
+																true
+															</ExpectedResult>
+													</Read></Actions>
+											</CheckBox><TreeListe>
+												<Parameters>
+													<id>24</id>
+												</Parameters>
+												<Actions>
+													<DeselectAll />
+													
+												</Actions>
+											</TreeListe></Actions>
+									</Formulaire></Actions>
+							</Content></Actions>
+					</ChoiceGuideFromTemplate></Actions></Content></Actions></ChoiceGuide></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

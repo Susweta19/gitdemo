@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Actions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>EN_1_09</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associativeteststart</Message>
+    <Actions><!--01-->
+      <Login>
+        <Parameters>
+          <login>1_Mickael&#160;SMITH</login>
+          <password>mmmmm</password>
+          <langage>English</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<ClickOnPortalTab>
+      			<Parameters>
+      				<tabName>Products</tabName>
+      				<frame>3287</frame>
+      			</Parameters>
+			</ClickOnPortalTab>
+      		<NavigateToOT>
+      			<Parameters>
+      				<index>1</index>
+      				<iframe>3287</iframe>
+      			</Parameters>
+      		</NavigateToOT>
+      		<NavigationTree>
+      			<Actions>
+      				<SelectOT>
+      					<Actions>
+      						<Read>
+      							<ExpectedResult>Product composition view</ExpectedResult></Read></Actions>
+      				</SelectOT>
+      				<EntityTree>
+      					<Actions>
+      						<Search>
+      							<Parameters>
+      								<research>126757500 - EN 126/7500 v2</research>
+      							</Parameters>
+      						</Search>
+      						<SelectEntity>
+      							<Parameters>
+      								<nodes><path>126757500 - EN 126/7500 v2</path></nodes></Parameters>
+      						</SelectEntity></Actions>
+      				</EntityTree></Actions>
+      		</NavigationTree>
+      		<ReadForm>
+      			<Actions>
+      				<ChangeTab>
+      					<Parameters>
+      						<tabIndex>1</tabIndex>
+      					</Parameters>
+      				</ChangeTab>
+      				<Sleep>
+      					<Parameters>
+      						<timeOut>2</timeOut>
+      					</Parameters>
+      				</Sleep><!--06-->
+      				<ReadListLink>
+      					<Parameters>
+      						<attrId>1933</attrId>
+      					</Parameters>
+      					<Actions>
+      						<ElementAt>
+      							<Parameters>
+      								<index>5</index>
+      							</Parameters>
+      							<Actions>
+      								<GetText>
+      									<ExpectedResult>90009 - Blade PEN-90009</ExpectedResult></GetText>
+      								<Click></Click></Actions>
+      						</ElementAt></Actions>
+      				</ReadListLink></Actions>
+      		</ReadForm>
+      		<NavigationTree>
+      			<Actions>
+      				<SelectOT>
+      					<Actions>
+      						<Read>
+      							<ExpectedResult>Subassembly / Equipments</ExpectedResult></Read></Actions>
+      				</SelectOT></Actions>
+      		</NavigationTree>
+      		<ReadBanner>
+      			<ExpectedResult>90009 - Blade PEN-90009</ExpectedResult></ReadBanner>
+      		<GoBack></GoBack>
+      		<ReadBanner>
+      			<ExpectedResult>126757500 - EN 126/7500 v2</ExpectedResult></ReadBanner>
+      		<NavigationTree>
+      			<Actions>
+      				<SelectOT>
+      					<Actions>
+      						<Read>
+      							<ExpectedResult>Product composition view</ExpectedResult></Read></Actions>
+      				</SelectOT></Actions>
+      		</NavigationTree>
+      	</Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

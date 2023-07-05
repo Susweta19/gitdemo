@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Right click on a parent entity : contact </testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Projects</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Projet-A-001</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<MainToolbar>
+						<Parameters>
+							<modelName>Multiressouces view</modelName>
+						</Parameters>
+					</MainToolbar>
+
+					<Sleep>
+						<Parameters>
+							<timeOut>3</timeOut>
+						</Parameters>
+					</Sleep>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectScale>
+										<Parameters>
+											<option>Weeks/Days</option>
+										</Parameters>
+									</SelectScale>
+
+									<RightClickOnTask>
+										<Parameters>
+											<index>1</index>
+											<optionToMove>View details</optionToMove>
+										</Parameters>
+										<Actions></Actions>
+									</RightClickOnTask>
+									<RightClickOnTask>
+										<Parameters>
+											<index>1</index>
+											<optionToMove>Sort this level by</optionToMove>
+										</Parameters>
+										<Actions></Actions>
+									</RightClickOnTask>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<RightClickOnTask1>
+												<Parameters>
+													<taskName>Projet-A-001</taskName>
+													<option>View details</option>
+												</Parameters>
+												<Actions></Actions>
+											</RightClickOnTask1>
+										</Actions>
+									</ManageTask>
+
+								</Actions>
+							</Content>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<ReadBanner>
+						<ExpectedResult>Projet-A-001</ExpectedResult>
+					</ReadBanner>
+
+
+
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

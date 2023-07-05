@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the ability to rename the specification</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<ExpandNavigationTree />
+      		<NavigationTree>
+      			<Actions>
+      				<SelectOT>
+      					<Actions>
+      						<Select>
+      							<Parameters>
+      								<value>Type d'essais</value>
+      							</Parameters>
+      						</Select></Actions>
+      				</SelectOT>
+      				<EntityTree>
+      					<Actions>
+      						<SelectEntity>
+      							<Parameters>
+      								<nodes>
+      									<path>Type admin table 2</path></nodes>
+      							</Parameters>
+      						</SelectEntity></Actions>
+      				</EntityTree>
+
+
+
+
+
+      			</Actions>
+      		</NavigationTree>
+      		<LaunchModel>
+      			<Parameters>
+      				<modelName>Administration des tableaux modèles</modelName>
+      			</Parameters>
+      		</LaunchModel>
+      		<ReturnAdministrationModelTables>
+      			<Actions>
+      				<Content>
+      					<Actions>
+      						<EditSpecification>
+      							<Parameters>
+      								<rowIndex>1</rowIndex>
+      							</Parameters>
+      							<Actions>
+      								<Write>
+      									<Parameters>
+      										<value>Specification1</value>
+      									</Parameters>
+      								</Write>
+      								<PressKeyFromKeyBoard><Actions><PressEnter /></Actions></PressKeyFromKeyBoard></Actions>
+      						</EditSpecification></Actions>
+      				</Content>
+      				<Ok>
+      					<Parameters>
+      						<validate>true</validate></Parameters>
+      				</Ok></Actions>
+      		</ReturnAdministrationModelTables></Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

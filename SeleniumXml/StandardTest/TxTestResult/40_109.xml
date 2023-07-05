@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--does not clicking on close button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>After File Uploading</testDescription>
+        
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+
+      </teexmaData>
+    </Parameters>
+  </TestHeader><TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<NavigationTree>
+        		<Actions>
+        			<SelectOT>
+        				<Actions>
+        					<Select>
+        						<Parameters>
+        							<value>Essais</value>
+        						</Parameters>
+        					</Select></Actions>
+        			</SelectOT>
+        			<EntityTree>
+        				<Actions>
+        					<SelectEntity>
+        						<Parameters>
+        							<nodes>
+        								<path>TEST txresult</path></nodes>
+        						</Parameters>
+        					</SelectEntity></Actions>
+        			</EntityTree></Actions>
+        	</NavigationTree>
+        	<LaunchModel>
+        		<Parameters>
+        			<modelName>Saisir des résultats d'essai (link)</modelName>
+        		</Parameters>
+        	</LaunchModel>
+        	<ReturnTestResultEntityTest>
+        		<Actions><WaitForAjax></WaitForAjax>
+        		<Sleep>
+        						<Parameters>
+        							<timeOut>3</timeOut>
+        						</Parameters>
+        					</Sleep>
+        					<Ok>
+        						<Parameters>
+        							<validate>true</validate></Parameters>
+        					</Ok>
+        				</Actions>
+        	</ReturnTestResultEntityTest>
+        	<NavigationTree>
+        		<Actions>
+        			<SelectOT>
+        				<Actions>
+        					<Select>
+        						<Parameters>
+        							<value>Essais</value>
+        						</Parameters>
+        					</Select></Actions>
+        			</SelectOT>
+        			<EntityTree>
+        				<Actions>
+        					<SelectEntity>
+        						<Parameters>
+        							<nodes>
+        								<path>TEST txresult</path></nodes>
+        						</Parameters>
+        					</SelectEntity></Actions>
+        			</EntityTree></Actions>
+        	</NavigationTree>
+        	<LaunchModel>
+        		<Parameters>
+        			<modelName>Saisir des résultats d'essai (link)</modelName>
+        		</Parameters>
+        	</LaunchModel>
+        	<ReturnTestResultEntityTest>
+        		<Actions><WaitForAjax></WaitForAjax>
+        			<ConditionTable>
+        				<Actions>
+        					<ModifyFileValue>
+        						<Parameters>
+        							<rowIndex>1</rowIndex>
+        							<columnIndex>6</columnIndex>
+        						</Parameters>
+        						<Actions>
+        							<Content>
+        								<Actions>
+        									<UploadDocumentFile>
+        										<Parameters>
+        											<pathFile>#DocPath#Picture5.jpg</pathFile>
+        										</Parameters>
+        									</UploadDocumentFile></Actions>
+        							</Content>
+        							<Ok>
+        								<Parameters>
+        									<validate>true</validate></Parameters>
+        							</Ok></Actions>
+        					</ModifyFileValue>
+        					<ModifyFileValue>
+        						<Parameters>
+        							<rowIndex>1</rowIndex>
+        							<columnIndex>6</columnIndex>
+        						</Parameters>
+        						<Actions>
+        							<Content>
+        								<Actions>
+        									<ReadImageName>
+        										<ExpectedResult>Picture5.jpg</ExpectedResult></ReadImageName></Actions>
+        							</Content>
+        							<Cancel></Cancel></Actions>
+        					</ModifyFileValue></Actions>
+        			</ConditionTable>
+
+
+
+
+        		</Actions>
+        	</ReturnTestResultEntityTest>
+
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

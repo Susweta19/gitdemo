@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Using a simple model application</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click></Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>3</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result></Parameters>
+											</IfConfirmationPopUpPresent>
+											
+											
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+											
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult></ReadWindowTitle>
+											<Content>
+												<Actions>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>Parametered search 1</configName>
+														</Parameters>
+													</SelectConfiguration></Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>
+														true
+													</validate></Parameters>
+											</Ok>
+											
+										</Actions>
+									</SelectAdvancedSearch>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - Parametered search 1</ExpectedResult></ReadWindowTitle>
+									<ClearAll></ClearAll>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<CheckBoxInResultView>
+										<Parameters>
+											<objId>4584</objId>
+										</Parameters>
+										<Actions>
+											<Tick></Tick></Actions>
+									</CheckBoxInResultView>
+									<CheckBoxInResultView>
+										<Parameters>
+											<objId>4193</objId>
+										</Parameters>
+										<Actions>
+											<Tick></Tick></Actions>
+									</CheckBoxInResultView>
+									<ClickOnToolBarButtons>
+										<Parameters>
+											<btnName>Test Utils ID</btnName>
+										</Parameters>
+									</ClickOnToolBarButtons>
+
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<WaitForAjax></WaitForAjax>
+									<DoubleClickOnEntity>
+										<Parameters>
+											<objName>1.4404 Metal Powder</objName>
+										</Parameters>
+									</DoubleClickOnEntity>
+									<Sleep>
+										<Parameters>
+											<timeOut>2</timeOut>
+										</Parameters>
+									</Sleep>
+								</Actions>
+							</Content>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+					<WaitForAjax></WaitForAjax>
+					
+					<ReadBanner>
+						<ExpectedResult>1.4404 Metal Powder</ExpectedResult></ReadBanner>
+					<ReadForm>
+						<Actions>
+							<ReadValue>
+								<Parameters>
+									<attributeId>529</attributeId>
+								</Parameters>
+								<ExpectedResult>Sand</ExpectedResult>
+							</ReadValue>
+							
+						</Actions>
+					</ReadForm>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the Publication of the file</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Test Généralités</value>
+                    </Parameters>
+                  </Select>
+                  <Read>
+                    <ExpectedResult>Test Généralités</ExpectedResult>
+                  </Read>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                  <SelectEntity>
+                    <Parameters>
+                      <nodes><path>Entité Test</path></nodes>
+                    </Parameters>
+                  </SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <Edit>
+          	<Actions>
+          		<Content>
+          			<Actions>
+          				<Delete>
+          					<Parameters>
+          						<attrId>170</attrId>
+          					</Parameters>
+          				</Delete>
+          				
+          				
+          				<PublishDocumentFile>
+          					<Parameters>
+          						<attrId>170</attrId>
+          						<pathFile>#DocPath#DocToLoad.txt</pathFile>
+          					</Parameters>
+          				</PublishDocumentFile>
+          				
+          				
+          				
+          			</Actions>
+          		</Content>
+          		<Ok>
+          			<Parameters>
+          				<validate>true</validate></Parameters>
+          		</Ok></Actions>
+          </Edit>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

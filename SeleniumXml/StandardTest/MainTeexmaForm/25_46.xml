@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the display mode of the window title-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Read the English translation of all buttons in the TxTableview window</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+          <langage>English</langage>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <LinkPortal>
+          	<Parameters>
+          		<link>Link to TxTableView</link>
+          	</Parameters>
+          </LinkPortal>
+          
+          <ReturnTxTableView>
+          	<Actions>
+          		<Content>
+          			<Actions>
+          				<IsButtonDisabled>
+          					<Parameters>
+          						<buttonName>Save</buttonName>
+          					</Parameters>
+          					<ExpectedResult>false</ExpectedResult>
+          				</IsButtonDisabled>
+          				<IsButtonDisabled>
+          					<Parameters>
+          						<buttonName>Discard changes</buttonName>
+          					</Parameters>
+          					<ExpectedResult>false</ExpectedResult>
+          				</IsButtonDisabled>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Refresh</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Delete all filters</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Export...</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Check all Objects</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Uncheck all Objects</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle>
+          				<IsButtonPresentByTitle>
+          					<Parameters>
+          						<buttonName>Display notifications...</buttonName>
+          					</Parameters>
+          					<ExpectedResult>true</ExpectedResult>
+          				</IsButtonPresentByTitle></Actions>
+          		</Content></Actions>
+          </ReturnTxTableView>
+
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

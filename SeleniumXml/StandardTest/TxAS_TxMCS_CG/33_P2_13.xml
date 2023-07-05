@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Select the Ot and see the right side--&gt;View the checked Objects</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<IfPopUpPresent></IfPopUpPresent><NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_CG+AS</value>
+										</Parameters>
+									</Select></Actions>
+							</SelectOT></Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>TxMCS</modelName>
+						</Parameters>
+					</LaunchModel>
+					<TxMCS>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									<BlankRequirementSet>
+										<Parameters>
+											<objectType>TEST_CG+AS</objectType>
+										</Parameters>
+									</BlankRequirementSet>
+									<Settings>
+										<Actions>
+											<SelectEntity>
+												<Parameters><nodes><path>TEST_CG+AS</path></nodes></Parameters>
+											</SelectEntity></Actions>
+									</Settings>
+									<Criteria>
+										<Actions>
+											<PreselectionType>
+												<Parameters>
+													<optionName>Some of the Objects</optionName>
+												</Parameters>
+												<Actions>
+													<SelectEntitiesBox>
+														<Parameters>
+															<collection>
+																<collection>
+																	<path>New</path></collection>
+																<collection>
+																	<path>New1</path></collection></collection>
+														</Parameters>
+														<Actions>
+															<Tick />
+															<Read>
+																<Actions><ElementAt><Parameters><index>0</index></Parameters><ExpectedResult>true</ExpectedResult></ElementAt><ElementAt><Parameters><index>1</index></Parameters><ExpectedResult>true</ExpectedResult></ElementAt></Actions>
+															</Read></Actions>
+													</SelectEntitiesBox>
+													<Sleep>
+														<Parameters>
+															<timeOut>3</timeOut>
+														</Parameters>
+													</Sleep>
+													<ViewCheckedObjects /><Sleep>
+														<Parameters>
+															<timeOut>3</timeOut>
+														</Parameters>
+</Sleep>
+													<EntitytPresence>
+														<Parameters><nodes><path>New</path></nodes><presence>
+																true
+															</presence></Parameters>
+													</EntitytPresence>
+													<EntitytPresence>
+														<Parameters><nodes><path>New1</path></nodes><presence>
+																true
+															</presence></Parameters>
+													</EntitytPresence>
+													<EntitytPresence>
+														<Parameters><nodes><path>All</path></nodes><presence>false</presence></Parameters>
+													</EntitytPresence>
+													<PressHereToSee />
+													<EntitytPresence>
+														<Parameters><nodes>
+	<path>New1</path>
+	<path>New6</path></nodes><presence>true</presence></Parameters>
+													</EntitytPresence>
+												</Actions>
+											</PreselectionType></Actions>
+									</Criteria>
+									
+									
+								</Actions>
+							</Content></Actions>
+					</TxMCS></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

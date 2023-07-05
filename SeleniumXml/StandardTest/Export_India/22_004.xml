@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the ability to open the 'Export' window-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the availability of the Objects List</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>TEST_Export</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+            </Actions>
+          </NavigationTree>
+          <Export>
+            <Actions>
+              <Content>
+                <Actions>
+                	<ObjectsTree>
+                		<Actions>
+                			<IsButtonPresentByTitle>
+                				<Parameters>
+                					<buttonName>View the checked Objects</buttonName>
+                				</Parameters>
+                				<ExpectedResult>true</ExpectedResult>
+                			</IsButtonPresentByTitle>
+                			<IsButtonPresentByTitle>
+                				<Parameters>
+                					<buttonName>Import a preselection from a text or Excel file...</buttonName>
+                				</Parameters>
+                				<ExpectedResult>true</ExpectedResult>
+                			</IsButtonPresentByTitle>
+                			<IsButtonPresentByTitle>
+                				<Parameters>
+                					<buttonName>Uncheck all Objects</buttonName>
+                				</Parameters>
+                				<ExpectedResult>true</ExpectedResult>
+                			</IsButtonPresentByTitle>
+                			<IsButtonPresentByTitle>
+                				<Parameters>
+                					<buttonName>Check all Objects</buttonName>
+                				</Parameters>
+                				<ExpectedResult>true</ExpectedResult>
+                			</IsButtonPresentByTitle>
+                			<EntitytPresence>
+                				<Parameters>
+                					<nodes>
+                						<path>TestIndia</path></nodes>
+                					<presence>true</presence>
+                				</Parameters>
+                			</EntitytPresence>
+                			<SelectEntityBox>
+                				<Parameters>
+                					<nodes>
+                						<path>TestIndia</path></nodes>
+                				</Parameters>
+                				<Actions>
+                					<Tick></Tick></Actions>
+                			</SelectEntityBox>
+                			<Search>
+                				<Parameters>
+                					<research>TestIndia</research>
+                				</Parameters>
+                			</Search>
+                			<IsButtonPresentByTitle>
+                				<Parameters>
+                					<buttonName>Display the entire tree</buttonName>
+                				</Parameters>
+                				<ExpectedResult>true</ExpectedResult>
+                			</IsButtonPresentByTitle></Actions>
+                	</ObjectsTree>
+                </Actions>
+              </Content>
+              <Close></Close>
+            </Actions>
+          </Export>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

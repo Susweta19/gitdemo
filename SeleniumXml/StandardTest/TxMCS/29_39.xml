@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the view of  "Advanced options" tab</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_CG+AS</value>
+										</Parameters>
+									</Select></Actions>
+							</SelectOT></Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>TxMCS</modelName>
+						</Parameters>
+					</LaunchModel>
+					<TxMCS>
+						<Actions>
+							<Content>
+								<Actions>
+									<BlankRequirementSet>
+										<Parameters>
+											<objectType>TEST_CG+AS</objectType>
+										</Parameters>
+									</BlankRequirementSet>
+									<Settings>
+										<Actions>
+											<SelectEntity>
+												<Parameters>
+													<nodes>
+														<path>TEST_CG+AS</path></nodes>
+												</Parameters>
+											</SelectEntity></Actions>
+									</Settings>
+									
+									<Advanced>
+									<Parameters></Parameters>
+										<Actions>
+											<Agregation>
+												<Actions>
+													<SelectByText>
+														<Parameters>
+															<text>Geometric mean</text>
+														</Parameters>
+													</SelectByText>
+													<SelectByText>
+														<Parameters>
+															<text>Arithmetic mean</text>
+														</Parameters>
+													</SelectByText>
+													<SelectByText>
+														<Parameters>
+															<text>Maximum mark (OR)</text>
+														</Parameters>
+													</SelectByText></Actions>
+											</Agregation></Actions>
+									</Advanced>
+									<Settings>
+										<Actions>
+											<SelectEntity>
+												<Parameters>
+													<nodes>
+														<path>TEST_CG+AS</path>
+														<path>Bool/Date/Str/Text</path>
+														<path>Bool/Date/Str/Text</path>
+														<path>Boolean</path></nodes>
+												</Parameters>
+											</SelectEntity></Actions>
+									</Settings>
+									<Advanced>
+									<Parameters>
+										<alreadyOpen>true</alreadyOpen></Parameters>
+										<Actions>
+											<PresenceOfData>
+												<Actions>
+													<SelectByText>
+														<Parameters>
+															<text>Granting a rating depending on the value</text>
+														</Parameters>
+													</SelectByText>
+													<SelectByText>
+														<Parameters>
+															<text>Granting of a maximum rating (100), regardless of the value</text>
+														</Parameters>
+													</SelectByText>
+													<SelectByText>
+														<Parameters>
+															<text>Nil (0) value added irrespective of the value</text>
+														</Parameters>
+													</SelectByText></Actions>
+											</PresenceOfData>
+											<AbsenceOfData>
+												<Actions>
+													<SelectByText>
+														<Parameters>
+															<text>Granting an uncertain rating (0 to 100)</text>
+														</Parameters>
+													</SelectByText>
+													<SelectByText>
+														<Parameters>
+															<text>Granting a maximum rating (100)</text>
+														</Parameters>
+													</SelectByText>
+													<SelectByText>
+														<Parameters>
+															<text>Granting a null rating (0)</text>
+														</Parameters>
+													</SelectByText></Actions>
+											</AbsenceOfData></Actions>
+									</Advanced>
+								</Actions>
+							</Content></Actions>
+					</TxMCS></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

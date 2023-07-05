@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Adding a criterion in a parametered search</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<WaitForAjax></WaitForAjax>
+					<MainToolbar>
+						<Parameters>
+							<modelName>TxAdvancedSearch</modelName>
+						</Parameters>
+					</MainToolbar>
+					<WaitForAjax></WaitForAjax>
+					<ReturnTxAdvancedSearch>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectAdvancedSearch>
+										<Parameters>
+											<click>false</click>
+										</Parameters>
+										<Actions>
+											<Sleep>
+												<Parameters>
+													<timeOut>3</timeOut>
+												</Parameters>
+											</Sleep>
+											<IfConfirmationPopUpPresent>
+												<Parameters>
+													<result>false</result>
+												</Parameters>
+											</IfConfirmationPopUpPresent>
+
+
+											<Sleep>
+												<Parameters>
+													<timeOut>2</timeOut>
+												</Parameters>
+											</Sleep>
+
+											<ReadWindowTitle>
+												<ExpectedResult>Load an Advanced Search</ExpectedResult>
+											</ReadWindowTitle>
+											<Content>
+												<Actions>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<ExpandedCollapsedConfigList>
+														<Parameters>
+															<configName>Materials database</configName>
+														</Parameters>
+													</ExpandedCollapsedConfigList>
+													<SelectConfiguration>
+														<Parameters>
+															<configName>Parametered search 1</configName>
+														</Parameters>
+													</SelectConfiguration>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+
+										</Actions>
+									</SelectAdvancedSearch>
+									<ReadWindowTitle>
+										<ExpectedResult>[Materials database] - Parametered search 1</ExpectedResult>
+									</ReadWindowTitle>
+									<ClearAll></ClearAll>
+									<ManageQuestionList>
+										<Actions>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Additional criteria</groupName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsGroupPresent>
+										</Actions>
+									</ManageQuestionList>
+									<ShowMoreFilters>
+										<Actions>
+											<Content>
+												<Actions>
+													<SelectedEntity>
+														<Actions>
+															<SelectEntity>
+																<Parameters>
+																	<nodes>
+																		<path>Materials database</path>
+																		<path>Description</path>
+																		<path>Poisson ratio</path>
+																	</nodes>
+																</Parameters>
+															</SelectEntity>
+														</Actions>
+													</SelectedEntity>
+													<Criteria>
+														<Actions>
+															<TargetValue>
+																<Parameters>
+																	<value>0.33</value>
+																</Parameters>
+															</TargetValue>
+
+														</Actions>
+													</Criteria>
+												</Actions>
+											</Content>
+											<Ok>
+												<Parameters>
+													<validate>true</validate>
+												</Parameters>
+											</Ok>
+										</Actions>
+									</ShowMoreFilters>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<RemoveCriterion>
+										<Parameters>
+											<criteriaIndex>1</criteriaIndex></Parameters>
+									</RemoveCriterion>
+									<ManageQuestionList>
+										<Actions>
+											<ManageDecimalSingleValue>
+												<Parameters>
+													<questionName>Poisson ratio</questionName>
+													<min>0.33</min>
+												</Parameters>
+											</ManageDecimalSingleValue></Actions>
+									</ManageQuestionList>
+									<RefreshResult></RefreshResult><IfConfirmationPopUpPresent><Parameters><result>true</result></Parameters></IfConfirmationPopUpPresent>
+									<ReadCriteriaList>
+										<Actions>
+											<ElementAt>
+												<Parameters>
+													<index>0</index>
+												</Parameters>
+												<ExpectedResult>0.33</ExpectedResult>
+											</ElementAt>
+										</Actions>
+									</ReadCriteriaList>
+									<ManageQuestionList>
+										<Actions>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Additional criteria</groupName>
+												</Parameters>
+											</IsGroupPresent>
+											<IsGroupPresent>
+												<Parameters>
+													<groupName>Poisson ratio</groupName>
+												</Parameters>
+											</IsGroupPresent>
+										</Actions>
+									</ManageQuestionList>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnTxAdvancedSearch>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

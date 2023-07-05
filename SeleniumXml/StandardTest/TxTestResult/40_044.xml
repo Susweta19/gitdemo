@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--does not clicking on close button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Enter a decimal value in a range interval cell</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+        	<NavigationTree>
+        		<Actions>
+        			<SelectOT>
+        				<Actions>
+        					<Select>
+        						<Parameters>
+        							<value>Essais</value>
+        						</Parameters>
+        					</Select></Actions>
+        			</SelectOT>
+        			<EntityTree>
+        				<Actions>
+        					<SelectEntity>
+        						<Parameters>
+        							<nodes>
+        								<path>Traction 5 pour plan de test LNK</path></nodes>
+        						</Parameters>
+        					</SelectEntity></Actions>
+        			</EntityTree></Actions>
+        	</NavigationTree>
+        	<LaunchModel>
+        		<Parameters>
+        			<modelName>Saisir des résultats d'essai (link)</modelName>
+        		</Parameters>
+        	</LaunchModel>
+        	<ReturnTestResultEntityTest>
+        		<Actions><Sleep>
+        						<Parameters>
+        							<timeOut>2</timeOut>
+        						</Parameters>
+        					</Sleep>
+        			<ConditionTable>
+        				<Actions>
+        					<ModifyStringValue>
+        						<Parameters>
+        							<rowIndex>1</rowIndex>
+        							<columnIndex>12</columnIndex>
+        						</Parameters>
+        						<Actions>
+        							<Write>
+        								<Parameters>
+        									<value>2</value>
+        								</Parameters>
+        							</Write>
+        							<PressKeyFromKeyBoard><Actions><PressEnter /></Actions></PressKeyFromKeyBoard></Actions>
+        					</ModifyStringValue>
+        					<IsRowColourRed>
+        						<Parameters>
+        							<rowIndex>1</rowIndex>
+        							<columnIndex>12</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>true</ExpectedResult>
+        					</IsRowColourRed>
+        					<ModifyStringValue>
+        						<Parameters>
+        							<rowIndex>1</rowIndex>
+        							<columnIndex>12</columnIndex>
+        						</Parameters>
+        						<Actions>
+        							<Write>
+        								<Parameters>
+        									<value>3</value>
+        								</Parameters>
+        							</Write>
+        							<PressKeyFromKeyBoard><Actions><PressEnter /></Actions></PressKeyFromKeyBoard></Actions>
+        					</ModifyStringValue>
+        					<IsRowColourRed>
+        						<Parameters>
+        							<rowIndex>1</rowIndex>
+        							<columnIndex>12</columnIndex>
+        						</Parameters>
+        						<ExpectedResult>false</ExpectedResult>
+        					</IsRowColourRed></Actions>
+        			</ConditionTable>
+        			<ResultTable>
+        				<Actions>
+        					<ModifyStringValue>
+        						<Parameters>
+        							<rowIndex>1</rowIndex>
+        							<columnIndex>7</columnIndex>
+        						</Parameters>
+        						<Actions>
+        							<Write>
+        								<Parameters>
+        									<value>26</value>
+        								</Parameters>
+        							</Write>
+        							<PressEnter></PressEnter></Actions>
+        					</ModifyStringValue></Actions>
+        			</ResultTable>
+
+        			<Ok>
+        						<Parameters>
+        							<validate>true</validate></Parameters>
+        					</Ok>
+        					
+        					
+        				</Actions>
+        	</ReturnTestResultEntityTest>
+
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

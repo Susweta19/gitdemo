@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Click on the button "Assign more resources" in the resource table (Not Complete Due to Red Popup in Side)</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Multiressources view 2</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<Sleep>
+						<Parameters>
+							<timeOut>3</timeOut>
+						</Parameters>
+					</Sleep>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<SelectScale>
+										<Parameters>
+											<option>Weeks/Days</option>
+										</Parameters>
+									</SelectScale>
+									<ManageTask>
+										<Parameters></Parameters>
+										<Actions>
+											<ExpandEntity>
+												<Parameters>
+													<ProjectName>Projet-A-001</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<DoubleClickOnTask>
+												<Parameters>
+													<projectName>Projet-A-001</projectName>
+													<taskName>T-0598</taskName>
+												</Parameters>
+											</DoubleClickOnTask>
+											<ReturnAddTask>
+												<Actions>
+													<Content>
+														<Actions>
+															<AssignMoreResources>
+																<Actions>
+																	<Content>
+																		<Actions>
+																			<SelectEntityBox>
+																				<Parameters>
+																					<nodes>
+																						<path>Alice Dupont</path>
+																					</nodes>
+																				</Parameters>
+																				<Actions>
+																					<Tick></Tick>
+																				</Actions>
+																			</SelectEntityBox>
+																			<SelectEntityBox>
+																				<Parameters>
+																					<nodes>
+																						<path>Martin Pierre</path>
+																					</nodes>
+																				</Parameters>
+																				<Actions>
+																					<Tick></Tick>
+																				</Actions>
+																			</SelectEntityBox>
+																			<SelectEntityBox>
+																				<Parameters>
+																					<nodes>
+																						<path>Luc Bariol</path>
+																					</nodes>
+																				</Parameters>
+																				<Actions>
+																					<Tick></Tick>
+																				</Actions>
+																			</SelectEntityBox>
+																			<SelectEntityBox>
+																				<Parameters>
+																					<nodes>
+																						<path>Pauline Dufresne</path>
+																					</nodes>
+																				</Parameters>
+																				<Actions>
+																					<Tick></Tick>
+																				</Actions>
+																			</SelectEntityBox>
+																		</Actions>
+																	</Content>
+																	<Ok>
+																		<Parameters>
+																			<validate>true</validate>
+																		</Parameters>
+																	</Ok>
+																</Actions>
+															</AssignMoreResources>
+														</Actions>
+													</Content>
+												</Actions>
+											</ReturnAddTask>
+										</Actions>
+									</ManageTask>
+
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

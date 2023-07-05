@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>WF on linked objects (change selection)</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>User_Workflow</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Workflow_Use&#160;Cases</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                  <SelectEntities>
+                  	<Parameters>
+                  		<collection>
+                  			<collection>
+                  				<path>WF_Use Cases 1</path></collection>
+                  			<collection>
+                  				<path>WF_Use Cases 2</path></collection></collection>
+                  	</Parameters>
+                  </SelectEntities>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <MainToolbar>
+          	<Parameters>
+          		<modelName>WF on N objects</modelName>
+          	</Parameters>
+          </MainToolbar>
+          <Sleep>
+          	<Parameters>
+          		<timeOut>3</timeOut>
+          	</Parameters>
+          </Sleep>
+          <ReturnLinkedObject>
+          	<Actions>
+          		<Content>
+          			<Actions>
+          				<WaitForAjax></WaitForAjax>
+          				<ReadSelectedList>
+          					<Actions>
+          						<ElementAt>
+          							<Parameters>
+          								<index>0</index>
+          							</Parameters>
+          							<ExpectedResult>WF_Use Cases 1</ExpectedResult>
+          						</ElementAt>
+          						<ElementAt>
+          							<Parameters>
+          								<index>1</index>
+          							</Parameters>
+          							<ExpectedResult>WF_Use Cases 2</ExpectedResult>
+          						</ElementAt></Actions>
+          				</ReadSelectedList>
+          				
+          				<ReadActionList>
+          					<Actions>
+          						<ElementAt>
+          							<Parameters>
+          								<index>0</index>
+          							</Parameters>
+          							<ExpectedResult>Data writting</ExpectedResult>
+          						</ElementAt>
+          						<ElementAt>
+          							<Parameters>
+          								<index>1</index>
+          							</Parameters>
+          							<ExpectedResult>Attribute form</ExpectedResult>
+          						</ElementAt></Actions>
+          				</ReadActionList>
+          				<SelectObject>
+          					<Parameters>
+          						<objectName>WF_Use Cases 1</objectName>
+          					</Parameters>
+          				</SelectObject>
+          				<SelectObject>
+          					<Parameters>
+          						<objectName>WF_Use Cases 2</objectName>
+          					</Parameters>
+          				</SelectObject>
+          				
+          				<Sleep>
+          					<Parameters>
+          						<timeOut>3</timeOut>
+          					</Parameters>
+          				</Sleep>
+          				<ReadActionList>
+          					<Actions>
+          						<ElementAt>
+          							<Parameters>
+          								<index>0</index>
+          							</Parameters>
+          							<ExpectedResult>No available action</ExpectedResult>
+          						</ElementAt></Actions>
+          				</ReadActionList>
+          				<ChangeObjectSelected>
+          				</ChangeObjectSelected>
+          				<ObjectSelection>
+          					<Parameters>
+          						<windowIndex>2</windowIndex></Parameters>
+          					<Actions><SelectAll></SelectAll><SelectEntitiesBox>
+          									<Parameters>
+          										<collection>
+          											<collection>
+          												<path>Test TxWF_Use Cases</path></collection>
+          											<collection>
+          												<path>WF_Use Cases 1</path></collection>
+          											<collection>
+          												<path>WF_Use Cases 2</path></collection>
+          											<collection>
+          												<path>WF_Use Cases 3</path></collection>
+          											<collection>
+          												<path>WF_Use Cases 4</path></collection>
+          											<collection>
+          												<path>WF_Use Cases 5</path></collection></collection>
+          									</Parameters>
+          									<Actions>
+          										<Read>
+          											<Actions>
+          												<ElementAt>
+          													<Parameters>
+          														<index>
+          															0
+          														</index>
+          													</Parameters>
+          													<ExpectedResult>
+          														true
+          													</ExpectedResult>
+          												</ElementAt>
+          												<ElementAt>
+          													<Parameters>
+          														<index>1</index>
+          													</Parameters>
+          													<ExpectedResult>
+          														true
+          													</ExpectedResult>
+          												</ElementAt>
+          												<ElementAt>
+          													<Parameters>
+          														<index>2</index>
+          													</Parameters>
+          													<ExpectedResult>
+          														true
+          													</ExpectedResult>
+          												</ElementAt>
+          												<ElementAt>
+          													<Parameters>
+          														<index>3</index>
+          													</Parameters>
+          													<ExpectedResult>
+          														true
+          													</ExpectedResult>
+          												</ElementAt>
+          												<ElementAt>
+          													<Parameters>
+          														<index>4</index>
+          													</Parameters>
+          													<ExpectedResult>
+          														true
+          													</ExpectedResult>
+          												</ElementAt>
+          												<ElementAt>
+          													<Parameters>
+          														<index>5</index>
+          													</Parameters>
+          													<ExpectedResult>
+          														true
+          													</ExpectedResult>
+          												</ElementAt></Actions>
+          										</Read></Actions>
+          								</SelectEntitiesBox><UncheckAll></UncheckAll><SelectEntitiesBox>
+          									<Parameters>
+          										<collection>
+          											<collection>
+          												<path>Test TxWF_Use Cases</path></collection>
+          											<collection>
+          												<path>WF_Use Cases 1</path></collection>
+          											<collection>
+          												<path>WF_Use Cases 2</path></collection>
+          											<collection>
+          												<path>WF_Use Cases 3</path></collection>
+          											<collection>
+          												<path>WF_Use Cases 4</path></collection>
+          											<collection>
+          												<path>WF_Use Cases 5</path></collection></collection>
+          									</Parameters>
+          									<Actions>
+          										<Read>
+          											<Actions>
+          												<ElementAt>
+          													<Parameters>
+          														<index>
+          															0
+          														</index>
+          													</Parameters>
+          													<ExpectedResult>false</ExpectedResult>
+          												</ElementAt>
+          												<ElementAt>
+          													<Parameters>
+          														<index>1</index>
+          													</Parameters>
+          													<ExpectedResult>false</ExpectedResult>
+          												</ElementAt>
+          												<ElementAt>
+          													<Parameters>
+          														<index>2</index>
+          													</Parameters>
+          													<ExpectedResult>false</ExpectedResult>
+          												</ElementAt>
+          												<ElementAt>
+          													<Parameters>
+          														<index>3</index>
+          													</Parameters>
+          													<ExpectedResult>false</ExpectedResult>
+          												</ElementAt>
+          												<ElementAt>
+          													<Parameters>
+          														<index>4</index>
+          													</Parameters>
+          													<ExpectedResult>false</ExpectedResult>
+          												</ElementAt>
+          												<ElementAt>
+          													<Parameters>
+          														<index>5</index>
+          													</Parameters>
+          													<ExpectedResult>false</ExpectedResult>
+          												</ElementAt></Actions>
+          										</Read></Actions>
+          								</SelectEntitiesBox></Actions>
+          				</ObjectSelection>
+          				<ManagePopUp>
+          					<Actions>
+          						<CloseWindowPopup>
+          							<Parameters>
+          								<validate>true</validate></Parameters>
+          						</CloseWindowPopup>
+          						<CloseWindowPopup>
+          							<Parameters>
+          								<validate>false</validate></Parameters>
+          						</CloseWindowPopup></Actions>
+          				</ManagePopUp>
+          				<ChangeObjectSelected>
+          				</ChangeObjectSelected>
+          				<ObjectSelection>
+          					<Parameters><windowIndex>2</windowIndex></Parameters>
+          					<Actions><UncheckAll></UncheckAll><Search>
+          									<Parameters>
+          										<research>WF_Use Cases</research>
+          									</Parameters>
+          								</Search><SelectEntitiesBox>
+          									<Parameters>
+          										<collection>
+          											<collection>
+          												<path>WF_Use Cases 1</path></collection>
+          											<collection>
+          												<path>WF_Use Cases 2</path></collection>
+          											<collection>
+          												<path>WF_Use Cases 3</path></collection></collection>
+          									</Parameters>
+          									<Actions>
+          										<Tick></Tick>
+          									</Actions>
+          								</SelectEntitiesBox></Actions>
+          				</ObjectSelection>
+          				<ManagePopUp>
+          					<Actions>
+          						<CloseWindowPopup>
+          							<Parameters>
+          								<validate>true</validate></Parameters>
+          						</CloseWindowPopup></Actions>
+          				</ManagePopUp>
+          				<ReadSelectedList>
+          					<Actions>
+          						<ElementAt>
+          							<Parameters>
+          								<index>0</index>
+          							</Parameters>
+          							<ExpectedResult>WF_Use Cases 1</ExpectedResult>
+          						</ElementAt>
+          						<ElementAt>
+          							<Parameters>
+          								<index>1</index>
+          							</Parameters>
+          							<ExpectedResult>WF_Use Cases 2</ExpectedResult>
+          						</ElementAt>
+          						<ElementAt>
+          							<Parameters>
+          								<index>2</index>
+          							</Parameters>
+          							<ExpectedResult>WF_Use Cases 3</ExpectedResult>
+          						</ElementAt></Actions>
+          				</ReadSelectedList>
+
+          			</Actions>
+          		</Content>
+          		<Close></Close></Actions>
+          </ReturnLinkedObject>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

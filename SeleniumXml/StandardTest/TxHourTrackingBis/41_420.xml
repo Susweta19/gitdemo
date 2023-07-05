@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check availability of right click functions for a task under My team</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in new tab  mode with TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+								<ManageNavigationLayout>
+										<Actions>
+											<ClickOnLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+												</Parameters>
+											</ClickOnLinkBox>
+											<ManageLinkBox>
+												<Parameters>
+													<linkName>My team</linkName>
+												</Parameters>
+												<Actions>
+													<SelectAll></SelectAll>
+													
+													
+												</Actions>
+											</ManageLinkBox></Actions>
+									</ManageNavigationLayout>
+									<ManageTask>
+										<Actions>
+											<ManageCommonMethods>
+												<Actions>
+													<CurrentWeekFirstDay>
+														<Hashtag>#day#</Hashtag></CurrentWeekFirstDay>
+												</Actions>
+											</ManageCommonMethods>
+											<DeleteAllPresentTask></DeleteAllPresentTask>
+											<AddTask>
+												<Parameters>
+													<index>1</index>
+													<user>Luc Bariol</user></Parameters>
+												<Actions>
+													<Content>
+														<Actions>
+															<SelectTaskV2>
+																<Actions>
+																	<FilterInput>
+																		<Parameters>
+																			<indexColumn>2</indexColumn>
+																			<field>T-0787</field>
+																		</Parameters>
+																	</FilterInput>
+																	<CheckBox>
+																		<Parameters>
+																			<Row>1</Row>
+																			<Column>1</Column>
+																		</Parameters>
+																		<Actions>
+																			<Tick></Tick></Actions>
+																	</CheckBox></Actions>
+															</SelectTaskV2>
+															<SelectDate>
+																<Actions>
+																	<Day>
+																		<Parameters>
+																			<day>#day#</day>
+																		</Parameters>
+																	</Day>
+																</Actions>
+															</SelectDate>
+														</Actions>
+													</Content>
+													<Ok>
+														<Parameters>
+															<validate>
+																true
+															</validate></Parameters>
+													</Ok></Actions>
+											</AddTask>
+											<TaskContextMenu>
+												<Parameters>
+													<colIndex>3</colIndex>
+													<taskName>T-0787</taskName>
+												</Parameters>
+												<Actions>
+													<ReadAllFunctions>
+														<Actions>
+															<ElementAt>
+																<Parameters>
+																	<index>
+																		0
+																	</index>
+																</Parameters>
+																<ExpectedResult>View details</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>1</index>
+																</Parameters>
+																<ExpectedResult>Validate resource times</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>2</index>
+																</Parameters>
+																<ExpectedResult>Cancel resource times validation</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>3</index>
+																</Parameters>
+																<ExpectedResult>Add Task</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>4</index>
+																</Parameters>
+																<ExpectedResult>Complete Task</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>5</index>
+																</Parameters>
+																<ExpectedResult>Remove Task</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>6</index>
+																</Parameters>
+																<ExpectedResult>Duplicate time</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>7</index>
+																</Parameters>
+																<ExpectedResult>Delete time</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>8</index>
+																</Parameters>
+																<ExpectedResult>Add comment</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>9</index>
+																</Parameters>
+																<ExpectedResult>Edit comment</ExpectedResult>
+															</ElementAt>
+															<ElementAt>
+																<Parameters>
+																	<index>10</index>
+																</Parameters>
+																<ExpectedResult>Remove comment</ExpectedResult>
+															</ElementAt></Actions>
+													</ReadAllFunctions></Actions>
+											</TaskContextMenu>
+										</Actions>
+									</ManageTask></Actions>
+							</Content></Actions>
+					</ReturnTxHourTrackingInNewTab></Actions>
+      </MainWindow>
+    </Actions></TxInterface></Actions>

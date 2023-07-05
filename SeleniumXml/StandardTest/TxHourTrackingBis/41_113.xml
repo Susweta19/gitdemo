@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the view of Add task(s) window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in window  mode with TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInWindow>
+						<Actions>
+							<ReadWindowTitle>
+								<ExpectedResult>Hour Tracking - Spent times</ExpectedResult></ReadWindowTitle>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Actions>
+											<IsAddTaskButtonPresent>
+												<Parameters>
+													<resourceName>Alice Dupont</resourceName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsAddTaskButtonPresent>
+											<AddTask>
+												<Parameters>
+													<index>1</index>
+													<user>Alice Dupont</user></Parameters>
+												<Actions>
+													<WaitForAjax></WaitForAjax>
+													<Content>
+														<Actions>
+															<SelectTaskV2>
+																<Actions>
+																	<CheckallObjects></CheckallObjects>
+																	<UnCheckallObjects></UnCheckallObjects></Actions>
+															</SelectTaskV2>
+														</Actions>
+													</Content>
+													<IsButtonPresent>
+														<Parameters>
+															<buttonName>Previous tasks</buttonName>
+														</Parameters>
+														<ExpectedResult>
+															true
+														</ExpectedResult>
+													</IsButtonPresent>
+													<IsButtonPresent>
+														<Parameters>
+															<buttonName>Cancel</buttonName>
+														</Parameters>
+														<ExpectedResult>
+															true
+														</ExpectedResult>
+													</IsButtonPresent>
+													<IsButtonPresent>
+														<Parameters>
+															<buttonName>Ok</buttonName>
+														</Parameters>
+														<ExpectedResult>
+															true
+														</ExpectedResult>
+													</IsButtonPresent></Actions>
+											</AddTask></Actions>
+									</ManageTask></Actions>
+							</Content></Actions>
+					</ReturnTxHourTrackingInWindow></Actions>
+      </MainWindow>
+    </Actions></TxInterface></Actions>

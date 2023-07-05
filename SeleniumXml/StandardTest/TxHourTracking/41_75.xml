@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Checks the availability of functions for a task</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+      	<Actions>
+      		<Sleep>
+      			<Parameters>
+      				<timeOut>5</timeOut>
+      			</Parameters>
+      		</Sleep>
+      		<TxHourTracking>
+      			<Actions>
+      			<Content>
+      					<Actions>
+      						<WaitForAjax></WaitForAjax>
+      						<ManageNavigationLayout>
+      							<Actions>
+      								<ManageLinkBox>
+      									<Parameters>
+      										<linkName>Machine</linkName>
+      									</Parameters>
+      									<Actions>
+      										<SelectAll></SelectAll></Actions>
+      								</ManageLinkBox></Actions>
+      						</ManageNavigationLayout>
+      						<ManageTask>
+      							<Actions>
+      								<IfTaskPresent><Parameters><taskName>Tâche 1</taskName></Parameters></IfTaskPresent><WaitForSaving></WaitForSaving><AddTask>
+      									<Parameters>
+      										<user>Machine B</user>
+      									</Parameters>
+      									<Actions>
+      										<Content>
+      											<Actions>
+      												<SelectTask>
+      													<Actions>
+      														<SelectEntitiesBox>
+      															<Parameters>
+      																<collection>
+      																	<collection>
+      																		<path>Actif</path>
+      																		<path>Tâche 1</path></collection></collection>
+      															</Parameters>
+      															<Actions>
+      																<Tick></Tick></Actions>
+      														</SelectEntitiesBox></Actions>
+      												</SelectTask>
+      												<SelectDate>
+      													<Actions>
+      														<Today></Today></Actions>
+      												</SelectDate></Actions>
+      										</Content>
+      										<Ok>
+														<Parameters></Parameters>
+													</Ok></Actions>
+      								</AddTask>
+      								<Normal>
+      									<Parameters>
+      										<taskName>Tâche 1</taskName>
+      										<colNum>5</colNum>
+      									</Parameters>
+      									<Actions>
+      										<Write>
+      											<Parameters>
+      												<value>2</value>
+      											</Parameters>
+      										</Write>
+      										<WaitForAjax></WaitForAjax>
+      										<PressKeyFromKeyBoard><Actions><PressTab></PressTab></Actions></PressKeyFromKeyBoard></Actions>
+      								</Normal>
+      								
+      								<TaskContextMenu>
+      									<Parameters>
+      										<colIndex>2</colIndex>
+      										<taskName>Tâche 1</taskName>
+      									</Parameters>
+      									<Actions>
+      										<ReadAllFunctions>
+      											<Actions>
+      												<ElementAt>
+      													<Parameters>
+      														<index>0</index>
+      													</Parameters>
+      													<ExpectedResult>View details</ExpectedResult>
+      												</ElementAt>
+      												<ElementAt>
+      													<Parameters>
+      														<index>1</index>
+      													</Parameters>
+      													<ExpectedResult>Add Task</ExpectedResult>
+      												</ElementAt>
+      												<ElementAt>
+      													<Parameters>
+      														<index>2</index>
+      													</Parameters>
+      													<ExpectedResult>Remove Task</ExpectedResult>
+      												</ElementAt>
+      												<ElementAt>
+      													<Parameters>
+      														<index>3</index>
+      													</Parameters>
+      													<ExpectedResult>Delete time</ExpectedResult>
+      												</ElementAt>
+      												<ElementAt>
+      													<Parameters>
+      														<index>4</index>
+      													</Parameters>
+      													<ExpectedResult>Add comment</ExpectedResult>
+      												</ElementAt>
+      												<ElementAt>
+      													<Parameters>
+      														<index>5</index>
+      													</Parameters>
+      													<ExpectedResult>Edit comment</ExpectedResult>
+      												</ElementAt>
+      												<ElementAt>
+      													<Parameters>
+      														<index>6</index>
+      													</Parameters>
+      													<ExpectedResult>Remove comment</ExpectedResult>
+      												</ElementAt></Actions>
+      										</ReadAllFunctions>
+      										<RemoveTask></RemoveTask>
+      										<ManagePopUp>
+      											<Actions>
+      												<ClosePopUp>
+      													<Parameters>
+      														<result>
+      															true
+      														</result>
+      													</Parameters>
+      												</ClosePopUp></Actions>
+      										</ManagePopUp></Actions>
+      								</TaskContextMenu></Actions>
+      						</ManageTask></Actions>
+      				</Content>
+      		<Cancel></Cancel>
+      			</Actions>
+      		</TxHourTracking><Logout>
+      			<Actions>
+      				<ReadConfirmationPopUpMessage>
+      					<Actions>
+      						<ElementAt>
+      							<Parameters>
+      								<index>0</index>
+      							</Parameters>
+      							<ExpectedResult>Do you really want to quit TEEXMA?</ExpectedResult>
+      						</ElementAt></Actions>
+      				</ReadConfirmationPopUpMessage>
+      				<CloseConfirmationPopup>
+      					<Parameters>
+      						<result>true</result>
+      					</Parameters>
+      				</CloseConfirmationPopup></Actions>
+      		</Logout>
+      		</Actions>
+      </MainWindow></Actions></TxInterface></Actions>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Filter using choice list</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrateur</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Portals</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Welcome_Test</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<ButtonPortal>
+						<Parameters>
+							<link>My Dashboard</link>
+							<hasSpan>true</hasSpan>
+						</Parameters>
+					</ButtonPortal>
+					<ReturnTxTableView>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+									
+									<WaitForAjax></WaitForAjax>
+									<Sleep>
+										<Parameters>
+											<timeOut>25</timeOut>
+										</Parameters>
+									</Sleep>
+									<Filter>
+										<Parameters>
+											<indexColumn>11</indexColumn>
+										</Parameters>
+										<Actions>
+											<FilterType>
+												<Actions>
+													<Select>
+														<Parameters>
+															<value>List&#160;of&#160;choices</value>
+														</Parameters>
+													</Select></Actions>
+											</FilterType>											
+											<Listingvalue>
+												<Parameters>
+													<collection>
+														<collection>Building 1102</collection>
+														<collection>Building 1116</collection>
+														<collection>Building 1094</collection></collection>
+												</Parameters>
+											</Listingvalue>
+											<Listingvalue>
+												<Parameters>
+													<collection>														
+														<collection>Building 1111</collection></collection>
+												</Parameters>
+											</Listingvalue>
+											<ValidateOrCancel>
+												<Parameters>
+													<ok>true</ok></Parameters>
+											</ValidateOrCancel>
+										</Actions>
+									</Filter>
+
+
+								</Actions>
+							</Content></Actions>
+					</ReturnTxTableView>
+
+
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

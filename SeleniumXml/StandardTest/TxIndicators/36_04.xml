@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check save module's dropdown list</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrateur</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <WaitForAjax></WaitForAjax>
+          <TxIndicator>
+            <Parameters>
+              <indicatorname>Waste Production</indicatorname>
+            </Parameters>
+            <Actions>
+              <Content>
+                <Actions>
+                  <Save>
+                    <Actions>
+                      <EntityType>
+                        <Actions>
+                          <Read>
+                            <ExpectedResult>Departments</ExpectedResult>
+                          </Read>
+                        </Actions>
+                      </EntityType>
+                      <Characteristics>
+                        <Actions>
+                          <Read>
+                            <ExpectedResult>Annual report</ExpectedResult>
+                          </Read>
+                          <Select>
+                            <Parameters>
+                              <value>Products delivery</value>
+                            </Parameters>
+                          </Select>
+                          <Select>
+                            <Parameters>
+                              <value>Annual report</value>
+                            </Parameters>
+                          </Select>
+                        </Actions>
+                      </Characteristics>
+                    </Actions>
+                  </Save>
+                </Actions>
+              </Content>
+              <Close>
+                <Parameters>
+                  <index>0</index>
+                </Parameters>
+              </Close>
+            </Actions>
+          </TxIndicator>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Try to open 'Multicriterion Selection - Requirement Set' window</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+					<langage>German</langage>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>TEST_MulticriteriaSelection</value>
+										</Parameters>
+									</Select></Actions>
+							</SelectOT></Actions>
+					</NavigationTree>
+					<MultiCriteria>
+						<Actions>
+							<Content>
+								<Actions></Actions>
+							</Content>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Definition der Kriterien</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Berechnung der Auswahl starten</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Gruppe hinzufügen</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Gruppe bearbeiten</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Gruppe löschen</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Bearbeiten</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Speichern</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Löschen des Lastenheftes wird ausgeführt</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Im XML-Format exportieren</buttonName>
+								</Parameters>
+							</IsButtonPresent>
+							<IsButtonPresent>
+								<Parameters>
+									<buttonName>Literarischer Ausdruck</buttonName>
+								</Parameters>
+							</IsButtonPresent></Actions>
+					</MultiCriteria>
+				</Actions>
+			</MainWindow></Actions></TxInterface></Actions>

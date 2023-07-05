@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--We don't check after reload teexma that elemnt disappear from the OT list-->
+<!--click on the Link 'To Standard Visible OT TEST_Portal/Widget' and the Link 'To Standard Invisible OT Invisibility'-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the availability of the link to an Object Type Standard OT</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <Sleep>
+            <Parameters>
+              <timeOut>5</timeOut>
+            </Parameters>
+          </Sleep>
+          <LinkPortal>
+          	<Parameters>
+          		<link>Link to TxTableView</link>
+          	</Parameters>
+          </LinkPortal>
+          <ReturnTxTableView>
+          	
+          	<Actions>
+          		<Changetab>
+          			<Parameters>
+          				<indexTab>0</indexTab>
+          			</Parameters>
+          		</Changetab></Actions>
+          </ReturnTxTableView>
+          
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

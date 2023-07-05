@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Click on the button on the main toolbar named "Multiresources view"</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Projects</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<EntityTree>
+								<Actions>
+									<SelectEntity>
+										<Parameters>
+											<nodes>
+												<path>Projet-A-001</path>
+											</nodes>
+										</Parameters>
+									</SelectEntity>
+								</Actions>
+							</EntityTree>
+						</Actions>
+					</NavigationTree>
+					<ReadBanner>
+						<ExpectedResult>Projet-A-001</ExpectedResult>
+					</ReadBanner>
+					<MainToolbar>
+						<Parameters>
+							<modelName>Multiressouces view</modelName>
+						</Parameters>
+					</MainToolbar>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<Sleep>
+										<Parameters>
+											<timeOut>5</timeOut>
+										</Parameters>
+									</Sleep>
+									<ManageTask>
+										<Parameters>
+											<taskno>true</taskno>
+										</Parameters>
+										<Actions>
+											<ReadResourceName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>2</index>
+														</Parameters>
+														<ExpectedResult>Martin Pierre</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>3</index>
+														</Parameters>
+														<ExpectedResult>Luc Bariol</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>4</index>
+														</Parameters>
+														<ExpectedResult>Pauline Dufresne</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>5</index>
+														</Parameters>
+														<ExpectedResult>Orane Martel</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadResourceName>
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+							<Close>
+								<Parameters></Parameters>
+							</Close>
+							<Changetab>
+								<Parameters>
+									<indexTab>0</indexTab>
+								</Parameters>
+							</Changetab>
+						</Actions>
+					</ReturnGanttInNewTab>
+					<MainToolbar>
+						<Parameters>
+							<modelName>Project view</modelName>
+						</Parameters>
+					</MainToolbar>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<ManageTask>
+										<Parameters>
+											<taskno>true</taskno>
+										</Parameters>
+										<Actions>
+											<ReadResourceName>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>2</index>
+														</Parameters>
+														<ExpectedResult>Martin Pierre</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>3</index>
+														</Parameters>
+														<ExpectedResult>Luc Bariol</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>4</index>
+														</Parameters>
+														<ExpectedResult>Pauline Dufresne</ExpectedResult>
+													</ElementAt>
+													<ElementAt>
+														<Parameters>
+															<index>5</index>
+														</Parameters>
+														<ExpectedResult>Orane Martel</ExpectedResult>
+													</ElementAt>
+												</Actions>
+											</ReadResourceName>
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

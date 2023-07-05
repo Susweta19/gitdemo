@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>Check the availaiblity of the 'Delete the RS' button</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Message>Associative test start</Message>
+    <Actions>
+      <Login>
+        <Message>Login</Message>
+        <Parameters>
+          <login>Administrator</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <OpenRequirementSet>
+            <Actions>
+              <Content>
+                <Actions>
+                  <New>
+                    <Actions>
+                      <Content>
+                        <Actions>
+                          <CriteriaTab>
+                            <Actions>
+                              <Content>
+                                <Actions>
+                                  <Edit>
+                                    <Actions>
+                                      <Content>
+                                        <Actions>
+                                          <Name>
+                                            <Parameters>
+                                              <groupName>RequireMentSet Delete</groupName>
+                                            </Parameters>
+                                          </Name>
+                                        </Actions>
+                                      </Content>
+                                      <Ok>
+                                        <Parameters>
+                                          <validate>
+    																			true
+    																		</validate>
+                                        </Parameters>
+                                      </Ok>
+                                    </Actions>
+                                  </Edit>
+                                  <Save>
+                                    <Actions>
+                                    	<ClosePopupWithinFrame>
+                                    		<Parameters>
+                                    			<result>true</result>
+                                    		</Parameters>
+                                    	</ClosePopupWithinFrame>
+                                    	
+                                    </Actions>
+                                  </Save>
+                                  <DeleteTheRequirement>
+                                    <Actions>
+                                    	<ClosePopupWithinFrame>
+                                    		<Parameters>
+                                    			<result>true</result>
+                                    		</Parameters>
+                                    	</ClosePopupWithinFrame>
+                                    	
+                                    </Actions>
+                                  </DeleteTheRequirement>
+                                </Actions>
+                              </Content>
+                            </Actions>
+                          </CriteriaTab>
+                        </Actions>
+                      </Content>
+                    </Actions>
+                  </New>
+                </Actions>
+              </Content>
+            </Actions>
+          </OpenRequirementSet>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

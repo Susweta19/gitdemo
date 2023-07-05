@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Custom caption of the formulation interface</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<NavigationTree>
+						<Actions>
+							<SelectOT>
+								<Actions>
+									<Select>
+										<Parameters>
+											<value>Recipe</value>
+										</Parameters>
+									</Select>
+								</Actions>
+							</SelectOT>
+							<SwitchReadWrite></SwitchReadWrite>
+							<AddObject>
+								<Parameters>
+									<useForm>true</useForm>
+								</Parameters>
+								<Actions>
+									<Content>
+										<Actions>
+											<Write>
+												<DTText>
+													<Parameters>
+														<id>91</id>
+														<value>
+															<value>Recipe 8</value>
+														</value>
+													</Parameters>
+												</DTText>
+
+											</Write>
+											<Write>
+												<DTText>
+													<Parameters>
+														<id>101</id>
+														<value>
+															<value>10</value>
+														</value>
+													</Parameters>
+												</DTText>
+												
+											</Write>
+										</Actions>
+									</Content>
+									<Ok>
+										<Parameters>
+											<validate>true</validate>
+										</Parameters>
+									</Ok>
+								</Actions>
+							</AddObject>
+						</Actions>
+					</NavigationTree>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Launch formulation - Custom caption</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnIngredientWindow>
+						<Actions>
+							<ReadHeader>
+								<ExpectedResult>Select a main ingredient</ExpectedResult></ReadHeader>
+							<Content>
+								<Actions>
+									<SelectIngredient>
+										<Actions>
+											<UncheckAll></UncheckAll>
+											<SelectEntityBox>
+												<Parameters>
+													<nodes>
+														<path>IAADI0007 - ROUGE K3911 A 1%</path></nodes>
+												</Parameters>
+												<Actions>
+													<Tick></Tick></Actions>
+											</SelectEntityBox>
+											<IsRadioButtonTicked>
+												<Parameters>
+													<entityName>IAADI0007 - ROUGE K3911 A 1%</entityName>
+												</Parameters>
+												<ExpectedResult>
+													true
+												</ExpectedResult>
+											</IsRadioButtonTicked></Actions>
+									</SelectIngredient></Actions>
+							</Content>
+							<Ok>
+								<Parameters>
+									<validate>true</validate></Parameters>
+							</Ok>
+							<ReadHeader>
+								<ExpectedResult>My formulation for : Recipe 8 / Wished quantity :</ExpectedResult></ReadHeader></Actions>
+					</ReturnIngredientWindow>
+					<ReturnFormulationWindow>
+						<Actions>
+							<Content>
+								<Actions>
+									<ReadCellValue>
+										<Parameters>
+											<Row>1</Row>
+											<Column>1</Column>
+										</Parameters>
+										<ExpectedResult>IAADI0007 - ROUGE K3911 A 1%</ExpectedResult>
+									</ReadCellValue></Actions>
+							</Content></Actions>
+					</ReturnFormulationWindow>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

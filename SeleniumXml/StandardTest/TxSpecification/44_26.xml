@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the ability to click on Sigma button for different fields in Raw data and Mobile scope section</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>DUPONT&#160;Jean-Michel</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>SPC Dashboard</modelName>
+						</Parameters>
+					</LaunchModel>
+
+					<WaitForAjax></WaitForAjax>
+					<ReturnSPCDashboardWindow>
+						<Actions>
+							<WaitForAjax></WaitForAjax>
+							<Content>
+								<Actions>
+									<ClickOnStatistics>
+										<Parameters>
+											<statisticsName>Calmagine - % metamizole sodium 2019</statisticsName>
+										</Parameters>
+									</ClickOnStatistics>
+									<ReturnTxSpecificationInNewTab>
+										<Actions>
+											<Content>
+												<Actions>
+													<ClickOnButtonFromToolbar>
+														<Parameters>
+															<buttonName>Edit current Configuration...</buttonName>
+														</Parameters>
+													</ClickOnButtonFromToolbar>
+													<ReturnEditConfiguration>
+														<Actions>
+															<Content>
+																<Actions>
+																	<Next></Next>
+																	<Next></Next>
+																	<Next></Next>
+																	<Sleep>
+																		<Parameters>
+																			<timeOut>2</timeOut>
+																		</Parameters>
+																	</Sleep>
+																	<Sleep>
+																		<Parameters>
+																			<timeOut>1</timeOut>
+																		</Parameters>
+																	</Sleep>
+																	<IsSigmaEnabled>
+																		<Parameters>
+																			<fieldName>Upper Control limits (MS) at</fieldName>
+																		</Parameters>
+																		<ExpectedResult>
+																			true
+																		</ExpectedResult>
+																	</IsSigmaEnabled>
+																	<ClickOnSigma>
+																		<Parameters>
+																			<fieldName>Upper Control limits (MS) at</fieldName>
+																		</Parameters>
+																	</ClickOnSigma>
+																	<IsSigmaEnabled>
+																		<Parameters>
+																			<fieldName>Upper Control limits (MS) at</fieldName>
+																		</Parameters>
+																		<ExpectedResult>false</ExpectedResult>
+																	</IsSigmaEnabled>
+																</Actions>
+															</Content></Actions>
+													</ReturnEditConfiguration></Actions>
+											</Content></Actions>
+									</ReturnTxSpecificationInNewTab>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnSPCDashboardWindow>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

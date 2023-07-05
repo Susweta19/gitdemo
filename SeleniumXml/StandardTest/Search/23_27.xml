@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--does not clicking on close button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the availability of the Search textbox using Search button if no or one or more than one character</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface><Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<IfPopUpPresent></IfPopUpPresent><SearchBox>
+						<Parameters>
+							<research></research>
+							<byClick>true</byClick>
+						</Parameters>
+						<Actions>
+							<ReadWindowTitle>
+								<ExpectedResult>Text Search</ExpectedResult></ReadWindowTitle>
+							<Close></Close></Actions>
+					</SearchBox>
+					<IfPopUpPresent></IfPopUpPresent><SearchBox>
+						<Parameters>
+							<research>N</research>
+							<byClick>true</byClick>
+						</Parameters>
+						<Actions>
+							<Close></Close></Actions>
+					</SearchBox>
+					<IfPopUpPresent></IfPopUpPresent><SearchBox>
+						<Parameters>
+							<research>New</research>
+							<byClick>true</byClick>
+						</Parameters>
+						<Actions>
+							<Content>
+								<Actions>
+									<Results>
+										<Actions>
+											<SelectEntity>
+												<Parameters>
+													<nodes>
+														<path>New</path></nodes>
+												</Parameters>
+											</SelectEntity></Actions>
+									</Results>
+								</Actions>
+							</Content>
+							
+							<Close></Close></Actions>
+					</SearchBox></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

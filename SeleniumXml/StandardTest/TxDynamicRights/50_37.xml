@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Execution right on a given requirement set</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Marie&#160;Blène</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<OpenRequirementSet>
+						<Actions>
+							<Content>
+								<Actions><IsRequirementSetPresent>
+										<Parameters>
+											<requirementSet>Agency inaugurated in 2020</requirementSet>
+										</Parameters>
+										<ExpectedResult>true</ExpectedResult>
+</IsRequirementSetPresent>
+									<RequirementSet>
+										<Parameters>
+											<requirementSet>Agency inaugurated in 2020</requirementSet>
+										</Parameters>
+									</RequirementSet>
+									<Open>
+										<Parameters></Parameters>
+										<Actions>
+											<Content>
+												<Actions>
+													<CriteriaTab>
+														<Actions>
+															<ReadHeader>
+																<ExpectedResult>Multicriterion Selection - Requirement Set</ExpectedResult></ReadHeader>
+															<Content>
+																<Actions>
+																	<IsButtonPresentByTitle>
+																		<Parameters>
+																			<buttonName>Define Criteria</buttonName>
+																		</Parameters>
+																		<ExpectedResult>
+																			true
+																		</ExpectedResult>
+																	</IsButtonPresentByTitle>
+																	<DefineCriteria>
+																		<Actions>
+																			<Content>
+																				<Actions>
+																					<ListOfAttributes>
+																						<Actions>
+																							<EntitytPresence>
+																								<Parameters>
+																									<nodes>
+																										<path>City</path></nodes>
+																									<presence>
+																										true
+																									</presence>
+																								</Parameters>
+																							</EntitytPresence>
+																							<EntitytPresence>
+																								<Parameters>
+																									<nodes>
+																										<path>Address</path></nodes>
+																									<presence>
+																										true
+																									</presence>
+																								</Parameters>
+																							</EntitytPresence>
+																							<EntitytPresence>
+																								<Parameters>
+																									<nodes>
+																										<path>Inauguration date</path></nodes>
+																									<presence>
+																										true
+																									</presence>
+																								</Parameters>
+																							</EntitytPresence></Actions>
+																					</ListOfAttributes></Actions>
+																			</Content></Actions>
+																	</DefineCriteria></Actions>
+															</Content></Actions>
+													</CriteriaTab></Actions>
+											</Content></Actions>
+									</Open></Actions>
+							</Content></Actions>
+					</OpenRequirementSet>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

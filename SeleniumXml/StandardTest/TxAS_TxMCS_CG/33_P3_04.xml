@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Check the availability of the select button-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the availability of the 'Select' button after launching the Choice Guide 'TEST_AllQuestions' and modify the criteria by defining values for questions.</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface><Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+				<IfPopUpPresent></IfPopUpPresent><ChoiceGuide>
+						<Actions>
+							<Content>
+								<Actions>
+					<ChoiceGuideFromTemplate>
+						<Parameters>
+							<template>TEST_AllQustions</template>
+						</Parameters>
+						<Actions>
+							<Content>
+								<Actions>
+									<Formulaire>
+										<Actions>
+											<CheckBox>
+												<Parameters>
+													<id>13</id>
+												</Parameters>
+												<Actions>
+													<Tick /></Actions>
+											</CheckBox>
+											<Write>
+												<Parameters>
+													<id>14</id>
+													<firstValue>500</firstValue>
+												</Parameters>
+											</Write></Actions>
+									</Formulaire>
+									<Select>
+										<Parameters />
+										<Actions>
+											<Content>
+												<Actions>
+													<ResultsTab>
+														<Actions>
+															<Content>
+																<Actions>
+																	<TreeTabResults>
+																		<Actions>
+																			<EntitytPresence>
+																				<Parameters><nodes><path> New1</path></nodes><presence>
+																						true
+																					</presence></Parameters>
+																			</EntitytPresence>
+																			<EntitytPresence>
+																				<Parameters><nodes><path>New2</path></nodes><presence>
+																						false
+																					</presence></Parameters>
+																			</EntitytPresence></Actions>
+																	</TreeTabResults></Actions>
+															</Content></Actions>
+													</ResultsTab></Actions>
+											</Content></Actions>
+									</Select></Actions>
+							</Content></Actions>
+					</ChoiceGuideFromTemplate></Actions></Content></Actions></ChoiceGuide></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

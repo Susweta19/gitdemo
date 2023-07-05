@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the availability of the Attributes List in export window</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<Sleep>
+						<Parameters>
+							<timeOut>2</timeOut>
+						</Parameters>
+					</Sleep>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Contacts/Tasks view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Content>
+								<Actions>
+									<Sleep>
+										<Parameters>
+											<timeOut>3</timeOut>
+										</Parameters>
+									</Sleep>
+									<ManageTask1>
+										<Actions>
+											<ExpandEntity>
+												<Parameters>
+													<ProjectName>Luc Bariol</ProjectName>
+												</Parameters>
+											</ExpandEntity>
+											<SelectTask>
+												<Parameters>
+													<projectName>[To be planned]</projectName>
+													<taskName>Task_00909</taskName>
+												</Parameters>
+											</SelectTask>
+											<SelectTask>
+												<Parameters>
+													<projectName>[To be planned]</projectName>
+													<taskName>Task_00910</taskName>
+												</Parameters>
+											</SelectTask>
+										</Actions>
+									</ManageTask1>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

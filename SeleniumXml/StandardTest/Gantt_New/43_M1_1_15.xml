@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Select the option ""Weeks/Days"" Select the option "Month" from the button "Paging scale"</testDescription>
+
+
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+
+
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Gantt</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<ClickOnButton>
+						<Parameters>
+							<buttonName>Multiressources view</buttonName>
+
+						</Parameters>
+					</ClickOnButton>
+					<Sleep>
+						<Parameters>
+							<timeOut>5</timeOut>
+						</Parameters>
+					</Sleep>
+					<ReturnGanttInNewTab>
+						<Actions>
+							<Changetab>
+								<Parameters>
+									<indexTab>1</indexTab>
+								</Parameters>
+							</Changetab>
+							<Content>
+								<Actions>
+									<SelectScale>
+										<Parameters>
+											<option>Weeks/Days</option>
+										</Parameters>
+									</SelectScale>
+									<SelectPaging>
+										<Parameters>
+											<option>Month</option>
+										</Parameters>
+									</SelectPaging>
+									<ManageGanttView>
+										<Actions>
+											<ReadGanttFirstHeader>
+												<Actions>
+													<ElementAt>
+														<Parameters>
+															<index>1</index>
+														</Parameters>
+														<Hashtag>#currentmonth1#</Hashtag>
+													</ElementAt>
+												</Actions>
+											</ReadGanttFirstHeader>
+										</Actions>
+									</ManageGanttView>
+									<NextOrPreviousPage>
+										<Parameters>
+											<next>false</next>
+										</Parameters>
+									</NextOrPreviousPage>
+									<ManageCommonMethods>
+										<Actions>
+											<GetPreviousWeekDays>
+												<Parameters>
+													<twodegitday>true</twodegitday>
+												</Parameters>
+												<Actions>
+													<LastElement>
+														<Hashtag>
+															Hashtag
+														</Hashtag>
+													</LastElement>
+												</Actions>
+											</GetPreviousWeekDays>
+										</Actions>
+									</ManageCommonMethods>
+								</Actions>
+							</Content>
+						</Actions>
+					</ReturnGanttInNewTab>
+
+
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>

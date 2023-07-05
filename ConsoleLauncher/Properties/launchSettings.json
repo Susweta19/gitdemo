@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConsoleLauncher": {
+      "commandName": "Project",
+      "commandLineArgs": "run D:\\Project\\Tags\\MADE430Parallel\\SeleniumXml\\config.xml"
+    }
+  }
+}

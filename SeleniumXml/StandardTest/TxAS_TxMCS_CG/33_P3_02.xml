@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--open a Choice Guide from XML file-->
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the ability to open a Choice Guide from XML file.</testDescription>
+				<testRunningIssue>Not working because upload file(Code Limitations)</testRunningIssue>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface><Actions>
+			<Login>
+				<Parameters>
+					<login>Administrator</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<IfPopUpPresent></IfPopUpPresent><ChoiceGuide>
+						<Actions>
+							<Content>
+								<Actions>
+									<ChoiceGuideFromXML>
+										<Parameters>
+											<pathFile>#DocPath#TEST_AllQustions.xml</pathFile>
+										</Parameters>
+										<Actions>
+											<Content>
+												<Actions >
+													<Formulaire>
+														<Actions>
+															<CheckBox>
+																<Parameters>
+																	<id>13</id>
+																</Parameters>
+																<Actions>
+																	<Tick></Tick></Actions>
+															</CheckBox></Actions>
+													</Formulaire></Actions>
+											</Content></Actions>
+									</ChoiceGuideFromXML></Actions>
+							</Content></Actions>
+					</ChoiceGuide></Actions>
+			</MainWindow></Actions></TxInterface></Actions>

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <Configurations>Debug;Release;DebugGenerate</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Drive.v3" Version="1.45.0.1951" />
+    <PackageReference Include="Google.Apis.Sheets.v4" Version="1.45.0.1954" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="90.0.4430.2400" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TxSelenium\TxSelenium.csproj" />
+    <ProjectReference Include="..\XmlExecutor\XmlExecutor.csproj" />
+  </ItemGroup>
+
+</Project>

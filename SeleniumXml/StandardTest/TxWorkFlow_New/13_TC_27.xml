@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TestHeader>
+    <Parameters>
+      <testData>
+        <testPriority>0</testPriority>
+        <testDescription>WF on linked objects (irrelevant actions)</testDescription>
+      </testData>
+      <teexmaData>
+        <customerResPath>customerResPath</customerResPath>
+        <teexmaVersion>teexmaVersion</teexmaVersion>
+        <databasePath>databasePath</databasePath>
+      </teexmaData>
+    </Parameters>
+  </TestHeader>
+  <TxInterface>
+    <Actions>
+      <Login>
+        <Parameters>
+          <login>User_Workflow</login>
+          <password>aaaaa</password>
+        </Parameters>
+      </Login>
+      <MainWindow>
+        <Actions>
+          <NavigationTree>
+            <Actions>
+              <SelectOT>
+                <Actions>
+                  <Select>
+                    <Parameters>
+                      <value>Workflow_Use&#160;Cases</value>
+                    </Parameters>
+                  </Select>
+                </Actions>
+              </SelectOT>
+              <EntityTree>
+                <Actions>
+                  <SelectEntity>
+                    <Parameters><nodes><path>Test TxWF_Use Cases</path></nodes></Parameters>
+                  </SelectEntity>
+                </Actions>
+              </EntityTree>
+            </Actions>
+          </NavigationTree>
+          <MainToolbar>
+          	<Parameters>
+          		<modelName>Available actions</modelName>
+          	</Parameters>
+          </MainToolbar>
+          <Sleep>
+          	<Parameters>
+          		<timeOut>5</timeOut>
+          	</Parameters>
+          </Sleep>
+          <ReturnWFPromote>
+          	<Actions>
+          		<WFAction>
+          			<Parameters><!--Action 4 - Workflow on linked objects with table-->
+          				<actionName>Action 3 - Workflow on linked objects without table</actionName>
+          			</Parameters>
+          		</WFAction>
+          		
+          		
+          	</Actions>
+          </ReturnWFPromote>
+          <ReturnLinkedObject>
+          	<Actions>
+          		<Content>
+          			<Actions>
+          				<ReadActionList>
+          					<Actions>
+          						<ElementAt>
+          							<Parameters>
+          								<index>0</index>
+          							</Parameters>
+          							<ExpectedResult>No available action</ExpectedResult>
+          						</ElementAt></Actions>
+          				</ReadActionList>
+          				<SelectObject>
+          					<Parameters>
+          						<objectName>Object1</objectName>
+          					</Parameters>
+          				</SelectObject>
+          				<SelectObject>
+          					<Parameters>
+          						<objectName>Object2</objectName>
+          					</Parameters>
+          				</SelectObject>
+          				<Sleep>
+          					<Parameters>
+          						<timeOut>5</timeOut>
+          					</Parameters>
+          				</Sleep>
+          				<PerformActions>
+          					<Actions>
+          						<WFAction>
+          							<Parameters>
+          								<actionName>Data writting</actionName>
+          							</Parameters>
+          						</WFAction>
+          						<ManagePopUp>
+          							<Actions>
+          								<ReadConfirmationPopUpMessage>
+          									<Actions>
+          										<ElementAt>
+          											<Parameters>
+          												<index>
+          													0
+          												</index>
+          											</Parameters>
+          											<ExpectedResult>Do you want to run the action 'Data writting' on the 2 selected Objects?</ExpectedResult>
+          										</ElementAt></Actions>
+          								</ReadConfirmationPopUpMessage>
+          								<CloseConfirmationPopup>
+          									<Parameters>
+          										<result>false</result>
+          									</Parameters>
+          								</CloseConfirmationPopup></Actions>
+          						</ManagePopUp></Actions>
+          				</PerformActions>
+          				<PerformActions>
+          					<Actions>
+          						<WFAction>
+          							<Parameters>
+          								<actionName>Data writting</actionName>
+          							</Parameters>
+          						</WFAction>
+          						<ManagePopUp>
+          							<Actions>
+          								<ReadConfirmationPopUpMessage>
+          									<Actions>
+          										<ElementAt>
+          											<Parameters>
+          												<index>
+          													0
+          												</index>
+          											</Parameters>
+          											<ExpectedResult>Do you want to run the action 'Data writting' on the 2 selected Objects?</ExpectedResult>
+          										</ElementAt></Actions>
+          								</ReadConfirmationPopUpMessage>
+          								<CloseConfirmationPopup>
+          									<Parameters>
+          										<result>true</result>
+          									</Parameters>
+          								</CloseConfirmationPopup></Actions>
+          						</ManagePopUp>
+          						<ManagePopUp>
+          							<Actions>
+          								<ReadHeader>
+          									<ExpectedResult>Actions progress</ExpectedResult></ReadHeader>
+          								<CloseWindowPopup>
+          									<Parameters>
+          										<validate>false</validate></Parameters>
+          								</CloseWindowPopup></Actions>
+          						</ManagePopUp></Actions>
+          				</PerformActions></Actions>
+          		</Content>
+          		<Close></Close></Actions>
+          </ReturnLinkedObject>
+          <ReadForm>
+          	<Actions>
+          		<WaitForAjax></WaitForAjax>
+          		<Sleep>
+          			<Parameters>
+          				<timeOut>2</timeOut>
+          			</Parameters>
+          		</Sleep>
+          		<ReadAsso>
+          			<Parameters>
+          				<attrId>571</attrId>
+          			</Parameters>
+          			<Actions>
+          			<Value>
+          					<DTText>
+          						<Parameters>
+          							<colIndex>2</colIndex>
+          							<rowIndex>2</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>#Space</value>
+          						</ExpectedResult>
+          					</DTText>
+          					
+          				</Value>
+          				<Value>
+          					<DTText>
+          						<Parameters>
+          							<colIndex>2</colIndex>
+          							<rowIndex>3</rowIndex>
+          						</Parameters>
+          						<ExpectedResult>
+          							<value>Automatic text</value>
+          						</ExpectedResult>
+          					</DTText>
+          					
+          				</Value></Actions>
+          		</ReadAsso>
+          	</Actions>
+          </ReadForm>
+        </Actions>
+      </MainWindow>
+    </Actions>
+  </TxInterface>
+</Actions>

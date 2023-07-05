@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions
+	xsi:noNamespaceSchemaLocation="../../../ConsoleLauncher/bin/Debug/netcoreapp3.0/TxWebTests.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TestHeader>
+		<Parameters>
+			<testData>
+				<testPriority>0</testPriority>
+				<testDescription>Check the Functionality of Remove Task function for a task under My Tasks</testDescription>
+			</testData>
+			<teexmaData>
+				<customerResPath>customerResPath</customerResPath>
+				<teexmaVersion>teexmaVersion</teexmaVersion>
+				<databasePath>databasePath</databasePath>
+			</teexmaData>
+		</Parameters>
+	</TestHeader>
+	<TxInterface>
+		<Actions>
+			<Login>
+				<Parameters>
+					<login>Alice&#160;Dupont</login>
+					<password>aaaaa</password>
+				</Parameters>
+			</Login>
+			<MainWindow>
+				<Actions>
+					<LaunchModel>
+						<Parameters>
+							<modelName>Hour tracking in window mode without TxTableView</modelName>
+						</Parameters>
+					</LaunchModel>
+					<ReturnTxHourTrackingInWindow>
+						<Actions>
+							<Content>
+								<Actions>
+									<WaitForAjax></WaitForAjax>
+
+									<ManageTask>
+										<Actions>
+											<DeleteAllPresentTask></DeleteAllPresentTask>
+											<WaitForAjax></WaitForAjax>
+											<AddTask>
+												<Parameters>
+													<user>Alice Dupont</user>
+												</Parameters>
+												<Actions>
+													<WaitForAjax></WaitForAjax>
+
+													<ReadHeader>
+														<ExpectedResult>Add task(s)</ExpectedResult>
+													</ReadHeader>
+													<Content>
+														<Actions>
+															<SelectTask>
+																<Actions>
+																	<Search>
+																		<Parameters>
+																			<research>re</research>
+																		</Parameters>
+																	</Search>
+																	<SelectEntitiesBox>
+																		<Parameters>
+																			<collection>
+																				<collection>
+																					<path>Réunion</path>
+																				</collection>
+																			</collection>
+																		</Parameters>
+																		<Actions>
+																			<Tick></Tick>
+																		</Actions>
+																	</SelectEntitiesBox>
+																</Actions>
+															</SelectTask>
+															<SelectDate>
+																<Actions>
+																	<Today></Today>
+																</Actions>
+															</SelectDate>
+															<Sleep>
+																<Parameters>
+																	<timeOut>2</timeOut>
+																</Parameters>
+															</Sleep>
+														</Actions>
+													</Content>
+													<Ok>
+														<Parameters>
+															<validate>true</validate>
+														</Parameters>
+													</Ok>
+												</Actions>
+											</AddTask>
+											<WaitForAjax></WaitForAjax>
+											<TaskContextMenu>
+												<Parameters>
+													<rowIndex>2</rowIndex>
+													<colIndex>2</colIndex>
+													<taskName>Réunion</taskName>
+												</Parameters>
+												<Actions>
+													<RemoveTask></RemoveTask>
+												</Actions>
+											</TaskContextMenu>
+
+											<ManagePopUp>
+												<Actions>
+													<ReadPopUpMessage>
+														<Actions>
+															<ElementAt>
+																<Parameters>
+																	<index>
+																		0
+																	</index>
+																</Parameters>
+																<ExpectedResult>Delete this task times ?</ExpectedResult>
+															</ElementAt></Actions>
+													</ReadPopUpMessage>
+													<ClosePopUp>
+														<Parameters>
+															<result>true</result>
+														</Parameters>
+													</ClosePopUp>
+												</Actions>
+											</ManagePopUp>
+											<IsTaskPresent>
+												<Parameters>
+													<taskName>Réunion</taskName>
+												</Parameters>
+												<ExpectedResult>false</ExpectedResult>
+											</IsTaskPresent>
+										</Actions>
+									</ManageTask>
+								</Actions>
+							</Content>
+							<Close></Close>
+							
+
+						</Actions>
+					</ReturnTxHourTrackingInWindow>
+				</Actions>
+			</MainWindow>
+		</Actions>
+	</TxInterface>
+</Actions>
